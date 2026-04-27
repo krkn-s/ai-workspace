@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO/AEO Content"
+  short_description: "Briefs, audits et contenus SEO/AEO"
+  default_prompt: "Use $seo-aeo-content to create a SEO/AEO content brief for a target topic."
