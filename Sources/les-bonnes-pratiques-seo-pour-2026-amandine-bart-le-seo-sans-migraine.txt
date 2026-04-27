@@ -1,0 +1,779 @@
+video-title="Les bonnes pratiques SEO pour 2026"
+video-author="Amandine Bart - Le SEO Sans Migraine 💊"
+video-published="29 sept. 2025"
+video-link="https://www.youtube.com/watch?v=2ItpsKd2V2M"
+----------------------------------------
+00:04 Hein ? Ah ! [Musique]
+00:31 Bonjour tout le monde. Est-ce que vous pouvez juste me dire dans le chat si vous m'entendez bien ? Comme ça, on fait
+00:37 les petits check et ben j'espère que vous allez bien. Je
+00:43 suis trop contente de vous retrouver en live parce que la dernière fois c'était au mois de juin. OK, super. Vous m'entendez bien ? Parfait. Trop trop
+00:51 contente de vous retrouver pour cette rentrée. Euh vraiment ça ça faisait longtemps. J'avais hâte de ce nouveau
+00:57 live mais j'arrivais pas à le caler avec la rentrée. Donc c'est bon, on y est. Dites-moi un peu dans les commentaires
+01:02 d'où vous venez, de quelle ville. Moi, je suis de Montpellier, il fait encore chaud. On dirait pas que c'est encore la
+01:09 rentrée. Et ensuite, je vais vous rappeler juste deux trois petites règles en attendant
+01:15 les retards à terre. Donc euh comme d'habitude, je vous invite à ne pas
+01:21 faire de publicité dans les commentaires, de respecter mon travail et celui de mes équipes aussi, d'être
+01:27 bien sûr bienveillant dans le chat, ça c'est toujours je s'il vous plaît, on commence pas à se batailler ou à
+01:33 s'insulterin. On va rester chill pour ce petit vendredi. Je vois qu'il y a pas mal de monde. Bruxelles, savo Madrid.
+01:42 Ah oui, il y on est un peu on est on est éparpillé. C'est trop cool de savoir que vous êtes un peu partout. Je vois qu'il
+01:48 y a des Montpelier aussi. Ça ça fait plaisir. Il y a des sudistes en force là
+01:54 en savoir se gel. Je suis originaire de Haute Savoie donc je sais à quel point ça caille déjà là. C'est pour ça que je
+02:01 suis partie dans le sud d'ailleurs. Euh pas mal de gens de Lyon, pas mal de de Belgique aussi. Ça c'est très très cool.
+02:07 Bon bah trop contente de vous retrouver. Euh je vous invite du coup à ne pendant ce live là, vous hésitez pas vous poser
+02:14 vos questions en commentaire. Je prendrai bien un moment à la fin pour vous répondre, même si parfois je dépasse un peu, mais j'aime beaucoup
+02:20 connaître bah c'est quoi vos galères en SEO en ce moment. Euh plus vous mettez des pouces sur une question, plus euh je
+02:26 suis susceptible de la voir à la fin puisque il y a une loutre de l'équipe euh Karine qui tout au long du live là
+02:32 va sélectionner euh les les top questions et elle vous enverra aussi quelques liens à plusieurs moments. Euh
+02:39 enfin si après ce live vous vous faites démarcher de quelconque façon, si ça vient pas de moi et de toute façon ça ne
+02:44 viendra pas de moi puisque je ne fais pas ça, ben je ne vous invite pas à souscrire à ces offres. Je vous avoue
+02:49 que j'ai une concurrence qui est très agressive. J'essaie au maximum euh de vous protéger de cette prospection, mais
+02:55 il y a beaucoup de petits philosop et de techniques peu éthiques à mes yeux, donc je fais le maximum. Mais en tout cas, si
+03:00 vous recevez un peu des offres après ce webinar, ça m'avait déjà en tout cas été signalé la dernière fois, je m'en
+03:07 excuse. Je fais vraiment mon maximum pour que ça se reproduise le moins possible et la concurrence est un peu un
+03:12 peu agressive. C'est pas des loutres, c'est des requins. Euh alors pour aujourd'hui,
+03:17 je vais vous parler de plusieurs sujets, mais je vais déjà me présenter pour peut-être qu'il y a des gens ici qui ne me connaissent pas encore. Je ne sais
+03:23 pas comment vous êtes arrivé là si vous ne me connaissez pas. Mais enchanté. Du coup, moi c'est Amandine, ça fait j'ai mis 8 ans mais je pense qu'on arrive
+03:29 presque sur la 9e année que je fais du référencement autant naturel que payant.
+03:34 On m'appelle aussi la loutre du SEO et c'est pour ça que dans cette petite présentation, vous verrez une petite
+03:40 mascotte l'outre se balader de slide en slide. C'est tout simplement ma meilleure alliée pour vous parler de référencement sans que vous leviez les
+03:46 yeux au ciel parce que je sais à quel point c'est un sujet qui peut paraître comme vraiment très très chiant ou qui
+03:52 fait mal à la tête. Donc cette mascotte m'aide à faire en sorte que vous restiez sur mes contenus parce que le
+03:58 référencement ça peut vraiment vous aider pour votre business, pour référencer votre site, pour trouver des clients. Donc c'est pour ça en tout cas
+04:05 que j'ai choisi la loutre aussi parce que c'est trop cool de faire en plus je trouve que ça n'a aucun sens de parler de SEO avec une loutre. Je me suis dit
+04:12 trop cool et trop drôle et on va voir jusqu'où je peux pousser le délire. Et je crois que le délire a été poussé très loin puisque on compte un peu plus de
+04:18 150000 abonnés sur la marque sans migraine. J'en profite pour vous remercier puisque la semaine dernière on
+04:24 a dépassé les 110000 abonnés sur LinkedIn. Donc merci pour cette mais cette fidélité toujours aussi
+04:30 impressionnante pour moi et vous verrez aussi que je n'aime pas les mots compliqués forcément. Est-ce que sans
+04:35 migrain ? Donc dans ce live, il n'y aura aucun mot complexe, aucun jargon technique. Si vous êtes fan des gens qui
+04:41 parlent qu'en bluit, bah vous êtes pas du tout au bon endroit. Par contre, on ira sur des vrais conseils très
+04:46 actionnables, mais on en parlera de manière très très simple. Avant d'attaquer, je regarde un petit peu euh
+04:53 je regarde un petit peu vos commentaires parce que je voulais voir un peu d'où vous êtes. Très très cool. Il y a du
+04:58 monde de partout. Il y avait un peu plus de 1000 inscrits sur le sur le live. Je me suis dit "Ah
+05:03 ouais euh vous avez envie de bosser votre ratio à la rentrée" et c'est
+05:09 d'ailleurs de ça qu'on va parler. Donc dans aujourd'hui enfin les sujets qu'on va balayer en premier, ça va être
+05:16 vraiment toutes les tendances et CO qui vont dominer pour 2026. L'idée c'est de savoir bah déjà là pour terminer votre
+05:21 année, bah quelles sont les bonnes pratiques, quoi faire sur votre site pour bien le bah bien le référencer,
+05:27 pour faire en sorte qu'il se place sur les bons mots et qu'il attire les bons clients. Et ensuite, j'irais faire un
+05:32 tour aussi sur pas toutes les tendances pour 2026 pour que vous soyez déjà prêt
+05:37 pour janvier parce que je me doute que là, vous êtes plus en mode objectif de fin d'année, mais après vous allez déjà
+05:43 réfléchir à comment on fait pour être mieux positionné à la rentrée. Je vais aussi vous parler du sujet SO IA, donc
+05:49 référencement de chaîne GPT et cetera, puisque on en a bouffé hein cet été. Je ne sais pas pour vous, mais moi c'était
+05:56 terrible. C'est-à-dire que j'ai reçu des mails de prospection encore et encore en me disant "Mais vous perdez du trafic,
+06:02 c'est terrible, attention, vous passez à côté de cette offre." Et j'aimerais qu'on remette un peu d'ordre dans tout
+06:08 ça et d'ordre sur ces offres très urgentistes, on va les appeler comme ça.
+06:14 Et dans une deuxième partie, je vous parlais de comment on fait pour avoir un site à qui ramène des clients. En gros, comment on met en place ce fameux plan
+06:20 d'action, quels outils on utilise, par quoi on commence, qu'est-ce qu'on définit comme action prioritaire ? On
+06:27 commence par quoi en gros pour faire en sorte que son site il commence à à bosser pour nous parce que c'est vraiment le but, je trouve, du
+06:33 référencement. En tout cas, moi c'est comme ça que je considère. Mon site, il doit travailler pour moi quand moi je peux pas bosser, quand je suis en
+06:39 vacances, quand je suis sous l'eau, quand je peux j'ai pas le temps une semaine de faire de nouveaux contenus,
+06:45 j'ai besoin que mon site il taffe pour moi et qu'il me ramène des leads. Et je pense que c'est sûrement votre cas aussi
+06:50 euh puisque on a tendance à s'éparpiller et peut-être aussi parfois s'essouffler si on court après les algorithmes des
+06:56 réseaux sociaux. Et euh je sais de quoi je parle puisque ça fait 5 années que je publie sur LinkedIn et au début je peux
+07:02 y être tellement tellement tellement et il m'a manqué ce fameux canal d'acquisition qui venait un peu me
+07:08 m'apporter du souffle les semaines où j'en avais marre et où j'avais pas le temps de publier. Et donc c'est là que mon site est venu en renfort pour
+07:14 m'amener des lads de manière constante même quand j'ai pas le temps de publier sur LinkedIn. Dites-moi un petit peu
+07:19 s'il y en a ici qui en plus de leur SEO euh bossent un petit peu sur leur
+07:25 référencement sur Instagram. sur LinkedIn. Euh n'hésitez pas parce que c'est vraiment des sujets que j'attaque
+07:31 beaucoup et que sur lesquels je donne pas mal de conseils. Donc n'hésitez pas à me bombarder de questions pour la fin.
+07:38 Euh j'essaie de voir pour apparemment il y en a qui ont des petits bugs de connexion. Donc je fais ma petite .
+07:44 Est-ce que vous pouvez me dire si vous m'entendez toujours ? Si tout se passe bien, s'il y a des codes d'erreur,
+07:50 hésitez pas à rafraîchir la page, je ne vais pas disparaître. et il y aura un pour euh toutes les personnes qui
+07:56 sont inscrites au live. Euh donc j'attends juste de voir si tout le monde est OK puisque si j'ai pas envie de
+08:02 parler toute seule pendant 1 heure. Ça m'est déjà arrivé. Vrai vraie histoire
+08:07 de passer en live toute seule à cause d'un bug mais ça a l'air donc pour ceux qui ont des bugs, je vous invite juste à
+08:13 rafraîchir la page, à revenir et ça devrait le faire. Et ensuite donc pour terminer avant
+08:18 qu'on attaque euh à la ou vers la fin de ce live, je vous ferai une proposition. une proposition que je n'ai encore
+08:24 jamais faite, une proposition que vous m'avez beaucoup beaucoup demandé, sur laquelle j'ai travaillé tout l'été. Donc, j'ai hâte de vous en parler et on
+08:31 verra si euh si vous serez au rendez-vous. Mais avant de parler de cette petite proposition, on va
+08:36 commencer par les tendances et mon petit avis sur le SEO, IA, chat, GPT et
+08:42 cetera. Donc pour ceux qui me connaissent pas ou
+08:47 je fais un petit rappel sur pour moi c'est quoi une bonne stratégie de référencement. Donc quand on veut
+08:52 référencer son site ou quand on veut référencer n'importe quoi, que ce soit sa page Instagram, ce soit sa page LinkedIn, pour moi ça s'appuie toujours
+08:58 sur trois piliers. Donc le pilier technique, c'est tout ce qui fait que votre site, il va être éligible au fait
+09:04 de se positionner sur un moteur de recherche comme Google. Donc c'est il est rapide, il est facilement accessible. Bref, tout est tout
+09:10 fonctionne bien. Pour faire une petite métaphore, c'est comme le contrôle technique de votre voiture. Si vous le
+09:15 passez pas, vous pouvez théoriquement pas prendre la route. Bah c'est exactement la même chose. Ensuite, le deuxième pilier, c'est le pilier
+09:21 contenu. Donc ça c'est tous les mots que vous allez mettre sur votre site, sur vos articles de blog, sur vos fiches produits. Vous pouvez considérer ça
+09:27 comme le carburant que vous mettez dans votre voiture qui va vous permettre d'avancer. Sauf que là, ça va vous permettre d'avancer sur le moteur de
+09:33 recherche notamment Google. en gros, en lui donnant des mots, vous allez pouvoir avancer dans le classement. Et enfin, le
+09:39 dernier pilier, c'est le pilier confiance. Donc euh j'aime le comparer au bouche à oreille digital. C'est un
+09:45 peu comme ça que je le vois. En gros, il y a tellement de nouveaux sites qui sont créés euh par jour. Je n'ai même plus le
+09:50 shift à c'est énorme. Il faut que Google il arrive à déceler bah qui sont les sites qui sont fiables, qui sont les
+09:56 sites qui sont vraiment experts de ceux qui vont être plutôt arnaque, spam ou pas très stable. Il a besoin d'être sûr
+10:01 que s'il envoie des gens chez vous, bah vous tenez le coup. Et bien pour ça, il a besoin d'une forme de bouche à donc il
+10:08 faut qu'il y ait des gens qui parlent de vous. Donc d'autres sites internet qui parlent de vous, vos clients qui parlent de vous, des posts Insta qui parlent de
+10:13 vous qui vont vous construire cette confiance. C'est pas si compliqué en plus à obtenir et ça se fait assez
+10:20 rapidement quand on a juste les bonnes méthodes. Mais pour moi en tout cas, un bon référencement, il s'appuie sur ces trois piliers. La technique, le contenu
+10:26 et la confiance. ça fonctionne ensemble et si vous faites l'un sans l'autre, ça ça vous allez stagner ou alors vous
+10:33 allez augmenter un petit peu pendant un certain temps et après vous allez voir votre courbe de trafic se casser la figure. Euh et ça c'est souvent quand il
+10:40 y a un pilier qui est négligé. Mais depuis un certain temps, notamment avec l'arrivée de Lia, avec toutes ces
+10:47 nouvelles offres qu'on a vu voir pendant l'été qui m'ont particulièrement saoulé,
+10:53 euh apparemment le pilier donc confiance disparaîtrait. Donc c'est-à-dire que le
+10:58 fait de recevoir des liens, donc des backlinks ou qu'il y a des gens qui parlent de vous, ça n'a quasi plus aucun impact sur votre référencement. et je
+11:05 suis euh terriblement en désaccord avec ça pour plusieurs raisons. D'après ces
+11:11 personnes-là, donc le pilier confiance serait remplacé par le pilier branding, donc le fait de créer du contenu autour
+11:17 de votre marque, de créer ou autour de vous, faire du personal branding ou du branding, bref, qu'importe, mais en gros
+11:22 de bosser votre branding global. Je vais vous donner mon avis, mais moi mon avis c'est que pour travailler le
+11:29 SEO, c'est c'est les trois piliers, ils ont pas changé. On bosse toujours sa technique, son contenu, sa confiance et
+11:34 non les backlinks ont pas du tout perdu en puissance. Oui, c'est toujours important de recevoir des liens. Par
+11:40 contre, pas n'importe comment, pas n'importe quel rythme et on le fait pas comme on le faisait il y a 10 15 ans ou
+11:46 il y avait une centaine de liens par mois qui tombaient sur sur un site internet mais qui n'avait aucun sens ou qui était trafiqué. Là, effectivement,
+11:54 plus aucun intérêt de faire ça. Mais Google a toujours besoin de cette confiance. Je vais vous expliquer pourquoi je suis
+12:00 pas d'accord avec le fait que bah le troisème pilier, ça devrait être le branding. C'est tout simplement parce
+12:06 que pour moi quand on fait du SEO de base, on fait du SEO ce qu'on appelle du SEO marque et du SEO hors marque. Ça
+12:13 c'est dans une bonne stratégie de référencement qu'on va mettre en place. Il y a les deux dimensions. Donc le SEO
+12:19 marque, c'est tout ce qui va toucher tout simplement à vous, à votre marque, à votre site internet. Donc tous les mots en fait qui vont contenir un mot de
+12:26 marque. Donc par exemple dans mon cas avis SO sans migraine c'est du SEO de marque puisque des gens cherchent des
+12:31 avis mais sur moi. Formation SOS sans migraine bah c'est du SEO marque parce que c'est encore relié à moi. La
+12:36 personne qui tape en fait elle cherche à me trouver ou elle me connaît. Donc c'est du SEO de marque. Alors que le SEO
+12:43 hors marque c'est tous les mots où les gens ne vous connaissent absolument pas. Donc ils vont taper des mots clés beaucoup plus génériques comme agent
+12:49 Montpellier. Ils vont pas taper agent CIO 100 Mine par exemple. Ça c'est la différence entre le marque et le remarque. Le marque, il a un vrai rôle
+12:56 de protection, c'est-à-dire que il y a un vrai intérêt à travailler euh des
+13:01 mots clés de sa propre marque. ses propres mots clés à soi. travailler le mot clé sans migraine pour ma part, travailler le mot clé Amandine Bar et
+13:08 même travailler le mot clé l'outre du SEO dans mon cas puisque si je ne le fais pas et je vous montrerai après
+13:13 pourquoi si aujourd'hui beaucoup de gens me veulent me trouver veulent trouver mes services en tapant l'outre du SEO
+13:20 mais que moi j'ai pas vu cette porte d'entrée-là j'avais aucune idée que les gens ils essayaient de m'avoir par bah
+13:26 par ce biais là bah peut-être que mes concurrents eux ils ont bien capté et que moi j'ai pas bossé mon de marque
+13:32 donc ils vont pouvoir se positionner dans les top positions sur notamment
+13:37 l'outre du SEO et du coup ce qui fait qu'ils vont me voler mes trafics mon trafic et mes donc d'où l'intérêt du SEO
+13:44 marc je crois que je me suis un peu avancé sur une slide mais au global c'est ça
+13:50 c'est vous protégez votre marque vous vous protégeer vos concurrents et l'idée c'est de pas louper des lead c'est vraiment ça c'est couvrir toutes vos
+13:55 portes d'entrée quand les gens veulent vous trouver qu'importe que vous ayez une petite notoriété que vous en ayez
+14:00 pas que vous débutez il faut que vous réfléchissiez à comment est-ce que comment est-ce que les gens ils peuvent me trouver et donc toutes vos portes
+14:07 d'entrée donc tous les mots inimaginables que les gens pourraient taper pour vous pour vous tout
+14:12 simplement vous trouver vous. Il y a une petite astuce c'est quand vous avez lancé votre site vous attendez un ou de mois et sur la Google console
+14:19 vous pouvez voir comment les gens vous ont trouvé par quel mot. D'ailleurs, c'est comme ça que moi j'ai vu que les gens tappaient l'outre du SEO et qu'
+14:25 après je me suis dit ah il va falloir que je travaille ce mot clé là parce que si je le fais pas un concurrent le fera.
+14:30 En plus de vous protéger, ça va renforcer votre crédibilité, renforcer votre réputation et renforcer également
+14:36 votre confiance aux yeux de Google. qu'il va se dire "Ah ok donc c'est une boîte imaginons pour mon cas OK S
+14:42 migraine c'est une bonne boîte mais à côté ils font le taf c'est-à-dire que ils bossent sur le leur mot clé de
+14:47 marque. Si je tape avi 100 migraines, ils ont déjà prévu le coût ça va en fait participer à un bah une bonne enfin une
+14:56 bonne synergie globale qui fait que votre SEO marque va bénéficier à votre puissance globale.
+15:02 Euh je vais vous montrer l'exemple d'une page qui est bien protégée. Quand on tape si sans migraine là, vous voyez premier lien mon profil
+15:10 LinkedIn. Donc personne ne pourra passer devant ça. Ensuite un petit lien du
+15:15 gouvernement, personne pourra passer devant ça. Pareil après un petit lien obstacle qui est très très fort en SEO.
+15:21 En gros, le but c'est quand on tape votre mot clé de marque, vous regardez votre page une et ça doit être que des
+15:27 liens qui sont très très fort parce que s'il y a un lien, donc c'est ce que j'appelle des trous, euh un lien un peu
+15:34 faible, un lien un petit peu non volontaire, c'est pas vous qui l'avez travaillé, vous êtes pas inscrit sur un
+15:40 annuaire pour renforcer tout ça. Le problème c'est qu'un concurrent demain pourrait faire par exemple un article
+15:46 qui s'appelle avis et sans migraine arriver à se positionner dans ma page une rediriger son mon trafic vers chez
+15:53 lui et vers ses offres. Et donc ça ça peut se faire très facilement si il maîtrise deux trois rouages de
+15:58 référencement. Alors que si vous vous avez pas enfin vous avez même pas fait attention sur le
+16:03 fait de protéger votre bah votre page une, je crois que j'ai fait un cas d' d'une page qui est très mal protégée. Donc je sais pas si certains d'entre
+16:10 vous connaissent la marque Gemio. Moi c'est une marque que j'aime beaucoup. C'est une marque de joyerie française. Euh et quand j'ai fait la le petit audit
+16:18 et la petite analyse de leur stratégie SEO, c'est la première chose qui m'a sauté aux yeux. C'est-à-dire que quand on tame Gémio sur la page une, il y a
+16:25 notamment donc cette page là où c'est un de ses concurrents qui a fait donc une page géo avis alternative donc qui en
+16:31 fait redirige vers ses produits moins chers qui sont très semblables au à Gemio. Donc en page une déjà en plus
+16:38 vraiment dure pour eux mais du coup il y a le bon coin donc on se dit OK je vais acheter une par exemple une bague gémio.
+16:44 Ah mais il y en a des moins chers. Ah bah je vais aller plutôt sur le bon coin ou alors ah il y a des alternatives qui existent. Et ça en page une, c'est
+16:51 terrible parce que ils arriveront rarement à les délocaliser parce qu'une fois que quelqu'un s'est installé comme
+16:56 ça dans une première page, c'est la galère, galère galère vraiment galère
+17:01 pour aller bouger tout ça. Donc pour moi, l'intérêt du SEO hors marque, ça va
+17:07 être de vous faire connaître, d'attirer des clients qui vous connaissent pas encore. Donc ça c'est tous les mots clés où il y a pas votre marque dedans. par
+17:13 exemple agence, accompagnement SEO pour ma part ou si vous êtes électricien, électricien Montpellier, réparation
+17:19 urgence, enfin tous ces mots qui euh vont plutôt répondre à un besoin, ça c'est du remarque.
+17:25 Mais le Cark, c'est pas nouveau hein. Donc cette dimension de branding dans le SEO, je je sais pas pourquoi il y a eu
+17:32 une vague de communication sur ça dernièrement en disant que c'était vraiment le nouveau pilier et que c'était le truc à pas louper. Mais euh
+17:40 pour ma part et je vous donne mon avis, ça reste comme je le dis toujours, ma recette de crêpe. C'est-à-dire que il y
+17:46 a plein de façons de faire des crêpes. Ça veut pas dire qu'elles sont bonnes ou elles sont mauvaises, mais chacun a sa façon de faire ses propres crêpes et à
+17:52 mettre l'ordre de ses ingrédients. Bien dans ma recette de crêpe, le SEO, quand
+17:57 on fait une stratégie SEO, que ce soit pour moi, que ce soit pour mes clients, quand on en fait une, il faut penser au SEO hors marque et au SEO marque. C'est
+18:04 c'est indissociable. Et si on vous a fait faire du SEO sans penser justement à votre branding et sans penser à vos
+18:10 mots clé marque, le problème est plutôt là. Donc je ne vous recommande pas de
+18:15 vous fier à tous les contenus. Vous allez voir en disant le pilier confiance est mort, go sur le branding. Ça doit
+18:22 déjà être dans votre stratégie de base d'identifier euh bah quelles sont les portes d'entrée, comment vous protéger
+18:29 et quels sont les mots clés pour vous faire connaître. C'est d'ailleurs tout le but d'une étude de mots clés et c'est ce qu'on fait d'ailleurs nous chez les
+18:35 lo on vous le propose dans tous nos accompagnements SEO, on bosse le marque et on bosse le hors marque puisque pour
+18:41 moi une stratégie SEO elle a double rôle protéger et faire connaître et ça me semblerait impensable de le faire
+18:48 autrement. Et pour ceux qui ont jamais vu l'équipe, je vous ai mis une petite photo. Si un jour vous avez l'occasion
+18:53 de travailler avec nous, ben voilà, c'est toutes les petites têtes qui bosseront sur votre projet. Par contre, sur la partie au marque, c'est plutôt ma
+19:00 spécialité. Donc ce sera plus avec moi qu'on que vous travaillerez ça et c'est plutôt moi qui viendrai vous présenter
+19:05 ce que j'ai trouvé comme petite dinguerie. En espérant euh que vous soyez pas comme Gémio et que vous ayez
+19:10 pas déjà euh un concurrent en page une. C'est pas impossible de le délocaliser
+19:16 mais par contre ça va leur coûter très cher. Euh ou j'ai même fait une petite une
+19:21 petite animation. Je me suis je me suis je me suis surprise. Euh n'hésitez pas, je vais regarder un
+19:28 petit peu les commentaires. OK ? Posez, pensez bien à poser vos
+19:33 questions et je à la fin je je les dirai bien. J'essaierai de vous répondre, je prendrai un un bon gros quart d'heure.
+19:40 Euh donc maintenant, on va passer un peu sur les bonnes pratiques pour 2026. Elles sont aussi valables pour la fin de
+19:45 l'année, mais je m'avance un peu parce que je pense que là vous êtes déjà tous en train de préparer. OK. la rentrée,
+19:52 comment on fait, qu'est-ce qu'on met en place ? Euh, il y a pas grand-chose qui a changé. Par contre, c'est euh comment
+19:59 c'est fait et comment c'est mis en place. Donc il y a pas eu de dinguerie là qui s'est passé sur Google si ce
+20:04 n'est l'arrivée du SOIA, mais on en parle un peu un peu après. Euh la
+20:09 première bonne pratique, c'est que dans votre stratégie vaux, ce qui doit vous
+20:14 guider et ce qui doit être votre vraiment votre étoile là, votre lumière dans le noir, qu'importe, c'est
+20:20 l'intention de recherche. L'intention de recherche, c'est tout simplement quand quelqu'un va taper un mot clé. Donc
+20:26 imaginons, moi demain, je tape accompagnement et CO. À quoi la personne s'attend ? Est-ce qu'elle veut avoir des
+20:32 infos sur l'offre ? Est-ce qu'elle veut prendre rendez-vous ? Est-ce qu'elle juste juste savoir c'est quoi un accompagnement et SEO ? En gros, vous
+20:37 devez vraiment vous mettre à la place de vos futurs prospects ou de vos potentiels visiteurs et savoir OK, quand
+20:44 ils tapent ce mot-clé là, ils attendent quoi ? Et en fonction de ce qu'ils attendent là, vous proposez un type de page. Si par exemple, je prends souvent
+20:52 ce mot-clé, euh sur le mot clé acheter AirPod, vous proposez un article de blog qui parle de c'est quoi un AirPod et
+20:58 cetera, vous êtes complètement à côté de la plaque puisque l'intention de recherche est très claire. Il y a écrit acheter. Donc, il faut lui proposer une
+21:04 fiche produit où il peut acheter rapidement si possible en deux trois clics et pas lui proposer non plus tout
+21:12 un article comparatif. Ça l'article comparatif si ça aurait été adapté au mots clés par exemple comparatif entre
+21:18 AirPod 2 et AirPod 3, là c'est parfait. Mais si il y a acheté et bien l'intention de recherche ça doit être
+21:24 vraiment votre étoile. Euh c'est ce qui va vous permettre de passer devant les concurrents. Passer parfois de devant
+21:30 des gens qui sont là depuis très longtemps, qui sont en position une depuis super longtemps qui sont graves sur leurs acquis. Ils sont dit "Ah,
+21:35 c'est bon, je vais pas bouger." Ils ont pas regardé si l'intention de recherche avait évolué parce que oui, ça peut
+21:40 évoluer d'une semaine à l'autre, parfois de quelques mois à l'autre. Des fois, ça évolue que d'année en année. Mais si
+21:47 c'est des mots clés chouchous comme je les appelle, donc les mots clés chouchous, c'est ceux euh où vous voulez
+21:52 absolument être positionnés parce qu'ils vous apporte du bis, vous rapporte de l'argent et euh s'il y avait quelqu'un d'autre qui serait positionné à votre
+21:59 place, ça vous titillerait énormément. Ça c'est un peu les critères. Par exemple, moi le mot clé accompagnement
+22:04 et CO, je le regarde toutes les semaines. Toutes les semaines, je vais voir l'intention de recherche la changer qui est qui est fait quoi ? Est-ce qu'il
+22:10 y a des petits filou qui essayent de passer dans et j'en ai deux, trois pas plus, parfois 4 c mais c'est ces cinq
+22:17 mots clés là que je vais aller chouchooter. Euh et donc où je vous recommande de regarder si l'intention de
+22:22 recherche change ou pas. Euh le deuxième conseil, c'est écrire pour votre cible avant tout. Et surtout là je je vais
+22:30 faire une toute petite parenthèse. Quand je dis écrire propotip, c'est penser au fait qu'il y a des humains derrière. Donc euh faire des articles 100 % IA ou
+22:37 100 % GPT euh on en a notre claque. Enfin tout le monde en a sa claque. Personne n' envie de lire du des
+22:42 articles faits par Lia. Personne n' envie de lire des articles faits par GPT. Ça se voit, ça se sent. Euh on on
+22:49 ouvre la page, on se barre. Voilà, c'est aussi simple que ça. Donc il y a une
+22:54 production massive du contenu par euh par les IA, par des outils qui sont spécialisés en rédaction SEO, IA. Mais
+23:00 arrêtez, je je vous en vraiment là, je suis bien, arrêtez. Déjà, vous arrêtez pour vous, vous arrêtez pour votre business, vous arrêtez pour les gens qui
+23:06 vous lisent et vous arrêtez pour moi parce que ça me fait criser de d'ouvrir des pages et me dire "Ah, génial, le
+23:13 titre est était super bien travaillé, super métion." Je clique et alors là le
+23:18 boulevard du bullshit et c'est insupportable. Je dis pas que vous pouvez pas vous servir de lia dans la rédaction. Servez-vous-en plutôt pour le
+23:25 plan, pour vous challenger, pour rajouter des questions, pour un angle si vraiment vous avez un vous avez du mal à
+23:31 formuler une phrase mais pas pour la rédaction en entier. Ça je vous le recommande pas et je vous le recommande
+23:37 encore moins déjà en terme de référencement parce que ça va être de plus en plus pénalisé. Là Google envoie
+23:43 du lourd sur le contenu généré par LIA. Il y en a beaucoup qui vont être supprimés. Vous allez voir vos positions
+23:48 baisser, votre trafic se casser la gueule. Ça c'est une évidence. Mais aussi pour tout simplement votre
+23:53 crédibilité. Demain, je imaginons, je cherche quelqu'un pour rénover ma
+23:58 maison. OK ? Je tape, je sais pas, Rénovation Montpellier ou artisan rénovation Montpellier. Je tombe sur un
+24:05 site où c'est super propre déjà, il y a une super expérience et surtout le les
+24:10 mots choisis, enfin, on sent que c'est quelqu'un derrière qui a mis sa patte. on sent on sent sa personnalité, on sent
+24:15 sa marque, on sent on le sent lui quoi. Bah je vais clairement être en mode "OK, il y a ça me plaît bien." À l'inverse,
+24:23 je serai allé sur un site très propre mais où je vois que c'est du full GPT, du Full IA, je passe, je me casse. Donc
+24:30 ce comportement-là, s'il y a pas que moi qui l'ai, c'est la majorité des gens qui vont l'avoir et de plus en plus,
+24:36 notamment vos futurs clients. Donc si vous voulez pas vous mettre des bâtons dans les roues, vous me prenez une heure et vous travaillez vos pages les plus
+24:42 importantes avec vos petites mains ou alors vous vous faites accompagner si vraiment c'est des sujets vous savez pas
+24:47 du tout quoi écrire mais c'est trop important pour votre image et pour votre référencement pour passer par l'a
+24:54 bien sûr vous aider de lia mais s'il vous plaît relisez ajoutez votre pâte faites quelque chose mais je ne veux plus lire tout ça c'est terrible c'est
+25:02 valable aussi pour toutes les personnes qui ont licencié tous les rédacteurs et rédactrices et ce dans leurs équipes ou
+25:08 soit en freelance ou en interne, vous allez beaucoup le regretter parce que là on va passer une aire du SEO qui va être
+25:14 l'air du on veut moins mais on veut de la Cali et surtout on veut sentir la marque derrière, on veut sentir l'humain
+25:19 derrière. le ralbol de l'IA et des générations plus là de contenu massive
+25:25 va faire basculer à l'effet inverse. Ne plus écrire que pour le SEO, ça c'est
+25:30 une recommandation aussi que je vous faite. C'est-à-dire que bah c'est très relié à ce que je viens de vous dire mais oui, on cherche à se positionner
+25:37 pour le référencement. Donc il y a plein de petites bonnes pratiques, des petites astuces pour faire en sorte fasse des
+25:42 petits clins d'œil à Google pour en gros lui dire "Hey, j'essaie de me positionner là-dessus si jamais tu avais
+25:47 pas compris, mais on n'écrit pas on écrit pas un robot quoi. Pensez encore une fois que c'est des gens qui vous
+25:53 lisent et qui vont passer du temps sur vos pages." Et je vous ai mis en cas donc c'est avoir de la cohérence globale sur votre
+25:59 marque. Donc quand je dis de la cohérence globale sur votre marque, c'est que Google il vous voit. Moi enfin en tout cas c'est comme ça que je que je
+26:05 vais le que je vais le enfin que je vais vous faire cette petite métaphore. C'est comme ça que je vois Google dans ma tête. C'est plus simple pour moi de le
+26:11 voir comme ça. En gros, je le vois comme un gros bibliothécaire. Il a besoin de il prend des boîtes, il
+26:17 il ouvre une boîte, il met une étiquette. Donc par exemple, je vais mettre l'étiquette à Amandine Bar et en fait il va essayer d'aller chercher tout ce qui trouve sur moi pour essayer de
+26:24 comprendre qui je suis, qu'est-ce que je fais, qu'est-ce que je propose, est-ce que je suis digne de confiance et cetera. Donc il va aller prendre mon
+26:30 site, il va aller voir mes posts Insta, il va aller voir mes posts LinkedIn, il va aller voir si je fais des trucs sur Substac, sur YouTube et en fait tout ça,
+26:35 il va le mettre dans la boîte et si tout est cohérent bah ça va envoyer une puissance qui est monstrueuse. Je dis
+26:41 pas qu'il faut faire du SEO spécifique pour Instagram, il y a des bonnes pratiques cependant. Euh pareil pour LinkedIn, pareil pour YouTube, mais le
+26:49 fait de juste appliquer bah un peu une méthode d'écriture ou une cohérence globale, par exemple si votre vous avez
+26:55 fait un article de blog sur l'audit qu'après vous l'avez dérivé en une en une vidéo YouTube mais que les deux
+27:02 disent pas du tout la même chose ou vous contredisez et ça va pas possible. Il faut que tout soit très cohérent.
+27:08 Cohérent autant dans l'ambiance, donc dans le design, dans le fait qu'on vous retrouve sur chacun de vos cadeaux. On a
+27:14 pas l'impression de changer de de pièce à chaque fois qu'on ouvre un un nouveau un nouveau de vos réseaux sociaux, mais
+27:20 une cohérence globale, ça va vraiment vous aider à en gros faire en sorte que cette boîte, elle soit de plus en plus nourrie. Plus cette boîte, elle est
+27:26 logique, elle est cohérente et elle est nourrie, plus votre référencement va en bénéficier. Donc effectivement, c'est à
+27:31 ce moment-là que vos postes Instagram, ils vont commencer à vous aider à vous positionner sur le mot clé, que votre
+27:36 fiche My Business à vous aider à remonter sur un mot clé local. C'est dans ce cas-là où ça vous aide. Mais si
+27:42 vous faites trop des trucs dispatchés et qu' pas de lien, ça va plutôt vous desservir.
+27:49 Je vais vous refaire un petit zoom sur OK concrètement qu'est-ce qu'on met en place pour le pilier technique ? Parce que on m'a dit des fois que OK, j'ai
+27:56 compris que c'est comme le contrôle technique de ma voiture, mais ça veut dire quoi concrètement ? full pil des
+28:02 technique notamment pour 2026 avec toutes les mises à jour qui sont passées qui vont passer qui vont tomber parce
+28:09 que Google est en train de mettre un gros gros gros gros coup de pied dans beaucoup de choses. Le premier critère c'est ce qu'on appelle les corbals. Donc
+28:15 ça c'est en gros c'est les critères de Google. Il a décidé qu'il avait, je crois que
+28:20 c'est une dizaine de critères où vous devez au minimum être à un score pour que vos sites passe l'examen. C'est
+28:27 exactement ça. Si votre site il passe pas l'examen, vous devez bosser vos corboss. C'est l'examen by Google. Si
+28:32 votre site il est trop lent, vos images elles chargent mal, votre site il est pas sécurisé, vous passerez pas les
+28:38 corbs. Si vous passez pas juste au moins ce prérequis là, c'est pas la peine d'aller plus loin. Votre référencement
+28:44 va se casser la gueule. Pareil si aujourd'hui vous aviez eu un bon score au corbo v mais qui s'est
+28:50 passé plein de choses sur votre site et qu'aujourd'hui votre note elle elle a baissé mais que vous en êtes pas occupé, ça doit être votre priorité numéro 1
+28:57 pour 2026 puisqueil y a de plus en plus de de mises à jour qui vont qui vont sévir sur ça. Le but pour lui, c'est
+29:06 tout simplement d'avoir des sites qui soient rapides et fluides en globalité plutôt que d'avoir plein de sites très
+29:12 lents qui ont mal chargé en mobile, avoir des images qui bougent dans tous les sens parce que ça lui fait aussi perdre en crédibilité. Pensez toujours
+29:19 que Google, il vous fait confiance pour vous envoyer du monde chez vous. Donc vous devez être au niveau sinon il va arrêter de le faire. Et au niveau, ça
+29:26 veut dire au minimum passer son test. Euh pour ceux qui sont sur WordPress, quelques bonnes pratiques mais une mise
+29:32 à jour régulière de vos plugins. Supprimer ceux que vous utilisez pas. Ça a tendance à alourdir votre site. Plus votre site il est lourd, plus il est
+29:38 lourd à charger. Moins Google va passer du temps dessus, voire du bon temps dessus. Euh la note en mobile n'est plus
+29:46 une option. Je vois encore trop de sites qui ont déjà une version mobile
+29:52 terrible mais en dehors de ça qui a des scores de vitesse catastrophique. Donc
+29:59 corrigez ça en priorité puisque Google vous déjà vous juge en mobile avant d'aller regarder votre site en version
+30:05 ordi, il passe sur la mobile parce que la majorité des gens maintenant sont sur téléphone. Donc c'est non négociable. Et ensuite je
+30:12 vous invite à choisir le bon CMS dès le début parce que sinon ça peut vous causer beaucoup de tracas.
+30:17 tous les gens qui ont tendance à à utiliser Wix par exemple, je sais que c'est pratique, que ça on a l'impression
+30:24 que la solution elle est parfaite mais même s'ils se sont améliorés, c'est ça reste terrible en référencement puisque
+30:29 c'est très difficile de passer ces fameux SW Vital avec un Wix. Donc pour ma part, je vous je vous enfin je vous
+30:34 conseille beaucoup plus WordPress et c'est parce que je suis une pro WordPress, j'ai beaucoup plus de facilité aussi à faire du SE sur
+30:40 WordPress. On peut faire beaucoup plus de choses. Euh Webflow, c'est bien aussi, mais par contre vous aurez moins de possibilités. d'optimisation. Sauf si
+30:47 vous avez un développeur ou un technique dans votre team. Alors là, le sujet se pose pas, il y a pas de souci. Mais pour
+30:53 ceux qui aurait par exemple pas la capacité d'avoir un développeur, d'avoir quelqu'un qui s'occupe des mises à jour et cetera, je partirai plus sur du
+30:59 WordPress qui est facilement euh enfin ça se prend facilement en main, ça se gère facilement au quotidien et la
+31:06 majorité des sites sont sur WordPress aussi et ce qui fait qu'il y a une grosse communauté derrière. Donc si vous avez rencontré un enfin si vous
+31:12 rencontrez un problème, il y a forcément quelqu'un qui l'a eu et du coup, il y a forcément une solution. qui a été proposé. Euh et c'est ce que j'aime bien
+31:18 quand en tout cas on doit se déberder un peu tout seul. Sur la partie contenu, ben je vous en ai beaucoup parler donc
+31:24 je vais pas forcément rentrer dans le détail mais il y a toute une technique aussi qui est pas mal pour écrire. Ça c'est pour les gens qui sont un tout
+31:30 petit peu plus avancés. Donc ceux qui commencent à bien gérer la partie rédaction de leur site. Il y a une
+31:36 technique qui s'appelle le EAT qui consiste, c'est une façon d'écrire une page tout simplement. Je vous en parle
+31:42 beaucoup dans ma formation 360 SEO que je vous parlerai plus tard. euh comment on le met en place le HT et cetera, mais
+31:47 pour l'instant si vous débutez et cetera, vous en êtes pas là, vous avez pas besoin de forcément le hâter pour sortir. Ça, c'est vraiment quand on
+31:53 commence à commence à être très très pointilleux, on se dit "OK, j'ai envie d'aller pousser encore plus loin mes
+31:59 articles et cetera. Qu'est-ce que je peux améliorer ?" Bah, je vous conseillerai de vous renseigner sur tout ce qui est EAT.
+32:06 Pour tout ce qui est donc zoom sur l'intention de recherche. Donc, je vous ai expliqué à quoi ça servait, mais je
+32:11 vous ai pas dit les différentes intentions de recherche qu'il existait. Donc majoritairement, il en existe quatre quatre types d'intentions
+32:17 derrière un mot- clé. La première, c'est informationnel. Donc la personne cherche à se renseigner transactionnel, donc il
+32:22 cherche à acheter, navigationnel, elle cherche à se rendre sur un site. Par exemple, quand vous tapez connexion impôt, bon bah c'est navigationnel. Et
+32:29 euh la dernière c'est locale. Donc vous cherchez euh dans une zone très précise, par exemple agent SEO à Montpellet. Et
+32:35 quand vous avez ces quatre intentions en tête, vous allez déjà pouvoir mieux comprendre quel type de page proposer à
+32:42 vos à vos futur lecteur, à vos futurs prospects. Et c'est comme ça qu'on fait du bon. C'est pas c'est pas si compliqué
+32:47 que ça. C'est juste on se met à la place des gens, on fait des on a un site qui cartonne bien, enfin qui qui est bien
+32:52 fluide du moins qui a une qui a un bon et qui qui est pas trop long. Il y a pas des images qui bougent partout. On bosse
+32:59 l'intention de recherche et après je vous montrerai pour le pil des confiance aussi. Euh ça ça part comme une fusée
+33:05 sans avoir besoin d'y passer 15 he par jour, hein. Euh pour trouver l'intention de recherche, il y a plusieurs options.
+33:10 Donc soit vous avez l'œil à force, vous allez l'avoir forcément les mots clés où il y a acheter, comment, bon c'est assez
+33:17 facile de comprendre pourquoi. Et par contre des fois sur des mots clés comme par exemple accompagnement SEO, c'est
+33:22 beaucoup plus dur parfois de savoir OK c'est quoi l'intention de recherche ? parce que il peut aussi des fois y avoir
+33:28 un une double intention recherche. Par exemple, la personne elle cherche à s'informer puis elle cherche à souscrire à quelque chose. Donc c'est ces petites
+33:34 subtilités qu'il faut arriver à détecter. Donc soit vous allez sur Google, vous tapez votre mot clé et vous
+33:39 essayez de regarder tous les résultats qui sortent et dans les titres de vos concurrents, il y a quoi ? Est-ce que c'est comment ? Est-ce que c'est des
+33:45 comparatifs ? Et vous pouvez déjà faire vos propres déductions. Sinon euh bah là
+33:50 forcément, je vais vous parler de rédiger sans migraine qui est l'outil qu'on a lancé en interne euh chez les Lutres. Euh quand vous allez taper un
+33:57 mot clé sur lequel vous souhaitez vous positionner, donc vous allez dire à notre boloutre là-bas, voilà, j'aimerais me positionner sur l'accompagnemento.
+34:02 Nous, on va vous sortir l'intention de recherche. Euh l'outil est gratuit donc hésitez pas à le tester.
+34:09 Et on va faire un petit exercice. J'aime bien faire des petits exercices maintenant dans les lives. J'avais testé
+34:14 ça une fois, j'avais trop kiffé. Donc là sur le mot clé, faire du SEO. D'après
+34:20 vous, quelle est l'intention de recherche ? Là vous je vous invite à regarder donc tout ce qu'il y a dans autre question,
+34:27 tout ce qu'il y a un peu dans les titres des concurrents et je vais regarder vos commentaires pour voir si vous avez
+34:33 quelques pistes pour cette intention de recherche. Et merci beaucoup pour tous les compléments que je vois passer sur
+34:39 sans migraine. On y a passé de long mois. Ça faisait très longtemps que je voulais sortir un outil SEO qui en fait
+34:46 qui venait vous aider vraiment vous enlever cette cette fameuse migraine quand on doit rédiger quelque chose sur
+34:53 notre site. On a eu plus de 4500 inscrits. Alors merci beaucoup parce que c'est un c'est un carton. On est très
+34:58 content, on est très fier des résultats. Il y a encore beaucoup de choses qui arrivent. Donc merci. J'ai passer plein de compliments et je crois que vous
+35:05 aviez fortement raison pour l'intention de recherche. Donc je sens qu'on a du niveau là dans le chat. Là là il y a là
+35:12 là on est là il y a du niveau et si du moins, vous commencez à à capter comment on fait du bon et si et ça ça me fait
+35:18 plaisir. Euh ça je vous en ai déjà parlé. Euh
+35:25 oui, on peut avoir deux intentions de recherche en même temps. Euh par exemple, je enfin j'aime bien cet exemple. Donc je reviens des vacances au
+35:31 soleil, j'ai remarqué que mes cheveux, ils étaient un peu plus secs et que j'avais besoin d'un petit soin postvacence. Donc je vais taper masque
+35:37 cheveux après vacances. Euh, je voudrais qu'on m'explique déjà ce que je dois faire parce que j'ai les cheveux secs et
+35:42 ensuite j'aimerais bien savoir quel quel acheter. Donc dans ce cas-là, vous avez
+35:47 la double possibilité, vous expliquer à la personne ce qu'elle doit faire et vous placez vos produits. J'ai beaucoup
+35:53 vu ça chez sur le site la Belle Boucle qui est un site que j'aime beaucoup où ils ont une tout un tout enfin toute une
+35:59 un coin sur leur site sur les conseil autour des cheveux et cetera et après il placent les soit leurs produits soit
+36:04 ceux de de leur partenaire et c'est très bien fait si jamais vous cherchez des exemples. Et donc oui, là j'étais dans
+36:10 deux intentions. Euh néanmoins, qu'est-ce qui se passe si bah je capte pas l'intention de
+36:16 recherche ? et bien vous allez avoir plusieurs phénomènes. Euh votre taux de rebond va être très élevé, c'est-à-dire que les gens vont arriver sur votre
+36:21 page, ils vont se barrer. Donc ça envoie un très très mauvais signal à Google. Euh Google ne vous positionnera pas à la
+36:27 page une, on pas beaucoup puisque vous allez être considéré à côté de la plaque. Mais ce qui pour moi euh fait le
+36:34 plus mal, c'est que toute la page que vous allez vous avez écrite là, elle servira à rien parce que du coup, vu qu'elle pas la bonne personne, elle est
+36:40 reléguée dans le fin fond de Google. vous aurez passé ce temps pour rien et votre temps est limité. Euh vous avez
+36:47 pas un temps extensible pour bosser votre SEO. Euh même quand on est full time en en job salarié sur du SEO, on a
+36:53 tellement de trucs à faire. Donc euh facilitez-vous la vie et regardez l'intention de rechercher avant d'écrire ou de créer n'importe quelle page.
+37:02 Euh si ça peut vous aider quand pour trouver votre cible parce que je trouve que c'est vraiment le le point idéal,
+37:07 c'est vraiment quand on fait une page, on fait un article, il faut qu'on pense à qui on va l'écrire, à qui on parle.
+37:13 Donc posez-vous ces questions là, qui est-ce que je veux cibler ? Qui est mon client idéal ? Ce client idéal, c'est
+37:19 quoi ses plus grosses problématiques ? Et est-ce que vous pouvez proposer une solution pour y remédier ?
+37:25 Si vous respectez ces quatre questions, vous serez rarement à côté de la plaque sur vos pages.
+37:31 On a tendance à me dire à chaque fois que je fais des formations parce que j'en fais beaucoup beaucoup, j'en fais aussi un présentiel. Euh mais attends
+37:36 là, on sort carrément du cadre du SEO, c'est pas possible. là on est au-delà de ça. Bah sauf que dans toutes ces
+37:43 dernières mises à jour, Google il dit que il mettrait en avant un contenu qui est pertinent et satisfaisant pour ses utilisateurs. Satisfaisant pour son
+37:51 utilisateur, c'est bah moi je veux que tu comprennes mon intention, que tu saches quel est mon problème, que tu
+37:57 comprennes qui je suis et de quoi j'ai besoin, que tu me proposes une réponse rapidement et une solution adaptée. Donc
+38:06 si ça c'est bien écrire pour le SEO en fait puisque si vous proposez pas un contenu qui est satisfaisant pour
+38:11 l'utilisateur, il se positionnera jamais. Donc c'est toujours du SEO, c'est juste une façon plus simple d'en
+38:17 parler. Par contre pour être 100 % à côté de la plaque, voici la recette
+38:22 miracle. Euh bah vous vendez, vous voulez vendre votre produit à tout prix, vous en foutez de l'utilisateur, vous
+38:27 écrivez ça avec GPT, vous écrivez que pour Google, vous abusez des mots clés en gras et vous bourrez des mots clés un
+38:32 peu partout. Là, c'est le cocktail. Euh vraiment je en plus ce qui est fou c'est
+38:38 qu'on pense que on pourrait penser que j'exagère et que je dis non mais il y a plus beaucoup de poches comme ça. Mais
+38:44 si vous saviez dans tous les audits que je fais il y a
+38:49 il y en a il y en a partout il y en a partout c'est terrible mais j'espère qu'à force de le répéter et de faire des lives à un moment donné je vais arriver
+38:56 sur des sites où il y aura pas tout ça. Et bien sûr, vous oubliez pas votre contenu marque qu'on a parlé au début.
+39:03 Même si vous bossez sur des mots clés qui sont intéressants pour votre bise sur lesquelles vous voulez vous positionner type accompagnement SEO,
+39:09 n'oubliez pas de consacrer un temps dans votre mois, dans votre semaine aller travailler votre SEO de marque pour vous
+39:15 protéger vous parce que ça vous coûtera tellement si vous le faites pas parce que demain, imaginez que sur votre mot
+39:22 clé, donc votre nom à vous, il y a un concurrent qui soit positionné en page 2 ou en page 3 qui mettent un gros comparatif et qui vous dzingue un peu,
+39:28 mais avec politesse, mais vous désingue un peu euh ça vous coûtera beaucoup plus cher que absolument tout et très
+39:36 difficile à rattraper. Donc prenez le temps dans votre semaine pour faire ça. Et enfin sur le pil des confiance, donc
+39:43 ça c'est le troisème pilet que je vous parlais tout à l'heure, le fameux bouche à rue digital. C'est quoi les bonnes pratiques pour 2026 et pour la fin
+39:49 d'année ? Euh bien avant il y avait vraiment une règle enfin une pratique en
+39:55 référencement qui a été envendue par beaucoup d'agences et de consultants qui étaient Ouais. OK, vous inquiétez pas,
+40:01 on va faire en sorte qu'il y a des gens qui parlent de vous. Ils allaient sur des sites, ils achetaient des des centaines et des centaines de liens.
+40:07 Donc effectivement, il y avait plein de liens qui parlent des de la marque. Clients étaient contents. Oh là là, il y
+40:12 a 100 sites qu'on parlait moi de moi ce mois-ci. OK, mais quel type de site ? Parce que si c'est des sites pas très
+40:19 recommandables de dropshipping, pornographique pour certains, c'est pas très recommandé pour que Google vous
+40:26 fasse confiance. Après, on a passé une phase où effectivement les gens compris que il
+40:31 fallait éviter ce type de lien et Google était pas dupe non plus. Donc il a mis à jour ses algorithmes. Euh et les gens
+40:37 tabassaient encore un peu trop, c'estàdire qu'ils envoyaient trop de liens parce qu'il y a des liens que vous pouvez acheter par exemple sur certains
+40:43 médias. Euh si demain moi j'ai envie qu'il y ait par exemple Marmiton qui parle de moi pour ma dernière recette de
+40:49 cuisine, euh vous pouvez tout à fait leur demander d'acheter un article sponsorisé sur leur site. Donc ça va
+40:55 vous coûter pépette mais ils parleront de vous. Donc c'est c'est des choses qui sont possibles. Donc dans pour obtenir
+41:01 des liens, on peut les obtenir de manière naturelle. Donc c'est-à-dire faire en sorte de créer les bonnes pages et les bons contenus pour faire pour que
+41:07 les gens parlent de vous tout seul et que ça monte progressivement. Ou alors on peut aussi euh en fonction de du
+41:14 niveau de concurrence, de vos objectifs, de votre budget, aller acheter des liens mais on les achète pas n'importe comment
+41:20 et on les achète pas chez n'importe qui. Dans tous les cas, pas de backlinks, pas de bonne stratégie SEO et c'est
+41:26 essentiel pour la confiance pour Google mais aussi pour sortir dans chat GPT
+41:32 puisque je sais que c'est une obsession en ce moment de sortir sur GPT. Eh bien, j'ai pété pour vous faire sortir se base
+41:38 majoritairement sur les backlinks. Donc tous les gens qui vous disent que les backlinks ne servent à rien et bien euh vous mettez une belle balle dans le pied
+41:44 parce que vous sortirez pas dans l'IA non plus. Nous voici, nous voilà au sujet le
+41:50 fameux, le SOIA, LLM, tous les mots compliqués que qu'on a pu voir passer.
+41:56 Pour moi, je vais vous le dire très simplement pour être référencé sur chat GPT, c'est que c'est une conséquence
+42:02 d'une bonne stratégie LO puisqueen fait une bonne stratégie de référencement bien faite sur votre site, elle est déjà
+42:09 friendly. Vous sortez déjà dans le GPT en bossant correctement votre SEO avec tout ce que je viens de vous dire. Donc
+42:15 vous n'avez pas besoin de souscrire à la dernière offre, attention, vous perdez 10 % de trafic. Euh la dernière offre de
+42:21 géo et cetera, c'est ça me ça me fascine que je sais qu'ils ont eu beaucoup de
+42:27 gens comme ça, mais si vous voulez commencer par sortir par les sur les IA, en fait, commencez par faire du bon SEO
+42:33 parce que quand vous faites une bonne stratégie de SEO, vous allez sortir naturellement sur GPT. Pour le moment
+42:40 effectivement, il y a plein de choses qui ont été testées, beaucoup de gens qui ont vendu des méthodes. La réalité,
+42:45 c'est que c'est pas vraiment aussi manipulable que on peut vous le faire croire, que la majorité du référencement
+42:53 de chat GPT se base sur du backlinks. Sauf que si ces agences et ses consultants vont acheter beaucoup de
+42:58 liens pour vous faire sortir dans GPT, le conséquence c'est que potentiellement c'estes beaucoup de liens vont vous
+43:04 faire baisser votre confiance au de Google. Donc vous allez perdre en référencement. OK, peut-être vous allez
+43:09 gagner sur un certain temps un peu de référencement GPT, mais derrière la cascade va être terrible parce que j'ai
+43:17 pété pour vous faire sortir, il s'appuie d'abord de votre référencement euh global et notamment de votre
+43:22 référencement Google. Donc voilà, néanmoins, sujet très intéressant sur lequel j'ai mené beaucoup de tests et on
+43:28 a mené beaucoup de tests en interne donc qui mérite clairement que ce soit
+43:35 le sujet prioritaire d'un live et on parle que de ça. Donc je vais faire une master une masterclass privée SOA.
+43:41 L'invitation partira pour tous les gens qui sont inscrits à les newsletter. Donc si vous êtes pas inscrit à la newsletter, il y a Karine qui vous envoie le petit lien euh dans le chat
+43:48 pour vous inscrire et euh j'en verrai. Du coup, je pense que ce sera d'ici la fin de l'année au max début d'année 2026
+43:55 où je ferai donc cette masterc privée où je vais vous partager donc tout les tests qu'on a fait, qu'est-ce qu'on a appliqué chez nos clients pour que à la
+44:01 fois ils se positionnent sur Google et GPT qu'il perdent pas le trafic ? Parce que l'idée c'est pas de choisir entre les deux, c'est pas de dire "OK, vas-y,
+44:08 on va pas du tout sur l'IA", mais c'est plutôt de faire en sorte que la stratégie de référencement, elle soit friendie et qui a pas non plus besoin de
+44:14 rajouter masse budget derrière pour aller faire du référencement GPT et cetera et cetera. Euh je ferai une
+44:20 masterclass privée où je pense qu'il y aura un nombre de places limité. Euh donc je vous enverrai tout ça. Si vous
+44:25 êtes inscritur, vous recevrez toute façon. Mais ce n'est pas ma proposition que je comptais vous faire dans ce live.
+44:30 Ça ce n'est ce n'est qu'une aparté. Je vais regarder un petit peu vos commentaires, le temps de boire un peu
+44:36 d'eau. Ah j'ai vu. Tu es en train de débuck un paquet de services sur LinkedIn en ce
+44:42 moment. Oui bah effectivement en fait c'est que j'ai vu passer tellement de postes. Le SEO est mort. Vive le GEO
+44:48 maintenant. Arrêtez le référencement Google. Faites tout le référencement GPT. Oui, d'accord. Euh bah pour faire
+44:55 du référencement GPT, GPT, il faut qu'il s'appuie sur une stratégie de référencement existante. Donc
+45:01 en tout cas, j'ai hâte de vous de vous de vous présenter ce format masterclass privé. Euh dans l'idée, je vais vous en
+45:08 dire un petit peu plus. Euh j'aimerais qu'il y ait un nombre de places limitées, qu'on puisse aussi tous échanger à la fin en groupe. Donc
+45:14 vraiment un truc plus intime euh avec euh où vous pourrez plus parler avec moi, mais où je viens vous partager
+45:19 aussi plus d'infos euh clairement vous partager nos tests et nos process quoi euh parce que je trouve ça très cool de
+45:26 partager ce qu'on arrive à construire, euh comment nous on fait du SOA, comment on le fait pour nos clients, comment on
+45:32 l'applique. Donc euh voilà, ça arrivera bientôt. Faut que je bien je pose bien dessus même si ça a bien avancé. Donc je
+45:38 vous invè partie. Comment on fait pour avoir un site qui amène des clients puisque c'est
+45:44 le but, c'est c'est la seule chose qu'on veut. On veut un site qui nous ramène des leads et c'est tout. Euh pour vous donner un exemple, donc moi j'ai j'ai
+45:51 été euh vraiment très mauvais élève, c'est que j'ai commencé à bosser mon propre SEO seulement quand je me suis
+45:56 lancé 100 % à mon compte, c'est-à-dire il y a 1 an parce que ça d'ailleurs, ça fait 1 an qu'on on a fêté la bougie des
+46:02 1 an du SEO sans migraine euh bah il y a il y a quelques jours. Enfin, ça existe depuis plus longtemps, ça fait plus
+46:08 longtemps que je fais ça, mais ça fait vraiment un an que je me suis mis à full time sur ce projet où j'ai ouvert l'agence et qu'on a pris des bureaux à Nopoli et cetera.
+46:14 Et je ne sais plus pourquoi je vous racontais ça. Euh oui, puisque effectivement donc ça fait que vraiment un an que j'ai commencé à bosser mon
+46:20 propre référencement et du coup là, j'ai pu faire un petit bilan de fin d'année et en fait la majorité de nos clients et
+46:25 de nos leades, donc majorité c'est Google, après c'est LinkedIn. Google dépasse LinkedIn.
+46:32 C'est ça m'a ça m'a fini. J'étais en mode très bien euh information reçu. Pourtant j'ai un profil LinkedIn qui
+46:37 convertit beaucoup. J'ai pas mal d'abonnés, je publie pas mal et cetera. Mais stratégie Google même avec une je
+46:43 crois que le site il a une quinzaine de pages, pas plus on cible entre 5 et 10 mots clés vraiment pépites, pas plus
+46:49 parce que de toute façon, on veut pas être une agence usine. Donc demain pour avoir 1000 prospects qui arrivent, on n
+46:55 pas envie de bosser avec tout le monde, on n'est pas avec n'importe quel type de site, donc ça sert à rien. Donc je vais cibler surtout des mots clés très très
+47:00 importants pour me ramener ma cible idéale. Et bien euh Google dépasse LinkedIn. Voilà, conclusion. Euh donc la
+47:08 première question à vous poser, c'est c'est quoi le but de votre site ? vous voulez faire un site internet ou vous en avez un ou voulez le remettre à
+47:14 jour qu'importe le votre requin. C'est quoi le but ? Est-ce que le but 1 c'est
+47:21 qu'il vous ramène des clients ou des leaders ? Est-ce que vous êtes plutôt dans une option de visibilité, de notoriété, de créité, de confiance ou
+47:28 qui bosse pour vous quand vous pouvez pas ? Là, je pense que tout le monde va me dire "Mais je veux les quatre." Mais il y a des fois ça m'est déjà
+47:34 arrivé de travailler pour des gens qui voulaient un site absolument d'abord pour la visibilité la non autorité puisqu'il y avait pas spécialement
+47:40 d'offre à vendre. C'était plus du média, du journal, du magazine et cetera. Donc c'était plus avoir des visiteurs qui
+47:46 passaient du temps chez eux pour lire et cetera. Il y avait pas encore d'abonnement de produits et cetera. Mais
+47:51 dans la majorité des cas, vous allez vouloir que votre site vous ramène des idées des clients, qu'il augmente votre crédibilité, votre confiance et surtout
+47:58 qui bosse pour vous quand vous avez pas le temps, quand vous êtes en vacances. très très satisfaisant de prendre des vacances et de voir les lad arriver par
+48:05 le SEO. Ça c'est tout ce que je vous souhaite. Et bien pour que ce soit le cas, je vais
+48:12 euh vous recommander de mettre en place un plan d'action SEO. Euh donc on va partir du principe que là vous avez euh
+48:19 donc si vous avez un site existant, donc votre site il existe déjà, ça fait un petit moment qu'il est là. Par contre si
+48:25 ça fait un mois qu'il est sorti euh pas besoin de faire d'audit. Mais si dans votre cas ça fait un peu plus de 3 mois
+48:31 qu'il existe qu'il y a déjà des choses qui ont été faites, l'étape une c'est faire un audito. Que vous faites que
+48:36 vous fassiez vous-même, que vous passiez par quelqu'un, que vous passiez par nous, je m'en fous. Mais l'étape une,
+48:42 c'est de faire votre audite où est-ce que vous en êtes ? Qu'est-ce quel est l'état des trois piliers de votre
+48:48 référencement ? C'est quoi vos faiblesses ? Quelles sont vos forces ? Quel est le plan d'attaque pour les 6 mois à venir ? Et comment on fait en
+48:54 sorte que demain ce soit vous qui soyez sur le mot clé, par exemple agence SEO ? et que ce soit pas moi, comment on fait
+49:01 ? Voilà, ça c'est votre étape 1 et c'est tout le but d'un audit quand on fait des audits se l'idée c'est déjà d'apporter
+49:08 un œil neuf. Donc si vous pouvez enfin c'est dur, je sais que c'est très dur quand on bosse sur son propre site on a
+49:14 dedans toute la journée et on dit "Ouais, il faut que je fasse un audit de mon propre site." Là c'est le c'est c'est le plus difficile. Moi, c'est pour
+49:20 ça souvent que je demande à quelqu'un de l'équipe de le faire comme ça. Euh ça me ça me sort de des choses que je ne vois
+49:25 plus. Des fois j'ai des fautes d'orthographe, elles sont là, elles sont devant mon nez. Mais en fait, je la vois tellement tout le temps, tous les jours,
+49:30 je suis tellement habitué au site que ça passe plus. C'est pareil pour votre référencement. Donc si vous sentez que
+49:36 vous avez tranche dans votre guidon, là ça peut être intéressant de passer par quelqu'un d'externe. Euh vous pouvez
+49:41 aussi passer par des outils de d'analyse d'audito, même si je la trouve très peu pertinent, même pour celui de Sam Rush
+49:48 que je trouve alarmiste mais pas très précis. Le but de l'audit, ça va vraiment donc on va regarder l'existant,
+49:54 on pose les bases, on essaie de d'en faire un état des lieux. Ensuite, la deuxième étape et c'est la plus
+50:00 importante d'ailleurs, j'aime la conseiller quand vous avez si vous avez pas de site internet, je vous conseille
+50:05 de commencer par l'étape 2. Avant de passer sur la partie création de site. On accompagne pas mal de clients qui
+50:12 nous sollicitent avant la création de leur site internet justement pour partir avec les bonnes bases et direct axer le
+50:18 site sur les bons mots clés pour la bonne cible. On se met souvent en relation avec les designers ou les bref
+50:25 qu'importe la l'agence de création de de sites et en fait nous on fournit notre plan d'action et de là on découle la
+50:31 création du site. Donc si en tout cas vous avez pas encore créé votre site internet, je vous conseille de commencer par ça. Donc c'est faire ce qu'on
+50:38 appelle une étude de mots clés. Donc en gros, vous allez essayer de comprendre quels sont les mots clés idéaux pour vous, quels sont les mots clés qui
+50:44 peuvent vous rapporter du business, euh qu'est-ce que vos clients votre cible potentielle tape et vous allez en gros
+50:51 charbonner charbonner jusqu'à ce que vous dire "OK, ben ça c'est mon mot clé chouchou et ça c'est des mots clés qui sont intéressants mais qui sont un peu
+50:57 secondaires dans je vous montrerai tout à l'heure aussi comment enfin dans quel cas on fait une comment on peut la mettre en
+51:03 place cette fameuse étude de mot clé et ensuite je vous conseille donc de définir un plan d'action basé sur vos
+51:09 trois piliers C'est-à-dire que quand vous allez faire un audit ou quand vous allez créer votre nouveau
+51:14 site, dans les deux cas, ça marche, il faut que vous sachiez clairement qu'est-ce que vous allez faire sur votre pilier technique, tous les combien vous
+51:20 allez l'entretenir. Si vous avez une note pourrie, fixez-vous une date pour avancer sur ce
+51:26 sujet-là et le et clôturer ça le plus rapidement possible. Pour tester votre note, vous pouvez déjà faire un premier
+51:32 test, c'est un outil qui de Google qui est gratuit qui s'appelle page speed insight. C'est pas le plus précis. Euh
+51:38 c'est-à-dire que c'est un une vue, enfin c'est une première vision. Il faudra gratter un peu plus loin pour comprendre
+51:44 vraiment les problèmes. Ça peut déjà vous donner un ordre d'idée de votre note en mobile et en en ordinateur.
+51:49 Et ensuite donc vous faites vraiment un plan d'action par pilier. OK. Pilier technique, j'ai une note de merde. OK, bah objectif ça c'est à cause de mes
+51:55 images. Tac tac tac. Euh contenu. J'aiécris plein de mots sur mon site. J'ai écrit plein de pages, j'ai écrit
+52:01 des articles, il y en a aucun qui sort. OK. Ben, on va prendre une page une par une et on va la regarder cette page,
+52:06 qu'est-ce qu'elle cible ? Elle cible ce mot clé-là. OK. Est-ce que j'ai ciblé la bonne intention de recherche ? Est-ce
+52:11 que mon article ou ma page répond à ce que la personne attend ? Est-ce que mes concurrents ont écrit euh plus que moi
+52:18 ou alors est-ce qu'ils ont eu un angle différent ? En gros, pour chaque pilier, vous faites un mini audit. C'est comme
+52:23 ça qu'on travaille nous. Quand on prend un site, on va le passer donc au panne fin. D'abord, on va analyser toute la
+52:29 partie technique, puis la partie pour contenu, puis la partie confiance et ensuite, on fait un état des lieux général. Et ensuite, sur la partie
+52:36 confiance, là l'idée ça va être d'aller voir un petit peu bah OK, ça c'est mon site. Est-ce qu'il y a des gens, est-ce
+52:42 que j'ai déjà je suis déjà paru dans je sais pas dans des articles, dans des médias ? Non. Est-ce qu'il y a déjà des
+52:47 gens qui ont parlé de moi ou de ma newsletter ? Est-ce qu'il y a des gens qui ont parlé de mon profil LinkedIn ou de mon dernier post Insta ? En gros,
+52:52 c'est un peu regarder qui a parlé d'où. Euh ça c'est est-ce que est-ce que en
+52:58 tout cas votre votre note de confiance, elle est elle est plutôt basse, elle est plutôt haute ? Euh j'utilise un outil
+53:04 moi personnellement qui s'appelle S observer mais qui est payant et assez cher, donc rentable dans mon cas puisque
+53:11 je je fais je travaille sur beaucoup de sites. Euh mais qui en fait donne une note euh de une estimation de votre note
+53:18 de confiance aux yeux de Google et qui pourra vous dire "OK, bah là tu es trop bas, tu es trop haut." Si vous avez S Rush, c'est l'équivalent du domaine
+53:24 authority. je trouve pas très précis mais qui peut donner un premier premier état des dieux. Surtout que SR quand
+53:32 même propose une il me semble une période d'essai de 14 jours et moi je travaille énormément avec se ranking
+53:39 donc qui est une enfin c'est comm pour moi c'est une alternative assez moche et que je trouve beaucoup plus précis à la
+53:45 fois sur l'audit SEO mais aussi sur cette interprétation de qui parle de moi. Vous pouvez aussi voir du coup votre historique de backlinks. Est-ce
+53:51 qu'il y a des gens qui ont fait des liens vers vous ou pas ? Euh voilà. j'aime beaucoup et plus abordable en
+53:56 terme de prix quand on démarre. Euh et ensuite je vais vous une fois que vous avez donc trouvé vos mots clés,
+54:01 vous avez défini votre plan d'action, vous avez fait le bilan euh donc de votre site. Là, je vous conseille de
+54:06 commencer par les mots clés qui vont rapporter le plus. Donc ça c'est les fameux mots clés chouchous que je vous parlais tout à l'heure. Par exemple, le
+54:13 note c'est accompagnement, c'est non négociable le chouchoout chaque semaine.
+54:20 Et avant de passer à la suite, je vais vous parler de cette fameuse proposition. que je que je vais vous faire et que je
+54:27 n'ai jamais fait jusqu'à maintenant. Euh qui m'a été énormément demandé, ça j'ai compris. Alors là, j'avais jamais reçu
+54:33 autant de messages sur ce sujet. Donc pour la première fois, je vais vous proposer un pack dans lequel à la fin,
+54:40 il y aura un coaching one avec moi. Donc c'est-à-dire que dans ce coaching là euh on va passer une voire 1h30 ensemble
+54:48 parce que on débordera s'il faut déborder et je vais venir vous aider à comprendre ce qui se passe sur votre
+54:53 site, pourquoi il bloque, comment est-ce que vous pouvez monter en compétence, quels outils utiliser, est-ce qu'il y a
+54:58 un quak dans votre routine ? Je n'ai encore pour l'instant jamais proposé du coaching one one jusqu'à maintenant.
+55:04 Donc j'avais envie de le faire aussi parce que vous m'avez beaucoup demandé. Donc ce pack sans migraine vraiment ce
+55:10 que j'ai fait c'est que j'ai condensé absolument toutes mes formations. Donc vous avez ma formation 360 SEO qui est
+55:16 la formation la plus complète, celle que j'ai vraiment j'ai tafé taffe encore dessus parce que je rajoute des modules
+55:22 euh tous les deux tr mois à chaque fois en fonction de vos questions. Euh donc dans la formation 360, je vous apprends
+55:28 à maîtriser chaque pilier. les trois qu'on vient de voir. Comment on améliore son site en technique, comment on écrit
+55:34 bien et comment on obtient des backlix. Déjà, vous allez partir avec un bagage énorme. Et dans 360 SEO, je vous
+55:40 explique aussi comment faire du SEO sur d'autres plateformes. Instagram, LinkedIn, YouTube, Substac, euh Airbnb
+55:47 aussi puisque j'en ai fait beaucoup. Je pense que là vous allez partir avec une en fait comment j'ai j'ai formé
+55:55 enfin comment j'ai structuré cette formation c'est vraiment j'ai pris ma méthode celle que je pefine depuis 10 ans et que j'applique sur mon site ceux
+56:01 de mes clients et je l'ai transformé en quelque chose de facile à comprendre et facile à refaire et ça ensuite vous
+56:08 pourrez le faire sur votre site ou sur le site de vos clients si vous êtes prance. Donc dans le pack déjà vous avez 360 SEO qui qui est ma plus grosse
+56:15 formation. Ensuite vous avez ma formation Google My Business. Donc là, c'est tout pour toute la partie SEO
+56:20 locale. Comment on optimise sa fiche My Business ? Comment on fait en sorte qu'elle sorte sur des mots clés ? Comment on fait en sorte que la la fiche
+56:28 My Business sorte quand on n pas de site internet aussi. Vous aurez aussi 25 crédits sur rédigation migraine. Donc
+56:34 l'outil que je vous ai parlé au début qu'on a développé qui va venir vous aider justement à rédiger vos pages, vos fiches produits, tous vos articles de
+56:40 blog. Donc vous aurez 25 crédits à utiliser sans expiration. Et vous aurez le fameux petit ebook aussi qui m'a été
+56:47 beaucoup demandé sur comment on apprend à trouver ces mots-clés. Euh donc en gros, comment on fait cette fameuse étude de mots clés. Vous aurez aussi
+56:53 accès à tous mes de live et notamment les plus intéressants, ceux qu'on a fait sur le SEOA, des
+56:58 masterclass que j'ai fait avec des start-ups à Montpelier où je ai mis le one de certains coachings. Et ensuite,
+57:04 une fois que vous avez passé un peu toutes ces étapesl et bien on se voit ensemble en pendant 1hure à 1h30 pour du
+57:12 coaching one one. Et vous pouvez aussi venir avec quelqu'un de votre équipe si vous êtes en enfin si vous êtes à
+57:18 plusieurs. L'idée c'est que ça vous apporte le maximum que je vienne vous aider. mettre le pied dans votre dans
+57:24 votre site et euh vous aurez je vous enverrai de toute façon à chaque fois avant un petit un tout petit formulaire avant le coaching one one pour bien
+57:31 cibler votre besoin. Vous me donniez des bons accès que j'arrive moi aussi dans ce coaching avec déjà des armes et des
+57:36 idées pour votre référencement. Donc comment je l'ai pensé ? et bien
+57:41 c'est que pour moi en 30 jours quand vous avez passé ce pack votre site vous ramène des clients. Il n'y aura que 12
+57:47 places seulement puisque je ne veux pas faire 70000 heures de coaching mais j'ai envie d'en faire 12 qui vont vraiment
+57:53 vous apporter. Donc 12 places seulement. Je teste aussi ce format là. Je vois aussi si ça vous apporte beaucoup. On
+57:59 voit si ce pack aussi vous aide à mieux référencer votre site et vous apprendrez aussi à faire du SEO partout. Voilà.
+58:08 Donc Karine va vous envoyer le lien du pack dans le chat et benah il n'y a que 12 places. Donc j'ai hâte en tout cas de
+58:15 d'échanger avec 12 d'entre vous et de venir mettre le de venir fouiner un peu dans votre référencement, voir comment
+58:21 est-ce que je peux vous aider et surtout bah vous rencontrer aussi puisque quand je fais des lives c'est génial mais je parle toute seule moi face à ma caméra
+58:27 donc ça va me faire du bien aussi de de vous rencontrer. Il n'y aura que 12 places. Je vous ai fait un prix pour effectivement l'offre
+58:35 d'aujourd'hui. Donc l'offre spéciale est à ce prix-là, le prix public avec donc ça c'est tout le condensé de la valeur
+58:41 de la formation de toutes les formations cumulées plus mon coaching one one et je vous ai mis le paiement en deux fois possible parce que je sais que c'est
+58:47 aussi la rentrée. Voilà, j'ai hâte en tout cas de rencontrer 12 d'entre vous
+58:53 et je crois que on peut continuer. Ensuite, on reprend donc on va reprendre
+58:59 sur le plan d'action. Si vous avez des questions sur le pack, n'hésitez pas, vous me les me les mettez à fond à la
+59:06 fin du webini et je vous répondrai. Et je crois qu'il y a quelqu'un qui a dit la coïncidence, c'est que aujourd'hui
+59:12 effectivement il y a un article sur blog du modérateur donc qui est un média plutôt connu qui sort sur notre agence
+59:19 CO. Effectivement, il y a aussi un article qui sort sur Rédiger Silva. Donc pile aujourd'hui. Donc effectivement on
+59:24 s'est on s'est bien aligné sur les dates. Euh on est très content de paraître dans cet article et très content qu'il parle de différemment des
+59:32 agences Co. Euh je crois que quelqu'un envoyé le lien dans le chat. Donc ensuite on reprend euh pour le plan
+59:37 d'action pour votre site. Euh donc une fois que vous avez fait donc une fois
+59:43 que vous avez fait attends je reprends plutôt là. Une fois que vous avez fait votre audito, que vous avez trouvé mot clé cible et que vous avez fait un peu
+59:49 votre plan d'action et que vous avez sélectionné vos mots clés qui vont vous rapporter le plus
+59:54 et bien plusieurs options. Déjà si euh vous avez un site existant, l'idée ça va
+01:00:00 être de venir rebosser vos trois piliers tout le temps. tout le temps parce que je sais que enfin en tout cas dans les
+01:00:05 points d'audit les plus les plus qui vont plus ressembler chez tous mes
+01:00:11 clients à chaque fois en fait ce qui se passe c'est que il y a toujours un pilier qui est mis sur le côté donc il y
+01:00:16 a toujours un pilier qui est moins travaillé donc commencez déjà à regarder dans votre semaine dans votre temps et
+01:00:22 CO combien de temps vous considérez à la partie technique combien de temps vous considérez la partie contenu et combien
+01:00:28 de temps vous considérez la partie confiance Je pense que vous allez vous rendre compte que vous passez très peu de temps
+01:00:33 sur le technique, beaucoup sur le contenu, très peu sur le confiance. C'est c'est souvent comme ça. Mais il faut vraiment vous forcer à vous mettre
+01:00:39 un temps technique, même si c'est juste aller vérifier que tout va bien. Euh est-ce que ça roule ? OK, est-ce que
+01:00:45 j'ai des mises à jour à faire ? Non. Est-ce que ma note elle est bonne ? OK, ça vous Si ça vous prend 15 minutes, ça vous prend 15 minutes et ça roule, tant
+01:00:51 mieux. Mais prenez ce réflexe là. Et euh sur la partie contenu, je sais qu'on a tendance à vouloir créer beaucoup de
+01:00:57 nouveaux contenus. Euh à chaque fois, on se dit "Ouais, je vais écrire un nouvel article. créer un nouvel article, créer une nouvelle page. Mais hésitez pas non
+01:01:02 plus à prendre du temps pour aller voir vos anciennes pages, celles qui peut-être rame un peu, ne se positionne
+01:01:08 pas, que vous avez écrit il a un petit bout de temps et que vous voyez pas décoller et allez voir si vous pouvez
+01:01:13 pas les réoptimiser, les remettre à jour. Ensuite, je vous invite à rester à jour plus sur ce qui se passe parce que
+01:01:20 ça bouge pas mal en ce moment. Ça bouge pas mal. Euh donc je vais vous donner quelques sources pour bien rester à
+01:01:27 jour, voir si vous êtes toujours dans les clous, dans les bonnes pratiques et euh la régularité en SEO, c'est ça le
+01:01:33 succès. C'est vraiment ça qui fait que votre site va euh bien tourner et va
+01:01:38 tourner longtemps. C'est une question de régularité. C'est pas une question de faire 15 he de SEO par semaine, c'est plutôt de faire 1 heure mais tout le
+01:01:45 temps. OK, chaque semaine, je vais faire entre une et 2 heures de SEO, mais je vais jamais louper ces heures là. Et c'est comme ça en fait que vous allez
+01:01:51 vraiment réussir à avoir une stratégie SEO qui décolle. Ensuite, je vous ai mis quelques petits
+01:01:57 outils par budget. Donc pour les tout petits budgets, je vous conseille trois outils. Donc forcément rédiger 100
+01:02:02 migres, je vous en ai parlé puisque on l'a quand même ouvert en gratuit donc ça peut vous débloquer sur pas mal de choses. Mais j'aime beaucoup Uber
+01:02:08 Suggest donc c'est un outil qui va vous permettre de faire votre étude de mots clé, faire un premier audit et qui est
+01:02:14 quand même très abordable en terme de de prix et qui en fait je pense que vous
+01:02:19 pouvez quand même vous débrouiller pas un pas mal de temps avec un bur suggest. à un moment donné, oui, il va être
+01:02:24 limitant, mais avant que que il soit limitant, ça voudrait dire que vous serez monté fortement en compéten et là,
+01:02:30 vous pourrez parer sur un sem rush et cetera. S'il y en a que ça dérange pas, que tout soit en anglais, j'aime
+01:02:36 beaucoup la suite d'outils SEO de chez Manguls. Ils ont plein de de petites
+01:02:42 outils par type de besoin, mais ils sont très pertinents. Ils ont des extensions chrome aussi, donc ça peut être très pratique au quotidien.
+01:02:49 Pour les budgets intermédiaires et bien à choisir entre les trois, soit sur Hanking, soit Semrus, soit Href et vous
+01:02:55 pouvez le cumuler avec un régié sans migraine toujours. Mais euh en préférence, c'est vrai que ça fait donc
+01:03:01 j'ai travaillé pendant 2 ans avec Sem Rush en partenariat, donc je connais bien les coulisses et c'est vrai qu'il
+01:03:07 est très précis, mais ils ont quand même l'envie et la vocation de passer plus sur un outil de marketing avant de
+01:03:12 rester un outil de SEO. Donc ce qui fait que je trouve que leurs nouvelles fonctionnalités sont légèrement moins pertinentes tandis que ce ranking bah
+01:03:18 c'est un outil de SEO qui va rester un outil de SEO. Donc c'est vrai que c'est particulièrement pertinent et j'aime
+01:03:24 beaucoup HRF aussi mais ce qui peut me freiner un petit peu, ça va plus être le prix. Euh j'aime beaucoup HRF pour la
+01:03:30 partie backlinks mais du coup ça commence à faire cher si vous cumulez un C Rush plus un HRF ou un C plus un HRF.
+01:03:36 Donc à choisir je prendrai un S ranking ou un SRH.
+01:03:41 Pour rester à jour, vous avez plusieurs options. Donc déjà pour toutes les loutres, absolument toutes les loutres
+01:03:46 qui ont pris mes formations, vous avez accès au Discord des CO sur lequel on échange sur bah beaucoup de choses, on
+01:03:52 se partage nos bonnes pratiques. Je viens vous débloquer sur pas mal de choses, vous échangez avec moi ou avec l'équipe, ce sera bien sûr accessible
+01:03:57 dans le pack sans migraine. L'accès au Discord forcément. Euh vous avez aussi
+01:04:02 du coup la newsletter dont je vous parlais euh un peu plus tôt. Donc la newsletter est gratuite. J'essaie de
+01:04:08 vous tenir à jour sur les dernière mise à jour Google, sur les dernières pratiques euh je vous envoie jamais d'épisode pour vous envoyer un épisode.
+01:04:14 Ça c'est ma règle. C'est-à-dire que sil y a une mise à jour qui sort mais qu'elle est euh vraiment insignifiante,
+01:04:20 qu'elle fait pas changer grand-chose, je viens pas vous alerter pour rien. Euh voilà, donc ça pour les petites pour les
+01:04:26 petites façons de de rester à jour. Et euh maintenant, je vais aller regarder toutes vos questions. Donc
+01:04:32 lâchez-vous dans les commentaires. Merci d'avoir passé ce joli temps de rentrer avec moi et je vous retrouverai de toute
+01:04:38 façon en live pour donc la master la masterclass SEOIA privé que je vais faire sur un groupe limité et je referai
+01:04:45 quand même, j'espère arriver à le caler mais un dernier live de de rent de d'année 2025. Euh donc il y a un petit
+01:04:52 live de fin d'année avec euh avec notamment tous ces sujets qui commencent à beaucoup bouger. Euh j'aimerais bien
+01:04:58 faire aussi un peu un live sur la partie comment on fait du SEO quand on a un site e-commerce vs quand on est un blog.
+01:05:03 Voilà, il y a des choses qui différencient. Mais si vous avez des idées aussi des sujets de live euh que vous avez envie que j'aborde mais
+01:05:10 lâchez-vous he vraiment je vous lis. Je lis souvent je lis les commentaires de 3 jours après de tout le chat aussi donc
+01:05:17 n'hésitez pas. Alors on va passer. Waouh ! Donc je vois que Karine m'a mis une centaine de
+01:05:23 questions, une rien que ça, une centaine de questions dans les dans les
+01:05:29 commentaires. C'est parti. Alors, on va commencer avec celle-là.
+01:05:34 Donc on a une question de Corine. Donc concernant le SEO marque et horque dans notre stratégie blog, on doit donc
+01:05:39 écrire un article sur du marque et du hor marque ou intégrer nos mots clés marques dans un article en marque. Alors non, c'est tout effectivement c'est
+01:05:46 c'est là que tu dois pas te planter. Quand tu fais du SEO marque et du SEO hors marque, c'est deux mots clés différents. Donc euh sauf si c'est
+01:05:54 pertinent dans du hors marque, tu viens pas placer ta marque. Sauf pour pas placer un produit, des choses comme ça pour vendre. Oui, mais tu viens pas
+01:06:00 commencer à raconter l'histoire de ta marque et cetera. Quand tu vas faire du SEO marque, ça va donc ça peut passer
+01:06:06 par de l'article de blog, mais c'est souvent de la création de page. Par exemple, créer une page avis avec le nom
+01:06:12 de ta boîte, créer une créer une page par exemple comparatif avec le nom de ta boîte, voir aussi ce que les gens tapent
+01:06:19 autour de toi. Euh pour reprendre l'audit que j'avais fait du coup pour la marque Gémio, il y avait beaucoup de
+01:06:24 gens qui tapaient "Que pensez-vous de la qualité de Gémio Donc c'était une super opportunité pour eux que d'aller créer
+01:06:31 une page que pensez-vous de la qualité de Gémio et de sortir tous leurs avis clients. Donc dis-toi que tout ce qui
+01:06:37 concerne le SEO marque, c'est que des mots clés qui doivent te protéger ou qui doivent faire en sorte que tu récupères
+01:06:43 un trafic qui t'appartient. Mais mélange pas les deux. Je crois que c'est ma question préf on
+01:06:49 me la pose tout le temps. Et quand les gens font des faux d'orthographes pour le nom d'entreprise, comment faire pour que l'on remonte quand même ? parce
+01:06:55 qu'on ne peut pas faire du contenu sur notre site avec une faute dans notre nom. En fait, il y a plein de façons de le tourner si vraiment c'est récurrent.
+01:07:01 Euh ça m'est déjà arrivé pour une marque de créer une page avec la faute d'orthographe dans le titre et en fait
+01:07:09 dans le contenu, j'ai mis euh "Ah, vous avez tapé ça, bon notre nom c'est ça, vous avez fait une petite faute mais c'est pas grave, vous êtes quand même
+01:07:15 arrivé au bon endroit." et en fait le tourner un peu sous le temps de l'humour et réussir à récupérer ça. Mais après si
+01:07:21 les gens tapent avec une faute d'orthographe, il faut pas que tu enfin faut quand même que tu couvres cette porte d'entrée là
+01:07:27 parce que si tu le fais pas, il y a un concurrent qui le qui le fera à moment donné. Ça m'arrive aussi des fois de
+01:07:32 donc de me positionner sur des mots clés où les gens font des fautes d'orthographe. Mais s'il y a plus de gens qui cherchent avec la faute
+01:07:38 d'orthographe, bah je vais m'adapter et je vais toujours placer dans l'article ou dans la page un petit truc un peu
+01:07:43 humoristique par rapport à la faute d'orthographe. histoire de faire comprendre aussi aux gens qui me disent
+01:07:48 que je suis consciente de la faute d'orthographe que j'ai faite et que c'est pas un oublié.
+01:07:54 Alors, est-ce que les rédactions quel clients peuvent rentrer dans notre strat et est-ce qu'on peut dans de certains
+01:07:59 cas le rédiger comme un article de SEO ? Ah euh je alors et confirme-moi, mais je pense avoir compris ça, c'est plus quand
+01:08:05 du coup tu fais euh sur ton site, tu vas mettre par exemple étude de cas et tu as bossé pour telle boîte. Oui, c'est une
+01:08:12 très bonne pratique pour les référencer. tu peux faire enfin c'est très très cool. En plus tu peux si tu le fais ça
+01:08:17 pour tes clients, moi ça m'arrive de le faire et ça leur permet d'obtenir un lien de ma part et du coup ça vient les
+01:08:22 protéger aussi sur leur nom de marque. Donc voilà mais par contre je crois qu'il faut toujours enfin il me semble he je ne suis pas je ne suis pas
+01:08:29 juriste. Mais pour faire ce type de page parler des résultats que tu auras fait pour un client, il faut toujours bien
+01:08:34 demander l'accord de ton client avant. Et pour mon cas, je le rédige pas du tout comme un article puisque euh sur ce
+01:08:41 type de page là, ce que les gens attendent, c'est gr ils veulent savoir qu'est-ce que tu as fait euh qu'est-ce
+01:08:46 que qu'est-ce que tu as fait pour eux, tu vois, sur ce type de marque, tuas qu'est-ce que tu as produit. Donc je le tourne plutôt en truc très graphique euh
+01:08:53 avec un système d'étape. Il y a Je vais essayer de te trouver mais j'en verrai,
+01:08:59 tu sais quoi ? J'en verrai dans le chat tout à l'heure. Euh j'ai vu j'ai des j'ai des types de pages de résultats
+01:09:05 clients que j'aime bien où je trouve que les gens les amène bien. Donc mais en tout cas c'est rarement écrit comme un
+01:09:11 article de blog. Pour répondre à cette pour rebondir à cette question, veut-il vaut-il mieux
+01:09:17 écrire des articles qu'à client ou avoir une page qu'à client, l'imetécharger ou
+01:09:22 faire les deux ? En tout cas, ça c'est ma recette de crêpe, mais pour ma part, je préfère
+01:09:27 avoir une page qu'à client euh avec mes résultats clients et des call to action vers mes offres. Euh ça peut arriver que
+01:09:34 je glisse un lit de manière à télécharger, mais en tout cas, je l'aurais pas fait comme un article.
+01:09:40 Quelle recommandation pour la taille des réponses d'une rubrique FAQ et ou page dédiée à la fin des pages thématiques ?
+01:09:48 Il y a pas spécifiquement de de taille précise. Il faut plus que tu dises
+01:09:54 toutes les questions que tu mets dans ta FAQ, faut que ça enfin faut que ça réponde à deux critères. Un, est-ce que c'est vraiment utile de mettre cette
+01:10:01 question là ? Est-ce qu'elle répond vraiment à quelque chose pour ton client ? Et de est-ce que ça peut te permettre de te positionner sur un mot clé parce
+01:10:06 que les FAQ sont très pratiques pour placer quelques mots clés. En plus,
+01:10:12 je regarde vos vos questions. HH
+01:10:18 alors, est-ce que les pages qui sortent sur Google dépendent de nos historiques de recherche ? Et donc que notre historique de recherche peut faire qu'on
+01:10:24 a pas le réel ordre d'apparition. Oui, donc je t'invite toujours à regarder en navigation privée, voir si tu peux te le
+01:10:31 permettre avec un VPN. Donc encore mieux. surtout si tu cherches pour du local euh oublie pas que Google va
+01:10:38 afficher des résultats autour de toi. Donc si tu tapes agenc Montpellier mais que tu es premier, vérifie que c'est pas
+01:10:44 juste parce que tu es à Montpellier. Mais oui, on peut se faire avoir par ce par ce genre de chos.
+01:10:53 Euh question très intéressante, mais comment faire remonter sa page Lind dans les premières pages ? De ce que j'ai
+01:10:59 constaté, en général ce qui sort le plus çaadresse les profils avant les pages, comme si les profils avaient plus de
+01:11:06 poids en référencement que les pages. Mais du coup, il faut que Google arrive à faire le lien entre toi et ta page
+01:11:12 LinkedIn. Donc ça veut dire que potentiellement si elle sort pas, c'est que ta page LinkedIn, elle est pas assez bien optimisée, référencée ou qu'il y a
+01:11:18 un manque de cohérence qui fait qu'il comprend pas que c'est aussi toi parce que s'il sait que c'est aussi toi, il te fait il te fait sortir assez facilement.
+01:11:25 Et parfois, c'est aussi une question de temps. Si la page elle est très récente et cetera, faut laisser un petit peu.
+01:11:31 Est-ce qu'on est obligé d'avoir un blog pour que notre site euh remonte bien en SEO ? Non, on n'est pas obligé d'avoir un blog pour que le site remonte bien en
+01:11:39 SEO. Il y a des sites qui ont que des pages et ça cartonne. Il y a des sites qui ont que des fiches produits et ça
+01:11:44 cartonne. Mais il enfin ça peut en fait ça dépend de tes mots clés parce que si tes mots clés sont de l'ordre de
+01:11:50 l'informationnel plus plus l'article de blog reste qui se positionne le mieux sur l'informationnel. Donc c'est plutôt
+01:11:57 je prendrai la chose à l'envers et du coup quels sont les mots clés sur lesquels tu veux te positionner ? Quelle est l'intention de recherche et du coup
+01:12:03 de là quel type de contenu tu dois faire sur ton site pour sortir ? Je regarde
+01:12:10 juste l'heure pour pas trop Il est déjà midi. Je vais prendre quelques questions en plus.
+01:12:16 Euh quand on est tout seul pour gérer toute une entreprise et qu'on a pas assez de temps pour faire un complet, quels sont les éléments minimum à
+01:12:22 assurer ? Il est difficile de lutter contre à des concurrents géants ayant un full département marketing ? Je suis totalement d'accord avec toi et c'est ça
+01:12:30 a été une de mes problématiques principales à un moment donné. Euh et bien il faut au minimum donc ce que je
+01:12:36 te disais sur tes trois piliers donc que ton site au minimum niveau technique il soit propre que tu es au minimum une
+01:12:42 page par mot clé que tu veux cibler par exemple si tu as cinq mots clés chouchou bah cinq pages et ensuite il faut que tu
+01:12:48 entretiennes si tu as pas la possibilité de créer régulièrement du contenu plutôt optimiser tes pages et les mettre à jour
+01:12:55 si tu as la possibilité de créer au moins un article de blog par mois ce serait vraiment l'idéal si bien sûr ça
+01:13:01 correspond à tes mots clés. Euh et si tu es en plus aussi dans un aspect local,
+01:13:07 donc tu peux te permettre d'avoir une fiche My Business, ça peut vraiment compenser euh sur sur ces fameux géants
+01:13:14 parce qu'une fiche My Business très bien optimisée, très bien travaillée, elle a un gros gros poids et elle peut vraiment
+01:13:20 t'aider à rivaliser avec ces gens qui ont un full département marketing. Tu serais surprise à quel point
+01:13:26 J'essaie de de voir toutes vos questions mais il y en a tellement.
+01:13:33 Euh je regarde, je regarde.
+01:13:39 J'ai vu une question sur c'est quoi les bonnes pratiques par réseaux sociaux ? Mais c'est impossible pour moi d'y répondre comme ça puisque ça serait
+01:13:46 presque l'objet d'un live entier. En tout cas, c'est c'est des sujets que j'ai traité dans 360 SEO. Vous avez un
+01:13:53 module par réseaux sociaux. Ensuite, c'est quoi les cor web vital et où on les trouve ? En fait, les corbitos,
+01:13:58 c'est donc ces fameux critères de Google. Tu as deux options. Donc déjà, tu peux aller sur Google et tu tapes
+01:14:04 page p insight. Euh, tu mets euh le lien de ton enfin tu mets l'URL de ton site
+01:14:10 et tu vas Google va analyser et tu vas avoir en fait quelques critères. Donc ça ça va te donner une première vue. Si tu
+01:14:17 as la capacité, il y a un autre outil de Google qui est gratuit, qui est facile à installer qui s'appelle la Google
+01:14:23 Console. Et en fait dans la Google Excel, c'est un peu c'est l'endroit où Google communique avec toi. Donc il va
+01:14:28 analyser ton site, il va te dire ton trafic, le nombre de gens qui sont venus chez toi, euh comment les gens euh t'ont
+01:14:34 trouvé, par quel type de mot clés. Et il y a un anglais corbals avec écrit "Oui, ça passe, non, ça passe
+01:14:40 pas, tu dois bosser ça, tu dois pefiner ça." Donc il enfin il y a pas de piège, c'est très clair. Par contre, parfois là
+01:14:47 où tu peux avoir besoin d'aidere, c'est si ce qui le problème qui te demande de corriger est technique, peut-être que
+01:14:54 là, tu auras besoin d'aide si tu as pas des capacités techniques ou si tu as pas quelqu'un de technique autour de toi.
+01:15:01 J'essaie de regarder encore.
+01:15:09 Tous les conseils se prêent bien au secteur peu concurrentiel, mais quand on travaille sur un site de beauté ou l'immobilier, la majorité de mes clients
+01:15:15 sont dans l'immobilier. Donc dans les dans les tous les conseils que je viens de te donner, ça s'applique à ça peut
+01:15:22 s'appliquer aussi à toi. Je comprends que tu grapides difficilement des places, surtout s'il y
+01:15:27 a des gens qui sont qui sont là installés depuis longtemps. Mais dans ton cas, je pense qu'il faudrait que tu
+01:15:33 abordes ta stratégie différemment. Effectivement, si ton site est très récent, il a entre
+01:15:39 1 et 2 ans, tu pourras pas te positionner sur agence immobilière. Par contre, il y a plein de petits
+01:15:45 mots-clés, notamment les mots clés long train qu'on appelle qui vont être plus précis, plus nichés, mais qui ont une intention de conversion plus élevée qui
+01:15:51 vont te permettre de débloquer ton trafico, de générer des leades et de petit à petit monter d'un d'un niveau
+01:15:57 ton SEO jusqu'à être capable un jour de rivaliser avec ces gros qui sont là depuis longtemps. En tout cas, c'est
+01:16:02 comme ça que j'attaque quand j'ai des clients qui sont sur des secteurs très très concurrentiels. En fait, on
+01:16:09 s'enlève de la tête que là, oui, effectivement, on pourra pas être placé sur agence immobilière demain. C'est impossible, même avec une très grosse
+01:16:15 somme d'argent. Par contre, on peut faire des choses, mais il faut accepter que ça qu'on va monter des paliers petit
+01:16:20 à petit. C'est un peu comme un jeu vidéo hein, on commence niveau 1 et si on veut choper le boss du niveau 100, bah faut
+01:16:25 un peu de patience et il faut faut équiper un peu son site en arme pour que pour qu'il puisse rivaliser.
+01:16:35 Il y a Virginie qui nous pose pas mal de questions donc sur effectivement je recommande WordPress et il est vrai que selon les donc les pêches enfin les les
+01:16:43 constructeur de page effectivement il y en a qui peuvent être un peu plus lourds. Néanmoins sur élémentor c'est
+01:16:48 rarement le cas de de galérer avec le poids de la page.
+01:16:55 C'est quand ça reste quand même très au friendly. Les menteurs restent très au friendly. Donc tant que tu abuses pas
+01:17:01 des animations parce que ça peut être un peu piégeux ou des images trop lourdes et tu prends bien le temps de bien
+01:17:06 optimiser tes images en poids et cetera, il y aura pas de souci. J'ai aussi vu pour Shopify, j'aime beaucoup. Pour
+01:17:12 Webflow, je suis un peu moins fan en terme de SEO, même si on fait des très jolis sites, je suis moins fan en terme
+01:17:18 de référencement parce qu'on a moins de possibilité d'optimiser le fameux pilier technique dont je vous parlais tout à l'heure.
+01:17:25 Euh et je vais prendre une dernière question. parce que il est déjà 12h 17
+01:17:31 et je ne veux pas vous je ne veux pas vous prendre en otage. Euh je ne veux
+01:17:36 pas trop vous prendre en otage. Donc je vais en prendre une dernière
+01:17:42 et j'aime bien celle-là. Alors à quel moment s'inquiéter quand on a un drop de ranking et de trafic ? Et bien si ton
+01:17:49 drop il est déjà sur plus de 4 semaines consécutives
+01:17:55 et que les dernières mises à jour Google en gros sont passées. En gros, tu es pas en plein séisme là. En plein séisme, on
+01:18:02 regarde pas trop son trafic. Euh si ça fait plus de 4 semaines consécutives que ça continue là, la seule solution c'est
+01:18:09 l'audit. que ce soit fait par toi ou que ce soit fait par quelqu'un d'autre, il faut que tu ailles tout passer au peigne
+01:18:15 fin pour comprendre ce qui s'est passé, pourquoi tu as un drop euh pour que par exemple, tu vois, on regarde aussi
+01:18:20 est-ce queil y a pas euh est-ce qu'il y a pas un quak dans dans ta partie confiance qui fait que Google d'un coup
+01:18:26 considère que tu es beaucoup moins fiable et du coup ton trafic va dégringoler. Merci beaucoup à tous pour toutes ces
+01:18:34 jolies questions, pour ce temps, pour merci à tous pour toujours d'être au
+01:18:39 rendez-vous dans les lives. Je vous retrouve bientôt pour un prochain live pour la masterclass SEO IA aussi que je
+01:18:45 vous enverrai et je j'essaierai de lire comme toujours après le live, j'essaie
+01:18:50 de de lire énormément vos commentaires et quand je vois des sujets, j'en fais des éditions de newsletter pour que vous
+01:18:55 restez pas sans réponse. En tout cas, bah merci d'avoir été avec moi et puis n'hésitez pas si vous avez des
+01:19:01 questions, vous savez où me trouver. Bon après-midi tout le monde.
