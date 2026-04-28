@@ -35,23 +35,21 @@ Use cases:
 Global installation for Codex:
 
 ```bash
-npx skills add https://github.com/<owner>/skills --skill seo-aeo-content -a codex -g
+npx skills add https://github.com/krkn-s/skills --skill seo-aeo-content -a codex -g
 ```
 
 Installation from the direct skill folder:
 
 ```bash
-npx skills add https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content -a codex -g
+npx skills add https://github.com/krkn-s/skills/tree/main/skills/seo-aeo-content -a codex -g
 ```
-
-Replace `<owner>` with the GitHub account or organization that hosts this repository.
 
 ### With Codex
 
 In Codex, ask:
 
 ```text
-Use $skill-installer to install https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content
+Use $skill-installer to install https://github.com/krkn-s/skills/tree/main/skills/seo-aeo-content
 ```
 
 ## Usage Examples
