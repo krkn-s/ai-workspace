@@ -64,51 +64,6 @@ Use $seo-aeo-content to create a SEO/AEO content brief for "answer engine optimi
 Use $seo-aeo-content to audit this article for SEO, AEO, intent match, and citation-worthiness.
 ```
 
-## Publishing to GitHub with `gh`
-
-This repository is intended to be published as `skills`.
-
-Before public publication, do not push the raw local transcripts in `Sources/`. They are ignored by Git in the public version, but if they exist in local history, publish from a clean export.
-
-### Recommended Option: Create a Clean Public Repository from an Export
-
-From this folder:
-
-```bash
-mkdir -p /tmp/skills-public
-rsync -av --exclude='.git' --exclude='.DS_Store' --exclude='Sources' ./ /tmp/skills-public/
-cd /tmp/skills-public
-git init
-git add .
-git commit -m "Initial public skills repository"
-gh repo create skills --public --source=. --remote=origin
-git push -u origin main
-```
-
-This avoids publishing local history that contains raw source transcripts.
-
-### If the GitHub Repository Already Exists
-
-```bash
-cd /tmp/skills-public
-git remote add origin git@github.com:<owner>/skills.git
-git push -u origin main
-```
-
-## Submitting to skills.sh / agentskill.sh
-
-Once the GitHub repository is public:
-
-1. Open the submission page on `skills.sh` or `agentskill.sh`.
-2. Paste the repository or skill URL:
-
-   ```text
-   https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content
-   ```
-
-3. Connect GitHub to verify repository ownership if requested.
-4. Add the GitHub webhook if the platform offers one to sync updates faster.
-
 ## License
 
 This repository uses the MIT License.
