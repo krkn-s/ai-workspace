@@ -1,1358 +1,1350 @@
-# Guide de reference SEO et AEO
+# SEO and AEO Reference Guide
 
-Derniere mise a jour : 27 avril 2026  
-Usage prevu : document de reference pour ecrire, creer, optimiser et maintenir du contenu internet visible dans Google, les AI Overviews, ChatGPT, Perplexity, Gemini, Copilot et les autres interfaces de reponse.
+Last updated: April 27, 2026  
+Purpose: reference document for writing, creating, optimizing, and maintaining internet content that can be visible in Google, AI Overviews, ChatGPT, Perplexity, Gemini, Copilot, and other answer interfaces.
 
-## 1. Synthese executive
+## 1. Executive Summary
 
-Le SEO n'est pas remplace par l'AEO. Il devient la base sur laquelle l'AEO se construit.
+SEO is not being replaced by AEO. SEO is the foundation that AEO builds on.
 
-Le SEO cherche a rendre une page trouvable, compréhensible, indexable, utile et digne de confiance dans les moteurs de recherche. L'AEO, pour Answer Engine Optimization, cherche a faire de votre contenu, de votre marque ou de vos preuves une source suffisamment claire et fiable pour etre citee, resumee ou recommandee dans une reponse generee par IA.
+SEO makes a page findable, understandable, indexable, useful, and trustworthy for search engines. AEO, or Answer Engine Optimization, makes your content, brand, or proof clear and reliable enough to be cited, summarized, or recommended in an AI-generated answer.
 
-La logique centrale est simple :
+The core logic:
 
-- SEO : gagner une place dans une page de resultats.
-- AEO : gagner une place dans une reponse.
-- GEO : terme voisin de l'AEO, souvent utilise pour parler de la visibilite dans les moteurs generatifs. Dans ce guide, AEO est le terme principal.
+- SEO: earn a place in a results page.
+- AEO: earn a place in an answer.
+- GEO: a related term often used for visibility in generative engines. This guide uses AEO as the primary term.
 
-La meilleure strategie actuelle n'est pas de choisir entre SEO et AEO. Elle consiste a construire un systeme de contenu qui fonctionne pour les humains, pour les moteurs de recherche et pour les moteurs de reponse :
+The best current strategy is not to choose between SEO and AEO. It is to build a content system that works for humans, search engines, and answer engines:
 
-- un site techniquement propre et indexable ;
-- des pages qui repondent a une intention precise ;
-- des contenus originaux, utiles, a jour et sourcables ;
-- une marque mentionnee dans des lieux tiers fiables ;
-- une mesure qui suit les clics, les conversions, les citations et la part de voix.
+- a technically clean and indexable site;
+- pages that answer a precise intent;
+- original, useful, up-to-date, citable content;
+- a brand mentioned in credible third-party places;
+- measurement that tracks clicks, conversions, citations, and share of voice.
 
-La grande erreur serait de traiter l'AEO comme une astuce separee. Google indique que les bonnes pratiques SEO restent pertinentes pour AI Overviews et AI Mode, sans exigence technique supplementaire ni schema special obligatoire. En revanche, dans l'ecosysteme plus large des LLMs et moteurs de reponse, les citations, les mentions de marque, Reddit, YouTube, les medias, les comparatifs, les avis et les contenus de support prennent plus d'importance.
+The main mistake is treating AEO as a separate hack. Google states that SEO best practices remain relevant for AI Overviews and AI Mode, without any special technical file or required schema. In the broader LLM and answer-engine ecosystem, however, citations, brand mentions, Reddit, YouTube, media, comparison pages, reviews, and support content matter more.
 
-## 2. Sources et niveau de confiance
+## 2. Sources and Confidence Level
 
-Ce guide consolide les 6 sources locales du dossier `Sources/` et les complete avec des sources externes recentes. Les transcriptions locales servent a extraire les frameworks, les intuitions pratiques et les retours d'experience. Les sources externes servent a verifier, nuancer ou corriger les affirmations.
+This guide consolidates six local sources from `Sources/` and enriches them with recent external sources. The local transcripts were used to extract frameworks, practical intuitions, and field experience. External sources were used to verify, qualify, or correct claims.
 
-### Sources locales analysees
+### Local Research Materials Analyzed
 
-- `Sources/les-bonnes-pratiques-seo-pour-2026-amandine-bart-le-seo-sans-migraine.txt`  
-  Apport principal : les trois piliers SEO, SEO de marque et hors marque, intention de recherche, audit, plan d'action, vigilance contre le contenu IA massif et les backlinks artificiels.
+The first version of this guide was drafted from six local research transcripts that are not distributed in the public repository. Their main contributions were:
 
-- `Sources/seo-geo-2026-la-nouvelle-strategie-de-contenu-pour-exploser-votre-visibilite-syril-digital.txt`  
-  Apport principal : evolution SEO/GEO, contenu multimodal, autorite de marque, mentions, ecosysteme Google et IA, presence LinkedIn/YouTube/podcast.
+- a 2026 SEO best-practices session covering the three SEO pillars, brand and non-brand SEO, search intent, auditing, action planning, and caution against mass AI content or artificial backlinks;
+- a SEO/GEO strategy session covering multimodal content, brand authority, mentions, the Google and AI ecosystem, and LinkedIn/YouTube/podcast presence;
+- an AEO expert interview covering AEO as an SEO extension, citations, conversational long tail, Reddit/YouTube/help-center optimization, AEO tracking, test/control experimentation, and misinformation risks;
+- an AI Overviews/AEO tactical session covering AEO keyword research, informational intent, People Also Ask, featured snippets, images, brand monitoring, gap analysis, and a 30-day plan;
+- an AEO introduction covering brand narrative control and the four AEO pillars: content, technical, authority, and measurement;
+- a marketing strategy session covering strategic AI use, referenceable content, specialization, and distribution.
 
-- `Sources/answer-engine-optimization-aeo—the-ultimate-guide-to-aeo-how-to-get-chatgpt-to-recommend-your-product-ethan-smith-graphite-lenny-s-podcast.txt`  
-  Apport principal : AEO comme extension du SEO, role des citations, long tail conversationnelle, Reddit/YouTube/help center, tracking AEO, experimentation test/controle, risques de desinformation AEO.
+### External Sources Used
 
-- `Sources/answer-engine-optimization-aeo—answer-engine-optimization-aeo-how-to-rank-1-in-ai-overviews-dominate-search-julia-mccoy.txt`  
-  Apport principal : recherche de mots cles AEO, intentions informationnelles, co-presence AI Overviews/People Also Ask/featured snippets/images, suivi de marque, gap analysis, plan 30 jours.
+- Google Search Central, [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features): AI Overviews and AI Mode use SEO fundamentals and do not require a special file or schema.
+- Google Search Central, [Top ways to ensure your content performs well in Google's AI experiences on Search](https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search): unique, useful, non-commoditized content adapted to longer and more specific questions.
+- Google Search Central, [Guidance on using generative AI content](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content): AI can help with research and structure, but large-scale generation without added value can violate spam policies.
+- Google Search Central, [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): who created the content, how it was produced, and why it exists.
+- Google Search Central, [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide): architecture, URLs, images, videos, useful content, promotion, and false SEO priorities.
+- Google Search Central, [Technical requirements](https://developers.google.com/search/docs/essentials/technical): Googlebot not blocked, HTTP 200, indexable content.
+- Google Search Central, [Structured data intro](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) and [structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies): structured data is useful but not guaranteed to produce enhanced results.
+- Google Search Central, [Robots meta tags](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag): `nosnippet`, `max-snippet`, `data-nosnippet`, and impact on AI Overviews/AI Mode.
+- Google, [AI Overviews and AI Mode in Search](https://search.google/pdf/google-about-AI-overviews-AI-Mode.pdf): AI Overviews rely on ranking systems, the Knowledge Graph, web results, and quality protections.
+- Semrush, [AI Overviews Study 2025](https://www.semrush.com/blog/semrush-ai-overviews-study/): growth of AI Overview-triggering queries, intent patterns, zero-click behavior, and SERP co-presence.
+- Ahrefs, [AI Overview Brand Visibility Factors](https://ahrefs.com/blog/ai-overview-brand-correlation/): strong correlation between web brand mentions and visibility in AI Overviews.
+- Ahrefs, [How to Rank in AI Overviews](https://ahrefs.com/blog/?p=194802): importance of intent density and the risk of diluting content with overly broad coverage.
+- Pew Research Center, [Google users are less likely to click on links when an AI summary appears](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/): observed click behavior on pages with AI summaries.
+- Amsive, [Google AI Overviews CTR Study](https://www.amsive.com/insights/seo/google-ai-overviews-new-research-reveals-how-to-navigate-click-drop-off/): observed CTR declines for keyword sets with AI Overviews, especially non-brand queries.
 
-- `Sources/answer-engine-optimization-aeo—introduction-to-answer-engine-optimization-aeo-webflow.txt`  
-  Apport principal : definition claire de l'AEO, controle du narratif de marque, quatre piliers AEO : contenu, technique, autorite, mesure.
-
-- `Sources/how-i-d-learn-marketing-fast-in-2026-joanna-wiebe.txt`  
-  Apport principal : penser comme un stratege, utiliser l'IA pour challenger le contenu plutot que produire du volume, creer du contenu referenceable, specialisation et distribution.
-
-### Sources externes utilisees
-
-- Google Search Central, [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) : AI Overviews et AI Mode utilisent les fondamentaux SEO, pas de fichier ou schema special requis.
-- Google Search Central, [Top ways to ensure your content performs well in Google's AI experiences on Search](https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search) : contenu unique, utile, non commoditise, adapte aux questions longues et specifiques.
-- Google Search Central, [Guidance on using generative AI content](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content) : l'IA peut aider a la recherche et a la structure, mais la generation massive sans valeur ajoutee peut violer les politiques anti-spam.
-- Google Search Central, [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) : qui a cree le contenu, comment il a ete produit, pourquoi il existe.
-- Google Search Central, [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) : architecture, URLs, images, videos, contenu utile, promotion et faux sujets SEO.
-- Google Search Central, [Technical requirements](https://developers.google.com/search/docs/essentials/technical) : Googlebot non bloque, HTTP 200, contenu indexable.
-- Google Search Central, [Structured data intro](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) et [structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) : donnees structurees utiles mais non garanties.
-- Google Search Central, [Robots meta tags](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) : `nosnippet`, `max-snippet`, `data-nosnippet` et impact sur AI Overviews/AI Mode.
-- Google, [AI Overviews and AI Mode in Search](https://search.google/pdf/google-about-AI-overviews-AI-Mode.pdf) : AI Overviews s'appuient sur les systemes de classement, le Knowledge Graph, les resultats web et les protections qualite.
-- Semrush, [AI Overviews Study 2025](https://www.semrush.com/blog/semrush-ai-overviews-study/) : evolution de la part des requetes avec AI Overviews, intentions, zero-click, co-presence SERP.
-- Ahrefs, [AI Overview Brand Visibility Factors](https://ahrefs.com/blog/ai-overview-brand-correlation/) : correlation forte entre mentions web de marque et visibilite dans AI Overviews.
-- Ahrefs, [How to Rank in AI Overviews](https://ahrefs.com/blog/?p=194802) : importance de la densite d'intention et risque de dilution par contenu trop large.
-- Pew Research Center, [Google users are less likely to click on links when an AI summary appears](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) : comportement de clic observe sur les pages avec resumes IA.
-- Amsive, [Google AI Overviews CTR Study](https://www.amsive.com/insights/seo/google-ai-overviews-new-research-reveals-how-to-navigate-click-drop-off/) : baisse CTR observee sur des ensembles de mots cles avec AI Overviews, notamment hors marque.
-
-## 3. Definitions utiles
+## 3. Useful Definitions
 
 ### SEO
 
-Search Engine Optimization. Discipline qui vise a rendre un site eligible, comprehensible, pertinent et digne de confiance pour les moteurs de recherche.
+Search Engine Optimization. The discipline of making a site eligible, understandable, relevant, and trustworthy for search engines.
 
-Le SEO ne se limite pas aux mots cles. Un bon SEO combine :
+SEO is not limited to keywords. Good SEO combines:
 
-- technique : crawl, indexation, vitesse, mobile, securite, HTML, liens internes ;
-- contenu : intention, utilite, profondeur, originalite, structure ;
-- confiance : liens, mentions, marque, reputation, preuves externes ;
-- mesure : Search Console, analytics, conversions, positions, pages performantes.
+- technical: crawl, indexing, speed, mobile, security, HTML, internal links;
+- content: intent, usefulness, depth, originality, structure;
+- trust: links, mentions, brand, reputation, external proof;
+- measurement: Search Console, analytics, conversions, rankings, high-performing pages.
 
 ### AEO
 
-Answer Engine Optimization. Discipline qui vise a etre utilise comme reponse, citation ou recommandation dans des interfaces qui generent directement une synthese.
+Answer Engine Optimization. The discipline of making content usable as an answer, citation, or recommendation in interfaces that generate direct summaries.
 
-Exemples de surfaces :
+Examples of answer surfaces:
 
-- Google AI Overviews ;
-- Google AI Mode ;
-- ChatGPT avec recherche ;
-- Perplexity ;
-- Gemini ;
-- Copilot ;
-- assistants vocaux ou interfaces conversationnelles.
+- Google AI Overviews;
+- Google AI Mode;
+- ChatGPT with search;
+- Perplexity;
+- Gemini;
+- Copilot;
+- voice assistants or conversational interfaces.
 
-L'AEO ne remplace pas le SEO. Il ajoute une nouvelle question :
+AEO does not replace SEO. It adds a new question:
 
-> Est-ce que ce contenu est assez clair, fiable, specifique et referenceable pour etre cite dans une reponse ?
+> Is this content clear, reliable, specific, and referenceable enough to be cited in an answer?
 
 ### GEO
 
-Generative Engine Optimization. Terme souvent utilise pour designer l'optimisation de la visibilite dans les moteurs generatifs. Dans la pratique, GEO et AEO recouvrent beaucoup de tactiques identiques : structure du contenu, citations, mentions de marque, autorite externe, donnees claires et suivi de la part de voix.
+Generative Engine Optimization. A term often used to describe visibility optimization in generative engines. In practice, GEO and AEO overlap heavily: content structure, citations, brand mentions, external authority, clear data, and share-of-voice tracking.
 
-Ce guide utilise AEO comme terme principal car l'objectif est la reponse.
+This guide uses AEO as the primary term because the goal is the answer.
 
 ### AI Overview
 
-Resume genere par IA dans Google Search. Il synthetise des informations issues de plusieurs sources et peut inclure des liens de support. Google indique que les AI Overviews s'appuient sur ses systemes de classement, de qualite et de securite.
+An AI-generated summary in Google Search. It synthesizes information from several sources and may include supporting links. Google says AI Overviews rely on its ranking, quality, and safety systems.
 
-Implication : pour apparaitre dans AI Overviews, il faut d'abord etre eligible dans Google Search. Google precise qu'il n'y a pas d'optimisation speciale ou de schema special obligatoire pour AI Overviews et AI Mode.
+Practical implication: to appear in AI Overviews, a page must first be eligible in Google Search. Google also states that there is no special optimization or special schema required for AI Overviews and AI Mode.
 
 ### Citation
 
-Dans l'AEO, une citation est une source utilisee ou affichee par le moteur de reponse. Elle peut etre :
+In AEO, a citation is a source used or displayed by the answer engine. It can be:
 
-- une page de votre site ;
-- une page d'un media ;
-- une video YouTube ;
-- une discussion Reddit ou forum ;
-- une page d'avis ;
-- une fiche produit ;
-- un comparatif ;
-- une documentation ou un help center.
+- a page on your site;
+- a media page;
+- a YouTube video;
+- a Reddit or forum discussion;
+- a review page;
+- a product page;
+- a comparison page;
+- documentation or a help center article.
 
-La citation n'est pas toujours un lien cliquable visible. Mais elle influence la facon dont l'IA formule la reponse, selectionne les marques et presente les options.
+A citation is not always a visible clickable link. But it influences how AI formulates the answer, selects brands, and presents options.
 
-### Mention de marque
+### Brand Mention
 
-Une mention de marque est une occurrence de votre marque dans un contenu tiers, avec ou sans backlink. Les sources locales insistent sur le fait que les mentions sans lien comptent de plus en plus pour l'AEO. Ahrefs observe une forte correlation entre mentions web de marque et visibilite dans AI Overviews. Ce n'est pas une preuve de causalite directe, mais c'est un signal strategique important.
+A brand mention is an occurrence of your brand in third-party content, with or without a backlink. The local sources emphasize that unlinked mentions matter more in AEO. Ahrefs observed a strong correlation between web brand mentions and AI Overview visibility. This is not proof of direct causation, but it is an important strategic signal.
 
-### Intention de recherche
+### Search Intent
 
-Ce que l'utilisateur cherche vraiment a accomplir. Les quatre familles les plus utiles :
+What the user is really trying to accomplish. The most useful categories:
 
-- informationnelle : comprendre, apprendre, comparer des notions ;
-- commerciale : evaluer une solution, comparer des offres, choisir ;
-- transactionnelle : acheter, reserver, s'inscrire, telecharger ;
-- navigationnelle : atteindre une marque, un site, un compte, une page precise.
+- informational: understand, learn, compare concepts;
+- commercial: evaluate a solution, compare offers, choose;
+- transactional: buy, book, subscribe, download;
+- navigational: reach a brand, site, account, or specific page;
+- local: find a nearby or location-specific solution.
 
-Une page qui rate l'intention peut etre bien ecrite et pourtant inutile pour le SEO.
+A page that misses intent can be well written and still useless for SEO.
 
-## 4. Modele mental : ce qui change et ce qui ne change pas
+## 4. Mental Model: What Changes and What Does Not
 
-### Ce qui ne change pas
+### What Does Not Change
 
-Les fondamentaux restent valables :
+The fundamentals still apply:
 
-- un contenu doit aider l'utilisateur ;
-- une page doit etre indexable ;
-- l'intention doit etre claire ;
-- la structure doit faciliter la lecture ;
-- la marque doit inspirer confiance ;
-- les liens internes et externes aident a comprendre le contexte ;
-- les pages doivent etre maintenues.
+- content must help the user;
+- a page must be indexable;
+- intent must be clear;
+- structure must make reading easier;
+- the brand must inspire trust;
+- internal and external links help clarify context;
+- pages must be maintained.
 
-Google confirme que les fondamentaux SEO restent pertinents pour AI Overviews et AI Mode. Cela contredit les discours qui pretendent qu'il faudrait abandonner le SEO pour une discipline entierement nouvelle.
+Google confirms that SEO fundamentals remain relevant for AI Overviews and AI Mode. This contradicts claims that SEO should be abandoned for a completely new discipline.
 
-### Ce qui change
+### What Changes
 
-Les interfaces de reponse changent les comportements :
+Answer interfaces change behavior:
 
-- l'utilisateur pose des questions plus longues ;
-- les questions de suivi deviennent centrales ;
-- l'IA synthetise plusieurs sources ;
-- le clic n'est plus garanti ;
-- la visibilite peut exister sans session attribuee dans Analytics ;
-- les mentions externes deviennent plus importantes ;
-- les pages de support, les videos, les forums et les comparatifs deviennent des sources potentielles ;
-- le controle du narratif de marque se joue aussi hors du site.
+- users ask longer questions;
+- follow-up questions become central;
+- AI synthesizes multiple sources;
+- clicks are no longer guaranteed;
+- visibility can exist without an attributed analytics session;
+- external mentions become more important;
+- support pages, videos, forums, and comparison pages become potential sources;
+- brand narrative control also happens off-site.
 
-Pew a observe en mars 2025 que les utilisateurs cliquaient moins souvent sur des resultats classiques quand une synthese IA apparaissait. Semrush nuance le sujet : les requetes avec AI Overviews ont souvent deja une tendance zero-click, et l'impact depend de l'intention. La conclusion pratique est de ne plus mesurer le SEO uniquement au trafic organique brut.
+Pew observed in March 2025 that users clicked traditional results less often when an AI summary appeared. Semrush qualifies the topic: queries with AI Overviews often already have a zero-click tendency, and impact depends on intent. The practical conclusion is that SEO should no longer be measured only through raw organic traffic.
 
-### Le nouveau KPI central
+### The New Central KPI
 
-Avant, on demandait surtout :
+Before, we mostly asked:
 
-- suis-je positionne ?
-- combien de clics ai-je ?
-- combien de conversions ai-je ?
+- am I ranking?
+- how many clicks do I get?
+- how many conversions do I get?
 
-Maintenant, il faut aussi demander :
+Now we must also ask:
 
-- suis-je cite ?
-- suis-je mentionne positivement ?
-- suis-je absent quand mes concurrents sont presents ?
-- ma marque est-elle comprise correctement ?
-- quelle part de voix ai-je dans les reponses IA ?
-- quels contenus tiers alimentent les reponses sur mon marche ?
+- am I cited?
+- am I mentioned positively?
+- am I absent when competitors are present?
+- is my brand understood correctly?
+- what share of voice do I have in AI answers?
+- which third-party content feeds answers in my market?
 
-## 5. La strategie unifiee SEO/AEO
+## 5. The Unified SEO/AEO Strategy
 
-Le cadre de reference combine cinq piliers.
+The reference framework combines five pillars.
 
-### Pilier 1 : technique
+### Pillar 1: Technical
 
-Objectif : rendre le site accessible, rapide, lisible et indexable.
+Goal: make the site accessible, fast, readable, and indexable.
 
-Minimum viable :
+Minimum viable baseline:
 
-- Googlebot peut acceder aux pages importantes ;
-- les pages importantes renvoient un code HTTP 200 ;
-- le contenu principal est indexable en texte ;
-- les pages ne sont pas bloquees par erreur via `robots.txt`, `noindex`, CDN ou protection serveur ;
-- la version mobile est utilisable ;
-- les images et videos importantes sont accompagnees de texte descriptif ;
-- les donnees structurees correspondent au contenu visible ;
-- Search Console est installee.
+- Googlebot can access important pages;
+- important pages return HTTP 200;
+- the main content is indexable text;
+- pages are not accidentally blocked through `robots.txt`, `noindex`, CDN settings, or server protection;
+- the mobile version is usable;
+- important images and videos have descriptive text;
+- structured data matches visible content;
+- Search Console is installed.
 
-Google liste trois exigences minimales pour l'indexation : Googlebot ne doit pas etre bloque, la page doit fonctionner, et la page doit contenir du contenu indexable.
+Google lists three minimum requirements for indexing: Googlebot must not be blocked, the page must work, and the page must contain indexable content.
 
-Pour l'AEO, la technique a deux roles :
+For AEO, technical quality has two roles:
 
-- permettre aux moteurs de trouver la page ;
-- rendre le contenu facile a extraire, comprendre et citer.
+- allow engines to find the page;
+- make content easy to extract, understand, and cite.
 
-### Pilier 2 : contenu
+### Pillar 2: Content
 
-Objectif : repondre mieux que les autres a une intention precise.
+Goal: answer a precise intent better than alternatives.
 
-Un bon contenu SEO/AEO :
+Good SEO/AEO content:
 
-- commence par la reponse attendue ;
-- explique ensuite le contexte, les nuances et les cas limites ;
-- utilise des titres qui correspondent aux questions reelles ;
-- ajoute des exemples, donnees, preuves, methodes et comparatifs ;
-- evite de diluer l'intention avec des sections tangentielles ;
-- montre l'experience ou l'expertise de l'auteur ;
-- inclut des visuels ou videos quand ils aident vraiment ;
-- se met a jour quand les faits changent.
+- starts with the expected answer;
+- then explains context, nuance, and edge cases;
+- uses headings that match real questions;
+- adds examples, data, proof, methods, and comparisons;
+- avoids diluting intent with tangential sections;
+- shows the author's experience or expertise;
+- includes visuals or videos when they truly help;
+- is updated when facts change.
 
-La source Ahrefs sur AI Overviews insiste sur un point important : plus long n'est pas toujours meilleur. Une page peut perdre en pertinence si elle ajoute trop de sections eloignees de l'intention principale. La densite d'intention compte plus que la longueur.
+Ahrefs' AI Overview research highlights an important point: longer is not always better. A page can become less relevant if it adds too many sections that drift away from the primary intent. Intent density matters more than length.
 
-### Pilier 3 : confiance et autorite
+### Pillar 3: Trust and Authority
 
-Objectif : creer un environnement de preuves autour de la marque et du contenu.
+Goal: create an environment of proof around the brand and content.
 
-Cela inclut :
+This includes:
 
-- backlinks legitimes ;
-- mentions sans lien ;
-- avis clients ;
-- cas clients ;
-- citations media ;
-- comparatifs tiers ;
-- contributions expertes ;
-- profils auteurs ;
-- presence coherente sur les plateformes ou vos clients cherchent.
+- legitimate backlinks;
+- unlinked mentions;
+- customer reviews;
+- case studies;
+- media citations;
+- third-party comparisons;
+- expert contributions;
+- author profiles;
+- presence on platforms where customers search.
 
-Les sources locales convergent : le pilier confiance ne disparait pas. Il evolue. Les backlinks restent utiles, mais les mentions de marque, les contextes de citation et les sources tierces prennent plus de poids dans les moteurs de reponse.
+The local sources converge on one idea: the trust pillar is not disappearing. It is evolving. Backlinks remain useful, but brand mentions, citation context, and third-party sources matter more in answer engines.
 
-### Pilier 4 : distribution
+### Pillar 4: Distribution
 
-Objectif : ne pas dependre uniquement de votre site.
+Goal: avoid depending only on your site.
 
-Les moteurs de reponse s'appuient sur l'ecosysteme. Il faut donc etre present la ou les citations apparaissent :
+Answer engines rely on the broader ecosystem. You therefore need to appear where citations appear:
 
-- YouTube pour les demonstrations, tutoriels, comparatifs, contenus B2B de niche ;
-- Reddit et forums pour les questions authentiques et les retours terrain ;
-- LinkedIn pour l'autorite d'expert, surtout en B2B ;
-- medias specialises pour les comparatifs et analyses ;
-- marketplaces, avis et annuaires pour le local, le commerce, le logiciel ;
-- help center et documentation pour les questions longues et specifiques ;
-- podcasts et newsletters pour l'association entre personne, expertise et categorie.
+- YouTube for demonstrations, tutorials, comparisons, and niche B2B topics;
+- Reddit and forums for authentic questions and field feedback;
+- LinkedIn for expert authority, especially in B2B;
+- specialist media for comparisons and analysis;
+- marketplaces, reviews, and directories for local, commerce, and software categories;
+- help centers and documentation for long, specific questions;
+- podcasts and newsletters to connect people, expertise, and categories.
 
-La distribution n'est pas un relais apres coup. C'est une partie du contenu.
+Distribution is not an afterthought. It is part of content design.
 
-### Pilier 5 : mesure
+### Pillar 5: Measurement
 
-Objectif : savoir ce qui fonctionne vraiment.
+Goal: know what actually works.
 
-Mesurer uniquement les positions et le trafic ne suffit plus. Il faut suivre :
+Rankings and traffic are no longer enough. Track:
 
-- impressions et clics Search Console ;
-- conversions organiques ;
-- pages qui generent leads ou ventes ;
-- mots cles de marque et hors marque ;
-- taux de presence dans AI Overviews ;
-- citations visibles ;
-- mentions de marque ;
-- sentiment ou tonalite des reponses ;
-- presence concurrentielle ;
-- sources qui citent les concurrents mais pas vous.
+- Search Console impressions and clicks;
+- organic conversions;
+- pages that generate leads or sales;
+- brand and non-brand queries;
+- presence in AI Overviews;
+- visible citations;
+- brand mentions;
+- answer sentiment or framing;
+- competitor presence;
+- sources that cite competitors but not you.
 
-Le tracking AEO est imparfait parce que les reponses varient selon les plateformes, les formulations et les sessions. Il faut donc raisonner en echantillons et tendances, pas en verite absolue.
+AEO tracking is imperfect because answers vary by platform, phrasing, and session. Think in samples and trends, not absolute truth.
 
-## 6. Recherche d'intention et selection des sujets
+## 6. Intent Research and Topic Selection
 
-### Commencer par le role business de la page
+### Start With the Business Role of the Page
 
-Avant de chercher un mot cle, definir le role :
+Before searching for a keyword, define the role:
 
-- acquisition : attirer des personnes qui ne connaissent pas la marque ;
-- conversion : aider un prospect a choisir ;
-- retention : aider un client existant ;
-- preuve : renforcer la confiance ;
-- protection : controler les resultats de marque ;
-- support AEO : repondre a des questions longues qui peuvent etre posees a un LLM.
+- acquisition: attract people who do not know the brand;
+- conversion: help a prospect choose;
+- retention: help an existing customer;
+- proof: strengthen trust;
+- protection: control brand results;
+- AEO support: answer long questions that may be asked to an LLM.
 
-Une page sans role finit souvent par devenir un contenu interchangeable.
+A page without a role often becomes interchangeable content.
 
-### SEO de marque et SEO hors marque
+### Brand SEO and Non-Brand SEO
 
-Le SEO hors marque sert a etre decouvert par des personnes qui ne vous connaissent pas. Exemples :
+Non-brand SEO helps people discover you when they do not know you. Examples:
 
-- `logiciel facturation freelance` ;
-- `agence seo b2b` ;
-- `comment choisir un crm` ;
-- `meilleur outil de transcription reunion`.
+- `freelance invoicing software`;
+- `b2b seo agency`;
+- `how to choose a crm`;
+- `best meeting transcription tool`.
 
-Le SEO de marque sert a proteger et convertir les personnes qui vous connaissent deja. Exemples :
+Brand SEO protects and converts people who already know you. Examples:
 
-- `[marque] avis` ;
-- `[marque] prix` ;
-- `[marque] alternative` ;
-- `[marque] vs [concurrent]` ;
-- `[marque] probleme` ;
-- faute courante dans le nom de marque.
+- `[brand] reviews`;
+- `[brand] pricing`;
+- `[brand] alternative`;
+- `[brand] vs [competitor]`;
+- `[brand] issue`;
+- common misspellings of the brand name.
 
-Ne pas melanger brutalement les deux. Un article hors marque peut mentionner votre solution si c'est utile, mais il ne doit pas devenir une page publicitaire. Une page marque peut etre beaucoup plus orientee preuve, avis, comparaison ou conversion.
+Do not force the two together. A non-brand article can mention your solution if useful, but it should not become a sales page. A brand page can be much more proof-, review-, comparison-, or conversion-oriented.
 
-### Les mots cles "chouchous"
+### "Favorite" Keywords
 
-Une bonne strategie n'a pas besoin de viser 500 mots cles des le depart. Identifier 5 a 20 mots cles ou questions qui ont un impact business direct :
+A good strategy does not need to target 500 keywords at first. Identify 5 to 20 keywords or questions with direct business impact:
 
-- intention claire ;
-- lien avec l'offre ;
-- capacite de conversion ;
-- faisabilite concurrentielle ;
-- possibilite d'apporter une reponse meilleure ;
-- potentiel AEO ou presence dans AI Overview ;
-- presence de concurrents dans les reponses.
+- clear intent;
+- connection to the offer;
+- conversion potential;
+- competitive feasibility;
+- ability to provide a better answer;
+- AEO potential or AI Overview presence;
+- competitors present in answers.
 
-Ces sujets doivent etre surveilles plus souvent que le reste.
+These topics should be monitored more often than the rest.
 
-### Transformer les mots cles en questions
+### Turn Keywords Into Questions
 
-L'AEO amplifie les questions longues. Pour chaque mot cle cible, lister :
+AEO amplifies long questions. For each target keyword, list:
 
-- la question principale ;
-- les questions de clarification ;
-- les objections ;
-- les comparaisons ;
-- les cas d'usage ;
-- les criteres de choix ;
-- les erreurs frequentes ;
-- les alternatives ;
-- les questions post-achat ou support.
+- the main question;
+- clarification questions;
+- objections;
+- comparisons;
+- use cases;
+- decision criteria;
+- common mistakes;
+- alternatives;
+- post-purchase or support questions.
 
-Sources de questions :
+Question sources:
 
-- Search Console ;
-- People Also Ask ;
-- recherches associees ;
-- ventes et appels prospects ;
-- support client ;
-- chats sur le site ;
-- avis clients ;
-- Reddit, forums, Quora ;
-- commentaires YouTube ;
-- questions posees a ChatGPT/Perplexity/Gemini ;
-- donnees paid search ;
-- mots cles concurrents.
+- Search Console;
+- People Also Ask;
+- related searches;
+- sales and prospect calls;
+- customer support;
+- website chat;
+- customer reviews;
+- Reddit, forums, Quora;
+- YouTube comments;
+- questions asked in ChatGPT/Perplexity/Gemini;
+- paid search data;
+- competitor keywords.
 
-### Matrice d'intention
+### Intent Matrix
 
-Utiliser cette matrice avant toute creation :
+Use this matrix before creating content:
 
-| Intention | Ce que veut l'utilisateur | Format principal | Exemple |
+| Intent | What the user wants | Main format | Example |
 | --- | --- | --- | --- |
-| Informationnelle | Comprendre ou apprendre | Guide, tutoriel, definition, checklist | `comment faire un audit seo` |
-| Commerciale | Comparer et evaluer | Comparatif, guide d'achat, cas d'usage | `meilleur outil seo pour freelance` |
-| Transactionnelle | Acheter ou agir | Page produit, offre, landing page | `acheter formation seo` |
-| Navigationnelle | Trouver une marque/page | Page marque, login, avis, support | `nom marque avis` |
-| Locale | Trouver une solution proche | Page locale, fiche GBP, avis | `consultant seo montpellier` |
+| Informational | Understand or learn | Guide, tutorial, definition, checklist | `how to run a seo audit` |
+| Commercial | Compare and evaluate | Comparison, buying guide, use case | `best seo tool for freelancers` |
+| Transactional | Buy or act | Product page, offer, landing page | `buy seo training` |
+| Navigational | Find a brand/page | Brand page, login, reviews, support | `brand name reviews` |
+| Local | Find a nearby solution | Local page, GBP profile, reviews | `seo consultant montpellier` |
 
-Une page peut avoir une double intention, par exemple informationnelle et commerciale. Dans ce cas, repondre d'abord au probleme, puis guider vers les options.
+A page may have a mixed intent, for example informational and commercial. In that case, answer the problem first, then guide the user toward options.
 
-## 7. Architecture de contenu
+## 7. Content Architecture
 
-### Penser par clusters, pas par articles isoles
+### Think in Clusters, Not Isolated Articles
 
-Un cluster est un ensemble de pages autour d'un probleme, d'une categorie ou d'un parcours client.
+A cluster is a set of pages around a problem, category, or customer journey.
 
-Exemple pour une solution B2B :
+Example for a B2B solution:
 
-- page pilier : `Guide complet de la gestion des notes de frais` ;
-- page commerciale : `Logiciel de gestion des notes de frais` ;
-- comparatif : `Meilleurs logiciels de notes de frais` ;
-- alternative : `[Votre marque] vs [Concurrent]` ;
-- support : `Comment exporter les notes de frais vers [outil comptable]` ;
-- preuve : `Cas client : reduction du temps de traitement des notes de frais` ;
-- FAQ : questions precises issues des ventes et du support.
+- pillar page: `Complete Guide to Expense Management`;
+- commercial page: `Expense Management Software`;
+- comparison: `Best Expense Management Software`;
+- alternative: `[Your Brand] vs [Competitor]`;
+- support: `How to Export Expenses to [Accounting Tool]`;
+- proof: `Case Study: Reducing Expense Processing Time`;
+- FAQ: precise questions from sales and support.
 
-Pour l'AEO, le cluster aide les moteurs a comprendre l'entite, les cas d'usage, les preuves et les relations entre sujets.
+For AEO, clusters help engines understand entities, use cases, proof, and relationships between topics.
 
-### Une page = une intention principale
+### One Page = One Primary Intent
 
-La regle n'est pas "une page = un mot cle exact". La regle est :
+The rule is not "one page = one exact keyword." The rule is:
 
-> une page doit satisfaire une intention principale et ses questions de suivi naturelles.
+> A page must satisfy one primary intent and its natural follow-up questions.
 
-Ne pas creer 20 pages quasi identiques pour 20 variantes. Creer une page forte qui couvre le sujet, puis des pages specifiques quand l'intention change vraiment.
+Do not create 20 near-identical pages for 20 variants. Create one strong page that covers the topic, then create specific pages only when intent truly changes.
 
-### Maillage interne
+### Internal Linking
 
-Le maillage interne doit aider trois lecteurs :
+Internal linking should help three readers:
 
-- l'utilisateur qui veut continuer son parcours ;
-- Googlebot qui explore et comprend la structure ;
-- les moteurs de reponse qui cherchent des relations entre entites, sujets et preuves.
+- the user who wants to continue the journey;
+- Googlebot, which explores and understands structure;
+- answer engines looking for relationships between entities, topics, and proof.
 
-Bonnes pratiques :
+Best practices:
 
-- lier les pages d'un meme cluster ;
-- utiliser des ancres descriptives ;
-- lier depuis les pages fortes vers les pages strategiques ;
-- ajouter des liens contextuels, pas seulement des blocs automatiques ;
-- relier articles, pages offres, cas clients, FAQ et help center ;
-- eviter les pages orphelines.
+- link pages in the same cluster;
+- use descriptive anchors;
+- link from strong pages to strategic pages;
+- add contextual links, not only automatic blocks;
+- connect articles, offer pages, case studies, FAQs, and help-center content;
+- avoid orphan pages.
 
-### Help center et documentation
+### Help Center and Documentation
 
-Les sources locales et l'entretien avec Ethan Smith insistent sur un point souvent oublie : le help center peut devenir une arme AEO.
+The local sources and Ethan Smith interview emphasize an often-overlooked point: the help center can become an AEO asset.
 
-Pourquoi :
+Why:
 
-- les utilisateurs posent aux LLMs des questions tres precises ;
-- beaucoup de ces questions concernent des fonctionnalites, integrations, compatibilites ou cas d'usage ;
-- les concurrents n'ont souvent pas de page pour ces micro-questions ;
-- une documentation claire peut devenir la seule source exploitable.
+- users ask LLMs very specific questions;
+- many of these questions concern features, integrations, compatibility, or use cases;
+- competitors often have no page for these micro-questions;
+- clear documentation can become the only usable source.
 
-Actions :
+Actions:
 
-- passer le help center en sous-dossier si possible, plutot que sous-domaine isole ;
-- creer des liens internes entre articles de support ;
-- ajouter les questions issues du support et des ventes ;
-- documenter les integrations, limites, workflows et cas d'usage ;
-- maintenir les contenus a jour ;
-- relier documentation, pages produit et cas clients.
+- use a subdirectory rather than an isolated subdomain when possible;
+- create internal links between support articles;
+- add questions from support and sales;
+- document integrations, limits, workflows, and use cases;
+- keep content up to date;
+- connect documentation, product pages, and case studies.
 
-## 8. Structure ideale d'une page SEO/AEO
+## 8. Ideal SEO/AEO Page Structure
 
-### Format de base
+### Basic Format
 
-1. Titre clair qui correspond a l'intention.
-2. Introduction courte qui reformule le probleme.
-3. Reponse directe en haut de page.
-4. Developpement structure en H2/H3.
-5. Exemples, donnees, preuves ou etapes.
-6. Comparaisons ou alternatives si l'intention le demande.
-7. FAQ utile, pas artificielle.
-8. Appel a l'action coherent avec le niveau d'intention.
-9. Sources, auteur, date et mise a jour si pertinent.
+1. Clear title matching intent.
+2. Short introduction that restates the problem.
+3. Direct answer near the top.
+4. Structured H2/H3 development.
+5. Examples, data, proof, or steps.
+6. Comparisons or alternatives if intent requires them.
+7. Useful FAQ, not artificial FAQ.
+8. CTA aligned with the level of intent.
+9. Sources, author, date, and update note when relevant.
 
-### La reponse directe
+### The Direct Answer
 
-Pour l'AEO et les featured snippets, la page doit fournir une reponse courte et extractible rapidement. Ensuite seulement elle developpe.
+For AEO and featured snippets, the page should provide a short, extractable answer quickly. Then it can develop.
 
-Exemple de structure :
+Example:
 
 ```markdown
-## Qu'est-ce que l'AEO ?
+## What is AEO?
 
-L'AEO, ou Answer Engine Optimization, consiste a optimiser un contenu pour qu'il puisse etre utilise comme reponse ou source par des moteurs de reponse comme Google AI Overviews, ChatGPT, Perplexity, Gemini ou Copilot. Il prolonge le SEO : le contenu doit rester utile, indexable, fiable et structure, mais il doit aussi etre facilement citable.
+AEO, or Answer Engine Optimization, is the practice of optimizing content so it can be used as an answer or source by answer engines such as Google AI Overviews, ChatGPT, Perplexity, Gemini, or Copilot. It extends SEO: content must remain useful, indexable, reliable, and structured, but it must also be easy to cite.
 ```
 
-La reponse ne doit pas etre creuse. Elle doit etre concise, exacte et utilisable seule.
+The answer should not be empty. It should be concise, accurate, and usable on its own.
 
-### Les sections de profondeur
+### Depth Sections
 
-Apres la reponse, approfondir :
+After the answer, go deeper:
 
-- pourquoi cela compte ;
-- comment cela fonctionne ;
-- quand l'utiliser ;
-- quelles erreurs eviter ;
-- exemples ;
-- criteres de decision ;
-- limites ;
-- prochaines actions.
+- why it matters;
+- how it works;
+- when to use it;
+- mistakes to avoid;
+- examples;
+- decision criteria;
+- limits;
+- next actions.
 
-### Les titres
+### Headings
 
-Les titres doivent correspondre a des questions ou decisions reelles :
+Headings should match real questions or decisions:
 
-- `Comment choisir un outil de gestion de projet ?`
-- `Quels criteres comparer avant d'acheter ?`
-- `Quelle difference entre Asana, Trello et Monday ?`
-- `Quand choisir une solution open source ?`
-- `Combien coute un outil de gestion de projet ?`
+- `How do you choose a project management tool?`
+- `Which criteria should you compare before buying?`
+- `What is the difference between Asana, Trello, and Monday?`
+- `When should you choose an open-source solution?`
+- `How much does a project management tool cost?`
 
-Eviter les titres marketing vagues :
+Avoid vague marketing headings:
 
-- `Notre vision innovante`
-- `Une solution puissante`
-- `Un outil pour demain`
+- `Our Innovative Vision`;
+- `A Powerful Solution`;
+- `A Tool for Tomorrow`.
 
 ### FAQ
 
-Une FAQ est utile si elle repond a de vraies questions supplementaires. Elle ne doit pas etre un depot de mots cles.
+An FAQ is useful when it answers real additional questions. It should not be a keyword dump.
 
-Bonnes questions FAQ :
+Good FAQ questions:
 
-- question posee en vente ;
-- objection frequente ;
-- point de confusion ;
-- comparaison ;
-- limite ;
-- prix ;
-- delai ;
-- compatibilite ;
-- mise en oeuvre.
+- sales question;
+- common objection;
+- confusion point;
+- comparison;
+- limitation;
+- price;
+- timeline;
+- compatibility;
+- implementation.
 
-Mauvaises questions FAQ :
+Bad FAQ questions:
 
-- questions inventees uniquement pour placer un mot cle ;
-- questions dont la reponse repete le contenu precedent ;
-- questions qui n'interessent pas l'utilisateur.
+- invented questions only meant to place a keyword;
+- questions whose answers repeat previous content;
+- questions the user does not care about.
 
-## 9. Qualite editoriale : ce que les moteurs et les humains cherchent
+## 9. Editorial Quality: What Engines and Humans Look For
 
-### Le principe "people-first"
+### The People-First Principle
 
-Google recommande de creer du contenu pour aider les personnes, pas pour manipuler les classements. La question centrale est :
+Google recommends creating content to help people, not to manipulate rankings. The central question is:
 
-> Pourquoi ce contenu existe-t-il ?
+> Why does this content exist?
 
-Bonne raison :
+Good reasons:
 
-- aider un utilisateur a prendre une decision ;
-- expliquer un sujet avec clarte ;
-- partager une experience ou une methode ;
-- resoudre un probleme ;
-- documenter une preuve ;
-- repondre a une question que personne ne couvre bien.
+- help a user make a decision;
+- explain a subject clearly;
+- share experience or a method;
+- solve a problem;
+- document proof;
+- answer a question nobody covers well.
 
-Mauvaise raison :
+Bad reasons:
 
-- publier parce qu'un outil a genere une liste de mots cles ;
-- remplir un calendrier editorial ;
-- produire 100 pages avec peu de valeur ajoutee ;
-- recopier les concurrents ;
-- saturer la page de mots cles ;
-- manipuler les IA avec des affirmations non verifiees.
+- publishing because a tool generated a keyword list;
+- filling an editorial calendar;
+- producing 100 pages with little added value;
+- copying competitors;
+- saturating the page with keywords;
+- manipulating AI systems with unverified claims.
 
-### E-E-A-T sans fantasme
+### E-E-A-T Without Mythology
 
-E-E-A-T signifie Experience, Expertise, Authoritativeness, Trustworthiness.
+E-E-A-T means Experience, Expertise, Authoritativeness, and Trustworthiness.
 
-Important : Google precise qu'E-E-A-T n'est pas un facteur de classement unique que l'on ajoute comme une balise. C'est un cadre d'evaluation de la qualite.
+Important: Google says E-E-A-T is not a single ranking factor that can be added like a tag. It is a quality-evaluation framework.
 
-Comment le traduire dans une page :
+How to translate it into a page:
 
-- afficher clairement l'auteur quand c'est attendu ;
-- expliquer l'experience ou les qualifications utiles ;
-- montrer les preuves : tests, donnees, captures, methodologie ;
-- citer les sources ;
-- dater et mettre a jour les contenus ;
-- separer faits, opinions et recommandations ;
-- eviter les promesses non verifiables ;
-- traiter les sujets sensibles avec prudence.
+- show the author when expected;
+- explain useful experience or credentials;
+- provide proof: tests, data, screenshots, methodology;
+- cite sources;
+- date and update content;
+- separate facts, opinions, and recommendations;
+- avoid unverifiable promises;
+- handle sensitive topics carefully.
 
-### Information gain
+### Information Gain
 
-Le contenu doit ajouter quelque chose que les autres n'apportent pas.
+Content should add something others do not provide.
 
-Sources possibles de gain informationnel :
+Possible sources of information gain:
 
-- donnees internes ;
-- experiences clients ;
-- comparatifs reels ;
-- erreurs observees ;
-- screenshots ;
-- methodologie ;
-- benchmarks ;
-- exemples concrets ;
-- opinions argumentees ;
-- limites et cas ou votre solution n'est pas adaptee.
+- internal data;
+- customer experience;
+- real comparisons;
+- observed mistakes;
+- screenshots;
+- methodology;
+- benchmarks;
+- concrete examples;
+- argued opinions;
+- limits and cases where your solution is not a fit.
 
-Un contenu qui reformule les 10 premiers resultats avec un ton different est fragile.
+Content that merely rewrites the top 10 results in a different tone is fragile.
 
-### IA : assistée, pas automatique
+### AI-Assisted, Not Fully Automated
 
-L'IA est utile pour :
+AI is useful for:
 
-- lister des angles ;
-- transformer des mots cles en questions ;
-- identifier des objections ;
-- restructurer une page ;
-- comparer un brouillon a une intention ;
-- detecter les passages flous ;
-- challenger une promesse ;
-- proposer des titres ou plans.
+- listing angles;
+- turning keywords into questions;
+- identifying objections;
+- restructuring a page;
+- comparing a draft against intent;
+- detecting vague sections;
+- challenging a promise;
+- proposing titles or outlines.
 
-L'IA est risquee pour :
+AI is risky for:
 
-- produire massivement des pages sans experience ;
-- inventer des sources ;
-- lisser le ton jusqu'a le rendre generique ;
-- supprimer l'opinion ;
-- fabriquer des comparatifs non testes ;
-- publier sans verification.
+- mass-producing pages without experience;
+- inventing sources;
+- smoothing the tone until it becomes generic;
+- removing opinion;
+- creating untested comparisons;
+- publishing without verification.
 
-La bonne question n'est pas "l'IA peut-elle ecrire ce contenu ?" mais :
+The right question is not "Can AI write this content?" but:
 
-> Ou ce contenu s'effondre-t-il pour un vrai client ?
+> Where does this content break down for a real customer?
 
-Utiliser l'IA comme sparring partner strategique, pas comme usine a texte.
+Use AI as a strategic sparring partner, not as a text factory.
 
-## 10. Donnees structurees et lisibilite machine
+## 10. Structured Data and Machine Readability
 
-### Ce que les donnees structurees font
+### What Structured Data Does
 
-Les donnees structurees aident Google a comprendre le type de contenu et peuvent rendre une page eligible a certains resultats enrichis.
+Structured data helps Google understand the type of content and can make a page eligible for some rich results.
 
-Elles peuvent concerner :
+It can cover:
 
-- article ;
-- produit ;
-- avis ;
-- organisation ;
-- personne ;
-- local business ;
-- breadcrumb ;
-- video ;
-- FAQ ou Q&A selon l'eligibilite actuelle ;
-- recette ;
-- evenement ;
-- logiciel.
+- article;
+- product;
+- reviews;
+- organization;
+- person;
+- local business;
+- breadcrumb;
+- video;
+- FAQ or Q&A depending on current eligibility;
+- recipe;
+- event;
+- software.
 
-Google recommande JSON-LD quand c'est possible.
+Google recommends JSON-LD when possible.
 
-### Ce qu'elles ne font pas
+### What It Does Not Do
 
-Les donnees structurees ne garantissent pas :
+Structured data does not guarantee:
 
-- un meilleur classement ;
-- un rich result ;
-- une citation dans AI Overview ;
-- une recommandation par ChatGPT.
+- better rankings;
+- a rich result;
+- a citation in AI Overview;
+- a recommendation by ChatGPT.
 
-Google indique aussi qu'il n'existe pas de schema special a ajouter pour apparaitre dans AI Overviews ou AI Mode.
+Google also states that there is no special schema to add for AI Overviews or AI Mode.
 
-### Regles pratiques
+### Practical Rules
 
-- baliser uniquement ce qui est visible ou coherent avec la page ;
-- utiliser le type le plus specifique ;
-- garder les donnees a jour ;
-- valider avec Rich Results Test ;
-- verifier dans Search Console ;
-- ne pas marquer de faux avis ;
-- ne pas ajouter de donnees trompeuses ;
-- ne pas bloquer les pages marquees.
+- mark up only what is visible or consistent with the page;
+- use the most specific type;
+- keep data up to date;
+- validate with Rich Results Test;
+- check Search Console;
+- do not mark fake reviews;
+- do not add misleading data;
+- do not block marked pages.
 
-### Pour l'AEO
+### For AEO
 
-Les donnees structurees sont utiles, mais la priorite reste :
+Structured data is useful, but the priorities remain:
 
-- contenu textuel clair ;
-- structure logique ;
-- entites nommees sans ambiguite ;
-- sources et preuves ;
-- maillage interne ;
-- mentions externes.
+- clear text content;
+- logical structure;
+- unambiguous named entities;
+- sources and proof;
+- internal linking;
+- external mentions.
 
-## 11. Autorite, mentions et citations externes
+## 11. Authority, Mentions, and External Citations
 
-### Backlinks : encore utiles, mais pas n'importe comment
+### Backlinks: Still Useful, But Not Any Backlinks
 
-Les backlinks restent un signal de confiance. Mais la quantite brute est moins importante que :
+Backlinks remain a trust signal. But raw quantity matters less than:
 
-- pertinence du site source ;
-- contexte de la mention ;
-- qualite editoriale ;
-- trafic et audience du site ;
-- diversite naturelle ;
-- rythme d'acquisition credible ;
-- absence de reseaux spammy.
+- relevance of the source site;
+- context of the mention;
+- editorial quality;
+- site traffic and audience;
+- natural diversity;
+- credible acquisition pace;
+- absence of spammy networks.
 
-Eviter :
+Avoid:
 
-- achats massifs de liens sans pertinence ;
-- ancres suroptimisees ;
-- reseaux de sites faibles ;
-- liens depuis contenus generiques ;
-- campagnes agressives qui peuvent nuire a long terme.
+- mass link buying without relevance;
+- over-optimized anchors;
+- weak site networks;
+- links from generic content;
+- aggressive campaigns that can hurt long term.
 
-### Mentions sans lien
+### Unlinked Mentions
 
-Les moteurs de reponse peuvent utiliser du texte qui mentionne une marque sans lien direct. Les mentions aident a associer :
+Answer engines can use text that mentions a brand without a direct link. Mentions help associate:
 
-- marque ;
-- categorie ;
-- probleme ;
-- audience ;
-- differenciateurs ;
-- sentiment ;
-- preuves.
+- brand;
+- category;
+- problem;
+- audience;
+- differentiators;
+- sentiment;
+- proof.
 
-Exemples utiles :
+Useful examples:
 
-- article media qui cite votre marque parmi les solutions ;
-- avis client detaille ;
-- discussion forum ;
-- comparatif tiers ;
-- intervention podcast ;
-- post LinkedIn repris ou commente ;
-- page partenaire.
+- a media article that lists your brand among solutions;
+- a detailed customer review;
+- a forum discussion;
+- a third-party comparison;
+- a podcast appearance;
+- a LinkedIn post that is referenced or discussed;
+- a partner page.
 
-### Strategie de citations par canal
+### Citation Strategy by Channel
 
-| Canal | Role AEO | Bonne pratique |
+| Channel | AEO Role | Good Practice |
 | --- | --- | --- |
-| Site propre | Source officielle | Pages claires, preuves, schemas, FAQ, cas clients |
-| YouTube | Source video et demonstration | Videos sur questions de niche, titres descriptifs, transcription |
-| Reddit/forums | Preuves communautaires | Repondre en humain identifie, utile, transparent |
-| Medias | Autorite tierce | Donnees, commentaires experts, etudes, angles journalistes |
-| Avis | Preuve sociale | Demander des avis detailles, repondre, corriger les problemes |
-| Comparatifs | Decision commerciale | Etre present dans les listes et alternatives pertinentes |
-| Help center | Long tail fonctionnelle | Repondre aux questions d'integration, limites, workflows |
-| LinkedIn | Autorite de personne/marque | Publier des idees fiables, coherentes, reprises ailleurs |
+| Own site | Official source | Clear pages, proof, schema, FAQ, case studies |
+| YouTube | Video source and demonstration | Videos on niche questions, descriptive titles, transcript |
+| Reddit/forums | Community proof | Respond as a real, transparent, useful human |
+| Media | Third-party authority | Data, expert comments, studies, journalist-friendly angles |
+| Reviews | Social proof | Ask for detailed reviews, respond, fix issues |
+| Comparisons | Commercial decision support | Appear in relevant lists and alternatives |
+| Help center | Functional long tail | Answer integration, limit, and workflow questions |
+| LinkedIn | Person/brand authority | Publish reliable ideas that can be reused elsewhere |
 
-### Reddit et forums : ligne rouge
+### Reddit and Forums: The Red Line
 
-Ce qui fonctionne :
+What works:
 
-- compte reel ;
-- affiliation transparente ;
-- reponse utile ;
-- contexte concret ;
-- absence de forcing ;
-- participation reguliere.
+- a real account;
+- transparent affiliation;
+- useful answer;
+- concrete context;
+- no forcing;
+- regular participation.
 
-Ce qui detruit la confiance :
+What destroys trust:
 
-- faux comptes ;
-- spam ;
-- auto-upvotes ;
-- commentaires generiques ;
-- dissimulation de l'interet commercial ;
-- repetition du meme message.
+- fake accounts;
+- spam;
+- self-upvotes;
+- generic comments;
+- hiding commercial interest;
+- repeating the same message.
 
-L'objectif n'est pas de manipuler une communaute. L'objectif est d'etre une source utile la ou les questions existent deja.
+The goal is not to manipulate a community. The goal is to be a useful source where the questions already exist.
 
-## 12. Contenu multimodal
+## 12. Multimodal Content
 
-Les sources locales insistent sur YouTube, LinkedIn, podcast, video et audio. Les etudes externes confirment que les SERP avec AI Overviews peuvent coexister avec videos, forums, People Also Ask et autres modules.
+The local sources emphasize YouTube, LinkedIn, podcasts, video, and audio. External studies confirm that SERPs with AI Overviews can coexist with videos, forums, People Also Ask, and other modules.
 
-### Quand produire une video
+### When to Produce a Video
 
-La video est pertinente si :
+Video is relevant when:
 
-- le sujet se demontre visuellement ;
-- la requete affiche deja des videos ;
-- les concurrents n'ont pas de bonne video ;
-- le sujet B2B est niche mais a forte valeur ;
-- la video peut etre transcrite et reutilisee ;
-- l'expert ou fondateur porte bien le sujet.
+- the topic is best demonstrated visually;
+- the query already shows videos;
+- competitors have no good video;
+- the B2B topic is niche but high value;
+- the video can be transcribed and reused;
+- the expert or founder can carry the topic well.
 
-### Format video SEO/AEO
+### SEO/AEO Video Format
 
-- titre descriptif ;
-- introduction qui repond vite ;
-- chapitres ;
-- transcription ;
-- description avec liens ;
-- mention claire de la marque, du sujet et des cas d'usage ;
-- page dediee sur le site avec resume, video integree et texte.
+- descriptive title;
+- introduction that answers quickly;
+- chapters;
+- transcript;
+- description with links;
+- clear mention of the brand, topic, and use cases;
+- dedicated site page with summary, embedded video, and text.
 
-### LinkedIn et autorite personnelle
+### LinkedIn and Personal Authority
 
-LinkedIn n'est pas un substitut au site, mais peut renforcer :
+LinkedIn is not a substitute for the site, but it can strengthen:
 
-- la reconnaissance d'un expert ;
-- le lien entre personne et categorie ;
-- la diffusion des idees ;
-- les mentions et reprises ;
-- les signaux de marque en B2B.
+- recognition of an expert;
+- the link between a person and a category;
+- idea distribution;
+- mentions and reuse;
+- B2B brand signals.
 
-Publier sur LinkedIn doit s'inscrire dans le meme systeme :
+Publishing on LinkedIn should fit the same system:
 
-- sujets alignes avec les clusters ;
-- exemples clients ;
-- opinions argumentees ;
-- liens vers guides ou ressources ;
-- reutilisation en article, video, newsletter ou page.
+- topics aligned with clusters;
+- customer examples;
+- argued opinions;
+- links to guides or resources;
+- reuse as article, video, newsletter, or page.
 
-## 13. Mesure SEO/AEO
+## 13. SEO/AEO Measurement
 
-### KPI SEO classiques
+### Classic SEO KPIs
 
-Suivre :
+Track:
 
-- impressions Search Console ;
-- clics organiques ;
-- CTR ;
-- position moyenne avec prudence ;
-- pages indexees ;
-- erreurs d'indexation ;
-- Core Web Vitals ;
-- pages qui gagnent/perdent ;
-- conversions organiques ;
-- requetes de marque et hors marque ;
-- backlinks et domaines referents ;
-- revenus ou leads issus du SEO.
+- Search Console impressions;
+- organic clicks;
+- CTR;
+- average position, with caution;
+- indexed pages;
+- indexing errors;
+- Core Web Vitals;
+- pages gaining or losing visibility;
+- organic conversions;
+- brand and non-brand queries;
+- backlinks and referring domains;
+- revenue or leads from SEO.
 
-### KPI AEO
+### AEO KPIs
 
-Suivre :
+Track:
 
-- presence dans AI Overviews ;
-- citations de votre domaine ;
-- mentions de marque dans les reponses ;
-- sentiment de la reponse ;
-- concurrents cites ;
-- sources citees ;
-- part de voix par question ;
-- presence dans ChatGPT, Perplexity, Gemini, Copilot ;
-- trafic referent depuis moteurs IA quand disponible ;
-- hausse du direct/branded search apres apparition en reponses ;
-- conversions ou declarations "comment nous avez-vous connus ?"
+- presence in AI Overviews;
+- citations of your domain;
+- brand mentions in answers;
+- sentiment of the answer;
+- cited competitors;
+- cited sources;
+- share of voice by question;
+- presence in ChatGPT, Perplexity, Gemini, Copilot;
+- referral traffic from AI engines when available;
+- increase in direct or branded search after answer visibility;
+- conversions or "how did you hear about us?" declarations.
 
-### Pourquoi la mesure AEO est difficile
+### Why AEO Measurement Is Difficult
 
-Les reponses changent selon :
+Answers vary depending on:
 
-- formulation ;
-- langue ;
-- localisation ;
-- compte utilisateur ;
-- historique ;
-- plateforme ;
-- moment ;
-- sources disponibles ;
-- variation aleatoire du modele.
+- phrasing;
+- language;
+- location;
+- user account;
+- history;
+- platform;
+- time;
+- available sources;
+- model variance.
 
-Il faut donc mesurer par echantillon :
+Measure with samples:
 
-- 50 a 200 questions strategiques ;
-- variantes proches ;
-- plusieurs plateformes ;
-- repetition dans le temps ;
-- comparaison avec concurrents ;
-- groupe test et groupe controle.
+- 50 to 200 strategic questions;
+- close variants;
+- multiple platforms;
+- repeated over time;
+- comparison against competitors;
+- test and control groups.
 
 ### Experimentation
 
-Approche recommandee :
+Recommended approach:
 
-1. Selectionner 100 a 200 questions.
-2. Mesurer la baseline pendant 2 a 4 semaines.
-3. Diviser en groupe test et groupe controle.
-4. Intervenir seulement sur le groupe test.
-5. Intervention possible : optimiser page, creer video, repondre sur forum, obtenir mention media, enrichir help center.
-6. Mesurer apres 2 a 6 semaines.
-7. Comparer test vs controle.
-8. Reproduire ce qui marche.
+1. Select 100 to 200 questions.
+2. Measure the baseline for 2 to 4 weeks.
+3. Split into a test group and a control group.
+4. Intervene only on the test group.
+5. Possible intervention: optimize a page, create a video, answer in a forum, earn a media mention, enrich the help center.
+6. Measure after 2 to 6 weeks.
+7. Compare test vs. control.
+8. Repeat what works.
 
-Ne pas tirer de conclusion a partir d'un seul avant/apres. Le canal est trop volatil.
+Do not draw conclusions from a single before/after. The channel is too volatile.
 
-## 14. Playbook : creer un contenu SEO/AEO
+## 14. Playbook: Create SEO/AEO Content
 
-### Etape 1 : definir l'objectif
+### Step 1: Define the Objective
 
-Repondre avant de produire :
+Answer before producing:
 
-- quelle audience ?
-- quel probleme ?
-- quelle intention ?
-- quelle etape du parcours ?
-- quel resultat business ?
-- quelle action attendue ?
-- quel risque si la page est absente ?
+- which audience?
+- which problem?
+- which intent?
+- which journey stage?
+- which business result?
+- which expected action?
+- what risk if the page is absent?
 
-### Etape 2 : analyser la SERP et les reponses IA
+### Step 2: Analyze SERP and AI Answers
 
-Verifier :
+Check:
 
-- top 10 Google ;
-- AI Overview si present ;
-- People Also Ask ;
-- featured snippet ;
-- videos ;
-- images ;
-- forums ;
-- concurrents cites ;
-- types de pages qui apparaissent ;
-- sources tierces recurrentes ;
-- questions posees dans ChatGPT/Perplexity/Gemini.
+- Google top 10;
+- AI Overview if present;
+- People Also Ask;
+- featured snippet;
+- videos;
+- images;
+- forums;
+- cited competitors;
+- recurring page types;
+- recurring third-party sources;
+- questions asked in ChatGPT/Perplexity/Gemini.
 
-Noter ce que les autres couvrent et ce qu'ils ne couvrent pas.
+Note what others cover and what they miss.
 
-### Etape 3 : construire le brief
+### Step 3: Build the Brief
 
-Le brief doit inclure :
+The brief should include:
 
-- intention principale ;
-- questions secondaires ;
-- angle distinctif ;
-- public cible ;
-- niveau de connaissance ;
-- preuve a apporter ;
-- sources a citer ;
-- CTA ;
-- maillage interne ;
-- format attendu ;
-- schema eventuel ;
-- date de mise a jour.
+- primary intent;
+- secondary questions;
+- distinctive angle;
+- target audience;
+- knowledge level;
+- proof to provide;
+- sources to cite;
+- CTA;
+- internal linking;
+- expected format;
+- possible schema;
+- update date.
 
-### Etape 4 : ecrire la reponse
+### Step 4: Write the Answer
 
-Regles :
+Rules:
 
-- commencer par l'utile ;
-- eviter l'introduction molle ;
-- donner une reponse claire ;
-- developper les nuances ;
-- ajouter exemples et preuves ;
-- signaler les limites ;
-- rendre le texte scannable ;
-- ne pas diluer l'intention.
+- start with what is useful;
+- avoid weak introductions;
+- give a clear answer;
+- develop nuance;
+- add examples and proof;
+- state limitations;
+- make the text scannable;
+- do not dilute intent.
 
-### Etape 5 : rendre le contenu referenceable
+### Step 5: Make Content Referenceable
 
-Ajouter :
+Add:
 
-- definition courte ;
-- methode etapes ;
-- tableau comparatif ;
-- checklist ;
-- chiffres sources ;
-- schema explicatif ;
-- exemples nommes ;
-- auteur identifie ;
-- date ;
-- liens internes et externes ;
-- version video ou visuelle si utile.
+- short definition;
+- step-by-step method;
+- comparison table;
+- checklist;
+- sourced figures;
+- explanatory schema or diagram;
+- named examples;
+- identified author;
+- date;
+- internal and external links;
+- video or visual version if useful.
 
-### Etape 6 : publier et distribuer
+### Step 6: Publish and Distribute
 
-Distribution minimale :
+Minimum distribution:
 
-- indexation verifiee ;
-- ajout au sitemap si necessaire ;
-- lien depuis pages parentes ;
-- partage LinkedIn/newsletter ;
-- reutilisation en video ou carrousel si pertinent ;
-- outreach vers sources citees ou partenaires ;
-- reponse utile dans forums si des discussions existent.
+- verify indexing;
+- add to sitemap if needed;
+- link from parent pages;
+- share on LinkedIn/newsletter;
+- reuse as video or carousel if relevant;
+- outreach to cited sources or partners;
+- useful answer in forums if discussions exist.
 
-### Etape 7 : mesurer et mettre a jour
+### Step 7: Measure and Update
 
-Apres publication :
+After publication:
 
-- verifier indexation ;
-- suivre impressions/clics ;
-- verifier requetes emergentes ;
-- ajuster titre et intro si besoin ;
-- enrichir FAQ avec vraies questions ;
-- surveiller AI Overview et citations ;
-- mettre a jour si le sujet evolue.
+- verify indexing;
+- track impressions/clicks;
+- review emerging queries;
+- adjust title and intro if needed;
+- enrich FAQ with real questions;
+- monitor AI Overview and citations;
+- update when the topic changes.
 
-## 15. Playbook : audit SEO/AEO en 30 jours
+## 15. Playbook: 30-Day SEO/AEO Audit
 
-### Semaine 1 : audit de base
+### Week 1: Baseline Audit
 
-- Installer ou verifier Search Console.
-- Identifier pages indexees et non indexees.
-- Relever erreurs techniques.
-- Verifier robots.txt, noindex, canonical.
-- Evaluer mobile et vitesse.
-- Lister les 20 pages les plus importantes.
-- Lister les 20 requetes business.
-- Identifier trafic marque vs hors marque.
+- Install or verify Search Console.
+- Identify indexed and non-indexed pages.
+- Record technical errors.
+- Check robots.txt, noindex, canonical.
+- Evaluate mobile and speed.
+- List the 20 most important pages.
+- List the 20 business-critical queries.
+- Separate brand vs. non-brand traffic.
 
-### Semaine 2 : recherche et priorisation
+### Week 2: Research and Prioritization
 
-- Cartographier les intentions.
-- Identifier mots cles "chouchous".
-- Transformer mots cles en questions AEO.
-- Verifier AI Overviews, PAA, snippets, videos, forums.
-- Identifier concurrents visibles.
-- Identifier sources tierces recurrentes.
-- Choisir 5 a 10 opportunites prioritaires.
+- Map intents.
+- Identify priority keywords and questions.
+- Turn keywords into AEO questions.
+- Check AI Overviews, PAA, snippets, videos, forums.
+- Identify visible competitors.
+- Identify recurring third-party sources.
+- Choose 5 to 10 priority opportunities.
 
-### Semaine 3 : optimisation contenu
+### Week 3: Content Optimization
 
-- Optimiser 3 a 5 pages existantes.
-- Ajouter reponses directes.
-- Corriger intention et structure.
-- Renforcer preuves et exemples.
-- Ajouter maillage interne.
-- Creer 1 a 3 nouveaux contenus pour gaps critiques.
-- Ajouter ou corriger donnees structurees si pertinent.
+- Optimize 3 to 5 existing pages.
+- Add direct answers.
+- Fix intent and structure.
+- Strengthen proof and examples.
+- Add internal linking.
+- Create 1 to 3 new pages for critical gaps.
+- Add or fix structured data when relevant.
 
-### Semaine 4 : autorite, distribution, mesure
+### Week 4: Authority, Distribution, Measurement
 
-- Mettre en place tracking AEO manuel ou outil.
-- Identifier mentions manquantes.
-- Contacter medias, partenaires ou comparatifs pertinents.
-- Creer une video ou ressource externe pour une question strategique.
-- Repondre a 3 a 5 discussions utiles si le contexte existe.
-- Creer un tableau KPI mensuel.
-- Fixer la prochaine revue.
+- Set up manual or tool-based AEO tracking.
+- Identify missing mentions.
+- Contact relevant media, partners, or comparison sources.
+- Create a video or external asset for a strategic question.
+- Respond to 3 to 5 useful discussions if context exists.
+- Create a monthly KPI table.
+- Schedule the next review.
 
-## 16. Playbook : proteger le SEO de marque
+## 16. Playbook: Protect Brand SEO
 
-Objectif : quand quelqu'un cherche votre marque, il doit trouver des resultats exacts, rassurants et utiles.
+Goal: when someone searches for your brand, they should find accurate, reassuring, and useful results.
 
-### Requetes a surveiller
+### Queries to Monitor
 
-- `[marque] avis`
-- `[marque] prix`
-- `[marque] alternative`
-- `[marque] vs [concurrent]`
-- `[marque] probleme`
-- `[marque] arnaque`
-- `[marque] contact`
-- `[marque] login`
-- fautes frequentes
+- `[brand] reviews`
+- `[brand] pricing`
+- `[brand] alternative`
+- `[brand] vs [competitor]`
+- `[brand] problem`
+- `[brand] scam`
+- `[brand] contact`
+- `[brand] login`
+- frequent misspellings
 
-### Pages a creer selon besoin
+### Pages to Create When Needed
 
-- page avis et temoignages ;
-- page tarifs ;
-- page comparaison transparente ;
-- page alternatives ;
-- page cas clients ;
-- page contact/support ;
-- page securite/conformite ;
-- page marque avec orthographes frequentes si cela existe vraiment.
+- review and testimonial page;
+- pricing page;
+- transparent comparison page;
+- alternatives page;
+- case studies;
+- contact/support page;
+- security/compliance page;
+- brand page covering common misspellings if they truly exist.
 
-### Regle
+### Rule
 
-Ne pas attendre qu'un concurrent ou un avis negatif occupe l'espace. Le SEO de marque est une assurance.
+Do not wait for a competitor or negative review to occupy the space. Brand SEO is insurance.
 
-## 17. Playbook : AEO pour B2B SaaS
+## 17. Playbook: AEO for B2B SaaS
 
-### Priorites
+### Priorities
 
-1. Pages use case.
-2. Comparatifs.
+1. Use-case pages.
+2. Comparisons.
 3. Alternatives.
 4. Integrations.
 5. Help center.
-6. Cas clients.
-7. Mentions dans medias et comparatifs tiers.
-8. Videos sur questions de niche.
-9. Reddit/forums si la categorie y est active.
+6. Case studies.
+7. Mentions in media and third-party comparisons.
+8. Videos on niche questions.
+9. Reddit/forums if the category is active there.
 
-### Questions types
+### Question Types
 
-- Quel outil fait X pour Y ?
-- Est-ce que [outil] s'integre avec [outil] ?
-- Quelle alternative a [concurrent] ?
-- Quel logiciel pour [cas d'usage specifique] ?
-- Quel outil choisir entre [A] et [B] ?
-- Comment resoudre [probleme] avec [contrainte] ?
+- Which tool does X for Y?
+- Does [tool] integrate with [tool]?
+- What is an alternative to [competitor]?
+- Which software for [specific use case]?
+- Which tool should I choose between [A] and [B]?
+- How do I solve [problem] with [constraint]?
 
-### Mesure
+### Measurement
 
-En B2B, le trafic direct ou marque peut augmenter sans attribution claire. Ajouter une question post-conversion :
+In B2B, direct or branded traffic may increase without clear attribution. Add a post-conversion question:
 
-> Comment avez-vous entendu parler de nous ?
+> How did you hear about us?
 
-Proposer des options incluant :
+Offer options including:
 
-- Google ;
-- ChatGPT ou autre IA ;
-- LinkedIn ;
-- YouTube ;
-- recommandation ;
-- media/comparatif ;
-- autre.
+- Google;
+- ChatGPT or another AI tool;
+- LinkedIn;
+- YouTube;
+- recommendation;
+- media/comparison;
+- other.
 
-## 18. Playbook : e-commerce et local
+## 18. Playbook: E-Commerce and Local
 
-### E-commerce
+### E-Commerce
 
-Priorites :
+Priorities:
 
-- donnees produit propres ;
-- avis ;
-- prix et disponibilite ;
-- schema Product quand pertinent ;
-- images de qualite ;
-- guides d'achat ;
-- comparatifs ;
-- FAQ produit ;
-- pages categorie utiles ;
-- contenus post-achat.
+- clean product data;
+- reviews;
+- price and availability;
+- Product schema when relevant;
+- quality images;
+- buying guides;
+- comparisons;
+- product FAQ;
+- useful category pages;
+- post-purchase content.
 
-Les interfaces IA et les modules shopping deviennent plus cliquables. Pour le commerce, les donnees structurees, les avis, les images et les flux produits sont plus critiques que dans un pur B2B.
+AI interfaces and shopping modules are becoming more clickable. For commerce, structured data, reviews, images, and product feeds are more critical than in pure B2B.
 
 ### Local
 
-Priorites :
+Priorities:
 
-- Google Business Profile a jour ;
-- NAP coherent : nom, adresse, telephone ;
-- avis locaux ;
-- pages locales ;
-- schema LocalBusiness si pertinent ;
-- photos recentes ;
-- FAQ locale ;
-- presence dans annuaires et medias locaux ;
-- contenu qui repond aux besoins de la zone.
+- up-to-date Google Business Profile;
+- consistent NAP: name, address, phone;
+- local reviews;
+- local pages;
+- LocalBusiness schema when relevant;
+- recent photos;
+- local FAQ;
+- presence in directories and local media;
+- content that answers local needs.
 
-## 19. Erreurs frequentes
+## 19. Common Mistakes
 
-### Dire "le SEO est mort"
+### Saying "SEO Is Dead"
 
-Faux et dangereux. Le SEO reste la base d'eligibilite et de comprehension. Les moteurs de reponse utilisent encore le web, les index, les sources et les signaux de confiance.
+False and dangerous. SEO remains the eligibility and comprehension foundation. Answer engines still use the web, indexes, sources, and trust signals.
 
-### Produire plus au lieu de produire mieux
+### Producing More Instead of Better
 
-La production massive de contenu generique est un risque. Google avertit que la generation de nombreuses pages sans valeur ajoutee peut violer les politiques de spam.
+Mass generic content is risky. Google warns that generating many pages without added value can violate spam policies.
 
-### Confondre schema et strategie
+### Confusing Schema With Strategy
 
-Les donnees structurees aident, mais ne remplacent pas l'intention, la qualite, la preuve et l'autorite.
+Structured data helps, but it does not replace intent, quality, proof, and authority.
 
-### Optimiser pour l'IA contre l'utilisateur
+### Optimizing for AI Against the User
 
-Si la page est faite pour manipuler une machine mais decevoir un humain, elle est fragile. Les systemes cherchent a recompenser les contenus utiles, fiables et satisfaisants.
+If a page is designed to manipulate a machine while disappointing a human, it is fragile. Systems aim to reward useful, reliable, satisfying content.
 
-### Ne mesurer que le trafic
+### Measuring Only Traffic
 
-Avec l'AEO, une partie de la valeur peut apparaitre en :
+With AEO, part of the value may appear as:
 
-- presence de marque ;
-- recherche de marque ;
-- direct ;
-- conversions assistees ;
-- mentions ;
-- citations ;
-- confiance accrue.
+- brand presence;
+- brand search;
+- direct traffic;
+- assisted conversions;
+- mentions;
+- citations;
+- increased trust.
 
-### Acheter des liens sans strategie
+### Buying Links Without Strategy
 
-Une campagne de liens artificielle peut nuire a la confiance. Les liens doivent etre pertinents, progressifs et justifiables.
+An artificial link campaign can hurt trust. Links should be relevant, progressive, and defensible.
 
-### Oublier les pages existantes
+### Forgetting Existing Pages
 
-Optimiser et maintenir les pages deja publiees est souvent plus rentable que publier sans cesse.
+Optimizing and maintaining existing pages is often more profitable than publishing endlessly.
 
 ## 20. Checklists
 
-### Checklist avant de creer une page
+### Before Creating a Page
 
-- [ ] Objectif business clair.
-- [ ] Audience definie.
-- [ ] Intention principale identifiee.
-- [ ] SERP analysee.
-- [ ] AI Overview ou moteurs de reponse testes.
-- [ ] Questions de suivi listees.
-- [ ] Angle distinctif defini.
-- [ ] Preuves disponibles.
-- [ ] CTA adapte.
-- [ ] Pages internes a lier identifiees.
+- [ ] Clear business objective.
+- [ ] Defined audience.
+- [ ] Primary intent identified.
+- [ ] SERP analyzed.
+- [ ] AI Overview or answer engines tested.
+- [ ] Follow-up questions listed.
+- [ ] Distinctive angle defined.
+- [ ] Proof available.
+- [ ] CTA adapted.
+- [ ] Internal pages to link identified.
 
-### Checklist de redaction
+### Writing Checklist
 
-- [ ] Reponse directe dans les premiers paragraphes.
-- [ ] Titres alignes avec les questions reelles.
-- [ ] Un seul sujet principal.
-- [ ] Exemples concrets.
-- [ ] Donnees ou sources quand necessaire.
-- [ ] Point de vue ou experience originale.
-- [ ] Comparaison si l'intention le demande.
-- [ ] FAQ utile.
-- [ ] Auteur ou marque clairement identifiable.
-- [ ] Pas de bourrage de mots cles.
-- [ ] Pas de contenu IA non verifie.
+- [ ] Direct answer in the first paragraphs.
+- [ ] Headings aligned with real questions.
+- [ ] One main topic.
+- [ ] Concrete examples.
+- [ ] Data or sources when needed.
+- [ ] Original point of view or experience.
+- [ ] Comparison if intent requires it.
+- [ ] Useful FAQ.
+- [ ] Author or brand clearly identifiable.
+- [ ] No keyword stuffing.
+- [ ] No unverified AI content.
 
-### Checklist technique
+### Technical Checklist
 
-- [ ] Page accessible sans login.
+- [ ] Page accessible without login.
 - [ ] HTTP 200.
-- [ ] Pas de `noindex` accidentel.
-- [ ] Non bloquee par robots.txt.
-- [ ] Canonical correct.
-- [ ] Titre et meta description propres.
-- [ ] Hn lisibles.
-- [ ] Contenu principal en texte indexable.
-- [ ] Images compressees et alt utiles.
-- [ ] Liens internes presents.
-- [ ] Donnees structurees valides si utilisees.
-- [ ] Mobile utilisable.
-- [ ] Performance acceptable.
+- [ ] No accidental `noindex`.
+- [ ] Not blocked by robots.txt.
+- [ ] Correct canonical.
+- [ ] Clean title and meta description.
+- [ ] Readable headings.
+- [ ] Main content in indexable text.
+- [ ] Compressed images and useful alt text.
+- [ ] Internal links present.
+- [ ] Valid structured data if used.
+- [ ] Usable on mobile.
+- [ ] Acceptable performance.
 
-### Checklist AEO
+### AEO Checklist
 
-- [ ] Definition courte extractible.
-- [ ] Reponse claire a la question principale.
-- [ ] Questions de suivi couvertes.
-- [ ] Tableau, liste ou etapes si utile.
-- [ ] Sources citees.
-- [ ] Donnees ou preuves originales.
-- [ ] Mentions explicites des entites importantes.
-- [ ] Page reliee au cluster.
-- [ ] Video ou visuel si la SERP le suggere.
-- [ ] Presence externe ciblee identifiee.
-- [ ] Tracking des questions mis en place.
+- [ ] Extractable short definition.
+- [ ] Clear answer to the main question.
+- [ ] Follow-up questions covered.
+- [ ] Table, list, or steps when useful.
+- [ ] Sources cited.
+- [ ] Original data or proof.
+- [ ] Important entities explicitly mentioned.
+- [ ] Page connected to its cluster.
+- [ ] Video or visual if the SERP suggests it.
+- [ ] External presence opportunity identified.
+- [ ] Question tracking in place.
 
-### Checklist mensuelle
+### Monthly Checklist
 
-- [ ] Verifier Search Console.
-- [ ] Revoir les pages prioritaires.
-- [ ] Surveiller les mots cles de marque.
-- [ ] Mettre a jour les contenus sensibles au temps.
-- [ ] Ajouter questions issues des ventes/support.
-- [ ] Controler les nouvelles mentions.
-- [ ] Identifier concurrents cites dans IA.
-- [ ] Planifier une action d'autorite.
-- [ ] Tester 20 a 50 questions AEO.
-- [ ] Documenter ce qui progresse ou recule.
+- [ ] Check Search Console.
+- [ ] Review priority pages.
+- [ ] Monitor brand keywords.
+- [ ] Update time-sensitive content.
+- [ ] Add questions from sales/support.
+- [ ] Monitor new mentions.
+- [ ] Identify competitors cited in AI answers.
+- [ ] Plan an authority action.
+- [ ] Test 20 to 50 AEO questions.
+- [ ] Document what improves or declines.
 
 ## 21. Templates
 
-### Brief de contenu SEO/AEO
+### SEO/AEO Content Brief
 
 ```markdown
-# Brief SEO/AEO
+# SEO/AEO Brief
 
-## Objectif
-- Role business :
-- Audience :
-- Etape du parcours :
-- CTA :
+## Objective
+- Business role:
+- Audience:
+- Funnel stage:
+- CTA:
 
-## Intention
-- Intention principale :
-- Intentions secondaires :
-- Question principale :
-- Questions de suivi :
+## Intent
+- Primary intent:
+- Secondary intents:
+- Main question:
+- Follow-up questions:
 
-## Recherche
-- Top concurrents :
-- AI Overview present ? :
-- Sources citees :
-- People Also Ask :
-- Videos/forums/images presents :
+## Research
+- Top competitors:
+- AI Overview present?:
+- Cited sources:
+- People Also Ask:
+- Videos/forums/images present?:
 
 ## Angle
-- Ce que les autres disent deja :
-- Ce que nous ajoutons :
-- Preuves disponibles :
-- Donnees internes :
-- Exemples :
+- What others already say:
+- What we add:
+- Available proof:
+- Internal data:
+- Examples:
 
 ## Structure
-- H1 :
-- Reponse directe :
-- H2/H3 :
-- FAQ :
-- Schema eventuel :
+- H1:
+- Direct answer:
+- H2/H3:
+- FAQ:
+- Possible schema:
 
 ## Distribution
-- Liens internes :
-- Canaux externes :
-- Opportunites de mention :
+- Internal links:
+- External channels:
+- Mention opportunities:
 
-## Mesure
-- KPI SEO :
-- KPI AEO :
-- Date de revue :
+## Measurement
+- SEO KPIs:
+- AEO KPIs:
+- Review date:
 ```
 
-### Format de reponse directe
+### Direct Answer Format
 
 ```markdown
-## [Question principale]
+## [Main question]
 
-[Reponse courte en 40 a 80 mots : definition, decision ou methode.]
+[Short answer in 40 to 80 words: definition, decision, or method.]
 
-En pratique, cela signifie :
+In practice, this means:
 
 - [point 1]
 - [point 2]
 - [point 3]
 
-La nuance importante : [limite ou cas particulier].
+Important nuance: [limit or special case].
 ```
 
-### Tableau de priorisation
+### Prioritization Table
 
-| Sujet | Intention | Valeur business | Difficulté | Presence AI | Preuves disponibles | Priorite |
+| Topic | Intent | Business value | Difficulty | AI presence | Proof available | Priority |
 | --- | --- | --- | --- | --- | --- | --- |
-| | | Forte/Moyenne/Faible | Forte/Moyenne/Faible | Oui/Non | Oui/Non | P1/P2/P3 |
+| | | High/Medium/Low | High/Medium/Low | Yes/No | Yes/No | P1/P2/P3 |
 
-## 22. Principes pour un futur skill
+## 22. Principles for a Future Skill
 
-Si ce document devient un skill, les instructions essentielles devront etre :
+If this document becomes a skill, its essential instructions should be:
 
-- Toujours commencer par l'intention, l'audience et le role business.
-- Ne jamais produire un contenu uniquement a partir d'un mot cle.
-- Verifier la SERP, les questions, les concurrents et les sources citees.
-- Ecrire d'abord pour l'utilisateur, puis structurer pour les moteurs.
-- Produire une reponse directe, puis une profondeur utile.
-- Ajouter experience, preuves, exemples et sources.
-- Eviter le contenu IA generique, les affirmations non verifiees et les listes creuses.
-- Penser distribution et citations externes des la conception.
-- Integrer SEO de marque et SEO hors marque.
-- Mesurer SEO et AEO avec des indicateurs separes.
-- Traiter les chiffres AEO comme mouvants et datés.
-- Preferer l'experimentation a la croyance dans une "best practice".
+- Always start with intent, audience, and business role.
+- Never produce content only from a keyword.
+- Check the SERP, questions, competitors, and cited sources.
+- Write for the user first, then structure for engines.
+- Produce a direct answer, then useful depth.
+- Add experience, proof, examples, and sources.
+- Avoid generic AI content, unverified claims, and hollow lists.
+- Think about distribution and external citations from the start.
+- Include brand SEO and non-brand SEO.
+- Measure SEO and AEO with separate indicators.
+- Treat AEO figures as moving and time-bound.
+- Prefer experimentation over belief in a "best practice."
 
-## 23. Reference rapide
+## 23. Quick Reference
 
-### Si vous n'avez qu'une heure
+### If You Have One Hour
 
-1. Choisir une page business importante.
-2. Verifier l'intention dans Google.
-3. Tester la question dans ChatGPT, Perplexity et Gemini.
-4. Ajouter une reponse directe en haut.
-5. Reorganiser les H2 autour des vraies questions.
-6. Ajouter preuves, exemples, FAQ utile.
-7. Lier la page depuis 2 a 5 pages internes.
-8. Verifier indexation et tracking.
+1. Choose an important business page.
+2. Check intent in Google.
+3. Test the question in ChatGPT, Perplexity, and Gemini.
+4. Add a direct answer at the top.
+5. Reorganize H2s around real questions.
+6. Add proof, examples, and useful FAQ.
+7. Link the page from 2 to 5 internal pages.
+8. Verify indexing and tracking.
 
-### Si vous avez une journee
+### If You Have One Day
 
-1. Auditer les 10 pages prioritaires.
-2. Identifier les intentions ratees.
-3. Cartographier les questions AEO.
-4. Optimiser 3 pages existantes.
-5. Creer 1 ressource manquante.
-6. Identifier 10 sources tierces ou concurrents apparaissent.
-7. Mettre en place un tableau de suivi.
+1. Audit the 10 priority pages.
+2. Identify missed intents.
+3. Map AEO questions.
+4. Optimize 3 existing pages.
+5. Create 1 missing resource.
+6. Identify 10 third-party sources where competitors appear.
+7. Set up a tracking table.
 
-### Si vous avez un mois
+### If You Have One Month
 
-Suivre le playbook 30 jours :
+Follow the 30-day playbook:
 
-- audit ;
-- priorisation ;
-- optimisation ;
-- creation ;
-- distribution ;
-- tracking ;
+- audit;
+- prioritization;
+- optimization;
+- creation;
+- distribution;
+- tracking;
 - experimentation.
 
 ## 24. Conclusion
 
-Le meilleur contenu SEO/AEO n'est pas celui qui coche le plus de cases techniques. C'est celui qui devient la meilleure source disponible pour une question donnee.
+The best SEO/AEO content is not the content that checks the most technical boxes. It is the content that becomes the best available source for a given question.
 
-En 2026, la strategie gagnante est sobre :
+In 2026, the winning strategy is sober:
 
-- comprendre mieux l'intention ;
-- repondre plus clairement ;
-- apporter plus de preuves ;
-- structurer plus proprement ;
-- distribuer plus intelligemment ;
-- mesurer plus largement ;
-- maintenir plus regulierement.
+- understand intent better;
+- answer more clearly;
+- bring more proof;
+- structure more cleanly;
+- distribute more intelligently;
+- measure more broadly;
+- maintain more regularly.
 
-Le SEO reste le socle. L'AEO ajoute une exigence : devenir referenceable.
+SEO remains the foundation. AEO adds one requirement: become referenceable.
