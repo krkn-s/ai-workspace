@@ -1,8 +1,8 @@
 # skills
 
-Collection personnelle de skills pour Codex et autres agents compatibles avec le format `SKILL.md`.
+Personal collection of skills for Codex and other agents that support the `SKILL.md` format.
 
-Le repo est organise pour accueillir plusieurs skills :
+The repository is organized to host multiple skills:
 
 ```text
 skills/
@@ -12,49 +12,49 @@ skills/
     references/
 ```
 
-## Skills disponibles
+## Available Skills
 
 ### `seo-aeo-content`
 
-Workflow SEO/AEO pour creer et ameliorer des contenus visibles dans les moteurs de recherche et les moteurs de reponse.
+SEO/AEO workflow for creating and improving content that can perform in search engines and answer engines.
 
-Cas d'usage :
+Use cases:
 
-- brief SEO/AEO ;
-- audit de page ou d'article ;
-- structure de landing page ;
-- plan editorial ;
-- optimisation d'article ;
-- checklist de publication ;
-- strategie AEO, citations et mentions de marque.
+- SEO/AEO briefs;
+- page or article audits;
+- landing page structures;
+- editorial plans;
+- article optimization;
+- publication checklists;
+- AEO strategy, citations, and brand mentions.
 
 ## Installation
 
-### Avec `skills`
+### With `skills`
 
-Installation globale pour Codex :
+Global installation for Codex:
 
 ```bash
 npx skills add https://github.com/<owner>/skills --skill seo-aeo-content -a codex -g
 ```
 
-Installation depuis le dossier direct du skill :
+Installation from the direct skill folder:
 
 ```bash
 npx skills add https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content -a codex -g
 ```
 
-Remplacer `<owner>` par le compte ou l'organisation GitHub qui hebergera ce repo.
+Replace `<owner>` with the GitHub account or organization that hosts this repository.
 
-### Avec Codex
+### With Codex
 
-Dans Codex, demander :
+In Codex, ask:
 
 ```text
 Use $skill-installer to install https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content
 ```
 
-## Exemple d'utilisation
+## Usage Examples
 
 ```text
 Use $seo-aeo-content to create a SEO/AEO content brief for "answer engine optimization for B2B SaaS".
@@ -64,15 +64,15 @@ Use $seo-aeo-content to create a SEO/AEO content brief for "answer engine optimi
 Use $seo-aeo-content to audit this article for SEO, AEO, intent match, and citation-worthiness.
 ```
 
-## Publication GitHub avec `gh`
+## Publishing to GitHub with `gh`
 
-Ce repo est destine a etre publie sous le nom `skills`.
+This repository is intended to be published as `skills`.
 
-Avant publication publique, ne pas pousser les transcriptions brutes du dossier local `Sources/`. Elles sont ignorees par Git dans la version publique, mais si elles existent dans l'historique local, il faut publier depuis un historique propre.
+Before public publication, do not push the raw local transcripts in `Sources/`. They are ignored by Git in the public version, but if they exist in local history, publish from a clean export.
 
-### Option recommandee : creer un repo public propre depuis un export
+### Recommended Option: Create a Clean Public Repository from an Export
 
-Depuis ce dossier :
+From this folder:
 
 ```bash
 mkdir -p /tmp/skills-public
@@ -85,9 +85,9 @@ gh repo create skills --public --source=. --remote=origin
 git push -u origin main
 ```
 
-Cette option evite de publier l'historique local contenant les sources brutes.
+This avoids publishing local history that contains raw source transcripts.
 
-### Option si le repo GitHub existe deja
+### If the GitHub Repository Already Exists
 
 ```bash
 cd /tmp/skills-public
@@ -95,29 +95,29 @@ git remote add origin git@github.com:<owner>/skills.git
 git push -u origin main
 ```
 
-## Soumission a skills.sh / agentskill.sh
+## Submitting to skills.sh / agentskill.sh
 
-Une fois le repo GitHub public :
+Once the GitHub repository is public:
 
-1. Aller sur la page de soumission de `skills.sh` ou `agentskill.sh`.
-2. Coller l'URL du repo ou du skill :
+1. Open the submission page on `skills.sh` or `agentskill.sh`.
+2. Paste the repository or skill URL:
 
    ```text
    https://github.com/<owner>/skills/tree/main/skills/seo-aeo-content
    ```
 
-3. Connecter GitHub pour verifier la propriete du repo si demande.
-4. Ajouter le webhook GitHub si la plateforme le propose pour synchroniser les mises a jour plus vite.
+3. Connect GitHub to verify repository ownership if requested.
+4. Add the GitHub webhook if the platform offers one to sync updates faster.
 
-## Licence
+## License
 
-Ce repo utilise la licence MIT.
+This repository uses the MIT License.
 
-Pourquoi MIT :
+Why MIT:
 
-- simple et largement comprise ;
-- compatible avec un usage personnel, commercial et open source ;
-- facile a reutiliser, forker, modifier et redistribuer ;
-- adaptee a une collection de skills que d'autres personnes peuvent installer et adapter.
+- simple and widely understood;
+- compatible with personal, commercial, and open source use;
+- easy to reuse, fork, modify, and redistribute;
+- well suited to a collection of skills that other people can install and adapt.
 
-MIT est volontairement peu contraignante. Si un futur skill contient du code plus sensible, des dependances complexes ou des enjeux de brevets, Apache-2.0 pourra etre reevaluee pour ce skill ou pour un repo dedie.
+MIT is intentionally permissive. If a future skill includes more sensitive code, complex dependencies, or patent-related concerns, Apache-2.0 can be reconsidered for that skill or for a dedicated repository.
