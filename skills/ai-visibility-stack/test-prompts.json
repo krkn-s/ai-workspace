@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "Audit and improve AI visibility for a local business website built with heavy client-side JavaScript. It has no llms.txt, no markdown mirrors, no sitemap.xml, and a thin robots.txt. I need a practical implementation plan and the expected outputs.",
+    "expected": "The skill should stage the work in the right order, recommend llms.txt plus a selective mirror layer, cover sitemap and robots, and separate repo changes from manual Search Console steps."
+  },
+  {
+    "id": 2,
+    "prompt": "I have a business site with clean public markdown docs and guide pages already live. Should I still add markdown mirrors everywhere, and how should llms.txt point to the right sources?",
+    "expected": "The skill should decide that the existing docs are the machine-readable source of truth, avoid redundant mirrors, and produce a spec-aligned llms.txt strategy that links the highest-value public pages."
+  },
+  {
+    "id": 3,
+    "prompt": "We are redesigning our website and want to preserve SEO plus AI visibility, but leadership only wants standard search indexing broad and AI crawler access limited to selected public resources. What should we keep, what should change, and what policy should we document?",
+    "expected": "The skill should produce a preservation-first plan, separate search indexing from AI crawler policy, identify which invisible layers must survive the redesign, and ask for confirmation before changing public exposure rules."
+  }
+]
