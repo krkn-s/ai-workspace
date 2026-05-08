@@ -1,0 +1,3 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-05-08T18:42	baseline	ai-visibility-stack	-	84.6	baseline	-	Initial dry-run review found weak checkpoints and limited task contracts	dry_run
+2026-05-08T18:42	working-tree	ai-visibility-stack	84.6	91.4	keep	checkpoint-design	Added task matrix, stop-and-ask checkpoints, explicit output contracts, and skill-local test prompts	dry_run
