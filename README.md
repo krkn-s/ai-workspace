@@ -6,6 +6,7 @@ Personal AI workspace — installable skills (`SKILL.md`) and pi prompt template
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO/AEO content strategy — briefs, audits, page structures, editorial plans.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure — `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy.
   - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness.
+  - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person — no AI tells, in French or English.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code and write a structured implementation plan to PLAN.md.
   - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
