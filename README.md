@@ -11,6 +11,7 @@ Personal AI workspace — installable skills (`SKILL.md`) and pi prompt template
   - [`plan`](prompts/plan.md) : Explore the code and write a structured implementation plan to PLAN.md.
   - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm — generate 5W1H clarifying questions, then pause for answers.
+  - [`critique`](prompts/critique.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
   - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
 ## Skills installation
