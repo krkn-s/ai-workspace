@@ -2,32 +2,11 @@
 
 Personal collection of installable skills for Codex and other agents that support the `SKILL.md` format.
 
-The repository is organized as a multi-skill catalog:
-
-```text
-skills/
-  seo-aeo-content/
-    SKILL.md
-    agents/openai.yaml
-    references/
-  ai-visibility-stack/
-    SKILL.md
-    agents/openai.yaml
-    references/
-    test-prompts.json
-  optimize-agent-instructions/
-    SKILL.md
-    agents/openai.yaml
-    test-prompts.json
-```
-
 ## Available Skills
 
-| Skill | Description |
-|------|-------------|
-| [`seo-aeo-content`](skills/seo-aeo-content) | SEO/AEO content strategy: briefs, audits, page structures, editorial plans, optimization. |
-| [`ai-visibility-stack`](skills/ai-visibility-stack) | AI visibility infrastructure: `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy. |
-| [`optimize-agent-instructions`](skills/optimize-agent-instructions) | Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness. |
+- [`seo-aeo-content`](skills/seo-aeo-content) : SEO/AEO content strategy — briefs, audits, page structures, editorial plans.
+- [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure — `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy.
+- [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness.
 
 > `skill-creator` (in `.agents/skills/`) is the dev meta-skill for building and benchmarking skills; it is not part of the installable catalog.
 
