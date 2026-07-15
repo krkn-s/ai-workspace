@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-stack
-description: AI visibility workflow for business websites. Use when Codex needs to create, review, or preserve llms.txt, markdown mirrors, sitemap.xml, robots.txt, AI crawler access, Google Search Console handoff, or the invisible SEO and AI-readable structure that lets websites be discovered, parsed, and cited by search engines and answer engines.
+description: AI visibility workflow for business websites. Use when the agent needs to create, review, or preserve llms.txt, markdown mirrors, sitemap.xml, robots.txt, AI crawler access, Google Search Console handoff, or the invisible SEO and AI-readable structure that lets websites be discovered, parsed, and cited by search engines and answer engines. Déclenche aussi sur les requêtes en français, par exemple créer ou corriger un llms.txt, des miroirs markdown, le sitemap.xml et le robots.txt, gérer l'accès des crawlers IA, ou préserver la visibilité IA et le SEO technique d'un site lors d'une refonte.
 ---
 
 # AI Visibility Stack

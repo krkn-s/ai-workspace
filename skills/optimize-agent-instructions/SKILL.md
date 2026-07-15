@@ -1,6 +1,6 @@
 ---
 name: optimize-agent-instructions
-description: Lean audit and rewrite workflow for agent instruction files such as AGENTS.md, CLAUDE.md, system prompts, rules files, and skill instructions. Use when Codex needs to clean up, shorten, or refactor an instruction file, remove redundant or contradictory rules, reduce unnecessary planning, questions, or validation steps, fix a CLAUDE.md or AGENTS.md that feels too long or too strict, review a skill's instructions for leanness, or consolidate overlapping project rules into a minimal high-signal replacement.
+description: Lean audit and rewrite workflow for agent instruction files such as AGENTS.md, CLAUDE.md, system prompts, rules files, and skill instructions. Use when the agent needs to clean up, shorten, or refactor an instruction file, remove redundant or contradictory rules, reduce unnecessary planning, questions, or validation steps, fix a CLAUDE.md or AGENTS.md that feels too long or too strict, review a skill's instructions for leanness, or consolidate overlapping project rules into a minimal high-signal replacement. Déclenche aussi sur les requêtes en français, par exemple alléger, raccourcir, nettoyer ou réécrire un fichier d'instructions (AGENTS.md, CLAUDE.md, prompt système, fichier de règles, skill), supprimer les règles redondantes ou contradictoires, simplifier un CLAUDE.md ou AGENTS.md trop long ou trop strict, ou consolider des règles projet qui se chevauchent en un fichier minimal.
 ---
 
 # Optimize Agent Instructions
