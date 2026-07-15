@@ -1,12 +1,14 @@
-# skills
+# KRKN's AI Workspace
 
-Personal collection of installable skills for any AI agent that supports the `SKILL.md` format.
+Personal AI workspace — installable skills (`SKILL.md`) and pi prompt templates.
 
-## Available Skills
-
-- [`seo-aeo-content`](skills/seo-aeo-content) : SEO/AEO content strategy — briefs, audits, page structures, editorial plans.
-- [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure — `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy.
-- [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness.
+- **skills**
+  - [`seo-aeo-content`](skills/seo-aeo-content) : SEO/AEO content strategy — briefs, audits, page structures, editorial plans.
+  - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure — `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy.
+  - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness.
+- **prompts**
+  - [`plan`](prompts/plan.md) : Explore the code and write a structured implementation plan to PLAN.md.
+  - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
 ## Installation
 
@@ -15,9 +17,9 @@ Personal collection of installable skills for any AI agent that supports the `SK
 Install from the repo root by skill name:
 
 ```bash
-npx skills add https://github.com/krkn-s/skills --skill seo-aeo-content
-npx skills add https://github.com/krkn-s/skills --skill ai-visibility-stack
-npx skills add https://github.com/krkn-s/skills --skill optimize-agent-instructions
+npx skills add https://github.com/krkn-s/ai-workspace --skill seo-aeo-content
+npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stack
+npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-instructions
 ```
 
 ## License
