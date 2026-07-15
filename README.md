@@ -8,6 +8,7 @@ Personal AI workspace — installable skills (`SKILL.md`) and pi prompt template
   - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code and write a structured implementation plan to PLAN.md.
+  - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
   - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
 ## Installation
