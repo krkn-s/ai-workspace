@@ -10,18 +10,16 @@ Personal AI workspace — installable skills (`SKILL.md`) and pi prompt template
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code and write a structured implementation plan to PLAN.md.
   - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
+  - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm — generate 5W1H clarifying questions, then pause for answers.
   - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
-## Installation
-
-### With `skills`
-
-Install from the repo root by skill name:
+## Skills installation
 
 ```bash
 npx skills add https://github.com/krkn-s/ai-workspace --skill seo-aeo-content
 npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stack
 npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-instructions
+npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
 ```
 
 ## License
