@@ -15,53 +15,21 @@ skills/
     agents/openai.yaml
     references/
     test-prompts.json
+  optimize-agent-instructions/
+    SKILL.md
+    agents/openai.yaml
+    test-prompts.json
 ```
 
 ## Available Skills
 
-### `seo-aeo-content`
+| Skill | Description |
+|------|-------------|
+| [`seo-aeo-content`](skills/seo-aeo-content) | SEO/AEO content strategy: briefs, audits, page structures, editorial plans, optimization. |
+| [`ai-visibility-stack`](skills/ai-visibility-stack) | AI visibility infrastructure: `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, AI crawler policy. |
+| [`optimize-agent-instructions`](skills/optimize-agent-instructions) | Audit & rewrite agent instruction files (AGENTS.md, CLAUDE.md, system prompts, skills) for leanness. |
 
-SEO and AEO content strategy workflow for creating and improving search-ready and answer-engine-ready content.
-
-Use cases:
-
-- SEO/AEO briefs;
-- page or article audits;
-- landing page structures;
-- editorial plans;
-- article optimization;
-- publication checklists;
-- AEO strategy, citations, and brand mentions.
-
-Example:
-
-```text
-Use $seo-aeo-content to create a SEO/AEO content brief for "answer engine optimization for B2B SaaS".
-```
-
-### `ai-visibility-stack`
-
-AI visibility workflow for business websites that need machine-readable and crawler-readable infrastructure such as `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy guidance.
-
-Use cases:
-
-- create or fix `llms.txt`;
-- plan or review markdown mirrors;
-- audit `sitemap.xml` and `robots.txt`;
-- preserve invisible SEO and AI visibility infrastructure during redesigns;
-- define search-engine vs AI-crawler exposure policy.
-
-Example:
-
-```text
-Use $ai-visibility-stack to audit this website's llms.txt, markdown mirrors, sitemap.xml, robots.txt, and AI crawler policy.
-```
-
-## Choose The Right Skill
-
-Use `seo-aeo-content` when the task is primarily about content strategy, content structure, editorial planning, or improving a page/article so it can perform in search engines and answer engines.
-
-Use `ai-visibility-stack` when the task is about website discoverability infrastructure: `llms.txt`, clean machine-readable pages, crawl files, AI crawler access, or preserving those layers during a rebuild.
+> `skill-creator` (in `.agents/skills/`) is the dev meta-skill for building and benchmarking skills; it is not part of the installable catalog.
 
 ## Installation
 
@@ -72,6 +40,7 @@ Install from the repo root by skill name:
 ```bash
 npx skills add https://github.com/krkn-s/skills --skill seo-aeo-content -a codex -g
 npx skills add https://github.com/krkn-s/skills --skill ai-visibility-stack -a codex -g
+npx skills add https://github.com/krkn-s/skills --skill optimize-agent-instructions -a codex -g
 ```
 
 Install from a direct skill folder:
@@ -79,18 +48,7 @@ Install from a direct skill folder:
 ```bash
 npx skills add https://github.com/krkn-s/skills/tree/main/skills/seo-aeo-content -a codex -g
 npx skills add https://github.com/krkn-s/skills/tree/main/skills/ai-visibility-stack -a codex -g
-```
-
-### With Codex
-
-In Codex, ask:
-
-```text
-Use $skill-installer to install https://github.com/krkn-s/skills/tree/main/skills/seo-aeo-content
-```
-
-```text
-Use $skill-installer to install https://github.com/krkn-s/skills/tree/main/skills/ai-visibility-stack
+npx skills add https://github.com/krkn-s/skills/tree/main/skills/optimize-agent-instructions -a codex -g
 ```
 
 ## Usage Examples
@@ -101,6 +59,10 @@ Use $seo-aeo-content to audit this article for SEO, AEO, intent match, and citat
 
 ```text
 Use $ai-visibility-stack to create or preserve the AI-readable and crawler-readable infrastructure for this website.
+```
+
+```text
+Use $optimize-agent-instructions to audit my CLAUDE.md and return a lean replacement that removes redundant rules and over-cautious steps.
 ```
 
 ## License
