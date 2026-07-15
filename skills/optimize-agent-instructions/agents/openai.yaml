@@ -1,4 +1,0 @@
-interface:
-  display_name: "Optimize Agent Instructions"
-  short_description: "Lean audit & rewrite of instruction files"
-  default_prompt: "Use $optimize-agent-instructions to audit and rewrite my AGENTS.md for leanness."

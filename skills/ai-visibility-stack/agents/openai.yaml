@@ -1,4 +1,0 @@
-interface:
-  display_name: "AI Visibility Stack"
-  short_description: "Audits, llms.txt, mirrors, crawl policy"
-  default_prompt: "Use $ai-visibility-stack to audit, create, or preserve the AI-readable and crawler-readable infrastructure and policy for this website."
