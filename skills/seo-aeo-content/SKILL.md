@@ -1,6 +1,6 @@
 ---
 name: seo-aeo-content
-description: SEO and AEO content strategy workflow for creating search-ready and answer-engine-ready content. Use when Codex needs to produce or improve SEO/AEO briefs, page outlines, article structures, landing pages, content audits, editorial plans, keyword-to-question maps, publication checklists, brand SEO recommendations, AI Overview/AEO visibility plans, or content guidance for web publishing.
+description: SEO and AEO content strategy workflow for creating search-ready and answer-engine-ready content. Use when the agent needs to produce or improve SEO/AEO briefs, page outlines, article structures, landing pages, content audits, editorial plans, keyword-to-question maps, publication checklists, brand SEO recommendations, AI Overview/AEO visibility plans, or content guidance for web publishing. Déclenche aussi sur les requêtes en français, par exemple brief SEO/AEO, plan ou calendrier éditorial, audit d'article ou de contenu, structure de page ou de landing page, optimisation de contenu, ou stratégie de contenu pour le référencement naturel et les moteurs de réponses.
 ---
 
 # SEO/AEO Content
