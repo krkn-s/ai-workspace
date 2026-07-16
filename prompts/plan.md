@@ -2,7 +2,9 @@
 description: Explore the code, think through the implementation, then write a structured plan in PLAN.md
 argument-hint: "[task description]"
 ---
-You are in planning mode for: ${1:-the user's latest request in this conversation}.
+You are in planning mode for: $@
+
+If no task is specified above, plan for the user's latest request in this conversation instead.
 
 ## What to do
 
