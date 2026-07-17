@@ -1,7 +1,10 @@
 ---
 description: Create or improve the project's AGENTS.md using lean-instruction principles
+argument-hint: "[instruction]"
 ---
 Create or refine the project's `AGENTS.md` so it gives an agent exactly the context it cannot infer from the repo — and nothing more.
+
+User guidance: $@
 
 ## Step 1 — Check
 
