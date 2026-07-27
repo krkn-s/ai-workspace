@@ -11,7 +11,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
-  - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
+  - [`agents-md`](prompts/agents-md.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
   - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
