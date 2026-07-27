@@ -8,6 +8,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit and rewrite agent instruction files for leanness, including AGENTS.md, CLAUDE.md, system prompts, and skills.
   - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
   - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
+  - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
   - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
@@ -16,6 +17,10 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
   - [`brand-audit`](prompts/brand-audit.md) : Audit an existing `BRAND.md` or scattered brand material for drift, gaps, and inconsistencies.
   - [`brand-rebrand`](prompts/brand-rebrand.md) : Plan and apply a rebrand or brand pivot as a versioned migration of `BRAND.md`.
+  - [`spec`](prompts/spec.md) : Propose and scaffold a spec-driven change (forward path) under `specs/`.
+  - [`spec-audit`](prompts/spec-audit.md) : Audit `specs/` for drift — code without a spec, spec without code, contradicting ADRs.
+  - [`spec-verify`](prompts/spec-verify.md) : Verify spec↔code alignment for a change before archiving it.
+  - [`spec-archive`](prompts/spec-archive.md) : Archive a change — merge its deltas into `current/` and move it to `3-archive/`.
   - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
 ## Installation
@@ -70,6 +75,7 @@ npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stac
 npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-instructions
 npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
 npx skills add https://github.com/krkn-s/ai-workspace --skill brand-md
+npx skills add https://github.com/krkn-s/ai-workspace --skill spec-vibe
 ```
 
 ## License
