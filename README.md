@@ -7,20 +7,69 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
   - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit and rewrite agent instruction files for leanness, including AGENTS.md, CLAUDE.md, system prompts, and skills.
   - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
+  - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
   - [`init-agentmd`](prompts/init-agentmd.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
+  - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
+  - [`brand-audit`](prompts/brand-audit.md) : Audit an existing `BRAND.md` or scattered brand material for drift, gaps, and inconsistencies.
+  - [`brand-rebrand`](prompts/brand-rebrand.md) : Plan and apply a rebrand or brand pivot as a versioned migration of `BRAND.md`.
   - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
-## Skills installation
+## Installation
+
+This repo doubles as a **pi package**: it exposes `skills/` and `prompts/` at the root, so a single source can install both skills and prompt templates together. The `skills` CLI only handles skills, not prompts.
+
+### Via `pi install` (skills + prompts together)
+
+Install everything from this repo into your global config:
+
+```bash
+pi install https://github.com/krkn-s/ai-workspace
+```
+
+Or install into the current project instead (`-l` writes to `.pi/settings.json`):
+
+```bash
+pi install -l https://github.com/krkn-s/ai-workspace
+```
+
+### Install only a subset (filtering)
+
+To pull just selected skills and prompts, declare the package with the object form in `.pi/settings.json`. Skill paths point at the skill directory; prompt paths point at the file:
+
+```json
+{
+  "packages": [
+    {
+      "source": "https://github.com/krkn-s/ai-workspace",
+      "skills": ["skills/brand-md"],
+      "prompts": [
+        "prompts/brand.md",
+        "prompts/brand-audit.md",
+        "prompts/brand-rebrand.md"
+      ]
+    }
+  ]
+}
+```
+
+- Omit a key to load **all** of that type; use `[]` to load **none**.
+- `!pattern` excludes, `+path` force-includes, `-path` force-excludes (exact paths relative to the repo root).
+- Toggle individual resources interactively with `pi config -l` (Tab switches between global and project scope).
+
+### Via `npx skills add` (skills only)
+
+Installs individual skills but does **not** install prompts. If you use this path, copy the prompt files you need into `~/.pi/agent/prompts/` (global) or `.pi/prompts/` (project) by hand.
 
 ```bash
 npx skills add https://github.com/krkn-s/ai-workspace --skill seo-aeo-content
 npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stack
 npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-instructions
 npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
+npx skills add https://github.com/krkn-s/ai-workspace --skill brand-md
 ```
 
 ## License
