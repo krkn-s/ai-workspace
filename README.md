@@ -9,6 +9,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
   - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
+  - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
   - [`agents-md`](prompts/agents-md.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
