@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reveal-slides — Test Deck</title>
+
+  <!-- reveal.js 6.0.1 CSS (pinned) + standard "black" theme as the polished base -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/theme/black.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight/monokai.css">
+
+  <style>
+    /* Same raw .ttf used by the live deck AND registered for the PDF export.
+       @expo-google-fonts on jsDelivr ships real .ttf (woff2 won't embed in html2realpdf). */
+    @font-face { font-family: "Inter"; src: url("https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_400Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_700Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+    /* Dual theme (dark default + light). Both palettes are declared inline so
+       html2realpdf resolves the ACTIVE one for the PDF export. Toggle via the
+       #theme-toggle button (top-right). The two palettes are designed, not a
+       naive invert, so each looks intentional. */
+    :root, :root[data-theme="dark"] {
+      --r-background-color: #191919;
+      --r-main-color: #ffffff;
+      --r-heading-color: #ffffff;
+      --r-link-color: #6ea8ff;
+      --r-link-color-hover: #9cc2ff;
+      --muted: #9aa0aa;
+      --code-bg: rgba(255,255,255,.06);
+      --btn-color: rgba(255,255,255,.82);
+      --btn-hover: #ffffff;
+      --btn-glow: rgba(255,255,255,.6);
+      --r-main-font: "Inter", "Source Sans Pro", Helvetica, sans-serif;
+      --r-heading-font: "Inter", "Source Sans Pro", Helvetica, sans-serif;
+      --r-main-font-size: 42px;
+    }
+    :root[data-theme="light"] {
+      --r-background-color: #fafafa;
+      --r-main-color: #1a1a1a;
+      --r-heading-color: #0a0a0a;
+      --r-link-color: #2563eb;
+      --r-link-color-hover: #1d4ed8;
+      --muted: #6b7280;
+      --code-bg: rgba(0,0,0,.06);
+      --btn-color: rgba(0,0,0,.55);
+      --btn-hover: #000000;
+      --btn-glow: rgba(255,255,255,.95);
+    }
+    .reveal h1, .reveal h2, .reveal h3 { text-transform: none; letter-spacing: -0.01em; }
+    .reveal .accent { color: var(--r-link-color); }
+    .reveal .muted { color: var(--muted); }
+    .reveal .lead { font-size: 0.85em; line-height: 1.5; }
+    .reveal ul.check { list-style: none; margin: 0; padding: 0; text-align: left; display: inline-block; }
+    .reveal ul.check li { margin: 0.35em 0; }
+    .reveal ul.check li::before { content: "→  "; color: var(--r-link-color); font-weight: 700; }
+    .reveal .metrics { display: flex; gap: 1.5em; justify-content: center; margin-top: 0.5em; }
+    .reveal .metric { text-align: center; }
+    .reveal .metric .n { display: block; font-size: 1.7em; font-weight: 700; color: var(--r-link-color); line-height: 1; }
+    .reveal .metric .l { display: block; font-size: 0.4em; color: var(--muted); margin-top: 0.4em; text-transform: uppercase; letter-spacing: 0.08em; }
+    .reveal pre { width: 100%; font-size: 0.5em; line-height: 1.5; }
+    .reveal pre code { padding: 0.6em 0.8em; }
+
+    /* Export container: MUST be on-page (left:0; top:0) — html2realpdf captures the
+       element's real position, so off-screen (left:-9999px) renders content off-page.
+       z-index:-1 hides it behind the deck during the brief render. */
+    #deck-export { position: absolute; left: 0; top: 0; width: 297mm; z-index: -1; }
+    #deck-export .slide {
+      width: 297mm; height: 167.0625mm; box-sizing: border-box;
+      padding: 16mm 20mm; display: flex; flex-direction: column; justify-content: center;
+      background: var(--r-background-color); color: var(--r-main-color);
+      font-family: var(--r-main-font); font-size: 26px; text-align: center;
+      break-after: page; page-break-after: always;
+    }
+    #deck-export h1, #deck-export h2, #deck-export h3 { color: var(--r-heading-color); font-family: var(--r-heading-font); line-height: 1.1; margin: 0 0 0.4em; }
+    #deck-export h1 { font-size: 2.4em; } #deck-export h2 { font-size: 1.8em; } #deck-export h3 { font-size: 1.3em; }
+    #deck-export a { color: var(--r-link-color); }
+    #deck-export .accent { color: var(--r-link-color); }
+    #deck-export .muted { color: var(--muted); }
+    #deck-export ul.check { list-style: none; padding: 0; text-align: left; display: inline-block; }
+    #deck-export ul.check li::before { content: "→  "; color: var(--r-link-color); font-weight: 700; }
+    #deck-export .metrics { display: flex; gap: 1.2em; justify-content: center; }
+    #deck-export .metric { text-align: center; }
+    #deck-export .metric .n { display: block; font-size: 1.8em; font-weight: 700; color: var(--r-link-color); }
+    #deck-export .metric .l { display: block; font-size: 0.45em; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    #deck-export pre, #deck-export code { font-family: "JetBrains Mono", ui-monospace, monospace; text-align: left; }
+    #deck-export pre { overflow: hidden; background: var(--code-bg); padding: 0.8em; border-radius: 8px; font-size: 0.55em; }
+    #deck-export .cols { display: flex; gap: 28px; text-align: left; }
+    #deck-export .cols > * { flex: 1; }
+
+    /* Two icon-only chrome buttons, no fill — same restrained elegance as the
+       nav arrows. Colors adapt to the active theme via --btn-* vars. */
+    #export-pdf, #theme-toggle {
+      position: fixed; z-index: 99;
+      width: 42px; height: 42px; border: 0; border-radius: 50%;
+      background: transparent; color: var(--btn-color); cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: transform .12s ease, color .12s ease;
+    }
+    #export-pdf { left: 16px; bottom: 16px; }
+    #theme-toggle { right: 16px; top: 16px; }
+    #export-pdf:hover, #theme-toggle:hover { transform: scale(1.08); color: var(--btn-hover); }
+    #export-pdf:disabled { opacity: .45; cursor: progress; }
+    #export-pdf svg, #theme-toggle svg {
+      width: 22px; height: 22px;
+      filter: drop-shadow(0 0 3px var(--btn-glow)) drop-shadow(0 1px 1px var(--btn-glow));
+    }
+    /* Sun = "switch to light" (shown in dark); moon = "switch to dark" (shown in light). */
+    #theme-toggle .icon-moon { display: none; }
+    :root[data-theme="light"] #theme-toggle .icon-sun { display: none; }
+    :root[data-theme="light"] #theme-toggle .icon-moon { display: inline; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <p class="muted" style="margin-bottom:0.2em">reveal.js · html2realpdf</p>
+        <h1>reveal-slides</h1>
+        <p class="lead">Single-file HTML decks that export to a <span class="accent">real vector PDF</span>.</p>
+        <p class="muted" style="font-size:0.5em;margin-top:1.5em">→ next · ↓ details · S notes · export (bottom-left) · theme (top-right)</p>
+        <aside class="notes">Welcome. Notes are stripped from the PDF automatically.</aside>
+      </section>
+
+      <section>
+        <h2>What this deck shows</h2>
+        <ul class="check">
+          <li>Dark &amp; <span class="accent">light</span> theme toggle (top-right)</li>
+          <li>Markdown &amp; syntax-highlighted code</li>
+          <li>Horizontal (→/←) and vertical (↓/↑) slides</li>
+          <li>Fragments &amp; two-column layouts</li>
+          <li>One-click <span class="accent">vector PDF</span> export</li>
+        </ul>
+      </section>
+
+      <!-- Vertical slide group: press ↓ for details -->
+      <section>
+        <section>
+          <h2>Navigation</h2>
+          <p class="lead">→ / ← move across topics.<br>Press <span class="accent">↓</span> to dive into details.</p>
+        </section>
+        <section>
+          <h3>↓ You went down</h3>
+          <p class="lead">This is a <span class="accent">vertical / detail</span> slide.<br>Use it for deep-dives, appendix, or step-by-step.</p>
+          <p class="muted" style="font-size:0.5em">↑ returns to the parent slide.</p>
+        </section>
+        <section>
+          <h3>Another detail level</h3>
+          <p class="lead">A horizontal topic can hold <span class="accent">several</span> vertical levels.<br>Great for keeping the main flow clean.</p>
+        </section>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Markdown &amp; code
+
+          - Write slides in **Markdown**
+          - Code is highlighted automatically
+
+          ```js
+          export function greet(name) {
+            return `Hello, ${name}!`;
+          }
+          ```
+        </textarea>
+      </section>
+
+      <section>
+        <h2>Two-column layout</h2>
+        <div class="cols" style="display:flex;gap:36px;text-align:left;">
+          <div>
+            <h3 class="accent">Live deck</h3>
+            <p class="lead">reveal.js renders slides in the browser with keyboard nav, transitions and speaker notes.</p>
+          </div>
+          <div>
+            <h3 class="accent">Vector PDF</h3>
+            <p class="lead">html2realpdf renders every slide to a selectable, searchable PDF — one page each.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>By the numbers</h2>
+        <div class="metrics">
+          <div class="metric"><span class="n">1</span><span class="l">HTML file</span></div>
+          <div class="metric"><span class="n">0</span><span class="l">Build step</span></div>
+          <div class="metric"><span class="n">16:9</span><span class="l">Per page</span></div>
+          <div class="metric"><span class="n">100%</span><span class="l">Selectable text</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Fragments</h2>
+        <p>Reveal content step by step:</p>
+        <p class="fragment fade-up">First, this appears</p>
+        <p class="fragment fade-up">Then this</p>
+        <p class="fragment strike"><span class="muted">…and strike through</span></p>
+        <aside class="notes">Fragments render fully visible in the exported PDF.</aside>
+      </section>
+
+      <section>
+        <h1>Thanks<span class="accent">.</span></h1>
+        <p class="lead">Click the icon (bottom-left) to export this deck to PDF.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <button id="export-pdf" title="Export PDF" aria-label="Export PDF">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+  </button>
+
+  <button id="theme-toggle" title="Toggle light / dark" aria-label="Toggle light and dark theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <script type="module">
+    import Reveal from "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/reveal.mjs";
+    import RevealMarkdown from "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/markdown.mjs";
+    import RevealHighlight from "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/highlight.mjs";
+    import RevealNotes from "https://cdn.jsdelivr.net/npm/reveal.js@6.0.1/dist/plugin/notes.mjs";
+    import { createRenderer } from "https://cdn.jsdelivr.net/npm/@imggion/html2realpdf@0.1.13/dist/index.js";
+
+    const PDF_PAGE = { format: [297, 167.0625], unit: "mm", margin: 0 }; // 16:9 (A4-wide)
+
+    // Custom fonts to embed in the PDF (raw .ttf). Same URLs as @font-face above
+    // so the live deck and the PDF match. Empty [] = html2realpdf falls back to
+    // its bundled Noto Sans (still a valid, selectable-text PDF).
+    const DECK_FONTS = [
+      { family: "Inter", url: "https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_400Regular.ttf", weight: 400 },
+      { family: "Inter", url: "https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_700Bold.ttf", weight: 700 },
+    ];
+    const WASM_URL = "https://cdn.jsdelivr.net/npm/@imggion/html2realpdf@0.1.13/dist/libhtml2realpdf.wasm";
+
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      center: true,
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    }).then(() => {
+      document.getElementById("export-pdf").addEventListener("click", exportDeckToPdf);
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.documentElement.dataset.theme =
+          document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      });
+      window.Reveal = Reveal; // expose for debugging/tests
+      console.log("[deck] reveal ready,", Reveal.getTotalSlides(), "slides");
+    });
+
+    // Main-thread renderer: robust for file:// (no cross-origin Worker) and for https.
+    let _renderer = null;
+    async function getRenderer() {
+      if (_renderer) return _renderer;
+      const fonts = [];
+      for (const f of DECK_FONTS) {
+        try {
+          const data = await (await fetch(f.url)).arrayBuffer();
+          fonts.push({ family: f.family, data, weight: f.weight ?? 400, style: f.style ?? "normal" });
+          console.log("[deck] registered font", f.family, f.weight);
+        } catch (e) {
+          console.warn("[deck] font fetch failed (falling back to Noto Sans for this face):", f.family, e);
+        }
+      }
+      _renderer = await createRenderer({ execution: "main", wasmUrl: WASM_URL, fonts });
+      return _renderer;
+    }
+
+    async function exportDeckToPdf() {
+      const btn = document.getElementById("export-pdf");
+      btn.disabled = true;
+      const root = document.createElement("div");
+      root.id = "deck-export";
+      for (const slide of Reveal.getSlides()) {
+        const page = document.createElement("div");
+        page.className = "slide";
+        page.innerHTML = slide.innerHTML;
+        page.querySelectorAll(".notes, .speaker-notes, .progress, .controls").forEach((n) => n.remove());
+        root.appendChild(page);
+      }
+      document.body.appendChild(root);
+      try {
+        const renderer = await getRenderer();
+        const pdf = await renderer.render(root, {
+          page: PDF_PAGE,
+          cssProfile: "web",
+          mediaType: "print",
+          layoutContext: "page",
+          pageBreak: { after: ".slide" },
+          metadata: { title: document.title, creator: "reveal-slides skill" },
+        });
+        pdf.download(`${document.title || "deck"}.pdf`);
+        console.log("[deck] PDF exported:", pdf.pageCount, "pages");
+        if (pdf.diagnostics?.length) console.table(pdf.diagnostics);
+        pdf.dispose();
+      } catch (err) {
+        console.error("[deck] PDF export failed:", err);
+        alert("PDF export failed:\n" + (err?.message || err) + "\n\nSee console (DevTools) for details.");
+      } finally {
+        root.remove();
+        btn.disabled = false;
+      }
+    }
+
+    window.exportDeckToPdf = exportDeckToPdf; // expose for debugging/tests
+  </script>
+</body>
+</html>
