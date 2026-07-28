@@ -11,6 +11,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
   - [`reveal-slides`](skills/reveal-slides) : Build single-file HTML presentation decks with reveal.js (Markdown, code highlight, speaker notes, fragments) and export a clean one-slide-per-page vector PDF via html2realpdf — both pinned to jsDelivr CDN URLs.
+  - [`alpha-analyst`](skills/alpha-analyst) : Manual-only (`/skill:alpha-analyst`) venture-builder copilot — trend radar, gap detection, TAM/SAM/SOM sizing, investment memo, MVP "Black Car", CAB pre-sale (10 LOIs), GTM kit, Pizza Squad, 0→1M ARR roadmap. Source-backed, French output.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
   - [`agents-md`](prompts/agents-md.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
