@@ -11,6 +11,7 @@ This repository is a **catalog of installable agent skills and pi prompt templat
 ## Skill conventions
 
 - Frontmatter: `name` and `description` only. `description` is the **primary trigger** — write it bilingual (English core plus a French clause), concrete and pushy (real trigger contexts, file types, phrasings).
+- **`description` MUST stay under 1200 characters.** Some tooling truncates or rejects longer descriptions, so treat 1200 as a hard ceiling. If a description grows past it, push the extra trigger contexts into the SKILL.md body instead of the frontmatter.
 - Keep `SKILL.md` under ~500 lines; push detail into `references/`.
 - Do **not** add `agents/openai.yaml` or `test-prompts.json` — they were intentionally removed (nothing here consumes them).
 
