@@ -17,6 +17,32 @@ Common rendering problems, root causes, and fixes — plus security limits for u
    `sips` on macOS only extracts page 1; use `pdftoppm` for arbitrary pages.
 4. **Confirm geometry:** `pdfinfo out.pdf` shows page size (in pts; 1 pt = 1/72 in).
 
+## Previewing in the Browser
+
+The HTML "looks wrong" when opened directly in a browser — content stretches across the full viewport with no page boxes. **This is expected, not a bug.** WeasyPrint renders in `print` media against the `@page` rule (size, margin, margin boxes); a browser renders in `screen` media by default and **ignores `@page`** for on-screen layout, so it shows one continuous full-width scroll. The PDF is the only faithful preview.
+
+Options to preview without leaving the browser:
+
+1. **Screen-only stylesheet (recommended).** Add a `@media screen` block that constrains `body` to the trim width — a white "page" centered on a gray desk, padded to the safe area. It is `screen`-only, so it **never affects the PDF** (WeasyPrint uses `print`):
+   ```css
+   @media screen {
+     html { background: #e9e9ee; }
+     body {
+       max-width: 210mm;          /* trim width — match @page size */
+       min-height: 297mm;
+       margin: 2em auto;
+       padding: 20mm;             /* = @page margin → safe area */
+       background: #fff;
+       box-shadow: 0 2px 12px rgba(0,0,0,.25);
+     }
+   }
+   ```
+   Limit: a multi-page document shows as one tall column (no visible page breaks). For a single-page card/flyer this is a faithful preview; for multi-page, still render the PDF for true pagination.
+
+2. **DevTools media emulation (no file edit).** Chrome/Firefox → DevTools → ⋮ → *More tools* → *Rendering* → **Emulate CSS media type: print**. Applies your `@media print` rules, but does **not** draw page boxes — useful to check print-specific styling, not pagination.
+
+3. **Browser print preview (Cmd/Ctrl+P).** The browser's own print pipeline honors `@page` and shows page breaks, but uses the browser's rasterizer — colors, backgrounds, and margin-box `content` may differ from WeasyPrint. Use only as a rough check; the PDF is authoritative.
+
 ## Symptoms → Causes → Fixes
 
 ### No text / squares instead of letters

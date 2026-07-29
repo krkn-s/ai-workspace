@@ -42,6 +42,26 @@ The primary execution path is the **CLI**. Use the Python API only for features 
 5. **Render via CLI.** `weasyprint input.html output.pdf -s print.css`. Verify the result (page count, dimensions, fonts, colors). Iterate.
 6. **Iterate fast with watchexec** (install separately): `watchexec -e html,css -- weasyprint input.html output.pdf`.
 
+## Browser Preview (screen stylesheet)
+
+Opening the HTML in a browser looks "wrong" (full-width, no pages) — this is **normal**: browsers render `screen` media and ignore `@page`, while WeasyPrint renders `print` against `@page`. The PDF is the source of truth. For a quick page-like preview in the browser, add a `screen`-only block that constrains `body` to the trim width — a white "page" centered on a gray desk, padded to the safe area. It never affects the PDF:
+
+```css
+@media screen {
+  html { background: #e9e9ee; }
+  body {
+    max-width: 210mm;          /* trim width — match @page size */
+    min-height: 297mm;
+    margin: 2em auto;
+    padding: 20mm;             /* = @page margin → safe area */
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  }
+}
+```
+
+Multi-page docs still show as one tall column (no visible breaks). For the full option matrix (DevTools media emulation, browser print preview), see `references/troubleshooting.md` → *Previewing in the Browser*.
+
 ## Standard Dimensions (trim)
 
 | Document | Trim (mm) | Orientation | Notes |
