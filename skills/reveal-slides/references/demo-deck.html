@@ -55,6 +55,10 @@
     .reveal ul.check { list-style: none; margin: 0; padding: 0; text-align: left; display: inline-block; }
     .reveal ul.check li { margin: 0.35em 0; }
     .reveal ul.check li::before { content: "→  "; color: var(--r-link-color); font-weight: 700; }
+    /* Default lists: bump the left indent so bullets sit clearly under any
+       heading/paragraph above them (reveal's stock indent is too tight).
+       The .check rules above have higher specificity and are unaffected. */
+    .reveal ul, .reveal ol { display: inline-block; text-align: left; margin: 0.4em 0 0.6em 1.5em; padding: 0 0 0 1em; }
     .reveal .metrics { display: flex; gap: 1.5em; justify-content: center; margin-top: 0.5em; }
     .reveal .metric { text-align: center; }
     .reveal .metric .n { display: block; font-size: 1.7em; font-weight: 700; color: var(--r-link-color); line-height: 1; }
@@ -88,6 +92,7 @@
     #deck-export pre { overflow: hidden; background: var(--code-bg); padding: 0.8em; border-radius: 8px; font-size: 0.55em; }
     #deck-export .cols { display: flex; gap: 28px; text-align: left; }
     #deck-export .cols > * { flex: 1; }
+    #deck-export ul, #deck-export ol { display: inline-block; text-align: left; margin: 0.4em 0 0.6em 1.5em; padding: 0 0 0 1em; }
 
     /* Two icon-only chrome buttons, no fill — same restrained elegance as the
        nav arrows. Colors adapt to the active theme via --btn-* vars. */
@@ -110,6 +115,19 @@
     #theme-toggle .icon-moon { display: none; }
     :root[data-theme="light"] #theme-toggle .icon-sun { display: none; }
     :root[data-theme="light"] #theme-toggle .icon-moon { display: inline; }
+
+    /* Slide number: plain text only, bottom-CENTER, no background box. It reuses
+       the themed --btn-* chrome color (the same adaptive rule as the nav arrows
+       and the chrome buttons) plus a soft glow, so it stays readable on any
+       background. ~11px is ~10% smaller than reveal's stock 12px. */
+    .reveal .slide-number {
+      left: 50%; right: auto; bottom: 8px;
+      transform: translateX(-50%);
+      background: transparent !important;
+      color: var(--btn-color);
+      font-size: 11px; padding: 0;
+      text-shadow: 0 0 3px var(--btn-glow);
+    }
   </style>
 </head>
 <body>

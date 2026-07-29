@@ -107,6 +107,10 @@ Copy this verbatim, then edit the slides and theme. The pinned URLs, plugin set,
     #deck-export a { color: var(--r-link-color); }
     #deck-export pre, #deck-export code { font-family: var(--r-code-font); text-align: left; }
     #deck-export pre { overflow: hidden; background: var(--code-bg); padding: 0.8em; border-radius: 8px; font-size: 0.55em; }
+    /* Default bullet/ordered lists: bump the left indent so bullets sit clearly
+       under any heading/paragraph above them (reveal's stock indent is tight). */
+    .reveal ul, .reveal ol { display: inline-block; text-align: left; margin: 0.4em 0 0.6em 1.5em; padding: 0 0 0 1em; }
+    #deck-export ul, #deck-export ol { display: inline-block; text-align: left; margin: 0.4em 0 0.6em 1.5em; padding: 0 0 0 1em; }
 
     /* Two icon-only chrome buttons, no fill — same restrained elegance as the
        nav arrows. Colors adapt to the active theme via --btn-* vars. */
@@ -126,6 +130,19 @@ Copy this verbatim, then edit the slides and theme. The pinned URLs, plugin set,
     #theme-toggle .icon-moon { display: none; }
     :root[data-theme="light"] #theme-toggle .icon-sun { display: none; }
     :root[data-theme="light"] #theme-toggle .icon-moon { display: inline; }
+
+    /* Slide number: plain text, bottom-CENTER, no background box. Reuses the
+       themed --btn-* chrome color (the same adaptive rule as the nav arrows and
+       chrome buttons) + a soft glow, so it stays readable on any background.
+       ~11px is ~10% smaller than reveal's stock 12px. */
+    .reveal .slide-number {
+      left: 50%; right: auto; bottom: 8px;
+      transform: translateX(-50%);
+      background: transparent !important;
+      color: var(--btn-color);
+      font-size: 11px; padding: 0;
+      text-shadow: 0 0 3px var(--btn-glow);
+    }
   </style>
 </head>
 <body>
@@ -312,6 +329,8 @@ Every deck ships with a **one-click dark/light toggle** (sun/moon icon, top-righ
 - **Nested/vertical slides:** nest `<section>` inside `<section>` for sub-slides (Down/Up to navigate).
 - **Speaker notes:** `<aside class="notes">…</aside>` inside a section; press `S` for the speaker view.
 - **Math:** not wired by default — add the math plugin if needed (`references/reveal-api.md`).
+- **List indentation:** reveal's stock `<ul>`/`<ol>` left indent is tight, so bullets often look flush with the text above. The skeleton/demo ship a small indent boost (`.reveal ul, .reveal ol { margin-left:1.5em; padding-left:1em }`, mirrored in `#deck-export` so the PDF matches). Keep it; if you restyle lists, preserve enough left indent that bullets read as nested under the preceding text.
+- **Slide number:** `slideNumber: "c/t"` shows "current / total" at the bottom. The skeleton/demo restyle it to plain text, bottom-**center**, no background box, and reuse the themed `--btn-*` chrome color (the nav arrows' adaptive rule) + a soft glow so it stays readable on any background, ~10% smaller than reveal's stock size. Reposition/recolor there if you change the chrome.
 
 ## Anti-Patterns
 
