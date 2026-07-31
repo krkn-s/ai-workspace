@@ -4,7 +4,7 @@ argument-hint: "[new direction or scope]"
 ---
 Handle a rebrand, rename, or brand pivot as a versioned migration of the project's `BRAND.md` — not a silent overwrite. Produce the change, its rationale, and the migration notes for every derived asset.
 
-User guidance / new direction: $@
+User guidance / new direction:{{  $@  }}
 
 This prompt is the entry point. Load and follow the `brand-md` skill, especially `references/lifecycle.md` (rebrand section). Do not improvise the structure.
 

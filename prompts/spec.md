@@ -4,7 +4,7 @@ argument-hint: "<feature or idea>"
 ---
 Propose and scaffold a new change in the project's `specs/` tree, using the spec-driven forward path: spec first, then code.
 
-What to build / the idea: $@
+What to build / the idea:{{  $@  }}
 
 This prompt is the entry point. Load and follow the `spec-vibe` skill for the full structure, artifact templates, and lifecycle rules. Do not improvise the structure.
 

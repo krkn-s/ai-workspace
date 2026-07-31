@@ -4,7 +4,7 @@ argument-hint: "[context or brand notes]"
 ---
 Create or refine the project's `BRAND.md` so it captures the brand decisions that humans and agents cannot infer from the repo — and nothing more.
 
-User guidance: $@
+User guidance:{{  $@  }}
 
 This prompt is the entry point. Load and follow the `brand-md` skill for the full workflow, structure, machine-readable layer, and lifecycle rules. Do not improvise the structure.
 

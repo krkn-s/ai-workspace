@@ -4,7 +4,7 @@ argument-hint: "[focus area]"
 ---
 Audit the project's brand setup for drift, gaps, and internal inconsistencies. Return findings and proposed fixes — do not rewrite the file.
 
-User guidance / focus: $@
+User guidance / focus:{{  $@  }}
 
 This prompt is the entry point. Load and follow the `brand-md` skill, especially `references/lifecycle.md` (audit section) and `references/structure.md` (phase scoping). Do not improvise the structure.
 

@@ -4,7 +4,7 @@ argument-hint: "[domain or path]"
 ---
 Audit the `specs/` tree (and the code it should describe) for drift. This is the entry point for the reverse path and for keeping the source of truth honest.
 
-Focus (optional): $@
+Focus (optional):{{  $@  }}
 
 This prompt loads the `spec-vibe` skill. Read `references/triggers.md` (what counts as spec-worthy, reverse detection) and `references/unix-queries.md` (the queries that power the audit). An audit **reports**; it does not rewrite.
 

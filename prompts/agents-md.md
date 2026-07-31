@@ -4,7 +4,7 @@ argument-hint: "[instruction]"
 ---
 Create or refine the project's `AGENTS.md` so it gives an agent exactly the context it cannot infer from the repo — and nothing more.
 
-User guidance: $@
+User guidance:{{  $@  }}
 
 ## Step 1 — Check
 

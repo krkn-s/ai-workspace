@@ -4,7 +4,7 @@ argument-hint: "[problem-or-objective]"
 ---
 Act as my brainstorming partner and guide me through the Starbursting method.
 
-The problem or objective: $@
+The problem or objective:{{  $@  }}
 
 If the objective above is blank or too vague, STOP and ask me what I want to explore before generating any questions.
 
