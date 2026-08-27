@@ -3,6 +3,7 @@
 A personal AI workspace with installable skills and pi prompt templates.
 
 - **skills**
+  - [`image-prompt-crafter`](skills/image-prompt-crafter) : Craft production-grade prompts for conversational image generators (GPT Image 2, Nano Banana 2/Pro, Seedream 5 Pro) — hybrid clarification, model-specific English variants, settings, and iteration plans.
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO and AEO content strategy for briefs, audits, page structures, and editorial plans.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
   - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit and rewrite agent instruction files for leanness, including AGENTS.md, CLAUDE.md, system prompts, and skills.
@@ -80,6 +81,7 @@ npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-ins
 npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
 npx skills add https://github.com/krkn-s/ai-workspace --skill brand-md
 npx skills add https://github.com/krkn-s/ai-workspace --skill spec-vibe
+npx skills add https://github.com/krkn-s/ai-workspace --skill image-prompt-crafter
 ```
 
 ## License
