@@ -18,9 +18,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`agents-md`](prompts/agents-md.md) : Create or improve any agent instruction file (AGENTS.md, CLAUDE.md, system prompts, skills) using lean-instruction principles — verdict, critical issues, lean replacement.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
-  - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
-  - [`brand-audit`](prompts/brand-audit.md) : Audit an existing `BRAND.md` or scattered brand material for drift, gaps, and inconsistencies.
-  - [`brand-rebrand`](prompts/brand-rebrand.md) : Plan and apply a rebrand or brand pivot as a versioned migration of `BRAND.md`.
+  - [`brand`](prompts/brand.md) : Brand source of truth — `create` or refine a BRAND.md, `audit` it for drift, or plan a versioned `rebrand`; routes into the `brand-md` skill.
   - [`spec`](prompts/spec.md) : Single entry point for the `spec-vibe` workflow — `plan` (forward path), `audit` (drift report), `verify` (spec↔code gate), or `archive` (merge deltas into `current/`); routes on the subcommand.
 
 ## Installation
@@ -52,9 +50,7 @@ To pull just selected skills and prompts, declare the package with the object fo
       "source": "https://github.com/krkn-s/ai-workspace",
       "skills": ["skills/brand-md"],
       "prompts": [
-        "prompts/brand.md",
-        "prompts/brand-audit.md",
-        "prompts/brand-rebrand.md"
+        "prompts/brand.md"
       ]
     }
   ]
