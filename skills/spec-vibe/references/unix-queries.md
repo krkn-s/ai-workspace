@@ -8,7 +8,7 @@ rg -n '^#' -g '*.md' specs/                     # whole tree
 rg -n '^#' -g '*.md' specs/changes/1-wip/       # in flight right now
 
 # listings by state (status is the folder)
-ls specs/changes/{0-draft,1-wip,2-done,3-archive}/
+ls specs/changes/{0-draft,1-wip,2-archive}/
 
 # by type — double extensions and frontmatter
 fd 'spec\.md$'  specs/current                   # the source of truth

@@ -1,6 +1,6 @@
 # Lifecycle & Structure
 
-Physical layout, naming, frontmatter, state machine, verify gate, and archive procedure. Read this before creating any file or moving a change between states.
+Physical layout, naming, frontmatter, the state machine, the verify gate, and the archive procedure. Read this before creating any file or moving a change between states.
 
 ## The tree
 
@@ -8,23 +8,27 @@ Physical layout, naming, frontmatter, state machine, verify gate, and archive pr
 specs/
 ├── current/                 # source of truth — behavior today
 │   ├── auth.spec.md
-│   ├── payments.spec.md
 │   └── ui.spec.md
 ├── changes/
 │   ├── 0-draft/             # being specified / reverse-spec in progress
 │   │   └── 2026-01-15-add-dark-mode/
-│   │       ├── proposal.md
-│   │       ├── design.md
-│   │       ├── tasks.md
+│   │       ├── proposal.md            # Lite ships only these two;
 │   │       └── specs/
-│   │           └── ui.delta.md
+│   │           └── ui.delta.md        # Standard adds design.md + tasks.md
 │   ├── 1-wip/               # implementation in progress
-│   ├── 2-done/              # implemented, pending verify + archive
-│   └── 3-archive/           # merged into current/, preserved for history
+│   └── 2-archive/           # verified + merged into current/, preserved
 └── decisions/               # ADRs: NNNN-<slug>.md
-    ├── 0001-css-variables.md
-    └── 0002-local-storage-prefs.md
+    └── 0001-css-variables.md
 ```
+
+## Lite & Standard
+
+Pick the tier before scaffolding:
+
+- **Lite (default)** — one requirement, one domain, no durable architectural choice, one session. The folder ships only the delta and a short proposal.
+- **Standard** — several requirements or domains, an architectural decision, or multi-session work. All four artifacts.
+
+Promotion is non-destructive: Lite → Standard means adding `design.md`/`tasks.md` to the same folder — nothing renames, no state changes. When in doubt, start Lite.
 
 ## Status is the folder
 
@@ -32,20 +36,18 @@ A change's status is **which state folder it sits in** — there is no `status` 
 
 | Folder | What happens here | Exit gate |
 |---|---|---|
-| `0-draft/` | Spec/proposal/design/tasks written. Forward: plan approved before code. Reverse: spec validated via Q&A. | Approval or validation |
-| `1-wip/` | Implementation against `tasks.md`; artifacts updated as you learn. | All tasks checked, scenarios pass |
-| `2-done/` | Complete, pending verify + archive. | Verify gate passed |
-| `3-archive/` | Deltas merged into `current/`. Terminal. | — |
+| `0-draft/` | Artifacts written. Forward: plan approved before code. Reverse: spec validated via Q&A. | Approval or validation |
+| `1-wip/` | Implementation against the delta; artifacts updated as you learn. | **Verify gate passed + delta merged** |
+| `2-archive/` | Verified and merged into `current/`. Terminal. | — |
 
-Advancing a change is a `git mv` of the whole folder — content never changes on a transition, so Git records a rename and history stays clean. The numeric prefix makes `ls changes/` read in lifecycle order.
+Advancing is a `git mv` of the whole folder — content never changes on a transition, so Git records a rename and history stays clean. The numeric prefix makes `ls changes/` read in lifecycle order.
 
 ```bash
 git mv specs/changes/0-draft/<id> specs/changes/1-wip/
-git mv specs/changes/1-wip/<id>   specs/changes/2-done/
-git mv specs/changes/2-done/<id>  specs/changes/3-archive/   # after verify + merge
+git mv specs/changes/1-wip/<id>   specs/changes/2-archive/   # after verify + merge
 ```
 
-Update each artifact's `updated:` date on transition; nothing else changes. A sub-status the folders cannot express (e.g. "blocked") is a one-line note at the top of `tasks.md`, not a new folder.
+Update each artifact's `updated:` date on transition; nothing else changes. A sub-status the folders cannot express (e.g. "blocked") is a one-line note at the top of the proposal, not a new folder.
 
 ## ID model
 
@@ -79,31 +81,32 @@ rg '2025-12-01-add-oauth' specs/   # the change + every reference to it, any sta
 
 ## Frontmatter schema
 
-Changes:
+Changes (proposal, delta, design, tasks) — five fields:
 
 ```yaml
----
-id: 2026-01-15-add-dark-mode      # change id (stable)
-type: change                       # change | spec | delta | proposal | design | tasks | adr
+id: 2026-01-15-add-dark-mode      # stable, never changes
 domain: ui
-origin: spec-driven                 # spec-driven | vibe   (provenance)
-created: 2026-01-15
+origin: spec-driven                # spec-driven | vibe   (provenance)
 updated: 2026-01-16
-depends_on: []                     # change ids that must land first
-provides: []                       # capability markers exposed
-requires: []                       # capability markers needed
----
+depends_on: []                     # proposal only: change ids that must land first
 ```
 
-Current specs use a lighter block (`id: ui`, `type: spec`, `domain: ui`, `updated:`). ADRs add the one legal `status` field — `proposed | accepted | deprecated | superseded` — because they evolve in place instead of moving between folders.
+Current specs use `id: <domain>`, `domain:`, `updated:`. ADRs keep `created` (no date in their ID) plus the one legal `status` field, because they evolve in place instead of moving between folders:
 
-- `depends_on` is the source of truth for archive ordering. `provides`/`requires` are visibility markers; they do **not** create implicit edges.
-- `origin` records provenance: `spec-driven` (spec led the code) or `vibe` (code led, spec reconstructed).
+```yaml
+id: 0001-css-variables
+domain: ui
+status: accepted                   # proposed | accepted | superseded
+created: 2026-01-15
+```
+
+- No `type`, no `status`, no `created` on changes — the path and headings already say what a file is; the ID already dates it.
+- `depends_on` is the source of truth for archive ordering.
 - YAML pitfalls: never `: ` inside an unquoted value; dates as `YYYY-MM-DD`.
 
 ## Scaffolding a fresh tree
 
-No `specs/` yet? Create the empty spine — `current/`, `changes/0-draft..3-archive/`, `decisions/` — and add a one-line pointer in `AGENTS.md` (ask before creating or editing a project-level `AGENTS.md`):
+No `specs/` yet? Create the empty spine — `current/`, `changes/0-draft..2-archive/`, `decisions/` — and add a one-line pointer in `AGENTS.md` (ask before creating or editing a project-level `AGENTS.md`):
 
 ```markdown
 ## Specs
@@ -114,42 +117,54 @@ Spec-driven workflow lives in `specs/`. See `current/` for current behavior,
 ## Forward workflow (default)
 
 1. **Read** — existing behavior, ADRs, and in-flight work for the domain.
-2. **Scaffold** `0-draft/<id>/` with the four artifacts from `artifacts.md`.
+2. **Pick the tier** (Lite by default) and scaffold `0-draft/<id>/` from `artifacts.md`.
 3. **Specify** — behavior-first requirements + scenarios in the delta; non-goals in the proposal.
-4. **Plan** — approach + decisions in design; numbered checklist ending in `## Verification` in tasks.
+4. **Plan** (Standard) — approach + decisions in design; checklist ending in `## Verification` in tasks.
 5. **Approve** — present the plan; explicit approval before any code.
-6. **Implement** — `git mv` to `1-wip/`; work through tasks; update artifacts as you learn.
-7. **Finish** — `git mv` to `2-done/`.
-8. **Verify** — run the verify gate.
-9. **Archive** — merge + `git mv` to `3-archive/`.
+6. **Implement** — `git mv` to `1-wip/`; update artifacts as you learn.
+7. **Verify** — run the verify gate.
+8. **Archive** — merge + `git mv` to `2-archive/`.
 
 ## Reverse workflow (vibe → spec)
 
-Detection in `triggers.md`. Scaffold `0-draft/<id>/` with `origin: vibe`, reverse-engineer the four artifacts from what was observably built, mark uncertainty `Open question`, validate via Q&A — then the lifecycle is identical (→ `1-wip/` → `2-done/` → verify → archive).
+Detection in `triggers.md`. Scaffold `0-draft/<id>/` with `origin: vibe`, reverse-engineer the artifacts from what was observably built, mark uncertainty `Open question`, validate via Q&A — then the lifecycle is identical (→ `1-wip/` → verify → `2-archive/`).
 
-## Verify gate (before archive)
+## Verify gate (exit of 1-wip)
 
 A lightweight, human-in-control gate: it reports gaps, it does not auto-fix.
 
 1. **Diff spec ↔ code.** For each `### Requirement:` and `#### Scenario:` in the delta, check the code satisfies it.
 2. **Classify gaps** — spec says X, code does not (missing) / code does X, spec does not say (delta gap) / they disagree (contradiction).
 3. **Ask** — fix code, fix spec, or accept the gap (recorded as a known limitation in the proposal).
-4. **Do not archive until the user confirms.** With real gaps, sending the change back to `1-wip/` is a valid outcome.
+4. **Do not archive until the user confirms.** Staying in `1-wip/` is a valid outcome.
 
 ## Archive procedure (merge + move)
 
-1. **Confirm dependencies** — every `depends_on` entry is already in `3-archive/`, else stop and sequence.
+1. **Confirm dependencies** — every `depends_on` entry is already in `2-archive/`, else stop and sequence.
 2. **Run the verify gate** — never merge a spec that lies about the code.
 3. **Apply the delta** to `current/<domain>.spec.md`: `ADDED` → append under `## Requirements`; `MODIFIED` → replace in place; `REMOVED` → delete (record why); update `updated:`.
-4. **Move** — `git mv specs/changes/2-done/<id> specs/changes/3-archive/`. Never delete; the archive is the audit trail.
+4. **Move** — `git mv specs/changes/1-wip/<id> specs/changes/2-archive/`. Never delete; the archive is the audit trail.
 5. **Summarize** — one line on what the source of truth now says.
 
 Multiple domains → apply each `<domain>.delta.md` to its own spec. Brand-new capability → create `current/<domain>.spec.md` from the delta's `## ADDED Requirements`, seeded with a `## Purpose` from the proposal.
 
+## Migrating an existing tree
+
+Trees from the four-state convention (`2-done`, `3-archive`) upgrade in place:
+
+```bash
+shopt -s nullglob
+for d in specs/changes/2-done/*/; do git mv "$d" "specs/changes/1-wip/${d#specs/changes/2-done/}"; done
+rmdir specs/changes/2-done
+git mv specs/changes/3-archive specs/changes/2-archive
+```
+
+Unverified `2-done` work returns to `1-wip` (its verify gate is still pending); the archive is renamed; IDs stay valid.
+
 ## Failure modes
 
 - **Dependency not archived yet** → archive the predecessor first, or fix the `depends_on` if wrong.
-- **Verify gate found real gaps** → back to `1-wip/` or update the spec, then re-verify.
+- **Verify gate found real gaps** → stay in `1-wip/`, fix code or spec, re-verify.
 - **`MODIFIED`/`REMOVED` targets a requirement missing from `current/`** → the delta or the spec is stale; surface it, do not guess.
 - **Two changes touch the same requirement** → sequence via `depends_on`; if both are in flight, surface the overlap and let the user order them.
 - **A change grew too large** → split into a parent with `depends_on` children, each archivable on its own.

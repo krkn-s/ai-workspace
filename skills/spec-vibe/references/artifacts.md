@@ -94,14 +94,13 @@ Omit empty sections. Why deltas: a reviewer sees exactly what changes, two chang
 
 ## Templates
 
-Copy verbatim into the target project; keep the headings exactly as shown.
+Copy verbatim into the target project; keep the headings exactly as shown. Frontmatter is five fields for changes — no `type`, no `created`, no `status` (see `lifecycle.md`).
 
 ### current/`<domain>`.spec.md
 
 ```markdown
 ---
 id: ui
-type: spec
 domain: ui
 updated: 2026-01-16
 ---
@@ -127,10 +126,8 @@ The system SHALL <observable behavior>.
 ```markdown
 ---
 id: 2026-01-15-add-dark-mode
-type: delta
 domain: ui
 origin: spec-driven
-created: 2026-01-15
 updated: 2026-01-15
 ---
 
@@ -158,19 +155,38 @@ The system SHALL <observable behavior>.
 (<reason for removal.>)
 ```
 
-### `<change>/proposal.md`
+### `<change>/proposal.md` — Lite form
+
+Lite ships only the delta and this proposal. Keep it to a handful of lines.
 
 ```markdown
 ---
 id: 2026-01-15-add-dark-mode
-type: proposal
 domain: ui
 origin: spec-driven
-created: 2026-01-15
 updated: 2026-01-15
 depends_on: []
-provides: []
-requires: []
+---
+
+# Proposal: add-dark-mode
+
+## Intent
+Why we are doing this, in one or two sentences.
+
+## Scope
+In: <what this change covers>.
+Out: <explicit non-goals>.
+```
+
+### `<change>/proposal.md` — Standard form
+
+```markdown
+---
+id: 2026-01-15-add-dark-mode
+domain: ui
+origin: spec-driven
+updated: 2026-01-15
+depends_on: []
 ---
 
 # Proposal: add-dark-mode
@@ -194,15 +210,13 @@ One short paragraph on the intended direction. Details live in design.md.
 - depends_on: <change id or none>
 ```
 
-### `<change>/design.md`
+### `<change>/design.md` (Standard only)
 
 ```markdown
 ---
 id: 2026-01-15-add-dark-mode
-type: design
 domain: ui
 origin: spec-driven
-created: 2026-01-15
 updated: 2026-01-15
 ---
 
@@ -226,15 +240,13 @@ The technical approach. Keep behavior out of here; this is how, not what.
 - <risk and mitigation>
 ```
 
-### `<change>/tasks.md`
+### `<change>/tasks.md` (Standard only)
 
 ```markdown
 ---
 id: 2026-01-15-add-dark-mode
-type: tasks
 domain: ui
 origin: spec-driven
-created: 2026-01-15
 updated: 2026-01-16
 ---
 
@@ -252,14 +264,13 @@ updated: 2026-01-16
 - [ ] no regression in existing tests
 ```
 
-Group related steps under numbered headings (`1.1`, `1.2`); keep each task finishable in one session; end with a `## Verification` group mapped to the delta's scenarios.
+Group related steps under numbered headings (`1.1`, `1.2`); keep each task finishable in one session; end with a `## Verification` group mapped to the delta's scenarios. Lite changes skip this file — the delta's scenarios are the checklist.
 
 ### decisions/`NNNN-`<slug>`.md`
 
 ```markdown
 ---
 id: 0001-css-variables
-type: adr
 domain: ui
 status: accepted
 created: 2026-01-15
