@@ -14,12 +14,18 @@ $@
 </user_input>
 
 ## Step 1 — Plan
-Based on the user request above, produce a detailed action plan with:
+Explore the relevant code first: read files, search for existing patterns, run diagnostic commands as needed.
+
+If the project has a `specs/` tree, work with it: load the `spec-vibe` skill and follow its forward path (spec first, then code) instead of the freeform plan below.
+
+Otherwise, produce a detailed action plan with:
 1. Restated objective
 2. Numbered steps (action, deliverable, estimated duration)
 3. Required resources
 4. Risks and watch points
 5. Success criteria
+
+If the task is complex or multi-session, write the plan to `PLAN-<YYYYMMDD-HHMM>.md` — never overwrite or delete an existing plan file — and keep it in sync if the plan changes during execution. Otherwise present the plan in conversation.
 
 Do not execute yet. Present the plan and wait for my approval.
 If something is ambiguous, ask clarifying questions before finalizing the plan.
