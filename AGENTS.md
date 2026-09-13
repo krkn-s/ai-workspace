@@ -17,7 +17,7 @@ This repository is a **catalog of installable agent skills and pi prompt templat
 
 ## Prompt conventions
 
-- Follow the pi prompt-template format; `prompts/sample.md` is the source of truth (frontmatter fields, argument syntax, loading rules).
+- Follow the pi prompt-template format (see pi's docs: `docs/prompt-templates.md` — frontmatter fields, argument syntax, loading rules).
 - One prompt per file, directly in `prompts/` (discovery is non-recursive).
 - Write bodies in English.
 
