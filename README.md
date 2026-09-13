@@ -27,7 +27,6 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`spec-audit`](prompts/spec-audit.md) : Audit `specs/` for drift — code without a spec, spec without code, contradicting ADRs.
   - [`spec-verify`](prompts/spec-verify.md) : Verify spec↔code alignment for a change before archiving it.
   - [`spec-archive`](prompts/spec-archive.md) : Archive a change — merge its deltas into `current/` and move it to `3-archive/`.
-  - [`sample`](prompts/sample.md) : Reference template documenting every pi prompt-template feature.
 
 ## Installation
 
