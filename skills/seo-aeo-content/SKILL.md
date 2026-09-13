@@ -1,6 +1,6 @@
 ---
 name: seo-aeo-content
-description: SEO and AEO content strategy workflow for creating search-ready and answer-engine-ready content. Use when the agent needs to produce or improve SEO/AEO briefs, page outlines, article structures, landing pages, content audits, editorial plans, keyword-to-question maps, publication checklists, brand SEO recommendations, AI Overview/AEO visibility plans, or content guidance for web publishing. Déclenche aussi sur les requêtes en français, par exemple brief SEO/AEO, plan ou calendrier éditorial, audit d'article ou de contenu, structure de page ou de landing page, optimisation de contenu, ou stratégie de contenu pour le référencement naturel et les moteurs de réponses.
+description: SEO and AEO content strategy workflow for creating search-ready and answer-engine-ready content. Use when the agent needs to produce or improve SEO/AEO briefs, page outlines, article or landing-page structures, content audits, editorial plans or calendars, keyword-to-question maps, publication checklists, brand SEO recommendations, AI Overview/AEO visibility plans, or content guidance for web publishing. Trigger on requests to rank in Google, get cited by AI Overviews, ChatGPT, Perplexity, Gemini, or Copilot, fix thin or unstructured content, or map user intent and questions to pages. Route infrastructure tasks (llms.txt, sitemap.xml, robots.txt, markdown mirrors, crawler access) to the ai-visibility-stack skill. Déclenche aussi sur les requêtes en français, par exemple brief SEO/AEO, plan ou calendrier éditorial, audit d'article ou de contenu, structure de page ou de landing page, optimisation de contenu pour le référencement naturel, être cité par ChatGPT ou Perplexity, ou stratégie de contenu pour les moteurs de réponses.
 ---
 
 # SEO/AEO Content
@@ -10,6 +10,8 @@ description: SEO and AEO content strategy workflow for creating search-ready and
 Use this skill to create content that can rank in search engines and be cited or summarized by answer engines. Optimize for user intent first, then structure for search crawlers, AI Overviews, ChatGPT, Perplexity, Gemini, Copilot, and similar answer surfaces.
 
 Keep outputs operational: briefs, outlines, audits, checklists, content plans, revision instructions, and measurement plans.
+
+This skill owns the content layer only. If the task is about `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, or AI crawler access, use the `ai-visibility-stack` skill instead.
 
 ## Reference Loading
 
