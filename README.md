@@ -6,7 +6,6 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`image-prompt-crafter`](skills/image-prompt-crafter) : Craft production-grade prompts for conversational image generators (GPT Image 2, Nano Banana 2/Pro, Seedream 5 Pro) — hybrid clarification, model-specific English variants, settings, and iteration plans.
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO and AEO content strategy for briefs, audits, page structures, and editorial plans.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
-  - [`optimize-agent-instructions`](skills/optimize-agent-instructions) : Audit and rewrite agent instruction files for leanness, including AGENTS.md, CLAUDE.md, system prompts, and skills.
   - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
   - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
@@ -16,7 +15,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`compact`](skills/compact) : Compact, LLM-friendly Markdown styling — single H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji; write new docs or restyle bloated `.md` files for humans and agents.
 - **prompts**
   - [`ship`](prompts/ship.md) : Explore, plan (through `specs/` when present, else `PLAN-<date>.md` for complex tasks), then execute step-by-step with verification, commit & push, and server update commands.
-  - [`agents-md`](prompts/agents-md.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
+  - [`agents-md`](prompts/agents-md.md) : Create or improve any agent instruction file (AGENTS.md, CLAUDE.md, system prompts, skills) using lean-instruction principles — verdict, critical issues, lean replacement.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
   - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
@@ -73,7 +72,6 @@ Installs individual skills but does **not** install prompts. If you use this pat
 ```bash
 npx skills add https://github.com/krkn-s/ai-workspace --skill seo-aeo-content
 npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stack
-npx skills add https://github.com/krkn-s/ai-workspace --skill optimize-agent-instructions
 npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
 npx skills add https://github.com/krkn-s/ai-workspace --skill brand-md
 npx skills add https://github.com/krkn-s/ai-workspace --skill spec-vibe
