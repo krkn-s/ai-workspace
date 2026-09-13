@@ -4,7 +4,9 @@ argument-hint: "[context or brand notes]"
 ---
 Create or refine the project's `BRAND.md` so it captures the brand decisions that humans and agents cannot infer from the repo — and nothing more.
 
-User guidance:{{  $@  }}
+<user_input>
+$@
+</user_input>
 
 This prompt is the entry point. Load and follow the `brand-md` skill for the full workflow, structure, machine-readable layer, and lifecycle rules. Do not improvise the structure.
 
@@ -48,7 +50,7 @@ A `BRAND.md` that nothing points to is invisible to the project's agents. After 
 - If the project has an `AGENTS.md` at the root, check whether it references `BRAND.md`. If it does not, propose adding a one-line pointer (e.g. under a Brand section or the existing context). If it references a stale or wrong path, propose a correction.
 - If there is no `AGENTS.md`, propose creating a minimal one whose only job here is to point to `BRAND.md` — but ask first, since creating a project-level `AGENTS.md` is a broader decision.
 
-In every case, **ask the user whether the change is critical before applying it.** If the user declines, leave the `AGENTS.md` as-is and note the gap.
+In every case, **ask the user** whether the change is critical before applying it. If the user declines, leave the `AGENTS.md` as-is and note the gap.
 
 ## Step 6 — Cold-agent test
 

@@ -4,9 +4,11 @@ argument-hint: "[problem-or-objective]"
 ---
 Act as my brainstorming partner and guide me through the Starbursting method.
 
-The problem or objective:{{  $@  }}
+<problem_or_objective>
+$@
+</problem_or_objective>
 
-If the objective above is blank or too vague, STOP and ask me what I want to explore before generating any questions.
+If the <problem_or_objective> above is blank or too vague, STOP and ask me what I want to explore before generating any questions.
 
 Generate a structured set of clarifying questions organized around the six Starbursting facets:
 

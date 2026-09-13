@@ -4,7 +4,9 @@ argument-hint: "[new direction or scope]"
 ---
 Handle a rebrand, rename, or brand pivot as a versioned migration of the project's `BRAND.md` — not a silent overwrite. Produce the change, its rationale, and the migration notes for every derived asset.
 
-User guidance / new direction:{{  $@  }}
+<user_input>
+$@
+</user_input>
 
 This prompt is the entry point. Load and follow the `brand-md` skill, especially `references/lifecycle.md` (rebrand section). Do not improvise the structure.
 
@@ -51,7 +53,7 @@ Flag, do not perform: new trademark filings, opposition windows, domain changes,
 
 ## Step 7 — Link check
 
-After the rebrand, verify the project's `AGENTS.md` still points correctly to `BRAND.md` (path and any inline references to the old name or tagline). Propose corrections and **ask whether the change is critical before applying it.**
+After the rebrand, verify the project's `AGENTS.md` still points correctly to `BRAND.md` (path and any inline references to the old name or tagline). Propose corrections and **ask** whether the change is critical before applying it.
 
 ## Step 8 — Cold-agent test on the new file
 
