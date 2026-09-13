@@ -15,8 +15,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`alpha-analyst`](skills/alpha-analyst) : Manual-only (`/skill:alpha-analyst`) venture-builder copilot — trend radar, gap detection, TAM/SAM/SOM sizing, investment memo, MVP "Black Car", CAB pre-sale (10 LOIs), GTM kit, Pizza Squad, 0→1M ARR roadmap. Source-backed, French output.
   - [`compact`](skills/compact) : Compact, LLM-friendly Markdown styling — single H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji; write new docs or restyle bloated `.md` files for humans and agents.
 - **prompts**
-  - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
-  - [`ship`](prompts/ship.md) : Make a plan, then execute it step-by-step with verification, commit & push, and server update commands.
+  - [`ship`](prompts/ship.md) : Explore, plan (through `specs/` when present, else `PLAN-<date>.md` for complex tasks), then execute step-by-step with verification, commit & push, and server update commands.
   - [`agents-md`](prompts/agents-md.md) : Create or improve the project's AGENTS.md using lean-instruction principles.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
