@@ -1,13 +1,13 @@
 ---
 name: human-prose
-description: Write and rewrite prose so it reads like a real person wrote it, precise, grounded, occasionally irregular, free of AI tells. Use by default whenever you write, draft, rewrite, summarize, expand, translate, or edit any prose for the user, in French or English, not only when asked to 'humanize' text. It overrides the default urge to produce polished, balanced, generic copy. It covers cleaning invisible characters and stray Markdown, plus a strict voice with no cliché openers ('À l'ère de…', 'In today's world…'), no em-dashes for pauses, concrete detail over abstract faux-depth, no listy or punchy AI structures, asking for real material instead of filling with generalities, then silently self-editing before answering. Déclenche par défaut sur tout texte écrit ou réécrit, en français comme en anglais (rédaction, reformulation, résumé, traduction, nettoyage de prose), même sans demande explicite d'humaniser.
+description: Write and rewrite any prose so it reads like a real person wrote it, precise, grounded, free of AI tells. Use by default whenever you produce or touch text for the user — emails, messages, LinkedIn or X posts, bios, landing pages, newsletters, blog posts, release notes, cover letters, product descriptions, summaries, translations — in French or English, including the text inside presentations, PDF documents, Markdown files, and websites. Fires even when the request looks operational (a quick email, a reply, a bio) and even when no style is mentioned, not only on explicit humanize requests; it also governs the prose inside tasks routed to other skills (SEO or brand content, slides, PDFs, websites) — their structure, this prose. Covers de-AI-ing drafts and cleaning invisible characters and stray Markdown. Déclenche par défaut sur tout texte rédigé, réécrit, résumé, traduit ou nettoyé — emails, posts LinkedIn, bios, pages web, newsletters, articles, notes de version, réponses clients, slides, PDF, fichiers Markdown, sites — même sans demande de style ni d'humaniser, y compris quand un autre skill (SEO, marque) structure la tâche.
 ---
 
 # Human Prose
 
 ## When this applies
 
-By default, whenever you write or rewrite any prose for the user, in French or English. This covers drafting, rewriting, summarizing, expanding, translating, editing, and cleaning text. Do not reserve it for explicit "humanize" requests.
+By default, whenever you write or rewrite any prose for the user, in French or English. This covers drafting, rewriting, summarizing, expanding, translating, editing, and cleaning text. It also covers the written content inside presentations, PDF documents, Markdown files, and websites — the artifact skill handles the deck, the PDF, or the site; this skill governs the words in it. Do not reserve it for explicit "humanize" requests.
 
 ## Goal
 
