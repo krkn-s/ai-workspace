@@ -1,6 +1,6 @@
 # Artifacts & Heading Taxonomy
 
-The content rules and copy-ready templates for every artifact. The heading hierarchy is **strict on purpose**: `rg -n '^#' -g '*.md' specs/` is the project's dashboard, so predictable headings make the whole tree navigable without an index file.
+Content rules and copy-ready templates for every artifact. The heading hierarchy is **strict on purpose**: `rg -n '^#' -g '*.md' specs/` is the project's dashboard, so predictable headings keep the whole tree navigable without an index file.
 
 ## The taxonomy at a glance
 
@@ -13,7 +13,7 @@ The content rules and copy-ready templates for every artifact. The heading hiera
 | Tasks | `# Tasks: <slug>` | `rg '^# Tasks:'` |
 | ADR | `# ADR NNNN: <title>` | `rg '^# ADR '` |
 
-Shared content signals (same across specs and deltas):
+Shared content signals — identical in specs and deltas, so one query covers both:
 
 | Content | Heading | Greppable signal |
 |---|---|---|
@@ -24,29 +24,11 @@ Shared content signals (same across specs and deltas):
 
 ## Behavior-first writing
 
-Specs and deltas describe **observable behavior**, not implementation.
-
-Good spec content:
-
-- behavior a user or downstream system relies on
-- inputs, outputs, and error conditions
-- external constraints (security, privacy, reliability, compatibility)
-- scenarios that can be tested or explicitly validated
-
-Avoid in specs:
-
-- internal class/function names
-- library or framework choices (those go in `design.md`)
-- step-by-step implementation details (those go in `tasks.md`)
-- execution plans
+Specs and deltas describe **observable behavior**: what a user or downstream system relies on, inputs/outputs/error conditions, external constraints (security, privacy, reliability, compatibility), and testable scenarios. Implementation detail — class names, libraries, frameworks, step-by-step plans — belongs in `design.md` and `tasks.md`, never in a spec.
 
 Quick test: if the implementation can change without changing externally visible behavior, it does not belong in the spec.
 
-Use RFC 2119 keywords deliberately:
-
-- **MUST / SHALL** — absolute requirement
-- **SHOULD** — recommended, exceptions allowed
-- **MAY** — optional
+Use RFC 2119 keywords deliberately: **MUST/SHALL** (absolute), **SHOULD** (recommended), **MAY** (optional).
 
 ## Requirement & Scenario format
 
@@ -67,15 +49,11 @@ defaulting to the system preference when no choice is saved.
 - THEN the theme matches the OS preference
 ```
 
-Good scenarios:
-
-- testable (you could write an automated check or a manual step for them)
-- cover the happy path **and** at least one edge case
-- use `GIVEN` / `WHEN` / `THEN` / `AND`
+Scenarios are testable, use `GIVEN`/`WHEN`/`THEN`/`AND`, and cover the happy path plus at least one edge case.
 
 ## Delta format
 
-A delta describes **what changes** relative to the current spec, not the whole spec restated. One file per affected domain.
+A delta describes **what changes** relative to the current spec — not the whole spec restated. One file per affected domain.
 
 ```markdown
 ## ADDED Requirements
@@ -106,19 +84,17 @@ The system MUST expire sessions after 15 minutes of inactivity.
 (Deprecated in favor of 2FA. Users re-authenticate each session.)
 ```
 
-| Section | Meaning | What happens on archive |
+| Section | Meaning | On archive |
 |---|---|---|
 | `## ADDED Requirements` | new behavior | appended to the current spec |
-| `## MODIFIED Requirements` | changed behavior | replaces the existing requirement (note the previous value) |
+| `## MODIFIED Requirements` | changed behavior | replaces the existing requirement |
 | `## REMOVED Requirements` | deprecated behavior | deleted from the current spec (record why) |
 
-Omit a section if it has no entries. A delta that only adds behavior has only `## ADDED Requirements`.
-
-Why deltas: a reviewer sees exactly what changes, two changes can touch the same spec without conflict (as long as different requirements), and the model fits brownfield work where most changes modify existing behavior.
+Omit empty sections. Why deltas: a reviewer sees exactly what changes, two changes can touch one spec without conflict, and brownfield work (mostly modifications) fits the model.
 
 ## Templates
 
-Copy these verbatim into the target project and fill them in. Keep the headings exactly as shown.
+Copy verbatim into the target project; keep the headings exactly as shown.
 
 ### current/`<domain>`.spec.md
 
@@ -276,12 +252,7 @@ updated: 2026-01-16
 - [ ] no regression in existing tests
 ```
 
-Task best practices:
-
-- group related steps under a numbered heading
-- hierarchical numbering (`1.1`, `1.2`)
-- each task small enough to finish in one session
-- a final `## Verification` group that maps back to the delta's scenarios
+Group related steps under numbered headings (`1.1`, `1.2`); keep each task finishable in one session; end with a `## Verification` group mapped to the delta's scenarios.
 
 ### decisions/`NNNN-`<slug>`.md`
 
@@ -312,8 +283,8 @@ What follows from the decision (positive and negative).
 - <option> — rejected because <reason>.
 ```
 
-When an ADR is superseded, do not delete it. Add a `Supersedes`/`Superseded by` line and flip `status: superseded`, then write the replacement ADR.
+A superseded ADR is never deleted: add a `Supersedes`/`Superseded by` line, flip `status: superseded`, and write the replacement.
 
 ## Reverse-path note
 
-When generating artifacts from vibe-coded work (`origin: vibe`), the templates are identical — only the provenance differs. Reverse-engineer the spec from **what was observably built**, mark anything uncertain as `Open question` in the proposal, and validate with the user before advancing past `0-draft/`.
+Templates are identical for `origin: vibe` — only provenance differs. Reverse-engineer from **what was observably built**, mark uncertainty `Open question` in the proposal, and validate with the user before advancing past `0-draft/`.
