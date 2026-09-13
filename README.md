@@ -23,10 +23,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`brand`](prompts/brand.md) : Create or refine the project's `BRAND.md` as a lean, project-relevant source of truth (entry point for the `brand-md` skill).
   - [`brand-audit`](prompts/brand-audit.md) : Audit an existing `BRAND.md` or scattered brand material for drift, gaps, and inconsistencies.
   - [`brand-rebrand`](prompts/brand-rebrand.md) : Plan and apply a rebrand or brand pivot as a versioned migration of `BRAND.md`.
-  - [`spec`](prompts/spec.md) : Propose and scaffold a spec-driven change (forward path) under `specs/`.
-  - [`spec-audit`](prompts/spec-audit.md) : Audit `specs/` for drift — code without a spec, spec without code, contradicting ADRs.
-  - [`spec-verify`](prompts/spec-verify.md) : Verify spec↔code alignment for a change before archiving it.
-  - [`spec-archive`](prompts/spec-archive.md) : Archive a change — merge its deltas into `current/` and move it to `3-archive/`.
+  - [`spec`](prompts/spec.md) : Single entry point for the `spec-vibe` workflow — `plan` (forward path), `audit` (drift report), `verify` (spec↔code gate), or `archive` (merge deltas into `current/`); routes on the subcommand.
 
 ## Installation
 
