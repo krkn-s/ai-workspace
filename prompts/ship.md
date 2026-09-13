@@ -17,6 +17,7 @@ $@
 Explore the relevant code first: read files, search for existing patterns, run diagnostic commands as needed.
 
 If the project has a `specs/` tree, work with it: load the `spec-vibe` skill and follow its forward path (spec first, then code) instead of the freeform plan below.
+Run the verify gate and surface gap decisions to me before merging and archiving — tests passing is not spec alignment.
 
 Otherwise, produce a detailed action plan with:
 1. Restated objective
