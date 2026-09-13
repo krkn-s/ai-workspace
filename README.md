@@ -13,6 +13,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
   - [`reveal-slides`](skills/reveal-slides) : Build single-file HTML presentation decks with reveal.js (Markdown, code highlight, speaker notes, fragments) and export a clean one-slide-per-page vector PDF via html2realpdf — both pinned to jsDelivr CDN URLs.
   - [`alpha-analyst`](skills/alpha-analyst) : Manual-only (`/skill:alpha-analyst`) venture-builder copilot — trend radar, gap detection, TAM/SAM/SOM sizing, investment memo, MVP "Black Car", CAB pre-sale (10 LOIs), GTM kit, Pizza Squad, 0→1M ARR roadmap. Source-backed, French output.
+  - [`compact`](skills/compact) : Compact, LLM-friendly Markdown styling — single H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji; write new docs or restyle bloated `.md` files for humans and agents.
 - **prompts**
   - [`plan`](prompts/plan.md) : Explore the code, then write a structured implementation plan to PLAN.md.
   - [`ship`](prompts/ship.md) : Make a plan, then execute it step-by-step with verification, commit & push, and server update commands.
