@@ -16,7 +16,7 @@ A personal AI workspace with installable skills and pi prompt templates.
 - **prompts**
   - [`ship`](prompts/ship.md) : Explore, plan (through `specs/` when present, else `PLAN-<date>.md` for complex tasks), then execute step-by-step with verification, commit & push, and server update commands.
   - [`agents-md`](prompts/agents-md.md) : Create or improve any agent instruction file (AGENTS.md, CLAUDE.md, system prompts, skills) using lean-instruction principles — verdict, critical issues, lean replacement.
-  - [`agents-md-sync`](prompts/agents-md-sync.md) : Verify a project AGENTS.md against the global cascade (`~/.pi/agent/AGENTS.md`, `~/.pi/agent/APPEND_SYSTEM.md`) — flag conflicts, duplication, stale rules, and cascade gaps, then realign in lean compact style after confirmation.
+  - [`agents-md-sync`](prompts/agents-md-sync.md) : Verify a project AGENTS.md against the global files (`~/.pi/agent/AGENTS.md`, `~/.pi/agent/APPEND_SYSTEM.md`) — flag conflicts, duplication, stale rules, and policy gaps, then realign in lean compact style after confirmation.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
   - [`brand`](prompts/brand.md) : Brand source of truth — `create` or refine a BRAND.md, `audit` it for drift, or plan a versioned `rebrand`; routes into the `brand-md` skill.
