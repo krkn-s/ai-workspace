@@ -5,7 +5,9 @@ argument-hint: "[instruction or file]"
 Create or refine an agent instruction file so it gives the agent exactly the context it cannot infer on its own — and nothing more. Default target: the project's `AGENTS.md`; any other instruction file (CLAUDE.md, system prompt, rules file, skill instructions) when named.
 
 <user_input>
+
 $@
+
 </user_input>
 
 ## Step 1 — Locate and ground

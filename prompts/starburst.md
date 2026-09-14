@@ -5,7 +5,9 @@ argument-hint: "[problem-or-objective]"
 Act as my brainstorming partner and guide me through the Starbursting method.
 
 <problem_or_objective>
+
 $@
+
 </problem_or_objective>
 
 If the <problem_or_objective> above is blank or too vague, STOP and ask me what I want to explore before generating any questions.
