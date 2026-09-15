@@ -28,7 +28,7 @@ Otherwise, produce a detailed action plan with:
 4. Risks and watch points
 5. Success criteria
 
-If the task is complex or multi-session, write the plan to `PLAN-<YYYYMMDD-HHMM>.md` — never overwrite or delete an existing plan file — and keep it in sync if the plan changes during execution. Otherwise present the plan in conversation.
+If the task is complex or multi-session, write the plan to `specs/PLAN-<YYYYMMDD-HHMM>.md` when the project has a `specs/` folder, else to `PLAN-<YYYYMMDD-HHMM>.md` — never overwrite or delete an existing plan file — and keep it in sync if the plan changes during execution. Otherwise present the plan in conversation.
 
 Do not execute yet. Present the plan and wait for my approval.
 If something is ambiguous, ask clarifying questions before finalizing the plan.
