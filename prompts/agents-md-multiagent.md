@@ -20,19 +20,31 @@ $@
 
 ## Step 2 — Decide
 
-- **Present and complete** — all seven numbered sections are there → report the heading found and stop. Do not rewrite, translate, or realign the existing section, even if it diverges from the canonical block.
-- **Present but incomplete** — heading found but some sections are missing or truncated → list what is missing, then repair after a one-line confirmation.
 - **Absent** → **Step 3**.
+- **Present** — compare the existing section against the canonical block, ignoring heading-level shifts (a demoted append is still a match).
+  - **Identical** → report no-op and stop. Do not rewrite, translate, or realign anything.
+  - **Different** (rules changed, added, removed, or sections missing/truncated) → expose the differences and ask which version to keep, as described below. Never decide this replacement unilaterally.
+
+### When the section differs
+
+Before touching anything:
+
+- Walk the seven numbered sections one by one; for each divergence, quote the existing wording next to the canonical wording — enough context to judge, no full-file dump.
+- Separate cosmetic-only divergences (heading levels, punctuation, typo fixes) from substantive ones (rules added, removed, or changed) so the choice is informed.
+- Then ask one question — which version to keep:
+  - **Existing** — keep the current section exactly as-is; no modification.
+  - **Canonical** — replace the whole section with the canonical block, verbatim, same heading-level rule as **Step 3**.
+- Apply only after the answer, and swap the section in one edit — never leave a mix of both versions.
 
 ## Step 3 — Apply
 
-Append the canonical block to the end of the file, preceded by one blank line:
+Append the canonical block to the end of the file, preceded by one blank line — or, when replacing a divergent section the user chose to overwrite, remove the old section entirely and put the block in its place. Never append a duplicate:
 
 - Keep the block **verbatim** — French wording, structure, code fences — nothing translated, rephrased, or reordered.
 - Single exception — if the file already has a level-1 heading, demote the block's headings one level (`#`→`##`, `##`→`###`, `###`→`####`) so the file keeps a single H1. Detection still matches the `Coordination multi-agents` text.
 - File created from scratch → write just the block; its own H1 serves as the title.
 
-Then re-read the file to confirm the section appears exactly once, and report — action taken (`created` / `appended` / `repaired` / `no-op`), `git diff --stat`, and a reminder to commit and push so other agents pick the section up. Do not commit unless asked.
+Then re-read the file to confirm the section appears exactly once, and report — action taken (`created` / `appended` / `replaced` / `no-op`), `git diff --stat`, and a reminder to commit and push so other agents pick the section up. Do not commit unless asked.
 
 ## Canonical block
 
