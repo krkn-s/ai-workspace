@@ -8,6 +8,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
   - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
   - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
+  - [`brand-site`](skills/brand-site) : Design, build, audit, and improve brand websites — typology vs e-commerce/vitrine/landing, 9-phase creation with design philosophy and tokens, credibility audit (Stanford, NN/g, E-E-A-T), conversion levers, stack choice, French legal frame.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
   - [`reveal-slides`](skills/reveal-slides) : Build single-file HTML presentation decks with reveal.js (Markdown, code highlight, speaker notes, fragments) and export a clean one-slide-per-page vector PDF via html2realpdf — both pinned to jsDelivr CDN URLs.
@@ -20,6 +21,7 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
   - [`brand`](prompts/brand.md) : Brand source of truth — `create` or refine a BRAND.md, `audit` it for drift, or plan a versioned `rebrand`; routes into the `brand-md` skill.
+  - [`brand-site`](prompts/brand-site.md) : Brand website — `create` a brand site from scratch, `audit` or `improve` an existing one (coherence, credibility, sales); routes into the `brand-site` skill.
   - [`spec`](prompts/spec.md) : Single entry point for the `spec-vibe` workflow — `plan` (forward path), `audit` (drift report), `verify` (spec↔code gate), or `archive` (merge deltas into `current/`); routes on the subcommand.
 
 ## Installation
