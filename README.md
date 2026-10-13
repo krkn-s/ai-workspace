@@ -13,17 +13,12 @@ A personal AI workspace with installable skills and pi prompt templates.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
   - [`reveal-slides`](skills/reveal-slides) : Build single-file HTML presentation decks with reveal.js (Markdown, code highlight, speaker notes, fragments) and export a clean one-slide-per-page vector PDF via html2realpdf — both pinned to jsDelivr CDN URLs.
-  - [`alpha-analyst`](skills/alpha-analyst) : Manual-only (`/skill:alpha-analyst`) venture-builder copilot — trend radar, gap detection, TAM/SAM/SOM sizing, investment memo, MVP "Black Car", CAB pre-sale (10 LOIs), GTM kit, Pizza Squad, 0→1M ARR roadmap. Source-backed, French output.
   - [`compact`](skills/compact) : Compact, LLM-friendly Markdown styling — single H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji; write new docs or restyle bloated `.md` files for humans and agents.
 - **prompts**
   - [`ship`](prompts/ship.md) : Explore, plan (through `specs/` when present, else `PLAN-<date>.md` for complex tasks), then execute step-by-step with verification, commit & push, and server update commands.
   - [`agents-md`](prompts/agents-md.md) : One prompt to create, improve, or realign any agent instruction file (AGENTS.md, CLAUDE.md, rules files, skill instructions) — creation grounded in the repo and aligned with the global baseline (`~/.pi/agent/`), one audit pass for conflicts, duplication, stale rules, lean failures, and gaps, every real decision surfaced to the user, output always in compact Markdown (compact skill).
   - [`agents-md-swarm`](prompts/agents-md-swarm.md) : Ensure a project's shared `AGENTS.md` contains the multi-agent coordination section (worktree-first, `.agents-sync/` with `state.json` + `messages.jsonl`, session protocol, merge rules) — append when missing, no-op when identical, expose divergences and ask which version to keep when it differs.
-  - [`starburst`](prompts/starburst.md) : Run a Starbursting brainstorm. Generate 5W1H clarifying questions, then pause for answers.
   - [`redteam`](prompts/redteam.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
-  - [`brand`](prompts/brand.md) : Brand source of truth — `create` or refine a BRAND.md, `audit` it for drift, or plan a versioned `rebrand`; routes into the `brand-md` skill.
-  - [`brand-site`](prompts/brand-site.md) : Brand website — `create` a brand site from scratch, `audit` or `improve` an existing one (coherence, credibility, sales); routes into the `brand-site` skill.
-  - [`spec`](prompts/spec.md) : Single entry point for the `spec-vibe` workflow — `plan` (forward path), `audit` (drift report), `verify` (spec↔code gate), or `archive` (merge deltas into `current/`); routes on the subcommand.
 
 ## Installation
 
@@ -54,7 +49,7 @@ To pull just selected skills and prompts, declare the package with the object fo
       "source": "https://github.com/krkn-s/ai-workspace",
       "skills": ["skills/brand-md"],
       "prompts": [
-        "prompts/brand.md"
+        "prompts/redteam.md"
       ]
     }
   ]
