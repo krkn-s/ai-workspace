@@ -7,7 +7,7 @@ description: Design, build, audit, and improve brand websites — sites where th
 
 Method and reference knowledge for brand websites: what they are (vs e-commerce, vitrine, landing), how to create one from scratch, and how to audit or improve one for coherence, credibility, and sales. Research-backed — Stanford credibility guidelines, NN/g, Google E-E-A-T and HEART, Core Web Vitals, Vercel Web Interface Guidelines — plus lessons distilled from agent design skills (Anthropic, Vercel Labs).
 
-Sibling skill: `brand-md` governs the `BRAND.md` source of truth (capture, don't invent). This skill designs the site where that brand manifests (proposing a territory is the job). The two compose — see Input contract.
+Sibling skill: `brand-md` governs the `BRAND.md` source of truth (capture, don't invent). This skill designs the site where that brand manifests (proposing a territory is the job). The two compose — see Input contract. Once the visual direction is decided, the `impeccable-lite` skill carries the detailed UI craft (components, typography, motion, states).
 
 ## Input contract (BRAND.md first)
 
