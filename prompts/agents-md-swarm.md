@@ -124,8 +124,8 @@ One file, append-only: lines are added, never removed.
 
 **During**
 
-- A file in another agent's `touches` or locked: do not touch it, coordinate by message.
-- Lock: entry in `locks` (`agent`, `acquired`, `expires` max 30 min), released as soon as done.
+- A file in another agent's `touches`: do not touch it — coordinate by message first, who takes it, then declare it in your `touches`.
+- Lock — reserved for shared contracts and non-mergeable files (`specs/` types, lockfiles, binaries), where a merge cannot reconcile two versions: entry in `locks` (`agent`, `acquired`, `expires` max 30 min), released as soon as done. Ordinary code files rely on `touches`, messages, and merges — never lock them.
 - Taking over a stale lock: a lock that expired, or whose agent has not appeared in any state write for 30 min, may be taken over. For a **live** lock, only after posting a `request` message announcing the takeover and waiting 5 minutes for an objection — then override the lock entry (your `acquired`, your `expires`) and notify.
 
 **End — task merged**
@@ -162,6 +162,6 @@ git push origin main
 - `git stash` — stack shared across worktrees; use commits or patches instead.
 - Non-atomic writes to `state.json`.
 - Removing a line from `messages.jsonl`.
-- Editing a locked or claimed file without coordination.
+- Editing a shared contract (`specs/`) or protected file claimed or locked by another agent, without coordination.
 - Merging without green tests and lint.
 `````
