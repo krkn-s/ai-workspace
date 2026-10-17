@@ -1,5 +1,5 @@
 ---
-description: Ensure the project's shared AGENTS.md contains the multi-agent coordination section (.agents-sync, worktree-first, state.json and messages.jsonl protocol) — append it when missing, no-op when already present, repair when truncated. Déclenche aussi en français — vérifier que l'AGENTS.md du projet contient la section coordination multi-agents et l'ajouter si absente.
+description: Ensure the project's shared AGENTS.md contains the multi-agent coordination section (.agents-sync, worktree-first, state.json and messages.jsonl protocol) — append it when missing, no-op when already present, repair when truncated.
 argument-hint: "[instructions]"
 ---
 Ensure this project's **shared, versioned `AGENTS.md`** contains the canonical multi-agent coordination section (bottom of this template). This is an idempotent maintenance task — the section must exist exactly once; never rewrite what is already there. Arguments may add instructions or override the target path.
@@ -15,7 +15,7 @@ $@
 
 - Target the shared `AGENTS.md` at the repo root — never `AGENTS.override.md` (the rules must reach every agent through the versioned file) and never a global `~/.pi` file.
 - File missing → go to **Step 3** (create).
-- File present → read it and search for an existing coordination section — any heading whose text contains `Coordination multi-agents`, or the `.agents-sync/` marker.
+- File present → read it and search for an existing coordination section — any heading whose text contains `Multi-agent coordination` or `Coordination multi-agents` (French legacy), or the `.agents-sync/` marker.
 - If `git status --porcelain` shows `AGENTS.md` already modified, say so before touching it — parallel agents may share this tree.
 
 ## Step 2 — Decide
@@ -40,8 +40,9 @@ Before touching anything:
 
 Append the canonical block to the end of the file, preceded by one blank line — or, when replacing a divergent section the user chose to overwrite, remove the old section entirely and put the block in its place. Never append a duplicate:
 
-- Keep the block **verbatim** — French wording, structure, code fences — nothing translated, rephrased, or reordered.
-- Single exception — if the file already has a level-1 heading, demote the block's headings one level (`#`→`##`, `##`→`###`, `###`→`####`) so the file keeps a single H1. Detection still matches the `Coordination multi-agents` text.
+- Keep the block **verbatim** — English wording, structure, code fences — nothing translated, rephrased, or reordered.
+- Legacy French sections (containing `Coordination multi-agents`) match detection but are always treated as **different** when compared against the canonical block — the user explicitly approves the replacement, which then rewrites the section in English.
+- Single exception — if the file already has a level-1 heading, demote the block's headings one level (`#`→`##`, `##`→`###`, `###`→`####`) so the file keeps a single H1. Detection still matches the `Multi-agent coordination` text.
 - File created from scratch → write just the block; its own H1 serves as the title.
 
 Then re-read the file to confirm the section appears exactly once, and report — action taken (`created` / `appended` / `replaced` / `no-op`), `git diff --stat`, and a reminder to commit and push so other agents pick the section up. Do not commit unless asked.
@@ -49,32 +50,32 @@ Then re-read the file to confirm the section appears exactly once, and report �
 ## Canonical block
 
 `````markdown
-# AGENTS.md — Coordination multi-agents
+# AGENTS.md — Multi-agent coordination
 
-Plusieurs agents travaillent ce dépôt en parallèle. Règles obligatoires, deux fichiers de coordination, zéro outil externe.
+Multiple agents work on this repository in parallel. Mandatory rules, two coordination files, zero external tooling.
 
 ## 1. Worktree-first
 
-Le checkout principal est partagé et sera écrasé sous toi. Avant toute édition de fichier :
+The main checkout is shared and will be overwritten under you. Before editing any file:
 
 ```bash
-git worktree add ../<repo>-<ta-tache> -b agent/<ta-tache> main
-cd ../<repo>-<ta-tache>
+git worktree add ../<repo>-<your-task> -b agent/<your-task> main
+cd ../<repo>-<your-task>
 ```
 
-Toute modification se fait dans ce worktree, jamais ailleurs.
+All changes happen inside this worktree, never elsewhere.
 
 ## 2. Coordination `.agents-sync/`
 
-Deux fichiers versionnés :
+Two versioned files:
 
 ```text
 .agents-sync/
-├── state.json       # qui fait quoi : agents actifs, verrous, tâches
-└── messages.jsonl   # messagerie unique, append-only
+├── state.json       # who is doing what: active agents, locks, tasks
+└── messages.jsonl   # single messaging channel, append-only
 ```
 
-`state.json` absent ? Crée-le :
+`state.json` missing? Create it:
 
 ```json
 {
@@ -85,78 +86,78 @@ Deux fichiers versionnés :
 }
 ```
 
-### Écriture de `state.json`
+### Writing `state.json`
 
-Toujours atomique — lis, modifie en mémoire, écris `state.json.tmp`, puis :
+Always atomic — read, modify in memory, write `state.json.tmp`, then:
 
 ```bash
 mv state.json.tmp state.json
 git add .agents-sync/state.json
-git commit -m "agents: <action> (<ton-id>)"
-git push origin agent/<ta-tache>
+git commit -m "agents: <action> (<your-id>)"
+git push origin agent/<your-task>
 ```
 
-**Push rejeté** : un autre agent a modifié l'état en même temps. `git fetch && git rebase origin/main`, ré-applique ta modification, re-teste, re-push. Le premier push gagne, tu t'adaptes.
+**Push rejected**: another agent modified the state concurrently. `git fetch && git rebase origin/main`, re-apply your change, re-test, re-push. First push wins, you adapt.
 
-### Messagerie `messages.jsonl`
+### Messaging `messages.jsonl`
 
-Un seul fichier, append-only : on ajoute des lignes, on n'en supprime jamais.
+One file, append-only: lines are added, never removed.
 
 ```jsonl
-{"from":"agent-1","to":"agent-2","ts":"2026-01-01T10:00:00Z","type":"info","msg":"Je modifie src/auth/types.ts, ne pas y toucher.","context":{"file":"src/auth/types.ts"}}
+{"from":"agent-1","to":"agent-2","ts":"2026-01-01T10:00:00Z","type":"info","msg":"I am editing src/auth/types.ts, stay away from it.","context":{"file":"src/auth/types.ts"}}
 ```
 
-- `type` : `info` | `request` | `ack` ; diffusion : `"to":"all"`.
-- Lire : `jq -c 'select(.to=="<ton-id>" or .to=="all")' .agents-sync/messages.jsonl | tail -20`
-- Push rejeté : même arbitrage que `state.json` (rebase, ré-append, re-push).
+- `type`: `info` | `request` | `ack`; broadcast: `"to":"all"`.
+- Read: `jq -c 'select(.to=="<your-id>" or .to=="all")' .agents-sync/messages.jsonl | tail -20`
+- Push rejected: same arbitration as `state.json` (rebase, re-append, re-push).
 
-## 3. Protocole de session
+## 3. Session protocol
 
-**Démarrage**
+**Start**
 
-1. Synchronise-toi sur `main`, crée ton worktree (règle 1).
-2. Lis `state.json`, nettoie les verrous expirés, lis tes messages.
-3. Enregistre-toi dans `agents` : id, branche, worktree, tâche, `touches` (fichiers prévus).
+1. Sync to `main`, create your worktree (rule 1).
+2. Read `state.json`, clean expired locks, read your messages.
+3. Register yourself in `agents`: id, branch, worktree, task, `touches` (planned files).
 
-**Pendant**
+**During**
 
-- Fichier dans le `touches` d'un autre agent ou verrouillé : n'y touche pas, coordonne par message.
-- Verrou : entrée dans `locks` (`agent`, `acquired`, `expires` max 2 h), libérée dès que fini.
+- A file in another agent's `touches` or locked: do not touch it, coordinate by message.
+- Lock: entry in `locks` (`agent`, `acquired`, `expires` max 2 h), released as soon as done.
 
-**Fin — tâche fusionnée**
+**End — task merged**
 
-1. Retire ton entrée `agents`, tes verrous, tes tâches terminées ; commit + push.
-2. `git worktree remove ../<repo>-<ta-tache>` ; supprime ta branche.
+1. Remove your `agents` entry, your locks, your completed tasks; commit + push.
+2. `git worktree remove ../<repo>-<your-task>`; delete your branch.
 
-## 4. Specs d'abord
+## 4. Specs first
 
-Décisions d'architecture et contrats (types, routes, interfaces) vivent dans `specs/`. Ta tâche touche un contrat partagé : lis la spec avant de coder ; la changer : modifie et valide la spec **avant** le travail parallèle. La spec est la source de vérité — pas les messages, pas le code.
+Architectural decisions and contracts (types, routes, interfaces) live in `specs/`. If your task touches a shared contract: read the spec before coding; to change it: modify and validate the spec **before** parallel work. The spec is the source of truth — not messages, not code.
 
-## 5. Validation avant fusion
+## 5. Validation before merge
 
-Détecte l'outillage du projet (manifest, scripts, Makefile, CI) et utilise ses commandes natives de test et lint. Rien détecté : signale-le, valide par revue manuelle.
+Detect the project's tooling (manifest, scripts, Makefile, CI) and use its native test and lint commands. Nothing detected: say so, validate by manual review.
 
-Tests et lint verts avant toute fusion, sans exception — et re-teste après un rebase.
+Tests and lint green before every merge, no exceptions — and re-test after a rebase.
 
-## 6. Workflow Git
+## 6. Git workflow
 
-1. Une branche par tâche, `agent/<ta-tache>` depuis `main`.
-2. Commits fréquents et atomiques ; ne stage que tes fichiers.
-3. Fusion séquentielle, une par une :
+1. One branch per task, `agent/<your-task>` off `main`.
+2. Frequent atomic commits; stage only your files.
+3. Sequential merges, one at a time:
 
 ```bash
-git push origin agent/<ta-tache>
+git push origin agent/<your-task>
 git fetch origin
-git rebase origin/main        # conflits → résous, re-teste
-git checkout main && git merge --no-ff agent/<ta-tache>
+git rebase origin/main        # resolve conflicts, re-test
+git checkout main && git merge --no-ff agent/<your-task>
 git push origin main
 ```
 
-## 7. Interdictions
+## 7. Prohibitions
 
-- `git stash` — pile partagée entre worktrees ; utilise commits ou patches.
-- Écriture non atomique de `state.json`.
-- Suppression d'une ligne de `messages.jsonl`.
-- Fichier verrouillé ou pris par un autre agent, sans coordination.
-- Fusion sans tests et lint verts.
+- `git stash` — stack shared across worktrees; use commits or patches instead.
+- Non-atomic writes to `state.json`.
+- Removing a line from `messages.jsonl`.
+- Editing a locked or claimed file without coordination.
+- Merging without green tests and lint.
 `````
