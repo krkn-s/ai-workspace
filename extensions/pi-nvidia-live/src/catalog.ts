@@ -3,12 +3,12 @@
 // models-only override so baseUrl, auth ($NVIDIA_API_KEY / auth.json) and the
 // openai-completions streamer stay owned by pi's built-in nvidia provider.
 
-import { NVIDIA_MODELS } from "@earendil-works/pi-ai/providers/nvidia.models";
+import { getBuiltinModels } from "@earendil-works/pi-ai/providers/all";
 import { NIM_BASE_URL, NIM_BASE_COMPAT, NIM_HEADERS, familyFor } from "./families";
 import type { CacheShape, CachedModel } from "./cache";
 import type { Provenance } from "./enrich";
 
-const BASE_FALLBACK = Object.values(NVIDIA_MODELS)[0];
+const BASE_FALLBACK = getBuiltinModels("nvidia")[0];
 
 export interface ChatDef {
 	id: string;
@@ -34,7 +34,7 @@ if (!BASE_FALLBACK) {
 }
 
 export function builtinChatDefs(): ChatDef[] {
-	return Object.values(NVIDIA_MODELS).map((model) => ({
+	return getBuiltinModels("nvidia").map((model) => ({
 		id: model.id,
 		name: model.name,
 		api: "openai-completions",
