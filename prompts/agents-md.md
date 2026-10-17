@@ -64,7 +64,7 @@ Drop any section that would say nothing; never restate global rules — agreemen
 
 ## Format — compact, always
 
-The compact skill is loaded alongside this prompt in every project — apply its recipe and checklist to the proposed file: exactly one H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji. Never drop facts or meaning while compacting. When the file follows a deliberate house style that conflicts with compact (tooling expecting deeper headings), preserve the intent and note the deviation instead of silently breaking tooling.
+Load the compact skill before proposing the file — it is installed globally in this setup; if it is not available in the session, follow the conventions below: exactly one H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji. Never drop facts or meaning while compacting. When the file follows a deliberate house style that conflicts with compact (tooling expecting deeper headings), preserve the intent and note the deviation instead of silently breaking tooling.
 
 ## Rules for this task
 
