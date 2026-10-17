@@ -75,6 +75,8 @@ Two versioned files:
 └── messages.jsonl   # single messaging channel, append-only
 ```
 
+First install in a repo: write a `.gitattributes` with `.agents-sync/messages.jsonl merge=union` so concurrent appends auto-merge — create it once, commit it.
+
 `state.json` missing? Create it:
 
 ```json
@@ -97,7 +99,7 @@ git commit -m "agents: <action> (<your-id>)"
 git push origin agent/<your-task>
 ```
 
-**Push rejected**: another agent modified the state concurrently. `git fetch && git rebase origin/main`, re-apply your change, re-test, re-push. First push wins, you adapt.
+**Push rejected**: another agent modified the state concurrently. `git fetch && git rebase origin/main`, resolve, re-push. First push wins, you adapt. If the rebase conflicts on `state.json`, resolve by **union**: keep both sides' `agents`, `locks`, and `tasks` entries (same key = the other agent registered first, rename your id), write atomically, commit, re-push.
 
 ### Messaging `messages.jsonl`
 
@@ -116,13 +118,15 @@ One file, append-only: lines are added, never removed.
 **Start**
 
 1. Sync to `main`, create your worktree (rule 1).
-2. Read `state.json`, clean expired locks, read your messages.
-3. Register yourself in `agents`: id, branch, worktree, task, `touches` (planned files).
+2. Read `state.json`: expired locks (older than 30 min) are removed; an unknown `version` → stop and report to the user, never write.
+3. Register yourself in `agents`: id, branch, worktree, task, `touches` (planned files). Ids are unique: `agent-<task>-<4 random chars>` — if the id is already taken in `state.json`, add a suffix.
+4. Read your messages (see rule 2).
 
 **During**
 
 - A file in another agent's `touches` or locked: do not touch it, coordinate by message.
-- Lock: entry in `locks` (`agent`, `acquired`, `expires` max 2 h), released as soon as done.
+- Lock: entry in `locks` (`agent`, `acquired`, `expires` max 30 min), released as soon as done.
+- Taking over a stale lock: a lock that expired, or whose agent has not appeared in any state write for 30 min, may be taken over. For a **live** lock, only after posting a `request` message announcing the takeover and waiting 5 minutes for an objection — then override the lock entry (your `acquired`, your `expires`) and notify.
 
 **End — task merged**
 
