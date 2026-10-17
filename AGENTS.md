@@ -14,12 +14,14 @@ This repository is a **catalog of installable agent skills and pi prompt templat
 - **`description` MUST stay under 1024 characters** (hard limit enforced by tooling: "description exceeds 1024 characters" error). If a description grows past it, push the extra trigger contexts into the SKILL.md body instead of the frontmatter.
 - Keep `SKILL.md` under ~500 lines; push detail into `references/`.
 - Do **not** add `agents/openai.yaml` or `test-prompts.json` — they were intentionally removed (nothing here consumes them).
+- **Imported third-party skills** — copy verbatim, keep the original code untouched, and add a note at the top of the body crediting the source repo, original author, and license, with the third-party license file kept inside the skill folder (see `skills/browser-tools`).
 
 ## Prompt conventions
 
 - Follow the pi prompt-template format (see pi's docs: `docs/prompt-templates.md` — frontmatter fields, argument syntax, loading rules).
 - One prompt per file, directly in `prompts/` (discovery is non-recursive).
-- Write bodies in English.
+- 100% English — bodies AND frontmatter descriptions.
+- Multiline user instructions are lossy with `$@` (arguments join with spaces); prompts that take long instructions should accept a file path argument.
 
 ## YAML pitfall
 
