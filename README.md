@@ -59,20 +59,16 @@ To pull just selected skills and prompts, declare the package with the object fo
 
 - Omit a key to load **all** of that type; use `[]` to load **none**.
 - `!pattern` excludes, `+path` force-includes, `-path` force-excludes (exact paths relative to the repo root).
-- Toggle individual resources interactively with `pi config -l` (Tab switches between global and project scope).
 
-### Via `npx skills add` (skills only)
+### Toggle resources
 
-Installs individual skills but does **not** install prompts. If you use this path, copy the prompt files you need into `~/.pi/agent/prompts/` (global) or `.pi/prompts/` (project) by hand.
+List and toggle individual resources interactively:
 
 ```bash
-npx skills add https://github.com/krkn-s/ai-workspace --skill seo-aeo-content
-npx skills add https://github.com/krkn-s/ai-workspace --skill ai-visibility-stack
-npx skills add https://github.com/krkn-s/ai-workspace --skill human-prose
-npx skills add https://github.com/krkn-s/ai-workspace --skill brand-md
-npx skills add https://github.com/krkn-s/ai-workspace --skill spec-vibe
-npx skills add https://github.com/krkn-s/ai-workspace --skill image-prompt-crafter
+pi config -l
 ```
+
+(Tab switches between global and project scope.)
 
 ## License
 

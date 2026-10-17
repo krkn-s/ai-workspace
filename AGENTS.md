@@ -29,7 +29,7 @@ Avoid `: ` (colon + space) inside unquoted frontmatter values — it breaks pars
 
 ## Tooling
 
-- Manage skills with the `skills` CLI (`npx skills add <repo> --skill <name>`). There is no `package.json`.
+- Install and manage this catalog with the `pi` CLI: `pi install <repo>` (global) or `pi install -l <repo>` (project), `pi config` to toggle resources. The repo doubles as a pi package exposing `skills/` and `prompts/` at the root. There is no `package.json`.
 - GitHub operations via `gh`.
 
 ## Git
