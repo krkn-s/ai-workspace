@@ -27,7 +27,7 @@ Per-format rules for the document types this skill targets. Use these to choose 
 - **Bleed:** 3 mm; safe text margin 5 mm.
 - **Color:** vivid for digital/offset; switch to CMYK + `pdf/x-4` for press.
 
-## Brochure / Dépliant (folded)
+## Brochure / Flyer (folded)
 
 Two sub-types. The **flat sheet** is what WeasyPrint prints; folding is physical.
 
