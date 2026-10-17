@@ -38,7 +38,7 @@ specs/
 
 ## Task routing
 
-Entry point `/spec <plan|audit|verify|archive>` loads this skill; it also triggers contextually without it. Load only the references the task needs:
+This skill triggers contextually whenever a spec-driven feature, spec, delta, or audit task appears, and can also be forced explicitly. Load only the references the task needs:
 
 | Task | Read | Output |
 |---|---|---|

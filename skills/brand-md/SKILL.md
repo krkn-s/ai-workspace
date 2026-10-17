@@ -18,7 +18,7 @@ Instruction-only: no tools, no generators. Visual production (logo files, color 
 
 ## Task routing
 
-Entry point `/brand <create|audit|rebrand>` loads this skill; it also triggers contextually. Load only the references the task needs:
+This skill triggers contextually on brand work (create, audit, or rebrand of a `BRAND.md`) and can also be forced explicitly from the body. Load only the references the task needs:
 
 | Task | Read | Output |
 |---|---|---|

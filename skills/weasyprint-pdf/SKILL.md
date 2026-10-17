@@ -5,6 +5,8 @@ description: Create print-ready PDF documents from HTML and CSS using WeasyPrint
 
 # WeasyPrint PDF
 
+All prose, copy, and wording that ends up in the document follows the `human-prose` skill — load it when the content is drafted or rewritten in this run (not needed for boilerplate labels).
+
 ## Overview
 
 WeasyPrint is a visual rendering engine for HTML and CSS that exports **paginated** PDF. Unlike a browser (one scrolling viewport), WeasyPrint flows content onto fixed-size pages defined by the CSS `@page` rule. This is the core mental model:

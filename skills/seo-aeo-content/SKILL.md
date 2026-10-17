@@ -13,6 +13,8 @@ Keep outputs operational: briefs, outlines, audits, checklists, content plans, r
 
 This skill owns the content layer only. If the task is about `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, or AI crawler access, use the `ai-visibility-stack` skill instead.
 
+All prose content produced or edited by this skill follows the `human-prose` skill (wording, AI-tell avoidance) — load it when drafting or rewriting.
+
 ## Reference Loading
 
 Load references only when needed:
