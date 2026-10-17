@@ -1,5 +1,5 @@
 ---
-description: Ensure the project's shared AGENTS.md contains the multi-agent coordination section (.agents-sync, worktree-first, state.json and messages.jsonl protocol) — append it when missing, no-op when already present, repair when truncated.
+description: Ensure the project's shared AGENTS.md contains the multi-agent coordination section (.agents-sync, worktree-first, per-agent state files, locks.json, message files, session protocol) — append it when missing, no-op when already present, repair when truncated.
 argument-hint: "[instructions]"
 ---
 Ensure this project's **shared, versioned `AGENTS.md`** contains the canonical multi-agent coordination section (bottom of this template). This is an idempotent maintenance task — the section must exist exactly once; never rewrite what is already there. Arguments may add instructions or override the target path.
@@ -52,7 +52,7 @@ Then re-read the file to confirm the section appears exactly once, and report �
 `````markdown
 # AGENTS.md — Multi-agent coordination
 
-Multiple agents work on this repository in parallel. Mandatory rules, two coordination files, zero external tooling.
+Multiple agents work on this repository in parallel. Mandatory rules, coordination files, zero external tooling.
 
 ## 1. Worktree-first
 
@@ -67,70 +67,77 @@ All changes happen inside this worktree, never elsewhere.
 
 ## 2. Coordination `.agents-sync/`
 
-Two versioned files:
+Coordination files, each agent writing ONLY its own — concurrent writes never conflict on the same file:
 
 ```text
 .agents-sync/
-├── state.json       # who is doing what: active agents, locks, tasks
-└── messages.jsonl   # single messaging channel, append-only
+├── state/
+│   └── agent-<id>.json        # one registration file per agent, written only by its owner
+├── locks.json                 # shared contracts + non-mergeable files only
+└── messages/
+    └── <ts>-<from>-<to>.json  # one file per message ("-to" is an agent id or "all")
 ```
 
-First install in a repo: write a `.gitattributes` with `.agents-sync/messages.jsonl merge=union` so concurrent appends auto-merge — create it once, commit it.
-
-`state.json` missing? Create it:
+`locks.json` missing? Create it:
 
 ```json
 {
   "version": 1,
-  "agents": {},
-  "locks": {},
-  "tasks": []
+  "locks": {}
 }
 ```
 
-### Writing `state.json`
+### Writing coordination files
 
-Always atomic — read, modify in memory, write `state.json.tmp`, then:
+Always atomic — read, modify in memory, write `<file>.tmp`, then:
 
 ```bash
-mv state.json.tmp state.json
-git add .agents-sync/state.json
+mv <file>.tmp <file>
+git add .agents-sync
 git commit -m "agents: <action> (<your-id>)"
 git push origin agent/<your-task>
 ```
 
-**Push rejected**: another agent modified the state concurrently. `git fetch && git rebase origin/main`, resolve, re-push. First push wins, you adapt. If the rebase conflicts on `state.json`, resolve by **union**: keep both sides' `agents`, `locks`, and `tasks` entries (same key = the other agent registered first, rename your id), write atomically, commit, re-push.
+You only ever modify your own `state/agent-<id>.json` and your own entries in `locks.json` — never another agent's file or entries.
 
-### Messaging `messages.jsonl`
+**Push rejected**: another agent pushed concurrently. `git fetch && git rebase origin/main`, resolve, re-push. First push wins, you adapt. If the rebase conflicts on `locks.json`, resolve by **union**: keep both sides' entries, write atomically, commit, re-push.
 
-One file, append-only: lines are added, never removed.
+### Messaging `messages/`
 
-```jsonl
-{"from":"agent-1","to":"agent-2","ts":"2026-01-01T10:00:00Z","type":"info","msg":"I am editing src/auth/types.ts, stay away from it.","context":{"file":"src/auth/types.ts"}}
+One file per message, named `<ts>-<from>-<to>.json` (`to` = a recipient id, or `all`) — adding a message never touches an existing file:
+
+```json
+{"from":"agent-auth-a1f2","to":"agent-api-9d3c","ts":"2026-01-01T10:00:00Z","type":"info","msg":"I am editing src/auth/types.ts, stay away from it.","context":{"file":"src/auth/types.ts"}}
 ```
 
-- `type`: `info` | `request` | `ack`; broadcast: `"to":"all"`.
-- Read: `jq -c 'select(.to=="<your-id>" or .to=="all")' .agents-sync/messages.jsonl | tail -20`
-- Push rejected: same arbitration as `state.json` (rebase, re-append, re-push).
+- `type`: `info` | `request` | `ack`; broadcast: `"to":"all"` (filename ends `-<to>-all`).
+- Read your inbox:
+
+```bash
+cat .agents-sync/messages/*-<your-id>.json .agents-sync/messages/*-all.json | jq .
+```
+
+Order by the `ts` in the filename prefix. Never delete, edit, or re-encode an existing message file — your own messages included. A `request` is answered with an `ack` message addressed back to the sender.
 
 ## 3. Session protocol
 
 **Start**
 
 1. Sync to `main`, create your worktree (rule 1).
-2. Read `state.json`: expired locks (older than 30 min) are removed; an unknown `version` → stop and report to the user, never write.
-3. Register yourself in `agents`: id, branch, worktree, task, `touches` (planned files). Ids are unique: `agent-<task>-<4 random chars>` — if the id is already taken in `state.json`, add a suffix.
-4. Read your messages (see rule 2).
+2. Read `state/` (all agent files) and `locks.json`: expired locks (older than 30 min) are removed; an unknown `version` in `locks.json` → stop and report to the user, never write.
+3. Register yourself: id = `agent-<task>-<4 random chars>` (check `ls state/` — if taken, add a suffix), then write `state/agent-<id>.json` with: id, branch, worktree, task, `touches` (planned files), `ts` (a timestamp you update on every later rewrite of this file).
+4. Read your messages (rule 2).
 
 **During**
 
 - A file in another agent's `touches`: do not touch it — coordinate by message first, who takes it, then declare it in your `touches`.
-- Lock — reserved for shared contracts and non-mergeable files (`specs/` types, lockfiles, binaries), where a merge cannot reconcile two versions: entry in `locks` (`agent`, `acquired`, `expires` max 30 min), released as soon as done. Ordinary code files rely on `touches`, messages, and merges — never lock them.
-- Taking over a stale lock: a lock that expired, or whose agent has not appeared in any state write for 30 min, may be taken over. For a **live** lock, only after posting a `request` message announcing the takeover and waiting 5 minutes for an objection — then override the lock entry (your `acquired`, your `expires`) and notify.
+- Lock — reserved for shared contracts and non-mergeable files (`specs/` types, lockfiles, binaries), where a merge cannot reconcile two versions: entry in `locks.json` (`agent`, file, `acquired`, `expires` max 30 min), released as soon as done. Ordinary code files rely on `touches`, messages, and merges — never lock them.
+- Taking over a stale lock: a lock that expired, or whose agent's `state/` file has not been rewritten for 30 min, may be taken over. For a **live** lock, only after posting a `request` message announcing the takeover and waiting 5 minutes for an objection — then override the lock entry (your `acquired`, your `expires`) and notify.
+- Keep your `state/agent-<id>.json` fresh: rewrite it (same atomic write, new `ts`) whenever your `touches` change materially or at least every 30 min while working — it is your liveness marker for the takeover rule.
 
 **End — task merged**
 
-1. Remove your `agents` entry, your locks, your completed tasks; commit + push.
+1. Delete your `state/agent-<id>.json`, clear your `locks.json` entries; commit + push.
 2. `git worktree remove ../<repo>-<your-task>`; delete your branch.
 
 ## 4. Specs first
@@ -160,8 +167,8 @@ git push origin main
 ## 7. Prohibitions
 
 - `git stash` — stack shared across worktrees; use commits or patches instead.
-- Non-atomic writes to `state.json`.
-- Removing a line from `messages.jsonl`.
+- Non-atomic writes to any `.agents-sync` file.
+- Deleting, editing, or re-encoding a `messages/` or `state/` file you do not own.
 - Editing a shared contract (`specs/`) or protected file claimed or locked by another agent, without coordination.
 - Merging without green tests and lint.
 `````
