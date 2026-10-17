@@ -1,7 +1,9 @@
 # KRKN's AI Workspace
 
-A personal AI workspace with installable skills and pi prompt templates.
+A personal AI workspace with installable skills, pi prompt templates, and pi extensions.
 
+- **extensions**
+  - [`pi-nvidia-live`](extensions/pi-nvidia-live) : Live NVIDIA NIM catalog for pi — replaces the built-in `nvidia` provider's model list with the free-tier `/v1/models` catalog, enriches per-model metadata from NVIDIA's own sources (`.md` records, `-infer` OpenAPI schemas, family fallbacks), commands `/nvidia-refresh` and `/nvidia-models`.
 - **skills**
   - [`image-prompt-crafter`](skills/image-prompt-crafter) : Craft production-grade prompts for conversational image generators (GPT Image 2, Nano Banana 2/Pro, Seedream 5 Pro) — hybrid clarification, model-specific English variants, settings, and iteration plans.
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO and AEO content strategy for briefs, audits, page structures, and editorial plans.
