@@ -2,13 +2,13 @@ import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-// Resolve the sibling prose skill so block reasons can point the model at full rules.
+// Resolve the sibling prose skill so block reasons can point the model at it.
 // Works in this repo's checkout and in the globally installed clone: extensions/prose-guard -> ../skills/prose.
 function proseSkillHint(): string {
 	try {
 		const skillPath = join(dirname(new URL(import.meta.url).pathname), "..", "..", "skills", "prose", "SKILL.md");
 		return existsSync(skillPath)
-			? `Full prose rules (voice, banned vocabulary, detection): read ${skillPath} and apply them before retrying.`
+			? 'Load the "prose" skill (read its SKILL.md from your available skills) and apply its full rules before retrying.'
 			: "";
 	} catch {
 		return "";
@@ -97,8 +97,8 @@ export default function proseGuard(pi: ExtensionAPI) {
 			block: true,
 			reason:
 				`${prefix} ${findings.join("; ")}. ` +
-				`Rewrite without them (em dash \u2192 period, comma, parentheses, or split the sentence; ellipsis \u2192 "...") and retry the call. Do not work around this gate \u2014 it applies to every file you produce.` +
-				(hint ? ` ${hint}` : ""),
+				(hint ? `${hint} ` : "") +
+				`Rewrite without them (em dash \u2192 period, comma, parentheses, or split the sentence; ellipsis \u2192 "...") and retry. Do not work around this gate; it applies to every file you produce.`,
 		};
 	});
 }
