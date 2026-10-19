@@ -55,7 +55,9 @@ Apply the replacement only after the user confirms.
 
 ## Create (file missing)
 
-Draft the leanest file that agrees with the global baseline from the start:
+**Ground or ask.** A brand-new project may leave nothing to inspect: if the repo is empty or yields no real evidence (no code, no lockfile, no scripts), grounding fails — ask one batch of questions instead of drafting guesses: stack and frameworks, package manager, the real build/run/test/lint commands, working conventions wanted, and the risky operations that should require confirmation. Skip only what the user's request already answers. Once answered (or once the repo yields real evidence), draft.
+
+Then draft the leanest file that agrees with the global baseline from the start:
 
 - **Stack & tooling** — frameworks, package manager, exact build/run/test/lint commands that are not obvious from lockfiles and scripts.
 - **Conventions** — patterns the codebase follows that a stranger would get wrong.
