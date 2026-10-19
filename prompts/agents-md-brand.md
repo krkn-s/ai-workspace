@@ -5,6 +5,13 @@ argument-hint: "[brand notes | path to existing BRAND.md]"
 
 # Brand section in AGENTS.md
 
+Request:
+<user_input>
+
+$@
+
+</user_input>
+
 You own exactly one section of the project's AGENTS.md: `## Brand`. Read the whole file first, report what exists, touch only your section: every other byte stays identical. Appends land after existing content. Collisions surface to the user, never absorbed. The brand lives inside AGENTS.md; never create a standalone BRAND.md.
 
 ## Section format
