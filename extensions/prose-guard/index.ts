@@ -1,4 +1,19 @@
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+
+// Resolve the sibling prose skill so block reasons can point the model at full rules.
+// Works in this repo's checkout and in the globally installed clone: extensions/prose-guard -> ../skills/prose.
+function proseSkillHint(): string {
+	try {
+		const skillPath = join(dirname(new URL(import.meta.url).pathname), "..", "..", "skills", "prose", "SKILL.md");
+		return existsSync(skillPath)
+			? `Full prose rules (voice, banned vocabulary, detection): read ${skillPath} and apply them before retrying.`
+			: "";
+	} catch {
+		return "";
+	}
+}
 
 // Skipped keys: identifiers, not prose.
 const SKIP_KEYS = new Set(["path", "file_path"]);
@@ -77,11 +92,13 @@ export default function proseGuard(pi: ExtensionAPI) {
 			event.toolName === "bash"
 				? "prose-guard: your bash command contains banned characters that would land in a file \u2014"
 				: `prose-guard: the text you are trying to ${event.toolName} contains banned characters \u2014`;
+		const hint = proseSkillHint();
 		return {
 			block: true,
 			reason:
 				`${prefix} ${findings.join("; ")}. ` +
-				`Rewrite without them (em dash \u2192 period, comma, parentheses, or split the sentence; ellipsis \u2192 "...") and retry the call. Do not work around this gate \u2014 it applies to every file you produce.`,
+				`Rewrite without them (em dash \u2192 period, comma, parentheses, or split the sentence; ellipsis \u2192 "...") and retry the call. Do not work around this gate \u2014 it applies to every file you produce.` +
+				(hint ? ` ${hint}` : ""),
 		};
 	});
 }
