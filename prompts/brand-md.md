@@ -56,7 +56,7 @@ Rules:
 1. Convert this BRAND.md into a `## Brand` section in AGENTS.md? (yes/no)
 2. After the section is written, delete the source file? (yes/no — destructive)
 Keep every decided fact and `Open question`; compress personas detail, long stories, and governance/legal/asset sections into the update line as "dropped: <what>"; copy the freshest date. Refusing either answer stops the flow. |
-| `/brand-md` (section already present) | Ask what changed; rewrite only the `## Brand` section after showing the user the replacement; update the trailing date line. |
+| `/brand-md` (section already present) | **Audit first, then ask.** See the audit mode below — never rewrite from guesswork. |
 
 ## Scope discipline (generic)
 
@@ -67,6 +67,21 @@ When editing `AGENTS.md` (or any agent instruction file) you own nothing outside
 - Never reorder, renumber, merge, rewrite, or reformat other sections; other rules, tables, and coordination blocks stay byte-identical.
 - Appends go after existing content, never above or between unrelated sections.
 - If a required change collides with a protected section (overlap, contradiction, formatting conflict), surface the conflict and ask; do not silently absorb it.
+
+## Audit mode (section already present)
+
+Goal: bring the section back in agreement with reality, and genuinely improve it — every finding carries evidence from the repo or from the user, never invention.
+
+1. **Observe.** Read the current `## Brand` section, then the whole repo for contradicting or confirming evidence: README and docs (offer changes, new pages), recent commits, package.json / site content, existing site copy if a URL is known (fetch it), previous brand-adjacent output. Also check which `Open question`s the repo has since answered.
+1. **Classify** each fact:
+   - **Verified** — repo evidence matches; say so, one line, move on.
+   - **Drifted** — the repo or an authoritative source contradicts the section (a price changed, a new offer exists, contact moved). Show: section value vs observed value, where observed.
+   - **Stale** — Open question the repo has now answered, or a forbidden term already appearing in project content (citing files and lines).
+   - **Unverifiable** — brand statements no repo evidence can reach (positioning, voice feel). Hand to the user as questions, never decide unilaterally.
+2. **Propose improvements** beyond drift, always grounded: sharper positioning if offers evolved, missing audience, stronger forbidden entries drawn from observed output failures, palette/typography notes if the site moved on. Each proposal = what + evidence + one-line why.
+3. **Decide with the user.** Present drifts and proposals as a compact batch; apply only what is confirmed; rewrite only the `## Brand` section; update the trailing date line with the real change summary.
+
+Rules: no finding without evidence (file, URL, commit) or an explicit user statement; drifts never silently overwrite — every replacement is user-confirmed; unverifiable claims stay verbatim.
 
 ## Agent consumption (tell the user)
 
