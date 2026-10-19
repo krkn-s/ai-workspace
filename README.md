@@ -17,6 +17,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`reveal-slides`](skills/reveal-slides): Self-contained reveal.js 6 decks in one HTML file, exported to vector PDF via html2realpdf.
 - [`seo-aeo-content`](skills/seo-aeo-content): SEO and AEO content strategy: briefs, outlines, audits, editorial plans.
 - [`spec-vibe`](skills/spec-vibe): Markdown-only spec-driven development over a `specs/` tree.
+- [`web-design`](skills/web-design): Web design fundamentals: visual hierarchy, color, typography, conversion practices, audience fit.
 - [`weasyprint-pdf`](skills/weasyprint-pdf): Print-ready PDFs from HTML and CSS via WeasyPrint (`@page`, TOC, bookmarks, CMYK/PDF-X).
 
 ## Prompts
