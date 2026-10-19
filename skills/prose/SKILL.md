@@ -7,7 +7,7 @@ description: Write and rewrite any prose so it reads like a real person wrote it
 
 ## When this applies
 
-By default, whenever you write or rewrite any prose for the user, in French or English. This covers drafting, rewriting, summarizing, expanding, translating, editing, and cleaning text. It also covers the written content inside presentations, PDF documents, Markdown files, and websites — the artifact skill handles the deck, the PDF, or the site; this skill governs the words in it. Do not reserve it for explicit "humanize" requests.
+By default, whenever you write or rewrite any prose for the user, in French or English. This covers drafting, rewriting, summarizing, expanding, translating, editing, and cleaning text. It also covers the written content inside presentations, PDF documents, Markdown files, and websites — the presentation and PDF skills handle the deck, the PDF, or the site; this skill governs the words in it. Do not reserve it for explicit "humanize" requests.
 
 ## Goal
 

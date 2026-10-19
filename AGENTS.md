@@ -1,31 +1,32 @@
 # AGENTS.md
 
-This repository is a **catalog of installable agent skills and pi prompt templates**, not a software project. There is no build, test, or lint step — everything is Markdown.
+This repository is a **catalog of installable agent skills, pi prompt templates, and pi extensions**, not a software project. There is no build, test, or lint step: everything is Markdown.
 
 ## Layout
 
-- `skills/<name>/SKILL.md` — one skill per folder; `references/` holds deeper docs.
-- `prompts/<name>.md` — pi prompt templates; the filename (without `.md`) becomes the `/name` command.
-- `README.md` — two-level catalog list (`skills`, `prompts`). Keep it in sync when adding or removing items.
+- `extensions/<name>/` (pi extension package; self-documenting in its own README)
+- `skills/<name>/SKILL.md`: one skill per folder; `references/` holds deeper docs.
+- `prompts/<name>.md`: pi prompt templates; the filename (without `.md`) becomes the `/name` command.
+- `README.md`: three-section catalog list (`extensions`, `skills`, `prompts`). Keep it in sync when adding or removing items.
 
 ## Skill conventions
 
-- Frontmatter: `name` and `description` only. `description` is the **primary trigger** — write it bilingual (English core plus a French clause), concrete and pushy (real trigger contexts, file types, phrasings).
+- Frontmatter: `name` and `description` only. `description` is the **primary trigger**: write it bilingual (English core plus a French clause), concrete and pushy (real trigger contexts, file types, phrasings).
 - **`description` MUST stay under 1024 characters** (hard limit enforced by tooling: "description exceeds 1024 characters" error). If a description grows past it, push the extra trigger contexts into the SKILL.md body instead of the frontmatter.
 - Keep `SKILL.md` under ~500 lines; push detail into `references/`.
-- Do **not** add `agents/openai.yaml` or `test-prompts.json` — they were intentionally removed (nothing here consumes them).
-- **Imported third-party skills** — copy verbatim, keep the original code untouched, and add a note at the top of the body crediting the source repo, original author, and license, with the third-party license file kept inside the skill folder (see `skills/browser-tools`).
+- Do **not** add `agents/openai.yaml` or `test-prompts.json`: they were intentionally removed (nothing here consumes them).
+- **Imported third-party skills**: copy verbatim, keep the original code untouched, and add a note at the top of the body crediting the source repo, original author, and license, with the third-party license file kept inside the skill folder (see `skills/browser-tools`).
 
 ## Prompt conventions
 
-- Follow the pi prompt-template format (see pi's docs: `docs/prompt-templates.md` — frontmatter fields, argument syntax, loading rules).
+- Follow the pi prompt-template format (see pi's docs: `docs/prompt-templates.md` for frontmatter fields, argument syntax, and loading rules).
 - One prompt per file, directly in `prompts/` (discovery is non-recursive).
-- 100% English — bodies AND frontmatter descriptions.
+- 100% English: bodies AND frontmatter descriptions.
 - Multiline user instructions are lossy with `$@` (arguments join with spaces); prompts that take long instructions should accept a file path argument.
 
 ## YAML pitfall
 
-Avoid `: ` (colon + space) inside unquoted frontmatter values — it breaks parsing. Re-check the frontmatter after editing any `SKILL.md` or prompt.
+Avoid `: ` (colon + space) inside unquoted frontmatter values: it breaks parsing. Re-check the frontmatter after editing any `SKILL.md` or prompt.
 
 ## Tooling
 
@@ -34,6 +35,6 @@ Avoid `: ` (colon + space) inside unquoted frontmatter values — it breaks pars
 
 ## Git
 
-- Atomic commits with imperative messages (e.g., `Add init-agentmd prompt template`).
+- Atomic commits with imperative messages (e.g., `Add agents-md prompt template`).
 - Do not commit `.zip` artifacts, `.DS_Store`, or unrelated changes.
-- `.agents/` is gitignored — local dev tooling, not part of the catalog.
+- `.agents/` is gitignored: local dev tooling, not part of the catalog.
