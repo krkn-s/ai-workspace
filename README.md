@@ -10,7 +10,6 @@ A personal AI workspace with installable skills, pi prompt templates, and pi ext
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO and AEO content strategy for briefs, audits, page structures, and editorial plans.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
   - [`prose`](skills/prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
-  - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
   - [`reveal-slides`](skills/reveal-slides) : Build single-file HTML presentation decks with reveal.js (Markdown, code highlight, speaker notes, fragments) and export a clean one-slide-per-page vector PDF via html2realpdf — both pinned to jsDelivr CDN URLs.
@@ -21,6 +20,7 @@ A personal AI workspace with installable skills, pi prompt templates, and pi ext
   - [`agents-md`](prompts/agents-md.md) : One prompt to create, improve, or realign any agent instruction file (AGENTS.md, CLAUDE.md, rules files, skill instructions) — creation grounded in the repo and aligned with the global baseline (`~/.pi/agent/`), one audit pass for conflicts, duplication, stale rules, lean failures, and gaps, every real decision surfaced to the user, output always in compact Markdown (compact skill).
   - [`agents-md-swarm`](prompts/agents-md-swarm.md) : Ensure a project's shared `AGENTS.md` contains the multi-agent coordination section (worktree-first, `.agents-sync/` with per-agent state files, `locks.json`, message files, session protocol, merge rules) — append when missing, no-op when identical, expose divergences and ask which version to keep when it differs.
   - [`challenge`](prompts/challenge.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
+  - [`brand-md`](prompts/brand-md.md) : Create, convert, or maintain a minimal BRAND.md brand-identity card — pure Markdown, no frontmatter, five sections (Positioning, Voice + Forbidden, Look, Facts, date-only Journal); converts an existing full BRAND.md after confirmation.
 
 ## Installation
 
@@ -49,8 +49,9 @@ To pull just selected skills and prompts, declare the package with the object fo
   "packages": [
     {
       "source": "https://github.com/krkn-s/ai-workspace",
-      "skills": ["skills/brand-md"],
+      "skills": [],
       "prompts": [
+        "prompts/brand-md.md",
         "prompts/challenge.md"
       ]
     }
