@@ -20,7 +20,7 @@ A personal AI workspace with installable skills, pi prompt templates, and pi ext
   - [`agents-md`](prompts/agents-md.md) : One prompt to create, improve, or realign any agent instruction file (AGENTS.md, CLAUDE.md, rules files, skill instructions) — creation grounded in the repo and aligned with the global baseline (`~/.pi/agent/`), one audit pass for conflicts, duplication, stale rules, lean failures, and gaps, every real decision surfaced to the user, output always in compact Markdown (compact skill).
   - [`agents-md-swarm`](prompts/agents-md-swarm.md) : Ensure a project's shared `AGENTS.md` contains the multi-agent coordination section (worktree-first, `.agents-sync/` with per-agent state files, `locks.json`, message files, session protocol, merge rules) — append when missing, no-op when identical, expose divergences and ask which version to keep when it differs.
   - [`challenge`](prompts/challenge.md) : Adopt a critical intellectual partner that stress-tests your claims for truth over agreement.
-  - [`brand-md`](prompts/brand-md.md) : Create, convert, or maintain a `## Brand` identity section inside the project's AGENTS.md — intro line, Positioning, Voice with a Forbidden list, Look, Facts; when a standalone BRAND.md file exists, converts it into this section and deletes the source file after explicit confirmations. Scope-disciplined: touches only its own section.
+  - [`agents-mark`](prompts/agents-mark.md) : Create, convert, or maintain a `## Brand` identity section inside the project's AGENTS.md — intro line, Positioning, Voice with a Forbidden list, Look, Facts; when a standalone BRAND.md file exists, converts it into this section and deletes the source file after explicit confirmations. Scope-disciplined: touches only its own section.
 
 ## Installation
 
@@ -51,7 +51,7 @@ To pull just selected skills and prompts, declare the package with the object fo
       "source": "https://github.com/krkn-s/ai-workspace",
       "skills": [],
       "prompts": [
-        "prompts/brand-md.md",
+        "prompts/agents-mark.md",
         "prompts/challenge.md"
       ]
     }
