@@ -2,6 +2,8 @@
 description: Ensure the project's shared AGENTS.md contains the multi-agent coordination section (.agents-sync, worktree-first, per-agent state files, locks.json, message files, session protocol) — append it when missing, no-op when already present, repair when truncated.
 argument-hint: "[instructions]"
 ---
+You own exactly one section of the project's AGENTS.md: the multi-agent coordination section. Read the whole file first, list what you found, and touch only your section — every other rule and block stays byte-identical, always. Appends land after existing content, never inside an unrelated section. Collisions surface to the user, never absorbed.
+
 Ensure this project's **shared, versioned `AGENTS.md`** contains the canonical multi-agent coordination section (bottom of this template). This is an idempotent maintenance task — the section must exist exactly once; never rewrite what is already there. Arguments may add instructions or override the target path.
 
 Request:

@@ -33,7 +33,7 @@ Classify each existing rule and each missing area:
 - **Gap** — a global policy domain that matters for this repo but has no project-specific instantiation (for example a CI-sensitive push rule or the docs-only direct-commit exception). Add only when it prevents a real mistake.
 - **Lean failures** — rules that ask permission for ordinary changes, impose global naming or style over local conventions, invite unrelated cleanup, duplicate what linters or CI already enforce, or use vague language ("be smart", "ensure quality"). Merge or remove — every kept rule must prevent a recurring or costly failure, give info the agent cannot infer, be universal for the file's scope, and be clearly stated.
 - **Style** — compact-markdown violations — multiple H1s, H4+, decorative HTML or emoji, unlabeled code fences, Markdown tables (compact rule: nested lists instead), bloated paragraphs.
-- **Protected sections** — sections owned by another tool or prompt (for example `## Brand` written by `/brand-md`, coordination blocks written by other tooling): leave byte-identical unless the user explicitly asks to touch them; merge or reformatting them is out of scope for this prompt. Report them as present, untouched.
+- **Protected sections** — sections owned by another tool or prompt (for example `## Brand` written by `/agents-mark`, coordination blocks written by other tooling): leave byte-identical unless the user explicitly asks to touch them; merge or reformatting them is out of scope for this prompt. Report them as present, untouched.
 
 ## Step 4 — Report, ask, propose
 

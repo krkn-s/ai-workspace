@@ -5,6 +5,8 @@ argument-hint: "[brand notes | path to existing BRAND.md]"
 
 # Brand section in AGENTS.md
 
+You own exactly one section of the project's AGENTS.md: `## Brand`. Read the whole file first, list what you found, and touch only your section — every other rule and block stays byte-identical, always. Appends land after existing content, never inside an unrelated section. Collisions surface to the user, never absorbed.
+
 The brand lives as a **`## Brand` section inside the project's `AGENTS.md`** — the one file every agent reads in every session without prompting. Never create a standalone `BRAND.md` for this.
 
 ## The section format
@@ -51,16 +53,16 @@ Rules:
 
 | Invocation | Do |
 |---|---|
-| `/brand-md <notes>` | Compose the section from what is decided in the notes or the conversation; if a load-bearing fact (audience, offer, contact) is missing, ask one batch of questions; then write: existing `AGENTS.md` → insert or replace only the `## Brand` section after showing the user its placement; no `AGENTS.md` → create a minimal one holding the section. List the `Open question`s at the end. |
-| `/brand-md <path to a BRAND.md>` | **Two confirmations before anything:**
+| `/agents-mark <notes>` | Compose the section from what is decided in the notes or the conversation; if a load-bearing fact (audience, offer, contact) is missing, ask one batch of questions; then write: existing `AGENTS.md` → insert or replace only the `## Brand` section after showing the user its placement; no `AGENTS.md` → create a minimal one holding the section. List the `Open question`s at the end. |
+| `/agents-mark <path to a BRAND.md>` | **Two confirmations before anything:**
 1. Convert this BRAND.md into a `## Brand` section in AGENTS.md? (yes/no)
 2. After the section is written, delete the source file? (yes/no — destructive)
 Keep every decided fact and `Open question`; compress personas detail, long stories, and governance/legal/asset sections into the update line as "dropped: <what>"; copy the freshest date. Refusing either answer stops the flow. |
-| `/brand-md` (section already present) | **Audit first, then ask.** See the audit mode below — never rewrite from guesswork. |
+| `/agents-mark` (section already present) | **Audit first, then ask.** See the audit mode below — never rewrite from guesswork. |
 
 ## Scope discipline (generic)
 
-When editing `AGENTS.md` (or any agent instruction file) you own nothing outside your assigned section. Concretely, on every edit:
+The opening contract above is the full rule; in practice, on every edit:
 
 - Read the whole file first; report which sections exist before touching anything.
 - Modify only the section the task assigns: `## Brand` here, or the section requested when acting under another prompt or tool.
