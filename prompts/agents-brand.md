@@ -53,12 +53,12 @@ Rules:
 
 | Invocation | Do |
 |---|---|
-| `/agents-mark <notes>` | Compose the section from what is decided in the notes or the conversation; if a load-bearing fact (audience, offer, contact) is missing, ask one batch of questions; then write: existing `AGENTS.md` → insert or replace only the `## Brand` section after showing the user its placement; no `AGENTS.md` → create a minimal one holding the section. List the `Open question`s at the end. |
-| `/agents-mark <path to a BRAND.md>` | **Two confirmations before anything:**
+| `/agents-brand <notes>` | Compose the section from what is decided in the notes or the conversation; if a load-bearing fact (audience, offer, contact) is missing, ask one batch of questions; then write: existing `AGENTS.md` → insert or replace only the `## Brand` section after showing the user its placement; no `AGENTS.md` → create a minimal one holding the section. List the `Open question`s at the end. |
+| `/agents-brand <path to a BRAND.md>` | **Two confirmations before anything:**
 1. Convert this BRAND.md into a `## Brand` section in AGENTS.md? (yes/no)
 2. After the section is written, delete the source file? (yes/no — destructive)
 Keep every decided fact and `Open question`; compress personas detail, long stories, and governance/legal/asset sections into the update line as "dropped: <what>"; copy the freshest date. Refusing either answer stops the flow. |
-| `/agents-mark` (section already present) | **Audit first, then ask.** See the audit mode below — never rewrite from guesswork. |
+| `/agents-brand` (section already present) | **Audit first, then ask.** See the audit mode below — never rewrite from guesswork. |
 
 ## Scope discipline (generic)
 
