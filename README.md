@@ -4,11 +4,12 @@ A personal AI workspace with installable skills, pi prompt templates, and pi ext
 
 - **extensions**
   - [`pi-nvidia-live`](extensions/pi-nvidia-live) : Live NVIDIA NIM catalog for pi — replaces the built-in `nvidia` provider's model list with the free-tier `/v1/models` catalog, enriches per-model metadata from NVIDIA's own sources (`.md` records, `-infer` OpenAPI schemas, family fallbacks), commands `/nvidia-refresh` and `/nvidia-models`.
+  - [`prose-guard`](extensions/prose-guard) : Deterministic gate for the `prose` skill's mechanical rules — blocks any `write`/`edit`/`bash` call containing em dashes, pause en dashes, typographic ellipsis, or invisible characters, and returns the exact findings to the model until it rewrites. Enforces systematically without skill invocation.
 - **skills**
   - [`image-prompt-crafter`](skills/image-prompt-crafter) : Craft production-grade prompts for conversational image generators (GPT Image 2, Nano Banana 2/Pro, Seedream 5 Pro) — hybrid clarification, model-specific English variants, settings, and iteration plans.
   - [`seo-aeo-content`](skills/seo-aeo-content) : SEO and AEO content strategy for briefs, audits, page structures, and editorial plans.
   - [`ai-visibility-stack`](skills/ai-visibility-stack) : AI visibility infrastructure covering `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler policy.
-  - [`human-prose`](skills/human-prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
+  - [`prose`](skills/prose) : Write and rewrite prose so it reads like a real person, without AI tells, in French or English.
   - [`brand-md`](skills/brand-md) : Create, audit, and maintain a `BRAND.md` as a Markdown source of truth readable by humans and consumable by LLM-based agents.
   - [`spec-vibe`](skills/spec-vibe) : CLI-free, Markdown-only spec-driven development over a `specs/` tree — forward (spec first) and reverse (vibe-code first, then generate specs) paths, with ADRs and `rg`/`fd`-queryable structure.
   - [`weasyprint-pdf`](skills/weasyprint-pdf) : Generate print-ready PDF documents (brochures, flyers, cards, business cards, slides, invoices, books) from HTML and CSS using WeasyPrint — `@page` paged media, page breaks, TOC, bookmarks, custom fonts, bleed/CMYK/PDF-X.
