@@ -5,7 +5,7 @@ description: Create print-ready PDF documents from HTML and CSS using WeasyPrint
 
 # WeasyPrint PDF
 
-All prose, copy, and wording that ends up in the document follows the `human-prose` skill — load it when the content is drafted or rewritten in this run (not needed for boilerplate labels).
+All prose, copy, and wording that ends up in the document follows the `prose` skill — load it when the content is drafted or rewritten in this run (not needed for boilerplate labels).
 
 ## Overview
 
