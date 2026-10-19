@@ -32,7 +32,8 @@ Classify each existing rule and each missing area:
 - **Stale** — references commands, paths, scripts, or conventions the repo does not actually have.
 - **Gap** — a global policy domain that matters for this repo but has no project-specific instantiation (for example a CI-sensitive push rule or the docs-only direct-commit exception). Add only when it prevents a real mistake.
 - **Lean failures** — rules that ask permission for ordinary changes, impose global naming or style over local conventions, invite unrelated cleanup, duplicate what linters or CI already enforce, or use vague language ("be smart", "ensure quality"). Merge or remove — every kept rule must prevent a recurring or costly failure, give info the agent cannot infer, be universal for the file's scope, and be clearly stated.
-- **Style** — compact-markdown violations — multiple H1s, H4+, decorative HTML or emoji, unlabeled code fences, bloated paragraphs.
+- **Style** — compact-markdown violations — multiple H1s, H4+, decorative HTML or emoji, unlabeled code fences, Markdown tables (compact rule: nested lists instead), bloated paragraphs.
+- **Protected sections** — sections owned by another tool or prompt (for example `## Brand` written by `/brand-md`, coordination blocks written by other tooling): leave byte-identical unless the user explicitly asks to touch them; merge or reformatting them is out of scope for this prompt. Report them as present, untouched.
 
 ## Step 4 — Report, ask, propose
 
@@ -64,7 +65,9 @@ Drop any section that would say nothing; never restate global rules — agreemen
 
 ## Format — compact, always
 
-Load the compact skill before proposing the file — it is installed globally in this setup; if it is not available in the session, follow the conventions below: exactly one H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, simple tables, no decorative HTML or emoji. Never drop facts or meaning while compacting. When the file follows a deliberate house style that conflicts with compact (tooling expecting deeper headings), preserve the intent and note the deviation instead of silently breaking tooling.
+Load the compact skill before proposing the file — it is installed globally in this setup; if it is not available in the session, follow the conventions below: exactly one H1, H2/H3 outline, short bullets, sparing bold, language-tagged code fences, nested lists for comparisons (never tables), no decorative HTML or emoji. Never drop facts or meaning while compacting. When the file follows a deliberate house style that conflicts with compact (tooling expecting deeper headings), preserve the intent and note the deviation instead of silently breaking tooling.
+
+When the rewrite touches anything outside the section this run owns: stop, show the diff for those parts, and ask. The complete-file rewrite never absorbs other tools' sections silently.
 
 ## Rules for this task
 

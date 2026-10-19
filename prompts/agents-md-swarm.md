@@ -16,6 +16,7 @@ $@
 - Target the shared `AGENTS.md` at the repo root — never `AGENTS.override.md` (the rules must reach every agent through the versioned file) and never a global `~/.pi` file.
 - File missing → go to **Step 3** (create).
 - File present → read it and search for an existing coordination section — any heading whose text contains `Multi-agent coordination` or `Coordination multi-agents` (French legacy), or the `.agents-sync/` marker.
+- Note every unrelated section you find (brand blocks, rules owned by other prompts or tools, anything you did not write): it stays byte-identical. You own only the coordination section; never reorder, merge, reformat, or delete anything else, and appends never land inside an unrelated section.
 - If `git status --porcelain` shows `AGENTS.md` already modified, say so before touching it — parallel agents may share this tree.
 
 ## Step 2 — Decide
