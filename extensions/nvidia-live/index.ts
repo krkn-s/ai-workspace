@@ -1,4 +1,4 @@
-// pi-nvidia-live: replaces the model list of pi's built-in nvidia provider with
+// nvidia-live: replaces the model list of pi's built-in nvidia provider with
 // the live free-tier catalog from integrate.api.nvidia.com/v1/models, with
 // per-model metadata enriched from NVIDIA's own sources:
 //   1. build.nvidia.com/<org>/<model>.md  (Specifications / Capabilities)
@@ -97,12 +97,12 @@ export default function (pi: ExtensionAPI) {
 				// Re-registration takes effect immediately (pi contract).
 				pi.registerProvider(PROVIDER_ID, { models: defs as never });
 				if (changed || (note?.startsWith("discovery failed"))) {
-					await ctx.ui.notify(`pi-nvidia-live: ${note ?? `catalog refreshed (${defs.length} models)`}`, "info");
+					await ctx.ui.notify(`nvidia-live: ${note ?? `catalog refreshed (${defs.length} models)`}`, "info");
 				}
 			} catch (error) {
 				const message = error instanceof Error ? error.message : String(error);
-				if (ctx.hasUI) await ctx.ui.notify(`pi-nvidia-live: refresh failed (${message})`, "warning");
-				else console.warn("pi-nvidia-live: refresh failed:", message);
+				if (ctx.hasUI) await ctx.ui.notify(`nvidia-live: refresh failed (${message})`, "warning");
+				else console.warn("nvidia-live: refresh failed:", message);
 			} finally {
 				inFlight = undefined;
 			}
@@ -125,7 +125,7 @@ export default function (pi: ExtensionAPI) {
 		handler: async (_args, ctx) => {
 			const cache = await readCache();
 			const lines = [
-				`pi-nvidia-live: ${cache.knownIds.length} live chat models (cache ${listIsStale(cache) ? "stale" : "fresh"})`,
+				`nvidia-live: ${cache.knownIds.length} live chat models (cache ${listIsStale(cache) ? "stale" : "fresh"})`,
 				"",
 			];
 			for (const id of [...cache.knownIds].sort()) {

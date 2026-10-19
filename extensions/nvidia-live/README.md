@@ -1,4 +1,4 @@
-# pi-nvidia-live
+# nvidia-live
 
 Live NVIDIA NIM model catalog for [pi](https://pi.dev). Replaces the model list of pi's
 built-in `nvidia` provider with the free-tier catalog from
@@ -22,9 +22,9 @@ Auth is untouched: use `/login nvidia` or `$NVIDIA_API_KEY`, as for the built-in
 ## Install
 
 ```bash
-pi install ./extensions/pi-nvidia-live   # from this repository, or an absolute path
+pi install ./extensions/nvidia-live   # from this repository, or an absolute path
 # or load for one session:
-pi -e ./extensions/pi-nvidia-live
+pi -e ./extensions/nvidia-live
 ```
 
 ## Commands

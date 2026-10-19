@@ -1,5 +1,5 @@
 {
-  "name": "pi-nvidia-live",
+  "name": "nvidia-live",
   "version": "0.1.0",
   "description": "Live NVIDIA NIM catalog for pi: overrides the built-in nvidia provider's model list with the free-tier /v1/models catalog and NVIDIA's own model metadata",
   "type": "module",

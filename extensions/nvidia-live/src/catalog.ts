@@ -30,7 +30,7 @@ export interface ChatDef {
 // cannot resolve a baseUrl for new models and registerProvider would throw.
 // Keep the throw loud at registration time instead.
 if (!BASE_FALLBACK) {
-	throw new Error("pi-nvidia-live: built-in nvidia catalog is empty; update pi.");
+	throw new Error("nvidia-live: built-in nvidia catalog is empty; update pi.");
 }
 
 export function builtinChatDefs(): ChatDef[] {

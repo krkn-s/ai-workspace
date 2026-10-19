@@ -1,4 +1,4 @@
-// Unit tests for the pi-nvidia-live catalog pipeline (no network, no pi-ai).
+// Unit tests for the nvidia-live catalog pipeline (no network, no pi-ai).
 // Fixtures are real captures from NVIDIA's pages (see test/fixtures/).
 
 import { describe, expect, test } from "bun:test";

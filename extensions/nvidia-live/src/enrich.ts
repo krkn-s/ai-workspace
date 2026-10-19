@@ -204,7 +204,7 @@ export async function enrichModel(id: string, signal: AbortSignal): Promise<Infe
 			if (parsed.contextWindow || parsed.maxTokens) meta.provenance = "nvidia-md";
 		}
 	} catch (error) {
-		if (!signal.aborted) console.warn(`pi-nvidia-live: .md enrich failed for ${id}: ${messageOf(error)}`);
+		if (!signal.aborted) console.warn(`nvidia-live: .md enrich failed for ${id}: ${messageOf(error)}`);
 	}
 
 	// 2. Per-model -infer reference (1-2 MB page; parsed locally, cheap regex)
@@ -218,7 +218,7 @@ export async function enrichModel(id: string, signal: AbortSignal): Promise<Infe
 			if (meta.provenance !== "nvidia-md") meta.provenance = "nvidia-infer";
 		}
 	} catch (error) {
-		if (!signal.aborted) console.warn(`pi-nvidia-live: -infer enrich failed for ${id}: ${messageOf(error)}`);
+		if (!signal.aborted) console.warn(`nvidia-live: -infer enrich failed for ${id}: ${messageOf(error)}`);
 	}
 
 	// Model record missing max output? keep family value and stay partial.
