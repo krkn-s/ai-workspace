@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-stack
-description: AI visibility infrastructure workflow for business websites. Use when the agent needs to create, review, or preserve llms.txt, markdown mirrors, sitemap.xml, robots.txt, AI crawler access or blocking, Google Search Console handoff, or the invisible SEO and machine-readable layer that lets a website be discovered, parsed, and cited by search engines and answer engines. Trigger on site redesigns or rebuilds where invisible SEO and LLM files must survive, audits of whether AI agents and crawlers can read a site, or questions like why ChatGPT or Perplexity cannot parse or cite the site. Route content strategy tasks (SEO briefs, article outlines, editorial plans) to the seo-aeo-content skill. Déclenche aussi sur les requêtes en français, par exemple créer ou corriger un llms.txt, des miroirs markdown, le sitemap.xml ou le robots.txt, gérer l'accès des crawlers IA, savoir pourquoi ChatGPT ou Perplexity ne trouvent pas le site, ou préserver la visibilité IA et le SEO technique d'un site lors d'une refonte.
+description: "Make a site readable by crawlers and answer engines: llms.txt, markdown mirrors, sitemap.xml, robots.txt, Search Console, AI crawler access. Use for site audits, redesigns where AI visibility must survive, or when ChatGPT or Perplexity cannot parse or cite a site."
 ---
 
 # AI Visibility Stack
