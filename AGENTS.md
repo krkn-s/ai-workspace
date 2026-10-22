@@ -14,7 +14,6 @@ This repository is a **catalog of installable agent skills, pi prompt templates,
 - Frontmatter: `name` and `description` only. `description` is the **primary trigger**: English only, 150 to 280 characters, naming the situations and artifacts that should load the skill. The model routes on meaning, so a French request matches an English description; no French clause, no second trigger enumeration, no cross-skill routing.
 - Body detail is free, trigger detail is not: workflow steps, feature lists, and "route X to Y" belong in the body, which loads on demand. `1024` characters is the tooling limit, not a budget.
 - Keep `SKILL.md` under ~500 lines; push detail into `references/`.
-- Do **not** add `agents/openai.yaml` or `test-prompts.json`: they were intentionally removed (nothing here consumes them).
 - **Imported third-party skills**: copy verbatim, keep the original code untouched, and add a note at the top of the body crediting the source repo, original author, and license, with the third-party license file kept inside the skill folder (see `skills/browser-tools`).
 
 ## Prompt conventions
@@ -27,14 +26,3 @@ This repository is a **catalog of installable agent skills, pi prompt templates,
 ## YAML pitfall
 
 Avoid `: ` (colon + space) inside unquoted frontmatter values: it breaks parsing. Re-check the frontmatter after editing any `SKILL.md` or prompt.
-
-## Tooling
-
-- Install and manage this catalog with the `pi` CLI: `pi install <repo>` (global) or `pi install -l <repo>` (project), `pi config` to toggle resources. The repo doubles as a pi package exposing `skills/` and `prompts/` at the root. There is no `package.json`.
-- GitHub operations via `gh`.
-
-## Git
-
-- Atomic commits with imperative messages (e.g., `Add agents-md prompt template`).
-- Do not commit `.zip` artifacts, `.DS_Store`, or unrelated changes.
-- `.agents/` is gitignored: local dev tooling, not part of the catalog.
