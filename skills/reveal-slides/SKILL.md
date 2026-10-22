@@ -1,6 +1,6 @@
 ---
 name: reveal-slides
-description: Create self-contained presentation decks as a single HTML file using reveal.js 6, exported to real vector PDFs (selectable text, embedded fonts, no black bars) via html2realpdf — both loaded from pinned jsDelivr URLs. Use when the agent must build slides, a deck, a slide deck, a keynote-style presentation, speaker slides, a webinar deck, a training support, or a pitch; author slides in HTML or Markdown with syntax-highlighted code, speaker notes, fragments, auto-animate, and a one-click dark/light theme toggle; or export the deck to a clean one-slide-per-page PDF containing only the slides. Déclenche aussi en français pour créer un diaporama, une présentation, des slides, un deck, un support de formation ou de conférence, un pitch ; écrire les slides en HTML ou Markdown avec coloration de code et notes, bascule de thème sombre/clair ; ou exporter un PDF vectoriel propre avec une slide par page, texte sélectionnable, via html2realpdf.
+description: "Build a slide deck as one self-contained HTML file with reveal.js 6, and export it to a clean one-slide-per-page vector PDF via html2realpdf: title slides, code with highlighting, speaker notes, fragments, auto-animate, dark and light themes."
 ---
 
 # Reveal Slides

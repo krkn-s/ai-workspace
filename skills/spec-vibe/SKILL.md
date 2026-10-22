@@ -1,6 +1,6 @@
 ---
 name: spec-vibe
-description: Run a CLI-free, Markdown-only spec-driven workflow over a specs/ tree — propose changes, write behavior-first specs and deltas, design, implement, then archive by merging deltas into the source of truth. Bidirectional workflow with a forward path (spec first) and a reverse path (vibe-code first, then retroactively generate and validate specs). Use whenever building, modifying, or refactoring a feature, behavior, API, schema, or contract; when code changes without an associated spec; when the user mentions specs, proposals, deltas, ADRs, acceptance criteria, living specs, or a spec-driven / vibe-coding workflow; or when auditing a repo for spec drift. Déclenche aussi en français, par exemple créer ou rédiger une spec, une proposition, un delta ou un ADR, formaliser une fonctionnalité, générer des specs depuis du code existant, auditer la dérive specs/code, workflow spec-driven ou vibe coding sans CLI ni base de données.
+description: "Run a Markdown-only spec workflow over a specs/ tree: propose, spec, design, implement, then merge deltas into the source of truth. Works forward from a spec or backward from existing code. Use for any feature, API, contract, ADR, or acceptance criteria."
 ---
 
 # Spec Vibe

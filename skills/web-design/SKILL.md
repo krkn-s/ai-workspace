@@ -1,6 +1,6 @@
 ---
 name: web-design
-description: Web design fundamentals for any page or site work, covering visual hierarchy, button and CTA design, color palettes with the 60-30-10 rule, typography choices, conversion practices (clarity, scannability, motivation), and designing for the target audience instead of the client or yourself. Use when creating, restyling, criticizing, or reviewing web page design, landing pages, marketing sites, color palettes, or font pairings, or when someone asks why a design does not convert or looks off. Route content strategy (SEO briefs, article outlines) to the seo-aeo-content skill. Déclenche aussi en français pour créer, retoucher, critiquer ou auditer le design d'un site web ou d'une landing page, choisir une palette de couleurs ou des polices, travailler la hiérarchie visuelle, ou comprendre pourquoi un site ne convertit pas.
+description: "Design or critique a web page: visual hierarchy, buttons and CTAs, color palettes, font pairings, conversion clarity, and fitting the target audience. Use when building or restyling a landing page or marketing site, or when a design looks off or does not convert."
 ---
 
 # Web Design

@@ -1,6 +1,6 @@
 ---
 name: image-prompt-crafter
-description: Craft, improve, and adapt prompts for conversational AI image generators — GPT Image 2 (OpenAI), Nano Banana 2 and Nano Banana Pro (Gemini), Seedream 5 Pro (ByteDance). Use when the user asks to write, rewrite, improve, translate, or compare an image prompt, or before sending any visual request to an image generator — e.g. 'write a prompt for Nano Banana', 'make this image prompt better', 'un prompt pour générer un visuel produit', 'écris le prompt d'une affiche avec du texte'. Covers posters, logos, product shots, photorealistic scenes, illustrations, UI mockups, text-in-image layouts, and image-editing instructions with reference photos. Expands vague ideas with a few targeted questions, then delivers model-specific English prompt variants with settings (aspect ratio, resolution, quality), constraint clauses, and iteration advice. Déclenche aussi en français — améliorer un prompt d'image, générer un prompt pour Nano Banana, GPT Image ou Seedream, préparer un visuel IA.
+description: "Write, improve, translate, or compare prompts for GPT Image 2, Nano Banana 2/Pro, and Seedream 5 Pro. Use before any visual request: posters, logos, product shots, photorealistic scenes, illustrations, UI mockups, text in image, edits from reference photos."
 ---
 
 # Image Prompt Crafter

@@ -1,6 +1,6 @@
 ---
 name: seo-aeo-content
-description: SEO and AEO content strategy workflow for creating search-ready and answer-engine-ready content. Use when the agent needs to produce or improve SEO/AEO briefs, page outlines, article or landing-page structures, content audits, editorial plans or calendars, keyword-to-question maps, publication checklists, brand SEO recommendations, AI Overview/AEO visibility plans, or content guidance for web publishing. Trigger on requests to rank in Google, get cited by AI Overviews, ChatGPT, Perplexity, Gemini, or Copilot, fix thin or unstructured content, or map user intent and questions to pages. Route infrastructure tasks (llms.txt, sitemap.xml, robots.txt, markdown mirrors, crawler access) to the ai-visibility-stack skill. Déclenche aussi en français — brief SEO/AEO, plan ou calendrier éditorial, audit de contenu, structure de page ou de landing page, référencement naturel, être cité par ChatGPT ou Perplexity, stratégie pour moteurs de réponses.
+description: "Plan content that ranks and gets cited: SEO and AEO briefs, page and article outlines, landing-page structure, content audits, editorial calendars, keyword-to-question maps, AI Overview plans. Use to rank in Google or be cited by ChatGPT, Perplexity, Gemini, or Copilot."
 ---
 
 # SEO/AEO Content

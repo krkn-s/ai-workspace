@@ -1,6 +1,6 @@
 ---
 name: prose
-description: Write and rewrite any prose so it reads like a real person wrote it, precise, grounded, free of AI tells. Use by default whenever you produce or touch text for the user — emails, messages, LinkedIn or X posts, bios, landing pages, newsletters, blog posts, release notes, cover letters, product descriptions, summaries, translations — in French or English, including prose inside presentations, PDFs, Markdown files, and websites. Fires even when the request looks operational or mentions no style, not only on explicit humanize requests, and governs the wording inside tasks routed to other skills (SEO, brand content, slides, PDFs, websites). Covers de-AI-ing drafts, invisible characters, and stray Markdown. Déclenche par défaut sur tout texte rédigé, réécrit, résumé, traduit ou nettoyé — emails, posts LinkedIn, bios, pages web, newsletters, articles, slides, PDF, Markdown, sites — même sans demande de style ni d'humaniser, y compris quand un autre skill structure la tâche.
+description: "Write or rewrite prose so it reads like a person wrote it, with no AI tells: emails, posts, bios, landing pages, newsletters, articles, release notes, summaries, translations, in French or English. Applies by default to any text the user will read, even without a style request."
 ---
 
 # Prose

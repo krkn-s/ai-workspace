@@ -1,6 +1,6 @@
 ---
 name: weasyprint-pdf
-description: Create print-ready PDF documents from HTML and CSS using WeasyPrint — brochures, flyers, cards, invitations, business cards, slides/decks, invoices, tickets, reports, and books. Use when the agent must turn HTML/CSS into a paged PDF, design a single-page or multi-page print layout, set exact page sizes and margins, add page numbers/headers/footers/running titles via @page margin boxes, control page breaks, build a table of contents with target-counter, add PDF bookmarks, embed custom fonts with @font-face, produce print-ready output with bleed and crop marks in CMYK/PDF-X, or generate PDF/A, PDF/UA, and PDF forms. Déclenche aussi en français pour générer un PDF à partir de HTML/CSS, créer une brochure, un flyer, une carte, une carte de visite, un dépliant, un diaporama, une facture, un ticket ; gérer la mise en page imprimable, les marges, numéros de page et en-têtes, les polices personnalisées, le fond perdu et traits de coupe, le CMYK, ou les variantes PDF/A, PDF/UA et formulaires.
+description: "Turn HTML and CSS into a print-ready PDF with WeasyPrint: brochures, flyers, cards, invoices, tickets, reports, books. Covers @page margins, running headers, page breaks, table of contents, bookmarks, custom fonts, bleed and crop marks, CMYK, PDF/A and PDF/UA."
 ---
 
 # WeasyPrint PDF

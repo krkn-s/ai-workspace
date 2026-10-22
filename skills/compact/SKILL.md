@@ -1,6 +1,6 @@
 ---
 name: compact
-description: Compact, LLM-friendly Markdown styling for any .md file — a single H1, an H2/H3 outline, short bullet lists, nested lists instead of tables, sparing bold, language-tagged code fences, no decorative HTML or emoji. Use when writing, rewriting, compacting, or cleaning up a Markdown file (README, docs, specs, notes, llms.txt, AGENTS.md), when the user asks for compact, minimal, token-efficient, or AI-readable formatting, when a file feels bloated or over-formatted, or when preparing documentation to be consumed by agents and LLMs. Déclenche aussi en français — compacter, alléger, nettoyer ou restructurer un fichier Markdown (README, documentation, notes, specs), réduire les tokens, supprimer le HTML ou les emojis décoratifs, aplanir une hiérarchie de titres trop profonde, ou appliquer un style Markdown minimaliste lisible par les LLM.
+description: "Keep the structure of a Markdown file short, flat, and AI-readable: one H1, an H2/H3 outline, bullets instead of tables, no emoji or decorative HTML. Use to write, rewrite, or clean a README, docs, specs, notes, llms.txt, or AGENTS.md."
 ---
 
 # Compact Markdown

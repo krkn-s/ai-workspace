@@ -11,8 +11,8 @@ This repository is a **catalog of installable agent skills, pi prompt templates,
 
 ## Skill conventions
 
-- Frontmatter: `name` and `description` only. `description` is the **primary trigger**: write it bilingual (English core plus a French clause), concrete and pushy (real trigger contexts, file types, phrasings).
-- **`description` MUST stay under 1024 characters** (hard limit enforced by tooling: "description exceeds 1024 characters" error). If a description grows past it, push the extra trigger contexts into the SKILL.md body instead of the frontmatter.
+- Frontmatter: `name` and `description` only. `description` is the **primary trigger**: English only, 150 to 280 characters, naming the situations and artifacts that should load the skill. The model routes on meaning, so a French request matches an English description; no French clause, no second trigger enumeration, no cross-skill routing.
+- Body detail is free, trigger detail is not: workflow steps, feature lists, and "route X to Y" belong in the body, which loads on demand. `1024` characters is the tooling limit, not a budget.
 - Keep `SKILL.md` under ~500 lines; push detail into `references/`.
 - Do **not** add `agents/openai.yaml` or `test-prompts.json`: they were intentionally removed (nothing here consumes them).
 - **Imported third-party skills**: copy verbatim, keep the original code untouched, and add a note at the top of the body crediting the source repo, original author, and license, with the third-party license file kept inside the skill folder (see `skills/browser-tools`).
