@@ -11,7 +11,7 @@ Use this skill to create content that can rank in search engines and be cited or
 
 Keep outputs operational: briefs, outlines, audits, checklists, content plans, revision instructions, and measurement plans.
 
-This skill owns the content layer only. If the task is about `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, or AI crawler access, use the `ai-visibility-stack` skill instead.
+This skill owns the content layer only. If the task is about `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, or AI crawler access, use the `ai-visibility-stack` skill instead. If the open question is which awareness level or which lead to write for, use the `schwartz-awareness` skill.
 
 All prose content produced or edited by this skill follows the `prose` skill (wording, AI-tell avoidance) — load it when drafting or rewriting.
 
