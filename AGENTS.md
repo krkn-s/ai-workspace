@@ -12,7 +12,7 @@ Personal catalog of installable pi extensions, skills, and prompt templates.
 
 - `description` in the frontmatter is a router, not a summary: English, 150 to 300 characters, naming the situations and artifacts that should load the skill. 
 - Keep `SKILL.md` under 400 lines; push depth into `references/` subfolder.
-- Third-party skills: copy verbatim, add a note at the top of the body crediting repo, author, and license, and keep the license file in the skill folder (`skills/browser-tools`).
+- Third-party skills: copy verbatim, add a note at the top of the body crediting repo, author, and license, and keep the license file in the skill folder.
 
 ## Prompts
 

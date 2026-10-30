@@ -10,7 +10,6 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 ## Skills
 
 - [`ai-visibility-stack`](skills/ai-visibility-stack): `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler access.
-- [`browser-tools`](skills/browser-tools): Browser automation via Chrome DevTools Protocol (Chrome on `:9222`). Imported from [badlogic/pi-skills](https://github.com/badlogic/pi-skills/tree/main/browser-tools) (MIT).
 - [`compact`](skills/compact): Compact, LLM-friendly Markdown style for any `.md` file.
 - [`image-prompt-crafter`](skills/image-prompt-crafter): Production-grade prompts for GPT Image 2, Nano Banana 2/Pro, and Seedream 5 Pro.
 - [`prose`](skills/prose): Human-sounding, AI-tell-free prose in French or English.
