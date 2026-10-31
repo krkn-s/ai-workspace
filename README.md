@@ -26,6 +26,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agents-md-swarm`](prompts/agents-md-swarm.md): Ensure AGENTS.md contains the multi-agent coordination section (idempotent).
 - [`challenge`](prompts/challenge.md): Critical intellectual partner stress-testing claims for truth over agreement.
 - [`ship`](prompts/ship.md): Plan, execute with verification, commit & push, and server update commands.
+- [`stack-refs`](prompts/stack-refs.md): Vendor third-party source and docs into read-only `.refs/`, plus the default stack for new projects.
 
 ## Installation
 
