@@ -19,16 +19,19 @@ Deterministic enforcement of the mechanical rules of the `prose` and `compact` s
 ## What is deliberately not scanned
 
 - Path arguments (a flag named `path`/`file_path`): identifiers, not prose
+- Writes targeting `skills/prose/` (its `SKILL.md` and `references/`): that folder documents the banned characters, so it has to show them
+- Text being removed by `edit` (`oldText`): the character disappears, it is never produced
 - Smart quotes, NBSP, guillemets — legitimate French typography, left to the skill's judgment
 - Words to watch, banned openers, decorative emoji — judgment rules, they stay in the skill
 
 ## Behaviour
 
-On `tool_call` for `write`/`edit`/`bash`: walk every string value in the input (skipping path keys), count violations per rule, include line numbers, hint the model to load the matching skill (`prose`, `compact` when their rules fired), and return `{ block: true, reason }`. The model reads the full SKILL.md from its available-skills list and retries compliant.
+On `tool_call` for `write`/`edit`/`bash`: walk every string value in the input (skipping path keys and `oldText`), count violations per rule, include line numbers, hint the model to load the matching skill (`prose`, `compact` when their rules fired), and return `{ block: true, reason }`. The model reads the full SKILL.md from its available-skills list and retries compliant.
 
 ## Limitations
 
 - Only reaches writes performed through the `write`/`edit`/`bash` tools. Prose typed by the user, existing files, and externally written files are not scanned.
+- `bash` has no path argument: its command text is scanned whole, even when the command edits a file under `skills/prose/`.
 - Structure checks ignore fenced code blocks but not indented (4-space) code blocks.
 
 ## History

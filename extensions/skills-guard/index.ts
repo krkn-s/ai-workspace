@@ -1,13 +1,24 @@
 import { existsSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, posix } from "node:path";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-// Skipped keys: identifiers, not prose.
-const SKIP_KEYS = new Set(["path", "file_path"]);
+// Skipped keys: identifiers, not prose, plus edit.oldText (removed, never written).
+const SKIP_KEYS = new Set(["path", "file_path", "oldtext"]);
 
 export type Violation = { label: string; count: number; sample?: string };
 const PROSE = "prose";
 const COMPACT = "compact-type";
+
+// The prose skill documents the banned characters themselves: its SKILL.md states
+// the rule and references/ shows before/after examples. Writes there are rule
+// documentation, not prose that breaks the rule.
+const PROSE_DOC = /(?:^|[/\\])skills[/\\]prose[/\\]/;
+
+function isProseDoc(path: string | undefined): boolean {
+	if (typeof path !== "string") return false;
+	// Normalize first: "skills/prose/../../docs/x.md" resolves outside the folder.
+	return PROSE_DOC.test(posix.normalize(path.replace(/\\/g, "/")));
+}
 
 function scanText(text: string): { prose: Violation[]; compactish: Violation[] } {
 	const prose: Violation[] = [];
@@ -91,10 +102,11 @@ function findingsToMessages(findings: Violation[]): string[] {
 	);
 }
 
-export function scanInput(input: unknown): {
+export function scanInput(input: unknown, targetPath?: string): {
 	prose: string[];
 	compact: string[];
 } {
+	if (isProseDoc(targetPath)) return { prose: [], compact: [] };
 	const strings: { text: string; where: string }[] = [];
 	walk(input, "input", strings);
 	const prose: string[] = [];
@@ -124,7 +136,8 @@ export default function skillsGuard(pi: ExtensionAPI) {
 	const TOOLS = new Set(["write", "edit", "bash"]);
 	pi.on("tool_call", async (event) => {
 		if (!TOOLS.has(event.toolName)) return;
-		const { prose, compact } = scanInput(event.input);
+		const target = (event.input as { path?: unknown } | undefined)?.path;
+		const { prose, compact } = scanInput(event.input, typeof target === "string" ? target : undefined);
 		const compactHint = compact.length ? skillHint("compact") : "";
 		const proseHint = prose.length ? skillHint("prose") : "";
 		const problems = [...compact, ...prose];
