@@ -2,7 +2,7 @@
 
 Exact flags, signatures, and PDF variants. Verified against WeasyPrint source (`weasyprint/__main__.py`, `weasyprint/__init__.py`, `weasyprint/pdf/*.py`).
 
-## CLI — Basic Usage
+## CLI: Basic Usage
 
 ```bash
 weasyprint <input> <output>          # input = URL or file or - for stdin; output = file or - for stdout
@@ -11,7 +11,7 @@ weasyprint https://example.com out.pdf
 weasyprint - output.pdf < input.html
 ```
 
-## CLI — Rendering Options
+## CLI: Rendering Options
 
 | Flag | Effect |
 |---|---|
@@ -23,11 +23,11 @@ weasyprint - output.pdf < input.html
 | `--pdf-version VER` | PDF version (e.g. `1.7`, `2.0`). |
 | `--pdf-forms` | Turn HTML forms into real PDF form fields. |
 | `--pdf-tags` | Tag PDF for accessibility (required for PDF/UA and PDF/A level A). |
-| `--uncompressed-pdf` | No compression — for debugging. |
+| `--uncompressed-pdf` | No compression: for debugging. |
 | `--xmp-metadata FILE` | Include XMP metadata (repeatable). |
 | `--custom-metadata` | Include custom `<meta>` tags in PDF info dict. |
 | `--output-intent SPEC` | `srgb`, `device-cmyk`, or a CSS identifier of an output-intent color space. |
-| `-p, --presentational-hints` | Follow HTML presentational attributes (color, align, …). |
+| `-p, --presentational-hints` | Follow HTML presentational attributes (color, align, ...). |
 | `--optimize-images` | Lossless size optimization for embedded images (slower render). |
 | `-j, --jpeg-quality N` | JPEG quality 0–95. |
 | `-D, --dpi N` | Max resolution (DPI) for embedded raster images. |
@@ -35,7 +35,7 @@ weasyprint - output.pdf < input.html
 | `--hinting` | Keep hinting info in embedded fonts. |
 | `-c, --cache-folder DIR` | Cache images on disk (created, cleaned after). Pass a dict in Python to share cache across docs. |
 
-## CLI — HTML / Fetcher Options
+## CLI: HTML / Fetcher Options
 
 | Flag | Effect |
 |---|---|
@@ -49,7 +49,7 @@ weasyprint - output.pdf < input.html
 
 CLI logging: `--verbose` / `--debug` / `--quiet`.
 
-## CLI — Common Recipes
+## CLI: Common Recipes
 
 ```bash
 # External print stylesheet
@@ -92,9 +92,9 @@ Prefer **`pdf/a-3u`** (transparency allowed, Unicode text, arbitrary file attach
 
 **Debug:** `debug` (visualizes boxes).
 
-> WeasyPrint tries to produce valid variant PDFs but does not guarantee validity — the HTML/CSS must obey each spec's constraints.
+> WeasyPrint tries to produce valid variant PDFs but does not guarantee validity. The HTML/CSS must obey each spec's constraints.
 
-## Python API — Core Objects
+## Python API: Core Objects
 
 ### `HTML`
 
@@ -196,7 +196,7 @@ HTML `<meta>` tags auto-populate PDF fields:
 </html>
 ```
 
-Custom `<meta name="…">` fields require `custom_metadata=True` to land in the info dict. Via Python, set `document.metadata.title`, `.authors`, `.keywords`, `.attachments`, `.xmp_metadata` before `write_pdf`.
+Custom `<meta name="...">` fields require `custom_metadata=True` to land in the info dict. Via Python, set `document.metadata.title`, `.authors`, `.keywords`, `.attachments`, `.xmp_metadata` before `write_pdf`.
 
 ## PDF Forms
 
@@ -209,7 +209,7 @@ Two ways:
 <label>Editable <input class="field" value="dynamic"></label>
 ```
 
-Form support varies by PDF reader — test in the target reader.
+Form support varies by PDF reader. Test in the target reader.
 
 ## Factur-X / ZUGFeRD (electronic invoices)
 
@@ -231,7 +231,7 @@ doc.metadata.xmp_metadata = [Path('rdf.xml').read_bytes()]
 doc.write_pdf('invoice.pdf', pdf_variant='pdf/a-3b')
 ```
 
-Adapt the XML content to the real invoice data — see `docs/common_use_cases.rst` for the full RDF + Factur-X XML templates.
+Adapt the XML content to the real invoice data. See `docs/common_use_cases.rst` for the full RDF + Factur-X XML templates.
 
 ## Image Caching (repeated renders)
 

@@ -17,16 +17,16 @@ Page geometry lives here, not on `body`.
 }
 ```
 
-**`size`** accepts named sizes (`A0`–`A6`, `B5`, `Letter`, `Legal`, `Ledger`, …), explicit `<length> <length>`, and `landscape`/`portrait` (alone or after a named size, e.g. `size: A4 landscape`). Custom sizes: `size: 85mm 55mm`.
+**`size`** accepts named sizes (`A0` to `A6`, `B5`, `Letter`, `Legal`, `Ledger`, ...), explicit `<length> <length>`, and `landscape`/`portrait` (alone or after a named size, e.g. `size: A4 landscape`). Custom sizes: `size: 85mm 55mm`.
 
 **`marks`** values: `crop` (trim marks), `cross` (registration marks), `none`. Requires a non-zero `bleed` to be meaningful.
 
 **Page selectors:**
-- `:left`, `:right` — facing pages (use for asymmetric margins / mirrored gutters).
-- `:first` — first page only.
-- `:blank` — intentionally blank pages.
-- `:nth(n)`, `:nth(2n+1)` — by position.
-- Named pages: `@page cover { … }` then `.cover { page: cover }` to apply a page geometry to a specific section.
+- `:left`, `:right`: facing pages (use for asymmetric margins / mirrored gutters).
+- `:first`: first page only.
+- `:blank`: intentionally blank pages.
+- `:nth(n)`, `:nth(2n+1)`: by position.
+- Named pages: `@page cover { ... }` then `.cover { page: cover }` to apply a page geometry to a specific section.
 
 ```css
 @page { margin: 20mm; }
@@ -48,13 +48,13 @@ Sixteen margin boxes positioned in the page margin: `@top-left-corner`, `@top-le
 }
 ```
 
-- `counter(page)` — current page number. `counter(pages)` — total page count.
-- `@page :first { @top-center { content: none } }` — suppress on the cover.
+- `counter(page)`: current page number. `counter(pages)`: total page count.
+- `@page :first { @top-center { content: none } }`: suppress on the cover.
 - Margin boxes can take `border`, `background`, `padding`, `width`, alignment.
 
 ## Running Headers & Footers (`string-set` / `string()`)
 
-Capture the last occurrence of an element on each page and echo it in a margin box — classic "current chapter title at the top".
+Capture the last occurrence of an element on each page and echo it in a margin box. Classic "current chapter title at the top".
 
 ```css
 h2 { string-set: chapter content(); }
@@ -64,7 +64,7 @@ h2 { string-set: chapter content(); }
 `string()` can combine static text, counters, and element content/attributes:
 
 ```css
-h1 { string-set: doctitle "— " content(text); }
+h1 { string-set: doctitle " - " content(text); }
 ```
 
 ## Counters (headings, figures, lists)
@@ -88,22 +88,22 @@ nav.toc a::after {
 }
 ```
 
-- `target-counter(url, counter-name)` — page number of the target.
-- `target-text(url)` — text of the target element.
-- `leader(dotted)` / `leader(solid)` / `leader('…')` — fills space between entry and page number.
+- `target-counter(url, counter-name)`: page number of the target.
+- `target-text(url)`: text of the target element.
+- `leader(dotted)` / `leader(solid)` / `leader('...')`: fills space between entry and page number.
 
 ```html
 <nav class="toc">
-  <a href="#ch1">Chapter 1 — Intro</a>
-  <a href="#ch2">Chapter 2 — Setup</a>
+  <a href="#ch1">Chapter 1 - Intro</a>
+  <a href="#ch2">Chapter 2 - Setup</a>
 </nav>
-…
+...
 <h2 id="ch1">Intro</h2>
 ```
 
 ## PDF Bookmarks (outline sidebar)
 
-By default `<h1>`–`<h6>` auto-generate bookmarks. Control them:
+By default `<h1>` to `<h6>` auto-generate bookmarks. Control them:
 
 ```css
 h1 { bookmark-level: none; }          /* drop from outline */
@@ -134,31 +134,31 @@ h2 { break-after: avoid; }              /* keep heading with next block */
 .margin-box { margin-break: discard; }  /* discard top margin after a break */
 ```
 
-Aliases `page-break-before/after/inside` work too. **Only page breaks** are supported — `break-*` on columns/regions is not.
+Aliases `page-break-before/after/inside` work too. **Only page breaks** are supported: `break-*` on columns/regions is not.
 
 `box-decoration-break: clone | slice` is supported (backgrounds always repeat, not extend).
 
 ## Generated Content
 
-`content` accepts strings, `counter()`, `attr()`, `url()`, `string()`, `target-*()`, `leader()`. Use `::before` / `::after`. On non-replaced elements `content` replaces normal flow only with `content: …` on the element itself (rare).
+`content` accepts strings, `counter()`, `attr()`, `url()`, `string()`, `target-*()`, `leader()`. Use `::before` / `::after`. On non-replaced elements `content` replaces normal flow only with `content: ...` on the element itself (rare).
 
 ## Units
 
-Supported: `em ex ch cap ic lh` (font), `vw vh vi vb vmin vmax pvw pvh…` (viewport / page), `cm mm q in pt pc px` (absolute), `rad grad turn deg` (angles), `dpi dpcm dppx x` (resolution).
+Supported: `em ex ch cap ic lh` (font), `vw vh vi vb vmin vmax pvw pvh...` (viewport / page), `cm mm q in pt pc px` (absolute), `rad grad turn deg` (angles), `dpi dpcm dppx x` (resolution).
 
-**Page-relative units** (`pvw`, `pvh`, …) are relative to the *whole page* (including margins); all other units are relative to the *page area* (excluding margins). `calc()` works everywhere.
+**Page-relative units** (`pvw`, `pvh`, ...) are relative to the *whole page* (including margins); all other units are relative to the *page area* (excluding margins). `calc()` works everywhere.
 
 ## Selectors
 
-Selectors L3 fully supported; L4 except `:dir`, input pseudo-classes (`:valid`, `:invalid`, …), and column selectors (`||`, `:nth-col`). `:hover/:active/:focus/:target/:visited` are valid but never match.
+Selectors L3 fully supported; L4 except `:dir`, input pseudo-classes (`:valid`, `:invalid`, ...), and column selectors (`||`, `:nth-col`). `:hover/:active/:focus/:target/:visited` are valid but never match.
 
 ## Properties at a Glance
 
-**Supported.** CSS 2.1 (near-complete for print), `transform`/`transform-origin` (2D only), `transform-origin`, all backgrounds/borders (`background-*`, `border-radius`, `border-image-*`), gradients (`linear`, `radial`, `repeating-radial`), `object-fit`/`object-position`, `box-sizing`, `overflow` (not `-x/-y`), `text-overflow`, `line-clamp`, `max-lines`, `continue`, `text-decoration-*` (not `text-shadow`, `text-underline-position`, `text-emphasis-*`), `outline-*` + `outline-offset`, `appearance` (auto = PDF form), `hyphens`/`hyphenate-*`, `column-*` (simple multicol), flexbox (simple), grid (simple — see below), logical properties (`*-block-*`, `*-inline-*`, `*-start`, `*-end`), `font-*` incl. `font-feature-settings`, `font-variation-settings`, `@font-face`, `color` (all L4 notations: `#rgba`, `rgb()`, `hsl()`, `hwb()`, `lab()`, `color()`, `light-dark()`, `device-cmyk()`), `opacity`, `z-index`, CSS variables (`var()`), `attr()` in `content`/`string-set`.
+**Supported.** CSS 2.1 (near-complete for print), `transform`/`transform-origin` (2D only), `transform-origin`, all backgrounds/borders (`background-*`, `border-radius`, `border-image-*`), gradients (`linear`, `radial`, `repeating-radial`), `object-fit`/`object-position`, `box-sizing`, `overflow` (not `-x/-y`), `text-overflow`, `line-clamp`, `max-lines`, `continue`, `text-decoration-*` (not `text-shadow`, `text-underline-position`, `text-emphasis-*`), `outline-*` + `outline-offset`, `appearance` (auto = PDF form), `hyphens`/`hyphenate-*`, `column-*` (simple multicol), flexbox (simple), grid (simple. See below), logical properties (`*-block-*`, `*-inline-*`, `*-start`, `*-end`), `font-*` incl. `font-feature-settings`, `font-variation-settings`, `@font-face`, `color` (all L4 notations: `#rgba`, `rgb()`, `hsl()`, `hwb()`, `lab()`, `color()`, `light-dark()`, `device-cmyk()`), `opacity`, `z-index`, CSS variables (`var()`), `attr()` in `content`/`string-set`.
 
 **Not supported.** `box-shadow`, `text-shadow`, `color-mix()`, `contrast-color()`, `unset` (use `initial`/`inherit`), `image()` notation for backgrounds, `image-resolution` `from-image`/`snap`, 3D transforms + `perspective`/`backface-visibility`, `resize`/`cursor`/`caret-*`/`nav-*`/`accent-color`, `writing-mode` + bidi/RTL, `table: visibility: collapse`, min/max width/height on table boxes and on page-margin boxes, `line-break`, `hanging-punctuation`, multi-column spanning/constrained-height, `break-*` on columns/regions.
 
-## Flexbox & Grid — Use Cautiously
+## Flexbox & Grid: Use Cautiously
 
 **Flexbox** works for simple cases, "not deeply tested". All `flex-*`, `align-*`, `justify-*`, `order`, `flex`/`flex-flow` shorthands work. Avoid relying on edge behavior.
 
@@ -170,7 +170,7 @@ Slower than block layout, especially when paginated across pages. For multi-page
 
 ## Image & Object
 
-`<img>`, `<embed>`, `<object>` accept raster formats (PNG, JPEG, GIF, …) via Pillow and **SVG rendered as vectors** (not rasterized — stays crisp). `object-fit`, `object-position`, `image-rendering` (`crisp-edges` mandatory for PDF/A), `image-orientation` supported. Missing images log a warning and render nothing — check logs.
+`<img>`, `<embed>`, `<object>` accept raster formats (PNG, JPEG, GIF, ...) via Pillow and **SVG rendered as vectors** (not rasterized, stays crisp). `object-fit`, `object-position`, `image-rendering` (`crisp-edges` mandatory for PDF/A), `image-orientation` supported. Missing images log a warning and render nothing) check logs.
 
 ## A Complete `@page` Example (multi-page book)
 

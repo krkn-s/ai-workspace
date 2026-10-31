@@ -5,7 +5,7 @@ description: "Turn HTML and CSS into a print-ready PDF with WeasyPrint: brochure
 
 # WeasyPrint PDF
 
-All prose, copy, and wording that ends up in the document follows the `prose` skill — load it when the content is drafted or rewritten in this run (not needed for boilerplate labels).
+All prose, copy, and wording that ends up in the document follows the `prose` skill. Load it when the content is drafted or rewritten in this run (not needed for boilerplate labels).
 
 ## Overview
 
@@ -16,7 +16,7 @@ WeasyPrint is a visual rendering engine for HTML and CSS that exports **paginate
 - **It is a print engine, not a browser.** There is no JavaScript, no interactivity, no `box-shadow`, no `text-shadow`. See *Unsupported CSS* below before writing CSS.
 - **Units are physical.** Use `mm`, `cm`, `pt`, `q` for print. `px` works but maps to 1/96 in. Physical units are exact in the PDF.
 
-This skill is methodology-only: it gives the rules, the exact CSS/CLI/API surface, and the per-format specifications, then lets the agent generate the HTML/CSS. Do not assume bundled templates — author the HTML from scratch using the references.
+This skill is methodology-only: it gives the rules, the exact CSS/CLI/API surface, and the per-format specifications, then lets the agent generate the HTML/CSS. Do not assume bundled templates. Author the HTML from scratch using the references.
 
 ## Tooling
 
@@ -38,19 +38,19 @@ The primary execution path is the **CLI**. Use the Python API only for features 
 1. **Pick the format.** Decide document type, trim size, orientation, and single vs multi-page. Use the *Standard dimensions* table below; load `references/formats.md` for folds and per-type layout rules.
 2. **Decide print-readiness.** Screen/digital PDF by default. If the output goes to a commercial printer, switch to print-ready mode (bleed + crop marks + CMYK + PDF/X). See *Print-ready toggle* and `references/print-ready.md`.
 3. **Author `@page` first.** Set `size`, `margin` (or `margin: 0` + a safe-area wrapper for full-bleed), and any margin boxes (page numbers, running headers). Named pages (`@page cover`) for page-specific geometry.
-4. **Write the HTML/CSS.** Use semantic HTML, author stylesheets, custom properties (`--brand`) for theme values. Avoid unsupported CSS — check *Unsupported CSS* before committing to a technique. Load `references/css-reference.md` for the full supported-property matrix and paged-media primitives (counters, `string-set`, `target-counter`, bookmarks, footnotes, leaders).
+4. **Write the HTML/CSS.** Use semantic HTML, author stylesheets, custom properties (`--brand`) for theme values. Avoid unsupported CSS. Check *Unsupported CSS* before committing to a technique. Load `references/css-reference.md` for the full supported-property matrix and paged-media primitives (counters, `string-set`, `target-counter`, bookmarks, footnotes, leaders).
 5. **Render via CLI.** `weasyprint input.html output.pdf -s print.css`. Verify the result (page count, dimensions, fonts, colors). Iterate.
 6. **Iterate fast with watchexec** (optional, install it only with the user's agreement): `watchexec -e html,css -- weasyprint input.html output.pdf`.
 
 ## Browser Preview (screen stylesheet)
 
-Opening the HTML in a browser looks "wrong" (full-width, no pages) — this is **normal**: browsers render `screen` media and ignore `@page`, while WeasyPrint renders `print` against `@page`. The PDF is the source of truth. For a quick page-like preview in the browser, add a `screen`-only block that constrains `body` to the trim width — a white "page" centered on a gray desk, padded to the safe area. It never affects the PDF:
+Opening the HTML in a browser looks "wrong" (full-width, no pages). This is **normal**: browsers render `screen` media and ignore `@page`, while WeasyPrint renders `print` against `@page`. The PDF is the source of truth. For a quick page-like preview in the browser, add a `screen`-only block that constrains `body` to the trim width, a white "page" centered on a gray desk, padded to the safe area. It never affects the PDF:
 
 ```css
 @media screen {
   html { background: #e9e9ee; }
   body {
-    max-width: 210mm;          /* trim width — match @page size */
+    max-width: 210mm;          /* trim width, match @page size */
     min-height: 297mm;
     margin: 2em auto;
     padding: 20mm;             /* = @page margin → safe area */
@@ -85,12 +85,12 @@ Two modes. Default to **digital**; switch to **print-ready** only when the PDF g
 
 **Digital (default).** Screen colors (`rgb`/`hex`/`hsl`), web units, no bleed, no marks. Simpler and lighter.
 
-**Print-ready.** Activated when the user names a printer, asks for "print-ready / prêt à imprimer / fond perdu / traits de coupe", or targets a format meant for offset/digital press. It changes four things — load `references/print-ready.md` for the exact technique:
+**Print-ready.** Activated when the user names a printer, asks for "print-ready / prêt à imprimer / fond perdu / traits de coupe", or targets a format meant for offset/digital press. It changes four things. Load `references/print-ready.md` for the exact technique:
 
-1. **Bleed** — set `@page { size: <trim+2×bleed>mm; margin: 0; marks: crop cross }` (bleed = 3 mm standard, 5 mm large-format). Push full-bleed artwork with negative positioning; pin text inside the trim/safe area.
-2. **Color** — use `device-cmyk()` for spot/process color and an `@color-profile` + `--output-intent` for an ICC profile. Target PDF/X (`--pdf-variant pdf/x-4`) for graphics exchange.
-3. **Image resolution** — export rasters at `(trim_mm + 2×bleed) / 25.4 × DPI` (300 DPI offset, 400+ large-format). Use `image-rendering: crisp-edges` (mandatory for PDF/A).
-4. **Marks** — `marks: crop cross` emits trim + registration marks in the bleed zone.
+1. **Bleed**: set `@page { size: <trim+2×bleed>mm; margin: 0; marks: crop cross }` (bleed = 3 mm standard, 5 mm large-format). Push full-bleed artwork with negative positioning; pin text inside the trim/safe area.
+2. **Color**: use `device-cmyk()` for spot/process color and an `@color-profile` + `--output-intent` for an ICC profile. Target PDF/X (`--pdf-variant pdf/x-4`) for graphics exchange.
+3. **Image resolution**: export rasters at `(trim_mm + 2×bleed) / 25.4 × DPI` (300 DPI offset, 400+ large-format). Use `image-rendering: crisp-edges` (mandatory for PDF/A).
+4. **Marks:** `marks: crop cross` emits trim + registration marks in the bleed zone.
 
 Always state which mode you are using when you deliver, and give the trim + bleed dimensions explicitly.
 
@@ -106,7 +106,7 @@ Pull brand values from the `## Brand` section of the project's `AGENTS.md` if pr
 body { color: var(--brand-primary); font-family: var(--brand-font); }
 ```
 
-Embed custom fonts with `@font-face`. **Any `@font-face` rule requires a `FontConfiguration`** passed to both the `CSS` and `write_pdf` call — otherwise the font is silently ignored:
+Embed custom fonts with `@font-face`. **Any `@font-face` rule requires a `FontConfiguration`** passed to both the `CSS` and `write_pdf` call. Otherwise the font is silently ignored:
 
 ```python
 from weasyprint import HTML, CSS
@@ -123,40 +123,40 @@ css = CSS(string='''
 HTML(filename="doc.html").write_pdf("doc.pdf", stylesheets=[css], font_config=font_config)
 ```
 
-CLI users cannot use `@font-face` with a separate stylesheet cleanly for runtime font registration — prefer embedding `@font-face` in the HTML `<style>` (where WeasyPrint picks it up) or, better, install the font system-side and reference it by family name (WeasyPrint uses Fontconfig; verify with `fc-list | rg Brand` and `fc-match "Brand Sans"`). WeasyPrint subsets embedded fonts automatically (hb-subset when available).
+CLI users cannot use `@font-face` with a separate stylesheet cleanly for runtime font registration. Prefer embedding `@font-face` in the HTML `<style>` (where WeasyPrint picks it up) or, better, install the font system-side and reference it by family name (WeasyPrint uses Fontconfig; verify with `fc-list | rg Brand` and `fc-match "Brand Sans"`). WeasyPrint subsets embedded fonts automatically (hb-subset when available).
 
-## Unsupported CSS — Avoid Before Writing
+## Unsupported CSS: Avoid Before Writing
 
 WeasyPrint is not a browser. These common properties are **not** supported and will silently no-op (with a logged warning):
 
-- **`box-shadow`** — not released. Fake depth with borders, layered background gradients, or an absolutely-positioned semi-transparent duplicate rectangle behind the element.
-- **`text-shadow`** — not supported. Use `text-decoration`, color, or background instead.
+- **`box-shadow`**: not released. Fake depth with borders, layered background gradients, or an absolutely-positioned semi-transparent duplicate rectangle behind the element.
+- **`text-shadow`**: not supported. Use `text-decoration`, color, or background instead.
 - **3D transforms** (`rotateX/Y/Z`, `perspective`, `matrix3d`, `translateZ`, `scaleZ`), `transform-style`, `backface-visibility`. Only 2D transforms work.
-- **`:hover`, `:active`, `:focus`, `:target`, `:visited`** — accepted but never match (PDF is static).
-- **`unset`** keyword — use `initial`/`inherit`.
-- **`color-mix()`, `contrast-color()`** — not supported.
-- **`grid` quirks** — `inline-grid`, `repeat(auto-fill/auto-fit)`, subgrids, `grid-auto-flow: column`, baseline alignment, and grid items with intrinsic size (images) are unsupported or untested. Prefer flexbox or block layout for robustness; use grid only for simple fixed-track cases.
-- **`flexbox`** — works for simple cases but is "not deeply tested". Avoid edge cases.
-- **Multi-column** — no constrained-height columns, no spanning, limited column breaking. Prefer pagination.
-- **`break-*` on columns/regions** — only page breaks are supported.
-- **`writing-mode`, RTL/bidi** — logical properties map block/inline to vertical/horizontal only; no vertical text.
+- **`:hover`, `:active`, `:focus`, `:target`, `:visited`**: accepted but never match (PDF is static).
+- **`unset`** keyword: use `initial`/`inherit`.
+- **`color-mix()`, `contrast-color()`**: not supported.
+- **`grid` quirks**: `inline-grid`, `repeat(auto-fill/auto-fit)`, subgrids, `grid-auto-flow: column`, baseline alignment, and grid items with intrinsic size (images) are unsupported or untested. Prefer flexbox or block layout for robustness; use grid only for simple fixed-track cases.
+- **`flexbox`**: works for simple cases but is "not deeply tested". Avoid edge cases.
+- **Multi-column**: no constrained-height columns, no spanning, limited column breaking. Prefer pagination.
+- **`break-*` on columns/regions**: only page breaks are supported.
+- **`writing-mode`, RTL/bidi**: logical properties map block/inline to vertical/horizontal only; no vertical text.
 - **`table: visibility: collapse`, min/max width/height on table boxes, min/max on page-margin boxes.**
 
 When in doubt about a property, load `references/css-reference.md` for the authoritative supported/unsupported matrix before designing around it.
 
 ## Key Supported Features (use these freely)
 
-`@page` with `:left/:right/:first/:blank/:nth()` and named pages; page margin boxes (`@top-center`, `@bottom-right`, …); page counters and `counter()`/`counters()`; `string-set` + `string()` running headers; `target-counter()`/`target-text()` for tables of contents; `leader()`; `bookmark-level`/`bookmark-label`/`bookmark-state`; `float: footnote` with `::footnote-marker`/`::footnote-call`; CSS `var()` custom properties; `calc()`; all physical + font/viewport/page-relative units; 2D transforms; multi-backgrounds, `border-radius`, `border-image`; `linear/radial/repeating-radial-gradient()`; flexbox + grid (simple cases); `hyphens: auto` (needs `lang` attribute); `@font-face`; PDF hyperlinks, attachments, bookmarks, forms, metadata.
+`@page` with `:left/:right/:first/:blank/:nth()` and named pages; page margin boxes (`@top-center`, `@bottom-right`, ...); page counters and `counter()`/`counters()`; `string-set` + `string()` running headers; `target-counter()`/`target-text()` for tables of contents; `leader()`; `bookmark-level`/`bookmark-label`/`bookmark-state`; `float: footnote` with `::footnote-marker`/`::footnote-call`; CSS `var()` custom properties; `calc()`; all physical + font/viewport/page-relative units; 2D transforms; multi-backgrounds, `border-radius`, `border-image`; `linear/radial/repeating-radial-gradient()`; flexbox + grid (simple cases); `hyphens: auto` (needs `lang` attribute); `@font-face`; PDF hyperlinks, attachments, bookmarks, forms, metadata.
 
 ## Reference Loading
 
-Load only what the current step needs. Do not paste large reference sections into the answer — apply them.
+Load only what the current step needs. Do not paste large reference sections into the answer. Apply them.
 
-- `references/css-reference.md` — load when writing CSS, especially `@page`, page breaks, page numbers, running headers, tables of contents, bookmarks, footnotes, or to confirm whether a specific CSS feature is supported.
-- `references/cli-api.md` — load when using CLI flags or the Python API (`HTML`/`CSS`/`write_pdf` signatures, PDF variants, attachments, forms, metadata, URL fetchers, image optimization, caching).
-- `references/print-ready.md` — load when the output is for a commercial printer (bleed, crop/registration marks, CMYK, `device-cmyk`, ICC profiles, PDF/X, image DPI math).
-- `references/formats.md` — load when designing a specific document type and needing exact dimensions, folds, panel ordering, safe margins, and structure rules (brochure, flyer, card, business card, slides, booklet, invoice).
-- `references/troubleshooting.md` — load when something renders wrong (missing shadows/fonts/images, wrong colors, huge files, slow renders, empty glyphs) or when rendering untrusted HTML/CSS (security limits).
+- `references/css-reference.md`: load when writing CSS, especially `@page`, page breaks, page numbers, running headers, tables of contents, bookmarks, footnotes, or to confirm whether a specific CSS feature is supported.
+- `references/cli-api.md`: load when using CLI flags or the Python API (`HTML`/`CSS`/`write_pdf` signatures, PDF variants, attachments, forms, metadata, URL fetchers, image optimization, caching).
+- `references/print-ready.md`: load when the output is for a commercial printer (bleed, crop/registration marks, CMYK, `device-cmyk`, ICC profiles, PDF/X, image DPI math).
+- `references/formats.md`: load when designing a specific document type and needing exact dimensions, folds, panel ordering, safe margins, and structure rules (brochure, flyer, card, business card, slides, booklet, invoice).
+- `references/troubleshooting.md`: load when something renders wrong (missing shadows/fonts/images, wrong colors, huge files, slow renders, empty glyphs) or when rendering untrusted HTML/CSS (security limits).
 
 ## Output Rules
 

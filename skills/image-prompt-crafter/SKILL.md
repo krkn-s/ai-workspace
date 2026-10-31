@@ -21,7 +21,7 @@ Pick one (or a combination):
 - **Editing** (image + instruction → image): retouch, restyle, remove, relight.
 - **Compositing / fusion** (multiple images → one): blend references, try-on, product placement.
 - **Text-in-image**: poster, ad, cover, infographic, packaging, localization.
-- **Conversion**: user brings a prompt written for another model (Midjourney, SD, Flux) — strip parameters and weights, rebuild as natural language.
+- **Conversion**: user brings a prompt written for another model (Midjourney, SD, Flux). Strip parameters and weights, rebuild as natural language.
 
 ### 2. Clarification gate (hybrid)
 
@@ -29,17 +29,17 @@ Pick one (or a combination):
 
 Ask (max 5, grouped in one round) when unknown:
 
-1. **Usage / destination** — Instagram, print poster, web hero, slides, marketplace? Drives ratio, resolution, polish level.
-2. **Medium / style** — photograph (candid vs studio vs editorial), illustration, 3D render, flat design?
-3. **Exact in-image text** — word for word. Never invent brand copy, names, or numbers; use `[PLACEHOLDER]` or ask.
-4. **Mood / palette** — only if the brief is creatively vague.
-5. **Constraints** — brand colors, must-include or forbidden elements, reference images available?
+1. **Usage / destination**: Instagram, print poster, web hero, slides, marketplace? Drives ratio, resolution, polish level.
+2. **Medium / style**: photograph (candid vs studio vs editorial), illustration, 3D render, flat design?
+3. **Exact in-image text**: word for word. Never invent brand copy, names, or numbers; use `[PLACEHOLDER]` or ask.
+4. **Mood / palette**: only if the brief is creatively vague.
+5. **Constraints**: brand colors, must-include or forbidden elements, reference images available?
 
 If the user says "just do it", proceed with sensible defaults and say what you assumed.
 
 ### 3. Build the creative brief skeleton
 
-Assemble internally, in this order — this layering works on all three model families:
+Assemble internally, in this order. This layering works on all three model families:
 
 | Layer | Content |
 |---|---|
@@ -48,7 +48,7 @@ Assemble internally, in this order — this layering works on all three model fa
 | **Action / pose** | What is happening, gaze direction, hands, interactions |
 | **Setting** | Location, time of day, season, background elements |
 | **Composition** | Framing, camera angle, lens, depth of field, placement callouts |
-| **Lighting** | Quality, direction, mood (golden hour, softbox, chiaroscuro…) |
+| **Lighting** | Quality, direction, mood (golden hour, softbox, chiaroscuro...) |
 | **In-image text** | Exact copy in quotes + font style + placement |
 | **Style** | Medium, era, film stock or render style, color grading, quality cues |
 | **Constraints** | Exclusions and invariants (see below) |
@@ -59,18 +59,18 @@ Pull precise wording from [`references/lexicon.md`](references/lexicon.md) inste
 
 Default: deliver the **three variants** (GPT Image 2, Nano Banana 2 or Pro, Seedream 5 Pro) unless the user named a single target model or platform. Follow each model's grammar in [`references/models.md`](references/models.md):
 
-- **GPT Image 2** — scene → subject → details → constraints; literal "photorealistic" for photos; explicit exclusion lists; sizes in pixels (multiples of 16).
-- **Nano Banana 2 / Pro** — flowing natural sentences, positive framing only ("empty street", never "no cars"); every text element in its own quotes; start with a strong verb.
-- **Seedream 5 Pro** — layered directive clauses, format named first, under ~600 words; pin clauses when editing.
+- **GPT Image 2**: scene → subject → details → constraints; literal "photorealistic" for photos; explicit exclusion lists; sizes in pixels (multiples of 16).
+- **Nano Banana 2 / Pro**: flowing natural sentences, positive framing only ("empty street", never "no cars"); every text element in its own quotes; start with a strong verb.
+- **Seedream 5 Pro**: layered directive clauses, format named first, under ~600 words; pin clauses when editing.
 
-One scene, three prompts — do not write one generic prompt and relabel it. The differences are real: framing syntax, text rules, constraint style, and settings all differ.
+One scene, three prompts: do not write one generic prompt and relabel it. The differences are real: framing syntax, text rules, constraint style, and settings all differ.
 
 ### 5. Deliver
 
 Use this layout, in the conversation language (prompts themselves always in English):
 
 ```
-## GPT Image 2 (OpenAI) — best for <one-line why>
+## GPT Image 2 (OpenAI): best for <one-line why>
 Settings: 3:4 · 1024×1536 · quality: medium
 
 < Paste-ready prompt in a fenced code block >
@@ -93,10 +93,10 @@ Then add, only when useful: an **edit variant** (if the user will iterate on a r
 ## Non-negotiable rules
 
 - **Prompts in English**, always. Text meant to appear *inside* the image stays in its display language (e.g. a French tagline stays French, quoted).
-- **Quote literal in-image text** — every separate element in its own double quotes, with font style and placement.
+- **Quote literal in-image text**: every separate element in its own double quotes, with font style and placement.
 - **Never invent** proper nouns, brand names, prices, dates, statistics. Ask or use `[PLACEHOLDER]`.
 - **Show, don't grade.** Concrete materials, light, lens, and era beat "beautiful, stunning, 8K, masterpiece" on every model in scope.
-- **Edits: one change at a time**, and always name what must not change. Restate invariants on every iteration round — that is what prevents drift.
+- **Edits: one change at a time**, and always name what must not change. Restate invariants on every iteration round. That is what prevents drift.
 - **Respect each model's framing grammar.** Positive framing is mandatory for Nano Banana; exclusion lists are fine (and encouraged) for GPT Image 2 and Seedream.
 - **Match the format to the destination.** Choose ratio and resolution from the deliverable (9:16 story, 3:4 poster, 1:1 packshot, 16:9 hero), not by habit.
 
@@ -107,6 +107,6 @@ Then add, only when useful: an **edit variant** (if the user will iterate on a r
 | Maximum fidelity, dense in-image text, infographics, transparent PNG assets | GPT Image 2 |
 | Fast iteration, best multilingual typography, real-world/current subjects (web grounding) | Nano Banana 2 |
 | Studio-grade creative control, 4K print, complex reasoning-heavy scenes | Nano Banana Pro |
-| Brand/product variants locked to reference packshots, extreme aspect ratios (1:8…8:1) | Seedream 5 Pro |
+| Brand/product variants locked to reference packshots, extreme aspect ratios (1:8 to 8:1) | Seedream 5 Pro |
 | Legacy GPT Image 1/1.5 or Seedream 4.x prompt | Same grammar as their successors (see models.md) |
-| Imagen | Retired (shut down Aug 17, 2026) — steer to Nano Banana |
+| Imagen | Retired (shut down Aug 17, 2026), so steer to Nano Banana |

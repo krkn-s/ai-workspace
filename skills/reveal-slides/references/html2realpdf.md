@@ -32,7 +32,7 @@ pdf.dispose();
 
 `renderPdf(source, options)` uses a lazily-created default **Worker** renderer cached for the page lifetime. For custom fonts, explicit disposal, or main-thread execution, use `createRenderer` instead.
 
-## `createRenderer(init)` — reusable renderer
+## `createRenderer(init)`: reusable renderer
 
 ```js
 const renderer = await createRenderer({
@@ -106,7 +106,7 @@ pageBreak: {
 ```
 Injected as `break-before:page!important` / `break-after:page!important` / `break-inside:avoid!important`. Authored inline `!important` break declarations still win.
 
-## CSS profiles — when to use which
+## CSS profiles: when to use which
 
 - **`document`** (default): for invoices/reports/letters; rejects positioned/floated/transformed layout so layout never silently mis-paints.
 - **`web`** (staged 0.2+): enables normal-flow, flex, grid, float, positioning (`relative`/`absolute`/`fixed`/`sticky`), 2D transforms, multiple backgrounds + gradients, `box-shadow`/`text-shadow`, isolated opacity, SVG vectors. **Use this for slides.**
@@ -129,11 +129,11 @@ Preview options: `showToolbar`, `padding` (28, 16 narrow), `initialScale` (`"fit
 
 ## Fonts in the PDF
 
-Without registration, html2realpdf embeds four **Noto Sans Latin** faces plus built-in Arabic/Hebrew fallbacks. To use your deck's fonts (Inter, JetBrains Mono, …), register TrueType faces via `createRenderer({ fonts: […] })` — fetch each `.ttf` as an `ArrayBuffer`. The default `renderPdf` cannot register fonts; switch to `createRenderer` when the PDF must match the live typography.
+Without registration, html2realpdf embeds four **Noto Sans Latin** faces plus built-in Arabic/Hebrew fallbacks. To use your deck's fonts (Inter, JetBrains Mono, ...), register TrueType faces via `createRenderer({ fonts: [...] })`. Fetch each `.ttf` as an `ArrayBuffer`. The default `renderPdf` cannot register fonts; switch to `createRenderer` when the PDF must match the live typography.
 
-**Format constraint (important):** html2realpdf only accepts **raw TrueType/OpenType bytes (`.ttf`/`.otf`)**. `woff2`/`woff` — what Google Fonts and Fontshare CSS serve — will **not** embed (the WASM parses TrueType tables directly); the PDF silently falls back to Noto Sans. Use a `.ttf` CDN source. The most reliable is **`@expo-google-fonts/<name>` on jsDelivr** (versioned, CORS, real `.ttf`): `https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_400Regular.ttf`. Google Fonts gstatic `.ttf` is also fetchable (`font/ttf`, CORS `*`) but its URLs are opaque and change on every font update.
+**Format constraint (important):** html2realpdf only accepts **raw TrueType/OpenType bytes (`.ttf`/`.otf`)**. `woff2`/`woff` (what Google Fonts and Fontshare CSS serve) will **not** embed (the WASM parses TrueType tables directly); the PDF silently falls back to Noto Sans. Use a `.ttf` CDN source. The most reliable is **`@expo-google-fonts/<name>` on jsDelivr** (versioned, CORS, real `.ttf`): `https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_400Regular.ttf`. Google Fonts gstatic `.ttf` is also fetchable (`font/ttf`, CORS `*`) but its URLs are opaque and change on every font update.
 
-**Glyph constraint:** if a glyph used in the deck is absent from every registered font and every built-in fallback, the render throws a hard `WasmRenderError: MissingGlyph` and aborts. **Emoji are the usual culprit** (not in Inter/Noto Sans) — avoid them in slides meant for export, or register an emoji face. Common arrows (→ ← ↓ ↑, U+2190–2193) and punctuation (·) are present in Noto Sans and are safe.
+**Glyph constraint:** if a glyph used in the deck is absent from every registered font and every built-in fallback, the render throws a hard `WasmRenderError: MissingGlyph` and aborts. **Emoji are the usual culprit** (not in Inter/Noto Sans). Avoid them in slides meant for export, or register an emoji face. Common arrows (→ ← ↓ ↑, U+2190–2193) and punctuation (·) are present in Noto Sans and are safe.
 
 ## Links
 
@@ -141,11 +141,11 @@ PDF link annotations keep absolute `http`/`https`/`mailto`/`tel`/`ftp`. Relative
 
 ## Resources (images, stylesheets)
 
-For a DOM-element source, images/CDN stylesheets are snapshotted from the live page (subject to CORS). For an HTML-string source, stylesheets are **inert** unless a `resourceResolver` supplies them — prefer passing a live DOM element for the deck export. Use `baseUrl` for relative URLs, `resourcePolicy: "omit"` to drop failed resources instead of erroring.
+For a DOM-element source, images/CDN stylesheets are snapshotted from the live page (subject to CORS). For an HTML-string source, stylesheets are **inert** unless a `resourceResolver` supplies them. Prefer passing a live DOM element for the deck export. Use `baseUrl` for relative URLs, `resourcePolicy: "omit"` to drop failed resources instead of erroring.
 
 ## Worker vs main-thread, and CDN robustness
 
-- **Use `execution: "main"` for standalone decks** (the skill default). It fetches the `.wasm` directly (jsDelivr serves `application/wasm` + CORS `*`, so `instantiateStreaming` works) and runs WASM on the UI thread — no Worker construction, which sidesteps cross-origin-Worker restrictions when the file is opened via `file://`. The render blocks ~1–2s; fine for a one-click export.
+- **Use `execution: "main"` for standalone decks** (the skill default). It fetches the `.wasm` directly (jsDelivr serves `application/wasm` + CORS `*`, so `instantiateStreaming` works) and runs WASM on the UI thread, no Worker construction, which sidesteps cross-origin-Worker restrictions when the file is opened via `file://`. The render blocks ~1–2s; fine for a one-click export.
 - **`execution: "worker"`** (the library default) is non-blocking and fine when the deck is served over `https://`, but cross-origin module Workers (loaded from jsDelivr) can be blocked from a `file://` page. Prefer `main` for portable single files.
 - If WASM fails to load, set an explicit pinned `wasmUrl` via `createRenderer`.
 

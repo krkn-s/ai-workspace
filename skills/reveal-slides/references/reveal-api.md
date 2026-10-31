@@ -48,7 +48,7 @@ Set 16:9 explicitly: `width: 1280, height: 720` (matches the export's 16:9 page)
 
 ## Slide Markup
 
-**HTML slide:** `<section>…content…</section>`.
+**HTML slide:** `<section>...content...</section>`.
 
 **Markdown slide** (single-file friendly): 
 ```html
@@ -70,7 +70,7 @@ Set 16:9 explicitly: `width: 1280, height: 720` (matches the export's 16:9 page)
 ```
 - `---` inside the textarea splits **horizontal** slides (→).
 - `----` splits **vertical** sub-slides (↓).
-- An external `.md` file is also supported (`<section data-markdown="deck.md">`) but breaks the single-file rule — avoid for the deliverable.
+- An external `.md` file is also supported (`<section data-markdown="deck.md">`) but breaks the single-file rule. Avoid for the deliverable.
 
 **Nested/vertical slides (HTML):**
 ```html
@@ -97,7 +97,7 @@ Set 16:9 explicitly: `width: 1280, height: 720` (matches the export's 16:9 page)
 | `data-auto-animate-easing`, `data-auto-animate-duration` | Tune the morph. |
 | `data-visibility="hidden"` | Skip slide (not counted, not navigable). |
 
-> **PDF caveat:** `data-background-*` backgrounds live outside `<section>` and are **not** cloned by the export. If a background matters for the PDF, set it on the export `.slide` (`#deck-export .slide { background: … }`) or add a full-bleed child element inside the section.
+> **PDF caveat:** `data-background-*` backgrounds live outside `<section>` and are **not** cloned by the export. If a background matters for the PDF, set it on the export `.slide` (`#deck-export .slide { background: ... }`) or add a full-bleed child element inside the section.
 
 ## Fragments
 
@@ -178,4 +178,4 @@ Built-in (`dist/theme/<name>.css`): `black`, `white`, `beige`, `league`, `sky`, 
 
 ## Browser `?print-pdf` (alternative, raster)
 
-Append `?print-pdf` to the URL and use the browser's **Save as PDF**. It stacks slides and paginates. This is a **raster/browser-print** path — use it only for quick screenshots. The skill's html2realpdf export is the recommended path for a clean **vector** PDF.
+Append `?print-pdf` to the URL and use the browser's **Save as PDF**. It stacks slides and paginates. This is a **raster/browser-print** path. Use it only for quick screenshots. The skill's html2realpdf export is the recommended path for a clean **vector** PDF.

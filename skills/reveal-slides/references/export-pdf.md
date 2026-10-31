@@ -4,7 +4,7 @@ The complete strategy for turning a reveal.js deck into a clean, one-slide-per-p
 
 ## Why a stacked export container (not the live `.reveal`)
 
-reveal.js renders one slide at a time and applies 3D transforms (`.present`, `.future`, scaling) to position slides. If you pass `.reveal` to html2realpdf, the snapshot captures those transforms and the single visible slide — you'd get one transformed page, not the whole deck.
+reveal.js renders one slide at a time and applies 3D transforms (`.present`, `.future`, scaling) to position slides. If you pass `.reveal` to html2realpdf, the snapshot captures those transforms and the single visible slide. You'd get one transformed page, not the whole deck.
 
 So the export:
 1. Reads every slide via `Reveal.getSlides()` (returns all `<section>` elements, including vertical/nested slides).
@@ -47,7 +47,7 @@ The export slides live under `#deck-export`, **not** under `.reveal`, so reveal'
 Key points:
 - **`width: 297mm`** on both the container and each `.slide` + `layoutContext: "page"` reflows content to the PDF content box (297mm). Each `.slide` is exactly one 16:9 page.
 - **`height: 167.0625mm`** makes the slide's background fill the whole page (297 × 9/16 = 167.0625). Use `min-height` instead if you want short slides to still start a new page after.
-- **On-page, non-fixed position is mandatory.** html2realpdf renders content at the element's **real position**, so off-screen (`left:-9999px`) → off-page → blank PDF. Use `position: absolute; left: 0; top: 0; z-index: -1` (the deck covers it). Do **not** use `position: fixed` — html2realpdf treats fixed elements as page fixtures and collapses the whole deck onto a single page. Do **not** use `display: none` — it breaks the snapshot.
+- **On-page, non-fixed position is mandatory.** html2realpdf renders content at the element's **real position**, so off-screen (`left:-9999px`) → off-page → blank PDF. Use `position: absolute; left: 0; top: 0; z-index: -1` (the deck covers it). Do **not** use `position: fixed`. Html2realpdf treats fixed elements as page fixtures and collapses the whole deck onto a single page. Do **not** use `display: none`. It breaks the snapshot.
 - **Re-declare theme colors inline.** html2realpdf resolves `var()` only from the document's **inline** `<style>`, not from an external theme `<link>` like `black.css`. Re-declare `--r-background-color`, `--r-main-color`, `--r-heading-color` (and any color `#deck-export` uses) in the inline `:root`, or the PDF paints white pages with invisible text.
 - **`break-after: page`** is belt-and-suspenders alongside the `pageBreak.after: ".slide"` option.
 
@@ -60,15 +60,15 @@ Speaker notes (`<aside class="notes">`) must be removed or they appear as text o
 
 ## Backgrounds, fragments, auto-animate
 
-- **`data-background-*`** (color/image/video) are **not** in `<section>` — they aren't cloned. Options:
-  - Set the background on the export `.slide` via an extra class: add `data-export-bg` or a class to the `<section>`, then `#deck-export .slide.has-bg { background: … }`.
+- **`data-background-*`** (color/image/video) are **not** in `<section>`. They aren't cloned. Options:
+  - Set the background on the export `.slide` via an extra class: add `data-export-bg` or a class to the `<section>`, then `#deck-export .slide.has-bg { background: ... }`.
   - Or add a full-bleed child (`<div class="bg">`) inside the section so it travels with the clone.
 - **Fragments** render **fully visible** (no animation steps in a static PDF). That's usually what you want in a handout.
 - **Auto-animate** is irrelevant to the PDF (it's a live transition); the start and end slides each export as their own page.
 
 ## Custom fonts in the PDF (match the live deck)
 
-The default `renderPdf` embeds Noto Sans only. To match the deck's fonts, switch to `createRenderer` and register **raw `.ttf`** faces — `woff2`/`woff` will not embed. For a standalone file, fetch the `.ttf` from a CORS CDN and use the **same URL in `@font-face` and `DECK_FONTS`** so live and PDF match:
+The default `renderPdf` embeds Noto Sans only. To match the deck's fonts, switch to `createRenderer` and register **raw `.ttf`** faces: `woff2`/`woff` will not embed. For a standalone file, fetch the `.ttf` from a CORS CDN and use the **same URL in `@font-face` and `DECK_FONTS`** so live and PDF match:
 
 ```js
 const DECK_FONTS = [
@@ -86,7 +86,7 @@ const renderer = await createRenderer({
 });
 ```
 
-`@expo-google-fonts/<name>` on jsDelivr is the most reliable `.ttf` source (versioned, CORS). Google Fonts gstatic `.ttf` works too but its URLs are opaque and change per update. On any per-font fetch failure, that face falls back to Noto Sans — the PDF is never broken.
+`@expo-google-fonts/<name>` on jsDelivr is the most reliable `.ttf` source (versioned, CORS). Google Fonts gstatic `.ttf` works too but its URLs are opaque and change per update. On any per-font fetch failure, that face falls back to Noto Sans. The PDF is never broken.
 
 ## Enhanced export (fonts + progress + main-thread fallback)
 
@@ -97,7 +97,7 @@ const PDF_PAGE = { format: [297, 167.0625], unit: "mm", margin: 0 };
 
 async function exportDeckToPdf() {
   const btn = document.getElementById("export-pdf");
-  btn.disabled = true; btn.textContent = "Rendering…";
+  btn.disabled = true; btn.textContent = "Rendering...";
 
   const root = document.createElement("div");
   root.id = "deck-export";
@@ -142,9 +142,9 @@ async function exportDeckToPdf() {
 ## Reading diagnostics
 
 `pdf.diagnostics` is an array of `{ code, severity, message }`. Common codes during deck export:
-- Unsupported CSS (flex/grid edge cases, 3D transforms) — usually harmless with `web` profile; resolve with `unsupportedCss: "ignore"` to silence.
-- Resource fetch failure (CORS-blocked image/font) — set `resourcePolicy: "omit"` or `baseUrl`, or register fonts.
-- SVG fallback triggered — opt into `fallback: "rasterize-subtree"` only for that subtree.
+- Unsupported CSS (flex/grid edge cases, 3D transforms): usually harmless with `web` profile; resolve with `unsupportedCss: "ignore"` to silence.
+- Resource fetch failure (CORS-blocked image/font): set `resourcePolicy: "omit"` or `baseUrl`, or register fonts.
+- SVG fallback triggered: opt into `fallback: "rasterize-subtree"` only for that subtree.
 
 During development, use `unsupportedCss: "error"` (or `cssProfile: "strict"`) to surface real layout problems.
 
@@ -154,8 +154,8 @@ During development, use `unsupportedCss: "error"` (or `cssProfile: "strict"`) to
 |---|---|
 | Only one slide / wrong transforms | You passed `.reveal` or a live slide. Pass the `#deck-export` container. |
 | PDF text is wrong font (Noto Sans) | Fonts not registered, or registered as `woff2` (html2realpdf needs raw `.ttf`). Use `createRenderer({ fonts })` with `@expo-google-fonts` `.ttf`; use the same URL in `@font-face` and `DECK_FONTS`. |
-| `WasmRenderError: MissingGlyph` / export aborts | A glyph isn't in any registered or built-in font — usually **emoji**. Remove emoji (use text/SVG icons), or register an emoji face. Arrows → ← ↓ ↑ and · are safe. |
-| "Could not load WASM: HTTP …" | Wrong/unreachable `wasmUrl`, or offline. Confirm the CDN URL and network. |
+| `WasmRenderError: MissingGlyph` / export aborts | A glyph isn't in any registered or built-in font, usually **emoji**. Remove emoji (use text/SVG icons), or register an emoji face. Arrows → ← ↓ ↑ and · are safe. |
+| "Could not load WASM: HTTP ..." | Wrong/unreachable `wasmUrl`, or offline. Confirm the CDN URL and network. |
 | Worker init failed (-20) | Cross-origin module Worker blocked. Use `execution: "main"`. |
 | Slides overlap / wrong page count | Missing `pageBreak: { after: ".slide" }` or `break-after: page`. Verify `.slide` has a definite `width: 297mm`. |
 | Empty pages / content missing | (a) `display: none` on the export container; (b) positioned off-screen (`left:-9999px`) → off-page; (c) **`position: fixed`** on the container → html2realpdf collapses everything to **1 page** (use `position: absolute`); or (d) white-on-white: the slide bg didn't paint because the color came from an external-theme `var()` → re-declare `--r-background-color` in the inline `:root`. |
@@ -166,7 +166,7 @@ During development, use `unsupportedCss: "error"` (or `cssProfile: "strict"`) to
 ## Verifying the result
 
 - **Page count** equals slide count (`Reveal.getTotalSlides()`).
-- **Dimensions**: each page is 297 × 167.0625 mm (≈ 842 × 473 pt). Check with `pdfinfo deck.pdf` (poppler-utils, installed with the platform package manager after asking) — `Page size: 841.89 x 473.74 pts`.
+- **Dimensions**: each page is 297 × 167.0625 mm (≈ 842 × 473 pt). Check with `pdfinfo deck.pdf` (poppler-utils, installed with the platform package manager after asking), which reports `Page size: 841.89 x 473.74 pts`.
 - **Selectable text**: open the PDF and try selecting/copying slide text. If it's an image, the export fell back to raster (check diagnostics / `fallback`).
 - **Fonts**: in a PDF reader, document properties → Fonts should list Inter/JetBrains Mono (if registered), not just Noto.
 
