@@ -22,11 +22,13 @@ This skill is methodology-only: it gives the rules, the exact CSS/CLI/API surfac
 
 Never install a tool or a package without the user's agreement. Check what is already there (`weasyprint --version`, `command -v weasyprint`, `fc-list`), then ask before adding anything.
 
-WeasyPrint needs Pango and the Python package. Install Pango with the platform package manager (`apt install libpango-1.0-0 libpangoft2-1.0-0` on Debian or Ubuntu, `dnf` on Fedora, `pacman` on Arch), then the Python package with `uv`:
+WeasyPrint needs Pango and the Python package. Install Pango with the platform package manager (`apt install libpango-1.0-0 libpangoft2-1.0-0` on Debian or Ubuntu, `dnf` on Fedora, `pacman` on Arch). For the package itself, pick the lightest mode that fits:
 
 ```bash
-uv add weasyprint                # or: uv pip install weasyprint
-weasyprint --info                # verify Pango/Python/versions
+uvx weasyprint input.html output.pdf   # one-off run, nothing added to the project
+uv tool install weasyprint             # persistent CLI, no project dependency
+uv add weasyprint                      # the project imports the Python API
+weasyprint --info                      # verify Pango/Python/versions
 ```
 
 The primary execution path is the **CLI**. Use the Python API only for features the CLI cannot express (PDF/A metadata, Factur-X, custom URL fetchers, programmatic page slicing).
