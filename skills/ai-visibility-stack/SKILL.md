@@ -21,7 +21,7 @@ Use it when the task is about any of these:
 
 Do not use it as the primary skill when:
 
-- the task is content strategy — SEO briefs, article outlines, content audits, or editorial plans — use the `seo-aeo-content` skill instead
+- the task is content strategy (SEO briefs, article outlines, content audits, editorial plans), so use the `seo-aeo-content` skill instead
 - the task is purely visual design with no discoverability or crawl concerns
 - the project already publishes canonical docs or markdown that fully solves the machine-readable layer
 - the user explicitly wants to block answer-engine access rather than improve it

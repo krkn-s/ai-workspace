@@ -1,4 +1,4 @@
-# Visual Lexicon — Word Bank for Image Prompts
+# Visual Lexicon: Word Bank for Image Prompts
 
 Concrete vocabulary beats vague adjectives on every model in scope. Pull from these banks instead of writing "beautiful", "stunning", "high quality". Combine 1–2 choices per layer, not all of them.
 
@@ -24,7 +24,7 @@ Concrete vocabulary beats vague adjectives on every model in scope. Pull from th
 ## Color and grade
 
 - Muted teal-and-amber cinematic grade, desaturated earth tones, warm nostalgic Kodak-Portra palette, high-saturation editorial pop, monochrome with a single accent color, pastel matte, sepia, duotone (name both colors), period-accurate 1980s film grain.
-- Say the *emotional* register once: intimate, serene, tense, exuberant, melancholic, premium, playful — then let light/grade carry it.
+- Say the *emotional* register once: intimate, serene, tense, exuberant, melancholic, premium, playful. Then let light/grade carry it.
 
 ## Medium and style anchors
 
@@ -53,7 +53,7 @@ Pick what applies; drop the rest:
 
 - "No watermark, no logos, no extra text, no trademarks."
 - "Render the tagline exactly once, clearly and legibly."
-- "Isolated subject on a fully transparent background — no scenery, no solid backdrop, no checkerboard, no shadows." (GPT Image 2 transparent PNG)
+- "Isolated subject on a fully transparent background: no scenery, no solid backdrop, no checkerboard, no shadows." (GPT Image 2 transparent PNG)
 - "Original design only, no copyrighted characters."
 - "Plain background to clearly showcase the character."
 - "Avoid cinematic lighting, dramatic color grading, or stylized composition." (when grounded realism is wanted)
@@ -62,11 +62,11 @@ Positive-framing equivalents (mandatory for Nano Banana, good hygiene elsewhere)
 
 ## Editing clause bank
 
-- Surgical change: "Change only X. Keep everything else the same — same camera angle, same lighting, same framing, same surrounding objects."
+- Surgical change: "Change only X. Keep everything else the same: same camera angle, same lighting, same framing, same surrounding objects."
 - Identity lock: "Do not change the face, facial features, skin tone, body shape, pose, or expression. Preserve exact likeness and proportions."
 - Outfit swap: "Replace only the clothing, fitted naturally to the existing pose with realistic fabric behavior. Match lighting, shadows, and color temperature to the original photo."
 - Removal + fill: "Remove X. Fill in the background naturally."
 - Relight / restage: "Make it look like a winter evening with snowfall. Preserve identity, geometry, camera angle, and object placement."
 - Style transfer: "Recreate this exact scene in the style of [reference/style]. Keep composition and content unchanged."
-- Character continuity: "Same character as before — same outfit, same palette, same proportions. Do not redesign the character."
+- Character continuity: "Same character as before: same outfit, same palette, same proportions. Do not redesign the character."
 - Pin clauses (Seedream): "Keep the exact silhouette, camera angle, backdrop, and studio lighting from the reference."
