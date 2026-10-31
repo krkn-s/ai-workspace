@@ -15,11 +15,11 @@ $@
 
 ## Audit
 
-- **Dead**: stale command or path, restates `~/.pi/agent/AGENTS.md`, already enforced by a linter or CI, or describes what the agent can read itself. Delete.
+- **Dead**: stale command or path, restates `~/.pi/agent/AGENTS.md` or `~/.pi/agent/APPEND_SYSTEM.md`, already enforced by a linter or CI, or describes what the agent can read itself. Delete.
 - **Lean failure**: asks permission for ordinary work, invites unrelated cleanup, vague ("be careful", "ensure quality"). Merge or delete.
 - **Only-sometimes**: valid for a subset of tasks. Move to its own file, keep one pointer line saying when to read it.
 - **Gap**: a mistake the file does not prevent and the agent cannot infer. Add one line.
-- **Conflict**: two rules that cannot both be obeyed, or a divergence from the global baseline. Ask which wins.
+- **Conflict**: two rules that cannot both be obeyed, or a divergence from the global baseline (`~/.pi/agent/AGENTS.md` and `~/.pi/agent/APPEND_SYSTEM.md`). Ask which wins.
 - **Protected**: a section owned by another prompt (`## Brand`, the multi-agent coordination block). Byte-identical, listed as present, never touched or reformatted.
 
 Record only what the repo cannot show. No stack identification, no directory listing, no naming or style rules a formatter enforces. Keep the reason behind a rule when the reason is the point: a pinned version, a banned pattern, a destructive command.

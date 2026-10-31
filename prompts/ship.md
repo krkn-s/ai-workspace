@@ -1,5 +1,5 @@
 ---
-description: "Plan a task in the conversation or into docs/plans/, get approval, then execute step by step with verification, the repo's own commit convention, and deploy commands when a service actually runs."
+description: "Plan a task in the conversation or into docs/plans/, execute directly when the work is local and reversible, otherwise get approval, then run step by step with verification, the repo's own commit convention, and deploy commands when a service actually runs."
 argument-hint: "[task description]"
 ---
 Work like a senior engineer: check the callers of anything you touch, and never trade existing behavior for the change without saying so in the plan.
@@ -14,9 +14,9 @@ $@
 
 ## Step 1: Plan
 
-Explore the code first: read the files, search for existing patterns, run the diagnostics you need. If the request is precise enough to act on, ask nothing. If a missing decision would change the plan, ask every question you need, then plan.
+Explore the code first: read the files, search for existing patterns, run the diagnostics you need. If the request is precise enough to act on, ask nothing. If a missing or ambiguous decision would change the plan, ask every question you need, then plan.
 
-A complex or multi-session task gets a file at `docs/plans/YYYY-MM-DD-<slug>.md`, folder created if absent, never overwriting an existing name (append `-2`, `-3`). A simple task is planned in the conversation.
+A complex or multi-session task gets a file at `docs/plans/YYYY-MM-DD-<slug>.md`, folder created if absent, never overwriting an existing name (append `-2`, `-3`).
 
 ```markdown
 # <task>
@@ -34,9 +34,9 @@ A complex or multi-session task gets a file at `docs/plans/YYYY-MM-DD-<slug>.md`
 <pending>
 ```
 
-Then stop: present the plan, and wait for approval. Do not execute yet.
+Local, reversible work with no item from the confirmation list goes straight to Step 2: state the steps in one line, then execute. Anything else stops here, presents the plan, and waits for approval.
 
-## Step 2: Execute (only after approval)
+## Step 2: Execute (immediately for local reversible work, after approval otherwise)
 
 1. If the repo has tests, a linter, or a build, run them once for a baseline and keep that level green after each step; skip when there is none. On failure: an obvious and reversible fix, apply it and note it; otherwise stop and ask.
 2. Tick the steps as they land and note anything the execution reveals, in the plan file when there is one. Fill `## Outcome` at the end with what shipped and what did not.

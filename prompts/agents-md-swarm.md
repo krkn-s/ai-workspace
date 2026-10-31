@@ -57,11 +57,10 @@ printf '{"id":"%s","branch":"agent/%s","task":"%s","touches":[],"ts":"%s"}\n' "$
 
 ```bash
 git fetch origin && git rebase "origin/$MAIN"
-# in the primary checkout, only with no uncommitted changes
+# in the primary checkout, only with green tests, green lint,
+# and no uncommitted changes
 git merge --no-ff "agent/$TASK" && git push origin "$MAIN"
 ```
 
-**Prohibitions.** No `git stash`: it is shared across every worktree of the clone. No writing another agent's state file, no editing an existing message. No merging without green tests and lint, and no merge while another agent is merging.
+**Prohibitions.** No `git stash`: it is shared across every worktree of the clone. No writing another agent's state file, no editing an existing message. No merging or pushing without green tests and lint, and no merge while another agent is merging.
 `````
-
-Rien d'autre à faire.

@@ -98,11 +98,11 @@ Always state which mode you are using when you deliver, and give the trim + blee
 
 ## Brand & Custom Fonts
 
-Pull brand values from the project's `BRAND.md` if present (colors, typefaces, voice) and reuse them as CSS custom properties so the document stays on-brand:
+Pull brand values from the `## Brand` section of the project's `AGENTS.md` if present (colors, typefaces, voice, forbidden claims) and reuse them as CSS custom properties so the document stays on-brand. When the project keeps a standalone `BRAND.md` instead, read that:
 
 ```css
 :root {
-  --brand-primary: #b8341f;   /* from BRAND.md */
+  --brand-primary: #b8341f;   /* from the Brand section */
   --brand-font: "Brand Sans";
 }
 body { color: var(--brand-primary); font-family: var(--brand-font); }
