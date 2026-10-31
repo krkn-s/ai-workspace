@@ -10,7 +10,7 @@ Common rendering problems, root causes, and fixes — plus security limits for u
    rg -i 'warn|ignored|not support|cannot|error' wp.log
    ```
 2. **Uncompressed PDF** for low-level inspection: `--uncompressed-pdf`.
-3. **Rasterize a page** to visually verify (poppler: `brew install poppler`):
+3. **Rasterize a page** to visually verify (poppler-utils, installed with the platform package manager after asking):
    ```bash
    pdftoppm -png -r 72 -f 1 -l 1 out.pdf /tmp/p    # page 1
    ```

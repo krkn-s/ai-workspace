@@ -166,7 +166,7 @@ During development, use `unsupportedCss: "error"` (or `cssProfile: "strict"`) to
 ## Verifying the result
 
 - **Page count** equals slide count (`Reveal.getTotalSlides()`).
-- **Dimensions**: each page is 297 × 167.0625 mm (≈ 842 × 473 pt). Check with `pdfinfo deck.pdf` (`brew install poppler`) — `Page size: 841.89 x 473.74 pts`.
+- **Dimensions**: each page is 297 × 167.0625 mm (≈ 842 × 473 pt). Check with `pdfinfo deck.pdf` (poppler-utils, installed with the platform package manager after asking) — `Page size: 841.89 x 473.74 pts`.
 - **Selectable text**: open the PDF and try selecting/copying slide text. If it's an image, the export fell back to raster (check diagnostics / `fallback`).
 - **Fonts**: in a PDF reader, document properties → Fonts should list Inter/JetBrains Mono (if registered), not just Noto.
 

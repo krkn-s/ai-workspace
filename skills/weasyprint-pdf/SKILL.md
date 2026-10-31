@@ -20,17 +20,13 @@ This skill is methodology-only: it gives the rules, the exact CSS/CLI/API surfac
 
 ## Tooling
 
-On macOS, install the full stack (Pango + WeasyPrint) with Homebrew:
+Never install a tool or a package without the user's agreement. Check what is already there (`weasyprint --version`, `command -v weasyprint`, `fc-list`), then ask before adding anything.
 
-```bash
-brew install weasyprint          # gives the `weasyprint` CLI + Python lib
-weasyprint --info                # verify Pango/Python/versions
-```
-
-For Python-API usage inside a project, prefer `uv`:
+WeasyPrint needs Pango and the Python package. Install Pango with the platform package manager (`apt install libpango-1.0-0 libpangoft2-1.0-0` on Debian or Ubuntu, `dnf` on Fedora, `pacman` on Arch), then the Python package with `uv`:
 
 ```bash
 uv add weasyprint                # or: uv pip install weasyprint
+weasyprint --info                # verify Pango/Python/versions
 ```
 
 The primary execution path is the **CLI**. Use the Python API only for features the CLI cannot express (PDF/A metadata, Factur-X, custom URL fetchers, programmatic page slicing).
@@ -42,7 +38,7 @@ The primary execution path is the **CLI**. Use the Python API only for features 
 3. **Author `@page` first.** Set `size`, `margin` (or `margin: 0` + a safe-area wrapper for full-bleed), and any margin boxes (page numbers, running headers). Named pages (`@page cover`) for page-specific geometry.
 4. **Write the HTML/CSS.** Use semantic HTML, author stylesheets, custom properties (`--brand`) for theme values. Avoid unsupported CSS — check *Unsupported CSS* before committing to a technique. Load `references/css-reference.md` for the full supported-property matrix and paged-media primitives (counters, `string-set`, `target-counter`, bookmarks, footnotes, leaders).
 5. **Render via CLI.** `weasyprint input.html output.pdf -s print.css`. Verify the result (page count, dimensions, fonts, colors). Iterate.
-6. **Iterate fast with watchexec** (install separately): `watchexec -e html,css -- weasyprint input.html output.pdf`.
+6. **Iterate fast with watchexec** (optional, install it only with the user's agreement): `watchexec -e html,css -- weasyprint input.html output.pdf`.
 
 ## Browser Preview (screen stylesheet)
 
