@@ -90,7 +90,7 @@ Several agents may work in this clone at once, one branch and one worktree per t
 - [x] Step 2: write the skill, its references and the protocol tests.
 - [x] Step 3: write the ADR, sync `README.md`, apply the section to the catalog `AGENTS.md`.
 - [x] Step 4: run the full verification, including the 3-agent smoke test.
-- [ ] Step 5: short-lived branch off main, verify, merge, push, refresh the pi package.
+- [x] Step 5: short-lived branch off main, verify, merge, push, refresh the pi package.
 - [ ] Step 6: apply to a real repo and measure for two weeks: merge conflicts, lock waits, orphan states, agent mistakes.
 
 ## Risks
@@ -126,4 +126,6 @@ Several agents may work in this clone at once, one branch and one worktree per t
 
 ## Outcome
 
-pending
+- Shipped: `agent-swarm` skill with the coordination protocol and 16 passing tests, the wt-based merge recipe validated by a 3-agent smoke test including a real `wt merge` (squash on main, source worktree and branch cleaned up), the rewritten `agents-md-swarm` prompt, ADR 0001, the README line, and the coordination section applied to the catalog `AGENTS.md`.
+- Tools in place: `wt` v0.81.0 on PATH, pi-worktrunk v0.13.0 installed, the catalog package refreshed to the merged commit.
+- Not done: application to a real project repo and the two-week measurement (Step 6, owner-driven). The smoke test exercised the merge locally only; the fetch and push around `wt merge` still need one run against a real remote.
