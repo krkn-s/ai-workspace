@@ -1,5 +1,5 @@
 ---
-description: "Ensure the project's versioned AGENTS.md carries the multi-agent coordination section: append it when missing, report a no-op when identical, quote and arbitrate divergences when not. State lives in the clone's shared .git directory."
+description: "Ensure the project's versioned AGENTS.md carries the wt-based multi-agent coordination section: append it when missing, report a no-op when identical, quote and arbitrate divergences when not. Coordination state lives in the clone's shared .git directory, never committed."
 argument-hint: "[instructions]"
 ---
 
@@ -31,36 +31,12 @@ Report the action taken, show `git diff --stat`, remind the user to commit and p
 `````markdown
 ## Multi-agent coordination
 
-Multiple agents work on this repository in parallel, each in its own worktree. Coordination state lives in this clone's shared `.git` directory: every worktree sees it, and nothing is ever committed, pushed, or merged for coordination. Scope: one machine, agents sandboxed under this repo's tree.
+Several agents may work in this clone at once, one branch and one worktree per task, managed with `wt` (worktrunk). Read the `agent-swarm` skill before claiming a branch, editing shared contracts, or merging.
 
-**Start.** Derive the default branch, announce yourself, open your worktree:
-
-```bash
-MAIN="$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|origin/||')"; MAIN="${MAIN:-main}"
-TASK="<your-task>"
-ID="$TASK-$(printf '%04x' $RANDOM)"
-STATE="$(git rev-parse --path-format=absolute --git-common-dir)/agents-sync"
-mkdir -p "$STATE/state" "$STATE/messages"
-git worktree add "../$(basename "$PWD")-$TASK" -b "agent/$TASK" "$MAIN"
-printf '{"id":"%s","branch":"agent/%s","task":"%s","touches":[],"ts":"%s"}\n' "$ID" "$TASK" "$TASK" "$(date -u +%FT%TZ)" > "$STATE/state/$ID.tmp" && mv "$STATE/state/$ID.tmp" "$STATE/state/agent-$ID.json"
-```
-
-**Files** in `$STATE` (plain filesystem, always written atomically with `mv <file>.tmp <file>`):
-- `state/agent-<id>.json`: one per agent, written only by its owner: id, branch, worktree, task, `touches` (files it plans to change), ts.
-- `messages/<ts>-<from>-<to>.json`: one file per message, `type` is `info`, `request`, or `ack`, `to` may be `all`. Read your inbox at start, before your first edit, and before any merge; never edit or delete a message, answer a `request` with an `ack`.
-
-**During.** Declare the files you plan to change in `touches` before your first edit. Liveness comes from `git worktree list`, not from a heartbeat. Before editing a file another agent lists in `touches`, or a shared contract, post a `request` and wait for the `ack`. Lockfiles are never merged: rebase and regenerate them.
-
-**Stale.** A state file older than 15 minutes whose worktree is gone from `git worktree list`: post a `request` and take over only if no `ack` and no objection arrives within 5 minutes.
-
-**End.** Delete your state file, then merge one agent at a time:
-
-```bash
-git fetch origin && git rebase "origin/$MAIN"
-# in the primary checkout, only with green tests, green lint,
-# and no uncommitted changes
-git merge --no-ff "agent/$TASK" && git push origin "$MAIN"
-```
-
-**Prohibitions.** No `git stash`: it is shared across every worktree of the clone. No writing another agent's state file, no editing an existing message. No merging or pushing without green tests and lint, and no merge while another agent is merging.
+- Identity is the branch. Claim it under `agents-sync/` in the shared git dir before your first edit, release after the merge. Nothing there is ever committed.
+- Enter your worktree before editing: pi uses the `worktrunk` tool or `/wt switch --create`; other agents run `wt switch --create`.
+- Declare shared contracts and lockfiles, not files: each worktree has its own copy. Before touching another agent's declared contract, post a message and wait for the ack.
+- One merge at a time: take the merge lock, `git fetch`, run the merge recipe from the skill, `git push`, release. A rejected push means fetch, rebase, retest, retry.
+- Never remove or prune another agent's worktree. A stale claim whose worktree is gone from `git worktree list` follows the takeover recipe: request, wait, take.
+- If `wt` or the `worktrunk` tool is missing, say so and stop: the owner installs them. Do not improvise a replacement protocol.
 `````
