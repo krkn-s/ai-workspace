@@ -1,6 +1,6 @@
 ---
 name: agent-swarm
-description: "Coordinate parallel agents, pi or any CLI, on one clone with wt (worktrunk): claim a branch, enter its worktree, declare contracts, exchange messages and acks, take the merge lock, merge, handle stale claims. Use before creating a worktree, touching shared contracts, or merging with other agents."
+description: "Coordinate parallel agents, pi or any CLI, on one clone with wt (worktrunk): claim a branch, place its worktree, declare contracts, exchange messages and acks, take the merge lock, merge, handle stale claims. Use before creating a worktree, touching shared contracts, or merging with other agents."
 ---
 
 # Agent Swarm
@@ -21,10 +21,20 @@ Coordinate several agents working in parallel on one clone. Identity is the bran
 - Identity is the branch. Name task branches `agent/<slug>`. Claim before your first edit, release after the merge. A claim is one directory per branch, written only by its owner: `state/<branch>/` holds `branch`, `task`, `worktree`, `ts`, and an append-only `contracts`.
 - Messages are one file each, never edited or deleted. An ack is one empty file. Locks are directories taken with `mkdir`, atomic by nature.
 - What the tools already guarantee, do not rebuild: `wt` creates and removes worktrees, runs the merge pipeline (commit, squash, rebase, pre-merge checks, fast-forward, cleanup) and refuses non-fast-forward merges. `git worktree list` is the only liveness signal, trust it over timestamps. pi-worktrunk follows wt directory changes and recovers a session whose worktree vanished.
-- Enter your worktree before editing. pi: call the `worktrunk` tool with `{"command": "switch", "args": ["--create", "agent/<slug>"]}` or run `/wt switch --create agent/<slug>`. Any other agent: `wt switch --create agent/<slug>` from the primary worktree. A branch whose worktree disappeared: `wt switch agent/<slug>` recreates the worktree.
+- When the session sits inside the clone, enter your worktree before editing. pi: call the `worktrunk` tool with `{"command": "switch", "args": ["--create", "agent/<slug>"]}` or run `/wt switch --create agent/<slug>`. Any other agent: `wt switch --create agent/<slug>` from the primary worktree. A branch whose worktree disappeared: `wt switch agent/<slug>` recreates the worktree.
 - `wt switch` in a pi bash tool shell never moves the session: shell integration is inactive there, the command prints `Cannot change directory`, creates the worktree, and leaves you in the primary one. You then edit `main` while believing you are on your branch. In pi, switch with the `worktrunk` tool or `/wt` only, and check `git branch --show-current` before your first edit.
 - The `worktrunk` tool answers `queued` for `switch` and `merge`: the command runs after your turn. End the turn, do not retry, do not touch files in between.
 - The sandbox follows the session, not the clone: after a switch, the primary worktree and its parent are outside the working directory, and so are `~/.config/worktrunk` and `~/.pi/agent`. One literal absolute path aborts the whole bash call. Derive shared paths with `git rev-parse`, keep the rest relative.
+
+## Session above the clone
+
+A project folder often keeps the clone in a subdirectory, so the session starts above it. pi follows worktree moves only inside the repository of its own working directory.
+
+- Resolve the clone before anything: `REPO="$(git -C <dir> rev-parse --show-toplevel)"`. Pass it to every command, with `-C "$REPO"` or by working inside the worktree. From a folder above the clone, a bare `git` reads and writes the parent repository instead.
+- Above the clone, every switch destination gets rejected and the session stays where it is. That is the intended setup there, not an error: keep the project-wide view, edit through absolute paths under the worktree.
+- Place the worktree inside the clone, so it stays under the project folder and inside the sandbox: `wt switch -C <clone> --create agent/<slug> --path .worktrees/<slug> --no-cd`, with `.worktrees/` gitignored. `--path` resolves from the clone named by `-C`, so the worktree lands inside it. A sibling path such as `../<clone>.<slug>` sits outside both the clone and the sandbox, and nothing can read it.
+- `--no-cd` keeps `wt` from announcing a directory change it cannot perform. Run that switch in bash: through the `worktrunk` tool it queues a turn for a move that cannot happen.
+- Never fill a worktree with `wt step copy-ignored`, which copied 420 MiB of ignored files in practice. Link `vendor` and `node_modules`, or declare them in the project `wt.toml`.
 
 ## Recipes
 
@@ -153,7 +163,7 @@ done
 
 ### Merge recipe
 
-All preconditions, or do not merge: checks green and the tree committable, diff inside your claimed task, every shared contract you touched has an ack, no other merge in progress. Take the lock and fetch:
+All preconditions, or do not merge: checks green and the tree committable, diff inside your claimed task, every shared contract you touched has an ack, no other merge in progress, and the branch carries its commits already, since `wt` falls back to `Changes to N files` when nothing is committed. Take the lock and fetch:
 
 ```sh
 STATE="$(git rev-parse --path-format=absolute --git-common-dir)/agents-sync"
@@ -163,7 +173,11 @@ printf '%s %s\n' "$BR" "$(date -u +%FT%TZ)" > "$STATE/locks/merge/owner"
 git fetch origin
 ```
 
-Then run the merge itself. pi: call the `worktrunk` tool with `{"command": "merge"}` and end your turn; the merge runs, your session lands in the target worktree, and you continue there. Any other agent: `wt merge` from your worktree.
+Then run the merge itself.
+
+- Session inside the clone, pi: call the `worktrunk` tool with `{"command": "merge"}` and end your turn; the merge runs, your session lands in the target worktree, and you continue there. Any other agent: `wt merge` from your worktree.
+- Session above the clone: `wt merge <target> --branch <slug>` in bash, from the primary worktree. It emits no directory directive, so no move is attempted and no destination gets rejected. Never run `wt merge` from inside the task worktree there: it asks the session to follow to the target, the move is rejected, and the invocation returns exit -1 after the merge already succeeded.
+- `failed` or `Rejected Worktrunk destination` after a merge is not proof of failure. Read `git -C <clone> log --oneline -1` before deciding, and never replay the merge.
 
 `wt merge` commits, squashes, rebases, runs the pre-merge checks, fast-forwards the target, removes your source worktree, and never fetches or pushes. Finish in the target worktree:
 
@@ -212,6 +226,7 @@ rm -rf "$STATE/state/$(git branch --show-current)"
 ## Failure modes
 
 - Orphan lock: read `locks/<name>/owner`, post a request, wait. Never steal.
+- Rejected destination: pi follows a worktree only inside the repository of its working directory. Above the clone, switch with `--no-cd` in bash, and after a merge that landed anyway, verify and continue.
 - Wrong directory: check `pwd` before your first edit. A claim made from the wrong worktree points everyone at the wrong path.
 - Skill not loaded: the AGENTS.md section names this skill for a reason. If you skipped it, read it now.
 - Unanswered request: one reminder, then an objection posted to `all`.
