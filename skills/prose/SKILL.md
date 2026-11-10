@@ -17,7 +17,7 @@ Produce text that reads like a real person wrote it: precise, grounded, sometime
 
 If the user gives a writing sample (their own previous writing), read it first: note its sentence lengths, vocabulary, punctuation, recurring phrases, transitions. Match those habits instead of merely deleting AI patterns. Do not upgrade casual words or regularize deliberate quirks.
 
-A sample outranks the style rules below, including the em-dash rule: if the sample uses em dashes, keep them at roughly the sample's frequency. Matching the author beats scrubbing the tell.
+A sample outranks the judgment rules below, but not the mechanical cleanup rules. Match sentence lengths, vocabulary, punctuation habits, recurring phrases, and transitions without regularizing deliberate quirks. The em-dash ban still applies when matching a sample.
 
 Without a sample, use the default behavior below.
 
@@ -30,7 +30,7 @@ Avoiding AI patterns is only half the job; voiceless, sterile writing is just as
 Run these on any text you output or edit:
 
 - Remove invisible characters, zero-width spaces, and trailing spaces.
-- Convert non-breaking spaces to normal spaces, smart/curly quotes to straight quotes, and ellipses (…) to three dots (...).
+- Convert ellipses (…) to three dots (...). Keep non-breaking spaces and smart/curly quotes when they are intentional typography.
 - Remove em dashes (—) and en dashes (–) used as pauses. See the em-dash rule below.
 - Remove leftover Markdown markers that don't belong in the final prose.
 - When cleaning already-formatted text, drop mechanical **boldface**, unwrap inline-header lists ("- **Header:** body"), and fix Title Case headings to sentence case.
@@ -52,7 +52,7 @@ These appear far more often in post-2023 text and tend to cluster. Not banned, b
 
 **Punctuation**
 
-4. **No em dashes (—) for pauses or asides.** This is the one hard punctuation ban, in both languages (sample override above). Replace with a period, a comma, parentheses, or split the sentence. Also catch spaced em dashes (` — `) and en dashes (–). Scan the final text for `—` and `–` before delivering.
+4. **No em dashes (—) for pauses or asides.** This is the one hard punctuation ban, in both languages, including when matching a writing sample. Replace with a period, a comma, parentheses, or split the sentence. Also catch spaced em dashes (` — `) and en dashes (–). Scan the final text for `—` and `–` before delivering.
 5. **Keep punctuation simple.** Do not use semicolons (;) to link clauses. Limit colons (:) to introducing a list. Avoid parentheses for inline commentary. If a sentence feels crowded, split it into separate sentences.
 
 **Words and constructions**

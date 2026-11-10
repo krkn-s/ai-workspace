@@ -1,5 +1,5 @@
 ---
-description: "Plan a task in the conversation or into docs/plans/, execute directly when the work is local and reversible, otherwise get approval, then run step by step with verification, the repo's own commit convention, and deploy commands when a service actually runs."
+description: "Plan a task in the conversation or into docs/plans/, execute local reversible work with verification, commit using the repo's convention, ask immediately before any push or deployment, and provide server update commands only when a service actually runs."
 argument-hint: "[task description]"
 ---
 Work like a senior engineer: check the callers of anything you touch, and never trade existing behavior for the change without saying so in the plan.
@@ -34,12 +34,19 @@ A complex or multi-session task gets a file at `docs/plans/YYYY-MM-DD-<slug>.md`
 <pending>
 ```
 
-Local, reversible work with no item from the confirmation list goes straight to Step 2: state the steps in one line, then execute. Anything else stops here, presents the plan, and waits for approval.
+The confirmation list covers:
+
+- every `git push`, identified by repository, remote, source branch, and destination branch;
+- publishing, deployment, server changes, and any other external side effect;
+- irreversible deletion or destructive data operations;
+- exposing secrets or weakening security.
+
+Local, reversible work with no item from the confirmation list goes straight to Step 2: state the steps in one line, then execute. Anything else stops here, presents the plan, and waits for approval. Approval of the task does not approve a later push or deployment: ask again immediately before that exact action.
 
 ## Step 2: Execute (immediately for local reversible work, after approval otherwise)
 
 1. If the repo has tests, a linter, or a build, run them once for a baseline and keep that level green after each step; skip when there is none. On failure: an obvious and reversible fix, apply it and note it; otherwise stop and ask.
 2. Tick the steps as they land and note anything the execution reveals, in the plan file when there is one. Fill `## Outcome` at the end with what shipped and what did not.
 3. A decision that will be re-litigated later (a tradeoff, a rejected option, a hosting or legal constraint) gets an ADR at `docs/adr/NNNN-<slug>.md`: `Status`, `Date`, `Context`, `Decision`, `Consequences`. One file per decision, numbered in order, immutable except its `Status`. Only when the diff and the commit message will not explain it.
-4. Read your own `git diff` before committing, then follow the repo's own convention: read `AGENTS.md` and the recent commits, and use Conventional Commits only when the repo already does. Push to your own branch, or to a single-writer tree; never to a protected default branch or a tree another agent is merging, without asking.
-5. If a service is deployed or running (evidence: `docker-compose.yml`, `Dockerfile`, systemd unit, deploy script, CI deploy job), end with one copy-pasteable update block (`curl`, `systemctl`, `docker`, `rsync`, multiline with trailing backslashes), stating whether it runs locally or remotely, plus the post-update checks. Omit it when the work is local, or when you are unsure a deployed service exists.
+4. Read your own `git diff` before committing, then follow the repo's own convention: read `AGENTS.md` and the recent commits, and use Conventional Commits only when the repo already does. Commit on the appropriate branch. Never push as an automatic part of this step. When the work is ready, show the repository, remote, source branch, and destination branch, then ask for approval immediately before `git push`. Push only the exact approved action.
+5. If a service is deployed or running (evidence: `docker-compose.yml`, `Dockerfile`, systemd unit, deploy script, CI deploy job), end with one copy-pasteable update block (`curl`, `systemctl`, `docker`, `rsync`, multiline with trailing backslashes), stating whether it runs locally or remotely, plus the post-update checks. Omit it when the work is local, or when you are unsure a deployed service exists. Preparing this block does not authorize running it: request separate approval immediately before any deployment or server change.

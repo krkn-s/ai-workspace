@@ -192,16 +192,36 @@ export async function enrichModel(id: string, signal: AbortSignal): Promise<Infe
 	meta.input = [...family.input];
 	if (family.thinking) meta.thinking = family.thinking;
 
+	let contextFromNvidia = false;
+	let maxTokensFromNvidia = false;
+	let inputFromNvidia = false;
+	let mdContributed = false;
+	let inferContributed = false;
+
 	// 1. Model record (.md)
 	try {
 		const md = await fetchText(`${BUILD_MD_URL}/${id}.md`, signal, 15_000);
 		if (md) {
 			const parsed = parseModelRecord(md);
-			if (parsed.contextWindow) { meta.contextWindow = parsed.contextWindow; meta.partial = false; meta.maxTokens ??= family.maxTokens; }
-			if (parsed.maxTokens) { meta.maxTokens = parsed.maxTokens; meta.partial = false; }
-			if (parsed.input) { meta.input = parsed.input; }
-			if (parsed.reasoning !== undefined) { meta.reasoning = parsed.reasoning; }
-			if (parsed.contextWindow || parsed.maxTokens) meta.provenance = "nvidia-md";
+			if (parsed.contextWindow) {
+				meta.contextWindow = parsed.contextWindow;
+				contextFromNvidia = true;
+				mdContributed = true;
+			}
+			if (parsed.maxTokens) {
+				meta.maxTokens = parsed.maxTokens;
+				maxTokensFromNvidia = true;
+				mdContributed = true;
+			}
+			if (parsed.input) {
+				meta.input = parsed.input;
+				inputFromNvidia = true;
+				mdContributed = true;
+			}
+			if (parsed.reasoning !== undefined) {
+				meta.reasoning = parsed.reasoning;
+				mdContributed = true;
+			}
 		}
 	} catch (error) {
 		if (!signal.aborted) console.warn(`nvidia-live: .md enrich failed for ${id}: ${messageOf(error)}`);
@@ -212,16 +232,29 @@ export async function enrichModel(id: string, signal: AbortSignal): Promise<Infe
 		const html = await fetchText(`${INFER_URL}/${inferSlug(id)}`, signal, 20_000);
 		if (html) {
 			const parsed = parseInferReference(html);
-			if (parsed.maxTokens) { meta.maxTokens = parsed.maxTokens; meta.partial = false; }
-			if (parsed.thinking && !meta.thinking) meta.thinking = parsed.thinking;
-			if (!meta.reasoning && (parsed.thinking || parsed.reasoning)) meta.reasoning = true;
-			if (meta.provenance !== "nvidia-md") meta.provenance = "nvidia-infer";
+			if (parsed.maxTokens) {
+				meta.maxTokens = parsed.maxTokens;
+				maxTokensFromNvidia = true;
+				inferContributed = true;
+			}
+			// The per-model schema is authoritative over the family fallback.
+			if (parsed.thinking) {
+				meta.thinking = parsed.thinking;
+				inferContributed = true;
+			}
+			if (parsed.reasoning) {
+				meta.reasoning = true;
+				inferContributed = true;
+			}
+			if (parsed.thinking) meta.reasoning = true;
 		}
 	} catch (error) {
 		if (!signal.aborted) console.warn(`nvidia-live: -infer enrich failed for ${id}: ${messageOf(error)}`);
 	}
 
-	// Model record missing max output? keep family value and stay partial.
-	if (meta.partial && meta.provenance === "family") meta.thinking = family.thinking;
+	// A core field still supplied by the family table keeps the record partial.
+	meta.partial = !(contextFromNvidia && maxTokensFromNvidia && inputFromNvidia);
+	if (mdContributed) meta.provenance = "nvidia-md";
+	else if (inferContributed) meta.provenance = "nvidia-infer";
 	return meta;
 }

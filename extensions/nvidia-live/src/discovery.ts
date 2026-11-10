@@ -4,6 +4,7 @@
 // when a key resolves, which NVIDIA treats slightly more leniently.
 
 const NIM_MODELS_URL = "https://integrate.api.nvidia.com/v1/models";
+export const DISCOVERY_TIMEOUT_MS = 10_000;
 
 // Non-chat families served by the shared endpoint: embeddings, retrievers,
 // parsers, speech, safety, rewards, clip, image-gen. Vision chat models
@@ -27,7 +28,10 @@ export async function discoverLiveChatIds(signal: AbortSignal, apiKey?: string):
 	try {
 		const headers: Record<string, string> = { Accept: "application/json" };
 		if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
-		const res = await fetch(NIM_MODELS_URL, { headers, signal });
+		const res = await fetch(NIM_MODELS_URL, {
+			headers,
+			signal: AbortSignal.any([signal, AbortSignal.timeout(DISCOVERY_TIMEOUT_MS)]),
+		});
 		if (!res.ok) return { chatIds: [], error: `HTTP ${res.status}` };
 		const payload = (await res.json()) as { data?: Array<{ id?: unknown }> };
 		if (!Array.isArray(payload.data)) return { chatIds: [], error: "unexpected /models payload" };
