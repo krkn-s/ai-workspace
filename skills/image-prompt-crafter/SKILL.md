@@ -41,17 +41,24 @@ If the user says "just do it", proceed with sensible defaults and say what you a
 
 Assemble internally, in this order. This layering works on all three model families:
 
-| Layer | Content |
-|---|---|
-| **Format** | Deliverable and orientation ("fashion editorial magazine cover, portrait 3:4", "mobile app UI mockup", "packshot on white") |
-| **Subject** | Who/what, with concrete wardrobe, materials, age, details |
-| **Action / pose** | What is happening, gaze direction, hands, interactions |
-| **Setting** | Location, time of day, season, background elements |
-| **Composition** | Framing, camera angle, lens, depth of field, placement callouts |
-| **Lighting** | Quality, direction, mood (golden hour, softbox, chiaroscuro...) |
-| **In-image text** | Exact copy in quotes + font style + placement |
-| **Style** | Medium, era, film stock or render style, color grading, quality cues |
-| **Constraints** | Exclusions and invariants (see below) |
+- **Format**
+  - **Content**: Deliverable and orientation ("fashion editorial magazine cover, portrait 3:4", "mobile app UI mockup", "packshot on white")
+- **Subject**
+  - **Content**: Who/what, with concrete wardrobe, materials, age, details
+- **Action / pose**
+  - **Content**: What is happening, gaze direction, hands, interactions
+- **Setting**
+  - **Content**: Location, time of day, season, background elements
+- **Composition**
+  - **Content**: Framing, camera angle, lens, depth of field, placement callouts
+- **Lighting**
+  - **Content**: Quality, direction, mood (golden hour, softbox, chiaroscuro...)
+- **In-image text**
+  - **Content**: Exact copy in quotes + font style + placement
+- **Style**
+  - **Content**: Medium, era, film stock or render style, color grading, quality cues
+- **Constraints**
+  - **Content**: Exclusions and invariants (see below)
 
 Pull precise wording from [`references/lexicon.md`](references/lexicon.md) instead of inventing vague adjectives.
 
@@ -102,11 +109,15 @@ Then add, only when useful: an **edit variant** (if the user will iterate on a r
 
 ## Model selection cheat sheet
 
-| Need | Pick |
-|---|---|
-| Maximum fidelity, dense in-image text, infographics, transparent PNG assets | GPT Image 2 |
-| Fast iteration, best multilingual typography, real-world/current subjects (web grounding) | Nano Banana 2 |
-| Studio-grade creative control, 4K print, complex reasoning-heavy scenes | Nano Banana Pro |
-| Brand/product variants locked to reference packshots, extreme aspect ratios (1:8 to 8:1) | Seedream 5 Pro |
-| Legacy GPT Image 1/1.5 or Seedream 4.x prompt | Same grammar as their successors (see models.md) |
-| Imagen | Retired (shut down Aug 17, 2026), so steer to Nano Banana |
+- **Maximum fidelity, dense in-image text, infographics, transparent PNG assets**
+  - **Pick**: GPT Image 2
+- **Fast iteration, best multilingual typography, real-world/current subjects (web grounding)**
+  - **Pick**: Nano Banana 2
+- **Studio-grade creative control, 4K print, complex reasoning-heavy scenes**
+  - **Pick**: Nano Banana Pro
+- **Brand/product variants locked to reference packshots, extreme aspect ratios (1:8 to 8:1)**
+  - **Pick**: Seedream 5 Pro
+- **Legacy GPT Image 1/1.5 or Seedream 4.x prompt**
+  - **Pick**: Same grammar as their successors (see models.md)
+- **Imagen**
+  - **Pick**: Retired (shut down Aug 17, 2026), so steer to Nano Banana

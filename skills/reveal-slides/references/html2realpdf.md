@@ -48,46 +48,88 @@ renderer.dispose();
 
 ### Renderer-lifetime options (`RendererInit`)
 
-| Option | Values / default | Use |
-|---|---|---|
-| `execution` | `"worker"` (default) / `"main"` | Keep WASM off the UI thread; fall back to `"main"` if cross-origin module Workers are blocked. |
-| `wasmUrl` | `string \| URL`; package-relative by default | Override only when the default resolution fails. |
-| `fonts` | `FontRegistration[]`; none by default | Register reusable TrueType faces once per renderer. |
+- `execution`
+  - **Values / default**: `"worker"` (default) / `"main"`
+  - **Use**: Keep WASM off the UI thread; fall back to `"main"` if cross-origin module Workers are blocked.
+- `wasmUrl`
+  - **Values / default**: `string | URL`; package-relative by default
+  - **Use**: Override only when the default resolution fails.
+- `fonts`
+  - **Values / default**: `FontRegistration[]`; none by default
+  - **Use**: Register reusable TrueType faces once per renderer.
 
 Font registration: `{ family, data: ArrayBuffer|Uint8Array, weight?: number|"normal"|"bold" (400), style?: "normal"|"italic" }`.
 
 ## Per-render options (`RenderOptions`)
 
-| Option | Default | Use |
-|---|---|---|
-| `page` | captured `@page`, else A4 portrait, 0 margin | Explicit page geometry (see below). |
-| `cssProfile` | `"document"` | **`"web"` for slides** (flex/grid/transforms/shadows/position/float). `"document"` rejects non-static layout; `"strict"` = web + errors on unsupported CSS. |
-| `strict` | `false` | Promote unsupported CSS to errors without selecting `web`. |
-| `mediaType` | `"screen"` | `"print"` selects the print media environment for computed styles/queries. |
-| `layoutContext` | `"source"` | `"page"` reflows the root to the PDF content box (use for the deck export). |
-| `viewport` | source env | `{ width, height }` for deterministic responsive layout. |
-| `unsupportedCss` | `"warn"` (`"error"` in strict) | `"warn"`/`"error"`/`"ignore"`. |
-| `fallback` | `"error"` | `"rasterize-subtree"` opt-in scoped rasterization for unsupported SVG. |
-| `canvasToSvg` | none | Adapter converting live `<canvas>` charts to SVG. |
-| `canvasFallback` | `"error"` | `"rasterize"` for a `null` `canvasToSvg`. |
-| `includeShadowDom` | `false` | Flatten open Shadow DOM into the snapshot. |
-| `baseUrl` | source document URL | Resolve relative image/stylesheet URLs. |
-| `resourcePolicy` | `"error"` | `"omit"` drops failed resources with diagnostics. |
-| `resourceResolver` | none | Supply protected/virtual images and stylesheets. |
-| `pageBreak` | none | Selector-driven pagination (see below). |
-| `metadata` | none | `{ title, author, subject, keywords, creator }` into PDF info dict. |
-| `enableLinks` | `true` | Preserve link annotations; `false` removes all. |
-| `signal` | none | `AbortSignal`; cancel at snapshot/render boundaries. |
-| `onProgress` | none | `{ phase: "snapshot"|"wasm"|"complete", completed, total }`. |
+- `page`
+  - **Default**: captured `@page`, else A4 portrait, 0 margin
+  - **Use**: Explicit page geometry (see below).
+- `cssProfile`
+  - **Default**: `"document"`
+  - **Use**: **`"web"` for slides** (flex/grid/transforms/shadows/position/float). `"document"` rejects non-static layout; `"strict"` = web + errors on unsupported CSS.
+- `strict`
+  - **Default**: `false`
+  - **Use**: Promote unsupported CSS to errors without selecting `web`.
+- `mediaType`
+  - **Default**: `"screen"`
+  - **Use**: `"print"` selects the print media environment for computed styles/queries.
+- `layoutContext`
+  - **Default**: `"source"`
+  - **Use**: `"page"` reflows the root to the PDF content box (use for the deck export).
+- `viewport`
+  - **Default**: source env
+  - **Use**: `{ width, height }` for deterministic responsive layout.
+- `unsupportedCss`
+  - **Default**: `"warn"` (`"error"` in strict)
+  - **Use**: `"warn"`/`"error"`/`"ignore"`.
+- `fallback`
+  - **Default**: `"error"`
+  - **Use**: `"rasterize-subtree"` opt-in scoped rasterization for unsupported SVG.
+- `canvasToSvg`
+  - **Default**: none
+  - **Use**: Adapter converting live `<canvas>` charts to SVG.
+- `canvasFallback`
+  - **Default**: `"error"`
+  - **Use**: `"rasterize"` for a `null` `canvasToSvg`.
+- `includeShadowDom`
+  - **Default**: `false`
+  - **Use**: Flatten open Shadow DOM into the snapshot.
+- `baseUrl`
+  - **Default**: source document URL
+  - **Use**: Resolve relative image/stylesheet URLs.
+- `resourcePolicy`
+  - **Default**: `"error"`
+  - **Use**: `"omit"` drops failed resources with diagnostics.
+- `resourceResolver`
+  - **Default**: none
+  - **Use**: Supply protected/virtual images and stylesheets.
+- `pageBreak`
+  - **Default**: none
+  - **Use**: Selector-driven pagination (see below).
+- `metadata`
+  - **Default**: none
+  - **Use**: `{ title, author, subject, keywords, creator }` into PDF info dict.
+- `enableLinks`
+  - **Default**: `true`
+  - **Use**: Preserve link annotations; `false` removes all.
+- `signal`
+  - **Default**: none
+  - **Use**: `AbortSignal`; cancel at snapshot/render boundaries.
+- `onProgress`
+  - **Default**: none
+  - **Use**: `{ phase: "snapshot"|"wasm"|"complete", completed, total }`.
 
 ### Page geometry (`page`)
 
-| Page option | Values / default |
-|---|---|
-| `format` | `"a4"` (default) / `"letter"` / custom `[width, height]` |
-| `orientation` | `"portrait"` (default) / `"landscape"` |
-| `unit` | `"pt"` (default) / `"px"` / `"mm"` / `"cm"` / `"in"` |
-| `margin` | one number · `[vertical, horizontal]` · `[top, left, bottom, right]` · **0 by default** |
+- `format`
+  - **Values / default**: `"a4"` (default) / `"letter"` / custom `[width, height]`
+- `orientation`
+  - **Values / default**: `"portrait"` (default) / `"landscape"`
+- `unit`
+  - **Values / default**: `"pt"` (default) / `"px"` / `"mm"` / `"cm"` / `"in"`
+- `margin`
+  - **Values / default**: one number · `[vertical, horizontal]` · `[top, left, bottom, right]` · **0 by default**
 
 Named formats keep physical size regardless of `unit`; custom dims + margins use the selected unit. For the deck export use `format: [297, 167.0625], unit: "mm", margin: 0` (16:9, A4-wide, full-bleed slides).
 
@@ -116,14 +158,18 @@ Full per-property matrix in `docs/css-support.md` (the repo). Highlights: full f
 
 ## Output methods (PdfDocument)
 
-| Method | Use |
-|---|---|
-| `pdf.download(filename)` | Trigger a browser download. |
-| `pdf.toBlob()` / `toArrayBuffer()` / `toUint8Array()` | Application-owned bytes. |
-| `pdf.createObjectURL()` (+ `revokeObjectURL`) | Manual URL management. |
-| `pdf.preview(target, opts)` | Render the real PDF in-page (Shadow DOM + canvas pages). |
-| `pdf.diagnostics` | Array of `{ code, severity, message }`. |
-| `pdf.dispose()` | Free WASM resources (always call). |
+- `pdf.download(filename)`
+  - **Use**: Trigger a browser download.
+- `pdf.toBlob()` / `toArrayBuffer()` / `toUint8Array()`
+  - **Use**: Application-owned bytes.
+- `pdf.createObjectURL()` (+ `revokeObjectURL`)
+  - **Use**: Manual URL management.
+- `pdf.preview(target, opts)`
+  - **Use**: Render the real PDF in-page (Shadow DOM + canvas pages).
+- `pdf.diagnostics`
+  - **Use**: Array of `{ code, severity, message }`.
+- `pdf.dispose()`
+  - **Use**: Free WASM resources (always call).
 
 Preview options: `showToolbar`, `padding` (28, 16 narrow), `initialScale` (`"fit-width"` or number), `minScale` (0.25), `maxScale` (3), `zoomStep` (0.25), `maxPixelRatio` (2), `ariaLabel`. Dispose previews before their document.
 

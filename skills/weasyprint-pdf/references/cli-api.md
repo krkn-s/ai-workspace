@@ -13,39 +13,61 @@ weasyprint - output.pdf < input.html
 
 ## CLI: Rendering Options
 
-| Flag | Effect |
-|---|---|
-| `-s, --stylesheet FILE` | User CSS stylesheet (repeatable). Process substitution works in bash/zsh: `-s <(echo '@page{size:A3}')`. |
-| `-a, --attachment FILE` | Attach a file to the PDF (repeatable). |
-| `--attachment-relationship REL` | Relationship per attachment (`Source`/`Data`/`Alternative`/`Supplement`). |
-| `--pdf-identifier ID` | PDF document identifier. |
-| `--pdf-variant VAR` | See *PDF Variants* below. |
-| `--pdf-version VER` | PDF version (e.g. `1.7`, `2.0`). |
-| `--pdf-forms` | Turn HTML forms into real PDF form fields. |
-| `--pdf-tags` | Tag PDF for accessibility (required for PDF/UA and PDF/A level A). |
-| `--uncompressed-pdf` | No compression: for debugging. |
-| `--xmp-metadata FILE` | Include XMP metadata (repeatable). |
-| `--custom-metadata` | Include custom `<meta>` tags in PDF info dict. |
-| `--output-intent SPEC` | `srgb`, `device-cmyk`, or a CSS identifier of an output-intent color space. |
-| `-p, --presentational-hints` | Follow HTML presentational attributes (color, align, ...). |
-| `--optimize-images` | Lossless size optimization for embedded images (slower render). |
-| `-j, --jpeg-quality N` | JPEG quality 0–95. |
-| `-D, --dpi N` | Max resolution (DPI) for embedded raster images. |
-| `--full-fonts` | Embed unmodified font files when possible. |
-| `--hinting` | Keep hinting info in embedded fonts. |
-| `-c, --cache-folder DIR` | Cache images on disk (created, cleaned after). Pass a dict in Python to share cache across docs. |
+- `-s, --stylesheet FILE`
+  - **Effect**: User CSS stylesheet (repeatable). Process substitution works in bash/zsh: `-s <(echo '@page{size:A3}')`.
+- `-a, --attachment FILE`
+  - **Effect**: Attach a file to the PDF (repeatable).
+- `--attachment-relationship REL`
+  - **Effect**: Relationship per attachment (`Source`/`Data`/`Alternative`/`Supplement`).
+- `--pdf-identifier ID`
+  - **Effect**: PDF document identifier.
+- `--pdf-variant VAR`
+  - **Effect**: See *PDF Variants* below.
+- `--pdf-version VER`
+  - **Effect**: PDF version (e.g. `1.7`, `2.0`).
+- `--pdf-forms`
+  - **Effect**: Turn HTML forms into real PDF form fields.
+- `--pdf-tags`
+  - **Effect**: Tag PDF for accessibility (required for PDF/UA and PDF/A level A).
+- `--uncompressed-pdf`
+  - **Effect**: No compression: for debugging.
+- `--xmp-metadata FILE`
+  - **Effect**: Include XMP metadata (repeatable).
+- `--custom-metadata`
+  - **Effect**: Include custom `<meta>` tags in PDF info dict.
+- `--output-intent SPEC`
+  - **Effect**: `srgb`, `device-cmyk`, or a CSS identifier of an output-intent color space.
+- `-p, --presentational-hints`
+  - **Effect**: Follow HTML presentational attributes (color, align, ...).
+- `--optimize-images`
+  - **Effect**: Lossless size optimization for embedded images (slower render).
+- `-j, --jpeg-quality N`
+  - **Effect**: JPEG quality 0–95.
+- `-D, --dpi N`
+  - **Effect**: Max resolution (DPI) for embedded raster images.
+- `--full-fonts`
+  - **Effect**: Embed unmodified font files when possible.
+- `--hinting`
+  - **Effect**: Keep hinting info in embedded fonts.
+- `-c, --cache-folder DIR`
+  - **Effect**: Cache images on disk (created, cleaned after). Pass a dict in Python to share cache across docs.
 
 ## CLI: HTML / Fetcher Options
 
-| Flag | Effect |
-|---|---|
-| `-e, --encoding ENC` | Force input character encoding. |
-| `-m, --media-type TYPE` | Media type for `@media` (default `print`). |
-| `-u, --base-url URL` | Base for relative URLs (defaults to input filename/dir). |
-| `-t, --timeout SEC` | Timeout for HTTP requests (default 10s). |
-| `--allowed-protocols LIST` | Comma-separated allowed protocols for fetching. |
-| `--no-http-redirects` | Do not follow HTTP redirects. |
-| `--fail-on-http-errors` | Abort on any HTTP error. |
+- `-e, --encoding ENC`
+  - **Effect**: Force input character encoding.
+- `-m, --media-type TYPE`
+  - **Effect**: Media type for `@media` (default `print`).
+- `-u, --base-url URL`
+  - **Effect**: Base for relative URLs (defaults to input filename/dir).
+- `-t, --timeout SEC`
+  - **Effect**: Timeout for HTTP requests (default 10s).
+- `--allowed-protocols LIST`
+  - **Effect**: Comma-separated allowed protocols for fetching.
+- `--no-http-redirects`
+  - **Effect**: Do not follow HTTP redirects.
+- `--fail-on-http-errors`
+  - **Effect**: Abort on any HTTP error.
 
 CLI logging: `--verbose` / `--debug` / `--quiet`.
 

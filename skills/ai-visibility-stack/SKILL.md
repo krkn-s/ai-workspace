@@ -28,16 +28,26 @@ Do not use it as the primary skill when:
 
 ## Task Matrix
 
-Use this routing table before loading references:
+Use this routing list before loading references:
 
-| Task Type | Load First | Expected Output |
-|---|---|---|
-| AI visibility audit | `references/templates.md` and `references/crawl-signals.md` | Current-state audit, gaps, priority fixes, preservation notes |
-| New `/llms.txt` | `references/llms-txt.md` | A spec-aligned `llms.txt` draft or correction plan |
-| Mirror strategy | `references/markdown-mirrors.md` | Mirror decision, page set, URL pattern, exclusions, validation steps |
-| Crawl signal work | `references/crawl-signals.md` | `sitemap.xml` / `robots.txt` guidance plus operator handoff |
-| Redesign or rebuild preservation | `references/site-guardrails.md` | Keep/replace/remove matrix for invisible infrastructure |
-| Limited AI exposure policy | `references/crawl-signals.md` and `references/templates.md` | Explicit crawl policy separating search and AI agents |
+- **AI visibility audit**
+  - **Load first**: `references/templates.md` and `references/crawl-signals.md`
+  - **Expected output**: Current-state audit, gaps, priority fixes, preservation notes
+- **New `/llms.txt`**
+  - **Load first**: `references/llms-txt.md`
+  - **Expected output**: A spec-aligned `llms.txt` draft or correction plan
+- **Mirror strategy**
+  - **Load first**: `references/markdown-mirrors.md`
+  - **Expected output**: Mirror decision, page set, URL pattern, exclusions, validation steps
+- **Crawl signal work**
+  - **Load first**: `references/crawl-signals.md`
+  - **Expected output**: `sitemap.xml` / `robots.txt` guidance plus operator handoff
+- **Redesign or rebuild preservation**
+  - **Load first**: `references/site-guardrails.md`
+  - **Expected output**: Keep/replace/remove matrix for invisible infrastructure
+- **Limited AI exposure policy**
+  - **Load first**: `references/crawl-signals.md` and `references/templates.md`
+  - **Expected output**: Explicit crawl policy separating search and AI agents
 
 ## Reference Loading
 

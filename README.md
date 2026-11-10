@@ -38,4 +38,4 @@ pi config -l                                            # toggle resources
 
 ## License
 
-MIT.
+[MIT](LICENSE).

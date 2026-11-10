@@ -29,10 +29,10 @@ pi -e ./extensions/nvidia-live
 
 ## Commands
 
-| Command | Effect |
-|---------|--------|
-| `/nvidia-refresh` | Force re-fetch of the live list + metadata for unknown models |
-| `/nvidia-models` | Show limits, provenance (`nvidia-md` / `nvidia-infer` / `family`, `partial` flag) |
+- `/nvidia-refresh`
+  - **Effect**: Force re-fetch of the live list + metadata for unknown models
+- `/nvidia-models`
+  - **Effect**: Show limits, provenance (`nvidia-md` / `nvidia-infer` / `family`, `partial` flag)
 
 Discovery also runs on `session_start` (list TTL 1 h; `.md`/`-infer` pages are fetched
 only for unknown model IDs). Discovery has a 10 s timeout, metadata requests have their
@@ -68,6 +68,7 @@ bun test
 Fixtures under `test/fixtures/` are real captures from NVIDIA's pages; tests never
 touch the network.
 
-License: MIT. The family table (`src/families.ts`) is adapted from
+License: [MIT](../../LICENSE). The family table (`src/families.ts`) is adapted from
 [Diegovisk/pi-nvidia-nim](https://github.com/Diegovisk/pi-nvidia-nim) (MIT, © Diegovisk),
 which itself builds on [Tibbee/pi-nvidia-nim-provider](https://github.com/Tibbee/pi-nvidia-nim-provider).
+See the [third-party notices and license texts](THIRD_PARTY_NOTICES.md).

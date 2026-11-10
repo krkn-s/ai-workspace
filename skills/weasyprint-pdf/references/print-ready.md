@@ -120,11 +120,12 @@ WeasyPrint embeds rasters at the CSS box size **without intelligent upsampling**
 pixels = (trim_mm + 2 × bleed_mm) / 25.4 × DPI
 ```
 
-| Use | DPI |
-|---|---|
-| Offset / commercial print | 300 |
-| Large-format (posters, roll-ups) | 150–200 |
-| Highest quality / fine detail | 400+ |
+- **Offset / commercial print**
+  - **DPI**: 300
+- **Large-format (posters, roll-ups)**
+  - **DPI**: 150–200
+- **Highest quality / fine detail**
+  - **DPI**: 400+
 
 Example: A4 (210×297) + 3 mm bleed at 300 DPI:
 - width = (210 + 6) / 25.4 × 300 ≈ **2548 px**

@@ -64,18 +64,41 @@ Multi-page docs still show as one tall column (no visible breaks). For the full 
 
 ## Standard Dimensions (trim)
 
-| Document | Trim (mm) | Orientation | Notes |
-|---|---|---|---|
-| Business card (EU/FR) | 85 × 55 | landscape | US: 89 × 51; JP: 91 × 55 |
-| Business card (US) | 89 × 51 | landscape | |
-| Flyer / handbill | A6 105 × 148, A5 148 × 210, DL 99 × 210 | portrait or landscape | DL = 1/3 A4 |
-| Brochure / dépliant (A4 folded) | 210 × 297 flat | portrait | tri-fold → 3 × 99×210 panels |
-| Booklet / A5 brochure | A5 148 × 210 | portrait | saddle-stitched, multiples of 4 |
-| Card (invitation, greeting) | A6 105 × 148, square 148 × 148, 120 × 170 | varies | |
-| Invoice / letter | A4 210 × 297, US Letter 216 × 279 | portrait | |
-| Slide (16:9) | 254 × 142.875 (= 1920×1080 @ 192dpi) | landscape | or `size: 1920px 1080px` |
-| Slide (4:3) | 254 × 190.5 (= 1024×768) | landscape | |
-| Poster | A3 297 × 420, A2 420 × 594 | portrait or landscape | |
+- **Business card (EU/FR)**
+  - **Trim (mm)**: 85 × 55
+  - **Orientation**: landscape
+  - **Notes**: US: 89 × 51; JP: 91 × 55
+- **Business card (US)**
+  - **Trim (mm)**: 89 × 51
+  - **Orientation**: landscape
+- **Flyer / handbill**
+  - **Trim (mm)**: A6 105 × 148, A5 148 × 210, DL 99 × 210
+  - **Orientation**: portrait or landscape
+  - **Notes**: DL = 1/3 A4
+- **Brochure / dépliant (A4 folded)**
+  - **Trim (mm)**: 210 × 297 flat
+  - **Orientation**: portrait
+  - **Notes**: tri-fold → 3 × 99×210 panels
+- **Booklet / A5 brochure**
+  - **Trim (mm)**: A5 148 × 210
+  - **Orientation**: portrait
+  - **Notes**: saddle-stitched, multiples of 4
+- **Card (invitation, greeting)**
+  - **Trim (mm)**: A6 105 × 148, square 148 × 148, 120 × 170
+  - **Orientation**: varies
+- **Invoice / letter**
+  - **Trim (mm)**: A4 210 × 297, US Letter 216 × 279
+  - **Orientation**: portrait
+- **Slide (16:9)**
+  - **Trim (mm)**: 254 × 142.875 (= 1920×1080 @ 192dpi)
+  - **Orientation**: landscape
+  - **Notes**: or `size: 1920px 1080px`
+- **Slide (4:3)**
+  - **Trim (mm)**: 254 × 190.5 (= 1024×768)
+  - **Orientation**: landscape
+- **Poster**
+  - **Trim (mm)**: A3 297 × 420, A2 420 × 594
+  - **Orientation**: portrait or landscape
 
 For every print job, the **physical canvas** is `trim + 2 × bleed` (see *Print-ready toggle*). Full per-format guidance (folds, safe margins, panel ordering, common structures) lives in `references/formats.md`.
 

@@ -357,13 +357,26 @@ Question sources:
 
 Use this matrix before creating content:
 
-| Intent | What the user wants | Main format | Example |
-| --- | --- | --- | --- |
-| Informational | Understand or learn | Guide, tutorial, definition, checklist | `how to run a seo audit` |
-| Commercial | Compare and evaluate | Comparison, buying guide, use case | `best seo tool for freelancers` |
-| Transactional | Buy or act | Product page, offer, landing page | `buy seo training` |
-| Navigational | Find a brand/page | Brand page, login, reviews, support | `brand name reviews` |
-| Local | Find a nearby solution | Local page, GBP profile, reviews | `seo consultant montpellier` |
+- **Informational**
+  - **What the user wants**: Understand or learn
+  - **Main format**: Guide, tutorial, definition, checklist
+  - **Example**: `how to run a seo audit`
+- **Commercial**
+  - **What the user wants**: Compare and evaluate
+  - **Main format**: Comparison, buying guide, use case
+  - **Example**: `best seo tool for freelancers`
+- **Transactional**
+  - **What the user wants**: Buy or act
+  - **Main format**: Product page, offer, landing page
+  - **Example**: `buy seo training`
+- **Navigational**
+  - **What the user wants**: Find a brand/page
+  - **Main format**: Brand page, login, reviews, support
+  - **Example**: `brand name reviews`
+- **Local**
+  - **What the user wants**: Find a nearby solution
+  - **Main format**: Local page, GBP profile, reviews
+  - **Example**: `seo consultant montpellier`
 
 A page may have a mixed intent, for example informational and commercial. In that case, answer the problem first, then guide the user toward options.
 
@@ -701,16 +714,30 @@ Useful examples:
 
 ### Citation Strategy by Channel
 
-| Channel | AEO Role | Good Practice |
-| --- | --- | --- |
-| Own site | Official source | Clear pages, proof, schema, FAQ, case studies |
-| YouTube | Video source and demonstration | Videos on niche questions, descriptive titles, transcript |
-| Reddit/forums | Community proof | Respond as a real, transparent, useful human |
-| Media | Third-party authority | Data, expert comments, studies, journalist-friendly angles |
-| Reviews | Social proof | Ask for detailed reviews, respond, fix issues |
-| Comparisons | Commercial decision support | Appear in relevant lists and alternatives |
-| Help center | Functional long tail | Answer integration, limit, and workflow questions |
-| LinkedIn | Person/brand authority | Publish reliable ideas that can be reused elsewhere |
+- **Own site**
+  - **AEO role**: Official source
+  - **Good practice**: Clear pages, proof, schema, FAQ, case studies
+- **YouTube**
+  - **AEO role**: Video source and demonstration
+  - **Good practice**: Videos on niche questions, descriptive titles, transcript
+- **Reddit/forums**
+  - **AEO role**: Community proof
+  - **Good practice**: Respond as a real, transparent, useful human
+- **Media**
+  - **AEO role**: Third-party authority
+  - **Good practice**: Data, expert comments, studies, journalist-friendly angles
+- **Reviews**
+  - **AEO role**: Social proof
+  - **Good practice**: Ask for detailed reviews, respond, fix issues
+- **Comparisons**
+  - **AEO role**: Commercial decision support
+  - **Good practice**: Appear in relevant lists and alternatives
+- **Help center**
+  - **AEO role**: Functional long tail
+  - **Good practice**: Answer integration, limit, and workflow questions
+- **LinkedIn**
+  - **AEO role**: Person/brand authority
+  - **Good practice**: Publish reliable ideas that can be reused elsewhere
 
 ### Reddit and Forums: The Red Line
 
@@ -1275,11 +1302,15 @@ In practice, this means:
 Important nuance: [limit or special case].
 ```
 
-### Prioritization Table
+### Prioritization Template
 
-| Topic | Intent | Business value | Difficulty | AI presence | Proof available | Priority |
-| --- | --- | --- | --- | --- | --- | --- |
-| | | High/Medium/Low | High/Medium/Low | Yes/No | Yes/No | P1/P2/P3 |
+- **Topic**: `<topic>`
+  - **Intent**: `<intent>`
+  - **Business value**: High/Medium/Low
+  - **Difficulty**: High/Medium/Low
+  - **AI presence**: Yes/No
+  - **Proof available**: Yes/No
+  - **Priority**: P1/P2/P3
 
 ## 22. Principles for a Future Skill
 

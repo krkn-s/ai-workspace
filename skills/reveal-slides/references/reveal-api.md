@@ -18,31 +18,75 @@ Optional plugins (same flat path pattern `dist/plugin/<name>.mjs`): `RevealZoom`
 
 ## `Reveal.initialize` config (common keys)
 
-| Key | Default | Effect |
-|---|---|---|
-| `controls` | `true` | Arrow UI (bottom-right). |
-| `progress` | `true` | Progress bar. |
-| `slideNumber` | `false` | `"c/t"` shows `current/total`; `true`, `"h.v"`, `"h/v"`. |
-| `hash` | `false` | URL `#/slide` deep-linking. |
-| `respondToHashChanges` | `true` | Update slide on hash change. |
-| `center` | `true` | Vertically center slide content. |
-| `transition` | `"slide"` | `none`/`fade`/`slide`/`convex`/`concave`/`zoom`. |
-| `transitionSpeed` | `"default"` | `default`/`fast`/`slow`. |
-| `backgroundTransition` | `"fade"` | Transition for slide backgrounds. |
-| `width` / `height` | `960` / `700` | Slide canvas size in px; scales to viewport. Set `width:1280, height:720` for 16:9. |
-| `margin` | `0.04` | Viewport margin factor. |
-| `minScale` / `maxScale` | `0.2` / `2.0` | Scale clamps. |
-| `autoSlide` | `0` | Auto-advance ms (0 = off). `loop`/`slideNumber` interact. |
-| `loop` | `false` | Loop back to first slide. |
-| `shuffle` | `false` | Randomize slide order. |
-| `keyboard` | `true` | Keyboard navigation. |
-| `overview` | `true` | Esc / overview mode. |
-| `touch` | `true` | Touch navigation. |
-| `mouseWheel` | `false` | Navigate with wheel. |
-| `previewLinks` | `false` | Open links in a preview iframe. |
-| `help` | `true` | `?` shows help overlay. |
-| `pdfSeparateFragments` | `true` | (Browser `?print-pdf` only.) |
-| `plugins` | `[]` | Plugin array. |
+- `controls`
+  - **Default**: `true`
+  - **Effect**: Arrow UI (bottom-right).
+- `progress`
+  - **Default**: `true`
+  - **Effect**: Progress bar.
+- `slideNumber`
+  - **Default**: `false`
+  - **Effect**: `"c/t"` shows `current/total`; `true`, `"h.v"`, `"h/v"`.
+- `hash`
+  - **Default**: `false`
+  - **Effect**: URL `#/slide` deep-linking.
+- `respondToHashChanges`
+  - **Default**: `true`
+  - **Effect**: Update slide on hash change.
+- `center`
+  - **Default**: `true`
+  - **Effect**: Vertically center slide content.
+- `transition`
+  - **Default**: `"slide"`
+  - **Effect**: `none`/`fade`/`slide`/`convex`/`concave`/`zoom`.
+- `transitionSpeed`
+  - **Default**: `"default"`
+  - **Effect**: `default`/`fast`/`slow`.
+- `backgroundTransition`
+  - **Default**: `"fade"`
+  - **Effect**: Transition for slide backgrounds.
+- `width` / `height`
+  - **Default**: `960` / `700`
+  - **Effect**: Slide canvas size in px; scales to viewport. Set `width:1280, height:720` for 16:9.
+- `margin`
+  - **Default**: `0.04`
+  - **Effect**: Viewport margin factor.
+- `minScale` / `maxScale`
+  - **Default**: `0.2` / `2.0`
+  - **Effect**: Scale clamps.
+- `autoSlide`
+  - **Default**: `0`
+  - **Effect**: Auto-advance ms (0 = off). `loop`/`slideNumber` interact.
+- `loop`
+  - **Default**: `false`
+  - **Effect**: Loop back to first slide.
+- `shuffle`
+  - **Default**: `false`
+  - **Effect**: Randomize slide order.
+- `keyboard`
+  - **Default**: `true`
+  - **Effect**: Keyboard navigation.
+- `overview`
+  - **Default**: `true`
+  - **Effect**: Esc / overview mode.
+- `touch`
+  - **Default**: `true`
+  - **Effect**: Touch navigation.
+- `mouseWheel`
+  - **Default**: `false`
+  - **Effect**: Navigate with wheel.
+- `previewLinks`
+  - **Default**: `false`
+  - **Effect**: Open links in a preview iframe.
+- `help`
+  - **Default**: `true`
+  - **Effect**: `?` shows help overlay.
+- `pdfSeparateFragments`
+  - **Default**: `true`
+  - **Effect**: (Browser `?print-pdf` only.)
+- `plugins`
+  - **Default**: `[]`
+  - **Effect**: Plugin array.
 
 Set 16:9 explicitly: `width: 1280, height: 720` (matches the export's 16:9 page).
 
@@ -83,19 +127,28 @@ Set 16:9 explicitly: `width: 1280, height: 720` (matches the export's 16:9 page)
 
 ## Attributes on `<section>`
 
-| Attribute | Effect |
-|---|---|
-| `data-markdown` | Markdown content (with `data-template` textarea). |
-| `data-background-color="#hex"` | Slide background color. |
-| `data-background-image="url"` | Background image (cover). |
-| `data-background-size`, `data-background-position`, `data-background-repeat` | Background tuning. |
-| `data-background-video="url"` | Background video (no audio in PDF). |
-| `data-background-iframe="url"` | Background iframe (not in PDF). |
-| `data-transition="zoom"` | Per-slide transition override. |
-| `data-background-transition="fade"` | Per-slide background transition. |
-| `data-auto-animate` | Enable auto-animate on this slide **and** the next. |
-| `data-auto-animate-easing`, `data-auto-animate-duration` | Tune the morph. |
-| `data-visibility="hidden"` | Skip slide (not counted, not navigable). |
+- `data-markdown`
+  - **Effect**: Markdown content (with `data-template` textarea).
+- `data-background-color="#hex"`
+  - **Effect**: Slide background color.
+- `data-background-image="url"`
+  - **Effect**: Background image (cover).
+- `data-background-size`, `data-background-position`, `data-background-repeat`
+  - **Effect**: Background tuning.
+- `data-background-video="url"`
+  - **Effect**: Background video (no audio in PDF).
+- `data-background-iframe="url"`
+  - **Effect**: Background iframe (not in PDF).
+- `data-transition="zoom"`
+  - **Effect**: Per-slide transition override.
+- `data-background-transition="fade"`
+  - **Effect**: Per-slide background transition.
+- `data-auto-animate`
+  - **Effect**: Enable auto-animate on this slide **and** the next.
+- `data-auto-animate-easing`, `data-auto-animate-duration`
+  - **Effect**: Tune the morph.
+- `data-visibility="hidden"`
+  - **Effect**: Skip slide (not counted, not navigable).
 
 > **PDF caveat:** `data-background-*` backgrounds live outside `<section>` and are **not** cloned by the export. If a background matters for the PDF, set it on the export `.slide` (`#deck-export .slide { background: ... }`) or add a full-bleed child element inside the section.
 
@@ -150,23 +203,36 @@ Then `$E=mc^2$` inline or `$$\int_a^b$$` block.
 
 ## API Methods
 
-| Method | Effect |
-|---|---|
-| `Reveal.initialize(config)` | Init; returns a Promise. |
-| `Reveal.ready` | Promise resolving when ready. |
-| `Reveal.slide(h, v, f)` | Jump to horizontal/vertical/fragment index. |
-| `Reveal.next()` / `Reveal.prev()` | Step. |
-| `Reveal.right()`/`left()`/`down()`/`up()` | Directional nav. |
-| `Reveal.getSlides()` | Array of all slide `<section>` elements (used by the export). |
-| `Reveal.getCurrentSlide()` | Current slide element. |
-| `Reveal.getIndices(slide?)` | `{h, v, f}`. |
-| `Reveal.fragment(next?)` / `Reveal.nextFragment()` / `prevFragment()` | Fragments. |
-| `Reveal.on(event, cb)` / `.off(event, cb)` | Events: `ready`, `slidechanged`, `fragmentshown`, `fragmenthidden`, `overviewshown`. |
-| `Reveal.configure(opts)` | Change config live. |
-| `Reveal.sync()` | Re-sync after DOM changes. |
-| `Reveal.toggleOverview()` / `toggleHelp()` / `togglePause()` | Modes. |
-| `Reveal.isReady()` / `isOverview()` / `isPaused()` | State. |
-| `Reveal.destroy()` | Tear down. |
+- `Reveal.initialize(config)`
+  - **Effect**: Init; returns a Promise.
+- `Reveal.ready`
+  - **Effect**: Promise resolving when ready.
+- `Reveal.slide(h, v, f)`
+  - **Effect**: Jump to horizontal/vertical/fragment index.
+- `Reveal.next()` / `Reveal.prev()`
+  - **Effect**: Step.
+- `Reveal.right()`/`left()`/`down()`/`up()`
+  - **Effect**: Directional nav.
+- `Reveal.getSlides()`
+  - **Effect**: Array of all slide `<section>` elements (used by the export).
+- `Reveal.getCurrentSlide()`
+  - **Effect**: Current slide element.
+- `Reveal.getIndices(slide?)`
+  - **Effect**: `{h, v, f}`.
+- `Reveal.fragment(next?)` / `Reveal.nextFragment()` / `prevFragment()`
+  - **Effect**: Fragments.
+- `Reveal.on(event, cb)` / `.off(event, cb)`
+  - **Effect**: Events: `ready`, `slidechanged`, `fragmentshown`, `fragmenthidden`, `overviewshown`.
+- `Reveal.configure(opts)`
+  - **Effect**: Change config live.
+- `Reveal.sync()`
+  - **Effect**: Re-sync after DOM changes.
+- `Reveal.toggleOverview()` / `toggleHelp()` / `togglePause()`
+  - **Effect**: Modes.
+- `Reveal.isReady()` / `isOverview()` / `isPaused()`
+  - **Effect**: State.
+- `Reveal.destroy()`
+  - **Effect**: Tear down.
 
 ## Keyboard Shortcuts
 

@@ -162,18 +162,26 @@ During development, use `unsupportedCss: "error"` (or `cssProfile: "strict"`) to
 
 ## Troubleshooting the export
 
-| Symptom | Cause / fix |
-|---|---|
-| Only one slide / wrong transforms | You passed `.reveal` or a live slide. Pass the `#deck-export` container. |
-| PDF text is wrong font (Noto Sans) | Fonts not registered, or registered as `woff2` (html2realpdf needs raw `.ttf`). Use `createRenderer({ fonts })` with `@expo-google-fonts` `.ttf`; use the same URL in `@font-face` and `DECK_FONTS`. |
-| `WasmRenderError: MissingGlyph` / export aborts | A glyph isn't in any registered or built-in font, usually **emoji**. Remove emoji (use text/SVG icons), or register an emoji face. Arrows → ← ↓ ↑ and · are safe. |
-| "Could not load WASM: HTTP ..." | Wrong/unreachable `wasmUrl`, or offline. Confirm the CDN URL and network. |
-| Worker init failed (-20) | Cross-origin module Worker blocked. Use `execution: "main"`. |
-| Slides overlap / wrong page count | Missing `pageBreak: { after: ".slide" }` or `break-after: page`. Verify `.slide` has a definite `width: 297mm`. |
-| Empty pages / content missing | (a) `display: none` on the export container; (b) positioned off-screen (`left:-9999px`) → off-page; (c) **`position: fixed`** on the container → html2realpdf collapses everything to **1 page** (use `position: absolute`); or (d) white-on-white: the slide bg didn't paint because the color came from an external-theme `var()` → re-declare `--r-background-color` in the inline `:root`. |
-| Images missing | CORS / relative URL. Set `baseUrl`, or `resourcePolicy: "omit"` to drop silently. |
-| Background color missing | `data-background` not cloned. Set background on `.slide` (see above). |
-| Export button did nothing | Not wired after `Reveal.initialize()`. Wire inside `.then(...)`. |
+- **Only one slide / wrong transforms**
+  - **Cause / fix**: You passed `.reveal` or a live slide. Pass the `#deck-export` container.
+- **PDF text is wrong font (Noto Sans)**
+  - **Cause / fix**: Fonts not registered, or registered as `woff2` (html2realpdf needs raw `.ttf`). Use `createRenderer({ fonts })` with `@expo-google-fonts` `.ttf`; use the same URL in `@font-face` and `DECK_FONTS`.
+- **`WasmRenderError: MissingGlyph` / export aborts**
+  - **Cause / fix**: A glyph isn't in any registered or built-in font, usually **emoji**. Remove emoji (use text/SVG icons), or register an emoji face. Arrows → ← ↓ ↑ and · are safe.
+- **"Could not load WASM: HTTP ..."**
+  - **Cause / fix**: Wrong/unreachable `wasmUrl`, or offline. Confirm the CDN URL and network.
+- **Worker init failed (-20)**
+  - **Cause / fix**: Cross-origin module Worker blocked. Use `execution: "main"`.
+- **Slides overlap / wrong page count**
+  - **Cause / fix**: Missing `pageBreak: { after: ".slide" }` or `break-after: page`. Verify `.slide` has a definite `width: 297mm`.
+- **Empty pages / content missing**
+  - **Cause / fix**: (a) `display: none` on the export container; (b) positioned off-screen (`left:-9999px`) → off-page; (c) **`position: fixed`** on the container → html2realpdf collapses everything to **1 page** (use `position: absolute`); or (d) white-on-white: the slide bg didn't paint because the color came from an external-theme `var()` → re-declare `--r-background-color` in the inline `:root`.
+- **Images missing**
+  - **Cause / fix**: CORS / relative URL. Set `baseUrl`, or `resourcePolicy: "omit"` to drop silently.
+- **Background color missing**
+  - **Cause / fix**: `data-background` not cloned. Set background on `.slide` (see above).
+- **Export button did nothing**
+  - **Cause / fix**: Not wired after `Reveal.initialize()`. Wire inside `.then(...)`.
 
 ## Verifying the result
 

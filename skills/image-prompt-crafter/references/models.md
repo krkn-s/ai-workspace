@@ -22,13 +22,16 @@ Write in a consistent order: **scene/background → subject → key details → 
 
 ### Settings
 
-| Parameter | Values / notes |
-|---|---|
-| `size` | Any resolution where: both edges multiple of 16, max edge < 3840px, long/short ratio ≤ 3:1, total pixels 655,360–8,294,400. Common: 1024×1024, 1024×1536, 1536×1024, 2560×1440 (2K recommended ceiling), 3840×2160 experimental |
-| `quality` | `low` (fast, high-volume, drafts) / `medium` (default) / `high` (dense text, infographics, close-up portraits, identity-sensitive edits) |
-| `background` | `transparent` (preview) → pair with `output_format` `png` or `webp`; describe "isolated subject on a fully transparent background, no scenery, no solid backdrop, no checkerboard, no shadows" |
-| `input_fidelity` | Not applicable to gpt-image-2 (high fidelity by default) |
-| `n` | Number of variations (useful for logo/ideation rounds) |
+- `size`
+  - **Values / notes**: Any resolution where: both edges multiple of 16, max edge < 3840px, long/short ratio ≤ 3:1, total pixels 655,360–8,294,400. Common: 1024×1024, 1024×1536, 1536×1024, 2560×1440 (2K recommended ceiling), 3840×2160 experimental
+- `quality`
+  - **Values / notes**: `low` (fast, high-volume, drafts) / `medium` (default) / `high` (dense text, infographics, close-up portraits, identity-sensitive edits)
+- `background`
+  - **Values / notes**: `transparent` (preview) → pair with `output_format` `png` or `webp`; describe "isolated subject on a fully transparent background, no scenery, no solid backdrop, no checkerboard, no shadows"
+- `input_fidelity`
+  - **Values / notes**: Not applicable to gpt-image-2 (high fidelity by default)
+- `n`
+  - **Values / notes**: Number of variations (useful for logo/ideation rounds)
 
 ### Ready-made prompt shapes
 
@@ -78,12 +81,18 @@ Core formula (Google's guidance):
 
 ### Settings
 
-| Parameter | Nano Banana 2 | Nano Banana Pro |
-|---|---|---|
-| Resolutions | 0.5K, 1K, 2K, 4K | 1K, 2K, 4K |
-| Aspect ratios | 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, plus 1:4, 4:1, 1:8, 8:1; `auto` picks from the prompt | same list without the extreme ratios |
-| Reference images | up to 14 | up to 14 (6–14 depending on surface) |
-| Web-search grounding | yes (use for real-world subjects only) | yes |
+- **Resolutions**
+  - **Nano Banana 2**: 0.5K, 1K, 2K, 4K
+  - **Nano Banana Pro**: 1K, 2K, 4K
+- **Aspect ratios**
+  - **Nano Banana 2**: 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, plus 1:4, 4:1, 1:8, 8:1; `auto` picks from the prompt
+  - **Nano Banana Pro**: same list without the extreme ratios
+- **Reference images**
+  - **Nano Banana 2**: up to 14
+  - **Nano Banana Pro**: up to 14 (6–14 depending on surface)
+- **Web-search grounding**
+  - **Nano Banana 2**: yes (use for real-world subjects only)
+  - **Nano Banana Pro**: yes
 
 Known limits: small text and fine detail fidelity, factual accuracy of data-driven visuals (verify diagrams), translation grammar, occasional artifacts in complex blends, character consistency varies across many edits.
 
@@ -114,13 +123,16 @@ Flagship control-oriented model: direct control over what changes and what stays
 
 ### Settings
 
-| Parameter | Values / notes |
-|---|---|
-| Prompt | ≤ 3000 chars, aim < 600 words |
-| Dimensions | Required for t2i. Pixel budget 1,048,576–4,194,304 (≈1024×1024 to 2048×2048; 16:9 tops out 2752×1536) |
-| Aspect ratios | 1:16 to 16:1, matched to the deliverable: 3:4 magazine covers and posters, 9:16 streaming key art, 4:3 editorial still-life, 1:1 packshots |
-| References | ≤ 10 images; dimensions optional when present |
-| Tiers | ≤ 2.36 MP = "1.5K" (iterate here) / above = "2K" (finals) |
+- **Prompt**
+  - **Values / notes**: ≤ 3000 chars, aim < 600 words
+- **Dimensions**
+  - **Values / notes**: Required for t2i. Pixel budget 1,048,576–4,194,304 (≈1024×1024 to 2048×2048; 16:9 tops out 2752×1536)
+- **Aspect ratios**
+  - **Values / notes**: 1:16 to 16:1, matched to the deliverable: 3:4 magazine covers and posters, 9:16 streaming key art, 4:3 editorial still-life, 1:1 packshots
+- **References**
+  - **Values / notes**: ≤ 10 images; dimensions optional when present
+- **Tiers**
+  - **Values / notes**: ≤ 2.36 MP = "1.5K" (iterate here) / above = "2K" (finals)
 
 ---
 
