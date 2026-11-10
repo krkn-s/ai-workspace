@@ -38,7 +38,7 @@ From virgin to exhausted. Each one: what the market has heard, what wins now.
 4. **Mechanisms exhausted**: rivals have mechanisms too. Enlarge and detail yours: more proof it works, more of the process.
 5. **Everything said**: nothing new can be claimed. Shift to identity, brand, and lived experience.
 
-Most pages fail here. On a saturated market, "a site that converts" says nothing because everyone says it. A named mechanism is the only way back in.
+Pages often fail here. On a saturated market, "a site that converts" says little because everyone says it. A named mechanism is one way to regain attention and credibility.
 
 ## Reading the level from the traffic
 
@@ -48,7 +48,7 @@ Most pages fail here. On a saturated market, "a site that converts" says nothing
 - Brand search, returning visitor: most aware.
 - Retargeting: product-aware.
 
-One page per level. A page that mixes levels speaks to everyone and converts nobody. With mixed traffic, pick the dominant level and accept losing the others.
+Prefer one dominant awareness level per page. Mixing levels can dilute the opening and the call to action. With mixed traffic, pick the dominant level and accept that other segments may be less directly served.
 
 ## Using it
 
@@ -61,7 +61,7 @@ One page per level. A page that mixes levels speaks to everyone and converts nob
 ## Limits
 
 - A practitioner's model from 1966, written for direct mail. No data behind it.
-- It says nothing about the offer, the price, the proof, or the page speed. Those four outweigh awareness every time.
+- It says nothing about the offer, the price, the proof, or the page speed. Those four can outweigh awareness, so test the model rather than treating it as law.
 - It assumes homogeneous traffic. SEO, paid, and brand visitors on one page force a compromise.
 - Labels vary across editions and summaries (need-aware, offer-aware, unaware). The logic is stable, the words are not.
 

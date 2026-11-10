@@ -1,5 +1,5 @@
 ---
-description: "Vendor read-only third-party source and documentation into `.refs/` at the version that the project uses. Read the tag from the lockfile. Make a shallow clone. Write `MANIFEST.md`. Add the folder to `.gitignore`. Add a note to `AGENTS.md`. Report newer releases. Do not upgrade."
+description: "Vendor read-only third-party source and documentation into `.refs/` at the version that the project uses. Read the version from the lockfile, resolve the repository and exact tag from package metadata, then verify and record the cloned SHA. Make a shallow clone. Write `MANIFEST.md`. Add the folder to `.gitignore`. Add a note to `AGENTS.md`. Report newer releases. Do not upgrade."
 argument-hint: "[project path | packages to vendor | notes]"
 ---
 Give the source and the documentation of the installed version to the agent. Do not give the version from the vendor website.
@@ -39,8 +39,10 @@ A request that already names the stack counts as approval. When a lockfile exist
 ## Vendor
 
 1. Read the version from the lockfile. Do not read the latest release.
-2. Run `git clone --depth 1 --branch <tag> <url> .refs/<name>`.
-3. Select the monorepo. Do not select the split package.
+2. Resolve the source repository and exact tag from the package metadata or registry. A package version is not automatically a Git tag: check the vendor's actual tag naming and monorepo layout. If no exact tag can be established, stop and ask rather than substituting another ref.
+3. Run `git clone --depth 1 --branch <resolved-tag> <resolved-url> .refs/<name>`.
+4. Verify the checked-out SHA with `git -C .refs/<name> rev-parse HEAD`. Confirm the tagged source identifies the same package version as the lockfile. If it does not, stop and report the mismatch.
+5. Select the monorepo. Do not select the split package.
 
 If `.refs/` contains files, tell the user. Ask before you add more files.
 
@@ -48,7 +50,7 @@ Do not run a package manager in `.refs/`. Keep `.refs/` out of these tools and f
 
 ## Record
 
-1. Write `.refs/MANIFEST.md`. Write one entry for each source. Include the URL, the tag, the SHA, and the date.
+1. Write `.refs/MANIFEST.md`. Write one entry for each source. Include the package version, repository URL, resolved tag, verified SHA, and date.
 2. Add `.refs/*` and `!.refs/MANIFEST.md` to `.gitignore`.
 3. Add the text below to `AGENTS.md`. Create the file when it does not exist.
 

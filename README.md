@@ -26,7 +26,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agents-md-brand`](prompts/agents-md-brand.md): Create, convert, or maintain a `## Brand` section inside AGENTS.md.
 - [`challenge`](prompts/challenge.md): Critical intellectual partner stress-testing claims for truth over agreement.
 - [`ship`](prompts/ship.md): Plan, execute with verification, commit, request approval before push, and prepare server update commands.
-- [`stack-refs`](prompts/stack-refs.md): Vendor third-party source and docs into read-only `.refs/`, plus the default stack for new projects.
+- [`stack-refs`](prompts/stack-refs.md): Vendor third-party source and docs into read-only `.refs/` at lockfile versions with resolved tags and verified SHAs, plus the default stack for new projects.
 
 ## Installation
 
