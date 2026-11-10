@@ -2,13 +2,14 @@
 // Fixtures are real captures from NVIDIA's pages (see test/fixtures/).
 
 import { describe, expect, test } from "bun:test";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { discoverLiveChatIds, filterChatIds } from "../src/discovery";
 import { enrichModel, parseModelRecord, parseInferReference, inferSlug, thinkingFromHint } from "../src/enrich";
 import { familyFor, NIM_BASE_COMPAT } from "../src/families";
-import { emptyCache, listIsStale, readCache, writeCache, CACHE_PATH } from "../src/cache";
+import { emptyCache, listIsStale, readCache, writeCache } from "../src/cache";
 
 const fix = (name: string) => readFile(join(dirname(fileURLToPath(import.meta.url)), "..", "test", "fixtures", name), "utf8");
 
@@ -22,6 +23,15 @@ async function mockedEnrich(id: string, md = "", html = "") {
 		return await enrichModel(id, new AbortController().signal);
 	} finally {
 		globalThis.fetch = originalFetch;
+	}
+}
+
+async function withTempCache(run: (path: string) => Promise<void>): Promise<void> {
+	const dir = await mkdtemp(join(tmpdir(), "nvidia-live-cache-"));
+	try {
+		await run(join(dir, "cache.json"));
+	} finally {
+		await rm(dir, { recursive: true, force: true });
 	}
 }
 
@@ -147,10 +157,7 @@ describe("slug derivation", () => {
 });
 
 describe("cache", () => {
-	test("roundtrip and staleness", async () => {
-		// Isolated temp path: redirect the module constant via env-free trick is
-		// not available, so test through the exported helpers on the real file
-		// path only for shape, not for the system cache location.
+	test("staleness", () => {
 		const cache = emptyCache();
 		expect(cache.updatedAt).toBe(0);
 		expect(listIsStale(cache)).toBe(true);
@@ -160,10 +167,21 @@ describe("cache", () => {
 		expect(cache.knownIds).toEqual(["a/b"]);
 	});
 
-	test("readCache tolerates missing or corrupt file", async () => {
-		// The default path may not exist in CI: readCache must resolve empty.
-		const cache = await readCache();
-		expect(typeof cache.updatedAt).toBe("number");
-		expect(Array.isArray(cache.knownIds)).toBe(true);
+	test("roundtrip writes and reads an isolated file", async () => {
+		await withTempCache(async (path) => {
+			const cache = emptyCache();
+			cache.updatedAt = Date.now();
+			cache.knownIds = ["a/b"];
+			await writeCache(cache, path);
+			expect(await readCache(path)).toEqual(cache);
+		});
+	});
+
+	test("readCache tolerates missing or corrupt files", async () => {
+		await withTempCache(async (path) => {
+			expect(await readCache(path)).toEqual(emptyCache());
+			await writeFile(path, "{broken", "utf8");
+			expect(await readCache(path)).toEqual(emptyCache());
+		});
 	});
 });
