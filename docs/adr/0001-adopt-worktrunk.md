@@ -13,7 +13,7 @@ Research on the field (same date, numbers rounded): worktrunk is a Rust CLI for 
 
 ## Decision
 
-Adopt `wt` for worktree mechanics and the merge pipeline, and `pi-worktrunk` for session placement and agent access. Do not build a helper, an alias, or an extension. Keep the coordination layer as a dumb protocol of copyable POSIX sh blocks in the `agent-swarm` skill: claims, shared contracts, messages and acks, `mkdir` locks, one merge at a time. The `agents-md-swarm` prompt carries the invariants into each repo's AGENTS.md. Nothing is committed to any repo except that section.
+Adopt `wt` for worktree mechanics and the merge pipeline, and `pi-worktrunk` for session placement and agent access. Do not build a helper, an alias, or an extension. Keep the coordination layer as a dumb protocol of copyable POSIX sh blocks in the `agent-swarm` skill: claims, shared contracts, messages and acks, `mkdir` locks, one merge at a time. Repos carry no coordination section: a single line in the global `~/.pi/agent/AGENTS.md` points sessions to the skill (see the update below).
 
 ## Consequences
 
@@ -23,3 +23,7 @@ Adopt `wt` for worktree mechanics and the merge pipeline, and `pi-worktrunk` for
 - `wt merge` never fetches and never pushes; the skill's merge recipe wraps it with fetch and push, and keeps the merge lock as our layer, since `wt` has no cross-agent merge serialization.
 - On ext4 there are no reflinks: carrying dependency caches into worktrees copies in full. Disk must be budgeted for the number of agents.
 - The bespoke-extension option is withdrawn; its hardest part, session placement and recovery, already exists in maintained code. The estimated 400 to 600 lines ignored that component, and the extension we would have written would have been a lesser copy of pi-worktrunk.
+
+## Update 2026-11-10
+
+The per-repo `## Multi-agent coordination` section is dropped, and the `agents-md-swarm` prompt deleted with it. The trigger is one line in the global `~/.pi/agent/AGENTS.md`, read in every project: on a git repo where other agents may work, the agent reads this skill before its first edit, and works directly elsewhere. Repos the prompt had touched lose their section when next visited. The protocol itself did not move.

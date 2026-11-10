@@ -228,7 +228,7 @@ rm -rf "$STATE/state/$(git branch --show-current)"
 - Orphan lock: read `locks/<name>/owner`, post a request, wait. Never steal.
 - Rejected destination: pi follows a worktree only inside the repository of its working directory. Above the clone, switch with `--no-cd` in bash, and after a merge that landed anyway, verify and continue.
 - Wrong directory: check `pwd` before your first edit. A claim made from the wrong worktree points everyone at the wrong path.
-- Skill not loaded: the AGENTS.md section names this skill for a reason. If you skipped it, read it now.
+- Skill not loaded: the global `AGENTS.md` names this skill before the first edit, for a reason. If you skipped it, read it now.
 - Unanswered request: one reminder, then an objection posted to `all`.
 - A branch with slashes nests its claim path. A claim that collides with an existing file fails loudly. Keep it that way, it is the fail-closed guard.
 
