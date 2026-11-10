@@ -78,6 +78,9 @@ async function fetchWithEnrichment(
 	}
 
 	const defs = mergeCatalog(builtinChatDefs(), chatIds, next, provenances);
+	if (signal.aborted) {
+		return { defs: mergeCatalog(builtinChatDefs(), cache.knownIds, cache, {}), changed: false };
+	}
 	await writeCache(next);
 	return { defs, changed: newIds.length > 0, note: newIds.length > 0 ? `${newIds.length} new model(s)` : undefined };
 }
@@ -88,27 +91,35 @@ export default function (pi: ExtensionAPI) {
 	pi.registerProvider(PROVIDER_ID, { models: builtinChatDefs() as never });
 
 	let inFlight: Promise<unknown> | undefined;
+	let activeRefresh: AbortController | undefined;
 
 	async function refreshCatalog(force: boolean, ctx: ExtensionContext): Promise<void> {
 		if (inFlight) return inFlight;
+		const controller = new AbortController();
+		activeRefresh = controller;
 		inFlight = (async () => {
 			try {
-				const { defs, changed, note } = await fetchWithEnrichment(force, new AbortController().signal);
+				const { defs, changed, note } = await fetchWithEnrichment(force, controller.signal);
+				if (controller.signal.aborted) return;
 				// Re-registration takes effect immediately (pi contract).
 				pi.registerProvider(PROVIDER_ID, { models: defs as never });
 				if (changed || (note?.startsWith("discovery failed"))) {
 					await ctx.ui.notify(`nvidia-live: ${note ?? `catalog refreshed (${defs.length} models)`}`, "info");
 				}
 			} catch (error) {
+				if (controller.signal.aborted) return;
 				const message = error instanceof Error ? error.message : String(error);
 				if (ctx.hasUI) await ctx.ui.notify(`nvidia-live: refresh failed (${message})`, "warning");
 				else console.warn("nvidia-live: refresh failed:", message);
 			} finally {
+				activeRefresh = undefined;
 				inFlight = undefined;
 			}
 		})();
 		return inFlight;
 	}
+
+	pi.on("session_shutdown", () => activeRefresh?.abort());
 
 	pi.on("session_start", (_event, ctx) => {
 		// Fire-and-forget: slow enrichment batches must not delay the session.

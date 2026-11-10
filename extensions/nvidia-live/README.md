@@ -35,7 +35,15 @@ pi -e ./extensions/nvidia-live
 | `/nvidia-models` | Show limits, provenance (`nvidia-md` / `nvidia-infer` / `family`, `partial` flag) |
 
 Discovery also runs on `session_start` (list TTL 1 h; `.md`/`-infer` pages are fetched
-only for unknown model IDs).
+only for unknown model IDs). Discovery has a 10 s timeout, metadata requests have their
+own timeouts, and `session_shutdown` aborts active requests before catalog registration.
+
+## Metadata flags
+
+`partial` means at least one core field still comes from the family fallback: context
+window, output limit, or input modalities. `nvidia-md` and `nvidia-infer` are assigned
+only when the corresponding source contributes usable metadata. Per-model `-infer`
+thinking rules override family thinking rules.
 
 ## Cache
 

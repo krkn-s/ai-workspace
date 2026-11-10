@@ -5,7 +5,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 ## Extensions
 
 - [`nvidia-live`](extensions/nvidia-live): Live NVIDIA NIM catalog for pi. Free-tier `/v1/models` model list with enriched per-model metadata; commands `/nvidia-refresh` and `/nvidia-models`.
-- [`skills-guard`](extensions/skills-guard): Gate enforcing `prose` and `compact` mechanical rules (em dashes, tables, deep heading or list nesting) on every `write`/`edit`/`bash` call, retry-until-clean.
+- [`skills-guard`](extensions/skills-guard): Gate enforcing `prose` and `compact` mechanical rules on `write`/`edit` and redirected bash heredocs, with Markdown-only structure checks and retry-until-clean.
 
 ## Skills
 
@@ -25,7 +25,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agents-md`](prompts/agents-md.md): Create, improve, or realign any agent instruction file against the global baseline.
 - [`agents-md-brand`](prompts/agents-md-brand.md): Create, convert, or maintain a `## Brand` section inside AGENTS.md.
 - [`challenge`](prompts/challenge.md): Critical intellectual partner stress-testing claims for truth over agreement.
-- [`ship`](prompts/ship.md): Plan, execute with verification, commit & push, and server update commands.
+- [`ship`](prompts/ship.md): Plan, execute with verification, commit, request approval before push, and prepare server update commands.
 - [`stack-refs`](prompts/stack-refs.md): Vendor third-party source and docs into read-only `.refs/`, plus the default stack for new projects.
 
 ## Installation

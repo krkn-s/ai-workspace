@@ -5,12 +5,25 @@ import { describe, expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { filterChatIds } from "../src/discovery";
-import { parseModelRecord, parseInferReference, inferSlug, thinkingFromHint } from "../src/enrich";
+import { discoverLiveChatIds, filterChatIds } from "../src/discovery";
+import { enrichModel, parseModelRecord, parseInferReference, inferSlug, thinkingFromHint } from "../src/enrich";
 import { familyFor, NIM_BASE_COMPAT } from "../src/families";
 import { emptyCache, listIsStale, readCache, writeCache, CACHE_PATH } from "../src/cache";
 
 const fix = (name: string) => readFile(join(dirname(fileURLToPath(import.meta.url)), "..", "test", "fixtures", name), "utf8");
+
+async function mockedEnrich(id: string, md = "", html = "") {
+	const originalFetch = globalThis.fetch;
+	globalThis.fetch = async (url) => {
+		if (String(url).includes("build.nvidia.com")) return new Response(md, { status: md ? 200 : 404 });
+		return new Response(html, { status: html ? 200 : 404 });
+	};
+	try {
+		return await enrichModel(id, new AbortController().signal);
+	} finally {
+		globalThis.fetch = originalFetch;
+	}
+}
 
 describe("discovery", () => {
 	test("filters non-chat families, keeps chat and vision chat", () => {
@@ -29,6 +42,23 @@ describe("discovery", () => {
 			"nvidia/nemotron-3-super-vl-120b-a12b",
 			"minimaxai/minimax-m3",
 		]);
+	});
+
+	test("propagates cancellation to the models request", async () => {
+		const originalFetch = globalThis.fetch;
+		const controller = new AbortController();
+		globalThis.fetch = async (_url, init) => new Promise<Response>((_resolve, reject) => {
+			init?.signal?.addEventListener("abort", () => reject(init.signal?.reason), { once: true });
+		});
+		try {
+			const pending = discoverLiveChatIds(controller.signal);
+			controller.abort(new Error("stop"));
+			const result = await pending;
+			expect(result.chatIds).toEqual([]);
+			expect(result.error).toBe("stop");
+		} finally {
+			globalThis.fetch = originalFetch;
+		}
 	});
 });
 
@@ -60,6 +90,39 @@ describe("infer reference parsing (layer 2)", () => {
 		expect(thinkingFromHint('Use {"thinking": true} to enable reasoning'))
 			.toHaveProperty("chatKwargs.thinking");
 		expect(thinkingFromHint("No thinking kwarg documented")).toBeUndefined();
+	});
+});
+
+describe("enrichment cascade", () => {
+	test("keeps the record partial while a core field uses the family fallback", async () => {
+		const result = await mockedEnrich("acme/context-only", "## Specifications\n- **Context Length:** 131,072 tokens\n");
+		expect(result.maxTokens).toBe(8192);
+		expect(result.partial).toBe(true);
+		expect(result.provenance).toBe("nvidia-md");
+	});
+
+	test("marks a record complete when NVIDIA supplies all core fields", async () => {
+		const md = [
+			"## Specifications",
+			"- **Context Length:** 131,072 tokens",
+			"- **Output:** 8,192 tokens",
+			"- **Input:** Text",
+		].join("\n");
+		const result = await mockedEnrich("acme/complete", md);
+		expect(result.partial).toBe(false);
+	});
+
+	test("does not claim infer provenance for an unusable page", async () => {
+		const result = await mockedEnrich("acme/no-useful-metadata", "", "<html></html>");
+		expect(result.provenance).toBe("family");
+		expect(result.partial).toBe(true);
+	});
+
+	test("lets infer thinking metadata override the family fallback", async () => {
+		const html = '<div id="body-params-chat_template_kwargs">Use {"thinking_mode": "enabled"}</div>';
+		const result = await mockedEnrich("qwen/qwen3-test", "", html);
+		expect(result.thinking?.levelKwarg?.key).toBe("thinking_mode");
+		expect(result.thinking?.chatKwargs).toBeUndefined();
 	});
 });
 
