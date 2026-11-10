@@ -16,8 +16,8 @@ The solution is visual hierarchy. A big bold line reads first, a smaller line ne
 
 ### Buttons and CTAs
 
-- Buttons must have high contrast with their surroundings. The main action on a page is clicking a button, so it must stand out.
-- Never use ghost buttons (outline only, no solid background). People don't see them and don't click them.
+- Buttons must have high contrast with their surroundings. When the main action is clicking a button, make that button stand out.
+- Use a solid, high-contrast style for the primary action. Ghost buttons can suit secondary actions when their label, contrast, and hit area remain clear. Test them with the intended audience.
 
 ## Pillar 2: Color
 
@@ -38,11 +38,11 @@ Three text elements carry a page:
 
 - H1: biggest, most prominent text on the page. It describes what the entire page is about.
 - H2: subheadings. They divide up the rest of the page and guide the user's attention.
-- P: paragraph text. Avoid very decorative fonts; they look cool but kill readability.
+- P: paragraph text. Avoid very decorative fonts for body copy; they often hurt readability.
 
 ## Conversion
 
-Good design without good conversion practices does not help clients. A clean, modern site that prioritizes looks over conversion can see sales plummet at launch. A design that ignores conversion is useless to the client.
+Good design without good conversion practices does not help clients. A clean, modern site that prioritizes looks over conversion can lose leads or sales at launch. A design that ignores conversion can cost the client results.
 
 Central principle: reduce friction. Make it very easy to find what users want, and make buying or signing up easy.
 

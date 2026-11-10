@@ -28,25 +28,12 @@ Exclude:
 - soft duplicates
 - `noindex` pages
 
-## Priority Heuristics
+## Sitemap Metadata
 
-Use simple business-aware defaults when the site does not already define them:
-
-- homepage: `1.0`
-- primary money pages: `0.9`
-- important supporting pages: `0.8`
-- blog posts, guides, and secondary pages: `0.7`
-
-Do not invent false precision. Consistency matters more than over-tuning.
-
-## Freshness Hints
-
-Reasonable default:
-
-- homepage: `weekly`
-- most stable pages: `monthly`
-
-If the site already has a reliable content cadence model, follow it instead of forcing these defaults.
+- Include only canonical public URLs that should be discovered.
+- Use `lastmod` only when it reflects a real substantive modification date.
+- Do not invent default `priority` or `changefreq` values. Keep site-specific values only when the operator has a documented reason for them.
+- Do not use sitemap metadata to compensate for duplicate, non-canonical, or stale pages.
 
 ## `robots.txt`
 
@@ -99,6 +86,7 @@ Translate this into concrete next actions: stronger titles, clearer descriptions
 ## Validation Checklist
 
 - sitemap lists canonical public URLs only
+- `lastmod` is accurate where used, with no invented `priority` or `changefreq` defaults
 - sitemap and robots agree on crawlable surfaces
 - sitemap URL is discoverable from `robots.txt`
 - mirror URLs are not blocked accidentally
