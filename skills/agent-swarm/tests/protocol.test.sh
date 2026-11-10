@@ -122,6 +122,20 @@ rm -rf "$STATE/locks/deploy"
 rm -rf "$STATE/state/agent/live"
 [ ! -d "$STATE/state/agent/live" ] && ok "release after unlocking" || ko "release after unlocking"
 
+# 13. stale claim recipe: verify, remove, recreate and claim again
+# The five-minute human wait is skipped. git worktree add stands in for wt switch.
+STALE="agent/stale"
+STALE_WT="$ROOT/wt-stale"
+claim "$STALE" "stale task" "$STALE_WT"
+WT="$(cat "$STATE/state/$STALE/worktree" 2>/dev/null)"
+if git worktree list --porcelain | grep -q "^worktree $WT$"; then stale=0; else stale=1; fi
+[ "$stale" -eq 1 ] && ok "stale claim detected from worktree list" || ko "stale claim detected from worktree list"
+post agent/takeover "$STALE" request 'taking over the stale claim' >/dev/null
+rm -rf "$STATE/state/$STALE"
+git worktree add -q "$STALE_WT" -b "$STALE" HEAD
+claim "$STALE" "taken over" "$STALE_WT"
+[ "$(cat "$STATE/state/$STALE/task")" = "taken over" ] && ok "stale claim recreated and reclaimed" || ko "stale claim recreated and reclaimed"
+
 if [ "$fail" -eq 0 ]; then
   printf 'all tests passed\n'
 else

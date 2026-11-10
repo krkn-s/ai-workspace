@@ -199,6 +199,7 @@ Failure paths:
 A claim is stale when its worktree is gone from `git worktree list`, never because its timestamp aged.
 
 ```sh
+STATE="$(git rev-parse --path-format=absolute --git-common-dir)/agents-sync"
 STALE="<branch>"
 WT="$(cat "$STATE/state/$STALE/worktree" 2>/dev/null)"
 git worktree list --porcelain | grep -q "^worktree $WT$" && { echo "still alive: do not take over" >&2; exit 1; }

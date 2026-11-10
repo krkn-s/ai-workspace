@@ -289,7 +289,9 @@
       const fonts = [];
       for (const f of DECK_FONTS) {
         try {
-          const data = await (await fetch(f.url)).arrayBuffer();
+          const response = await fetch(f.url);
+          if (!response.ok) throw new Error(`font HTTP ${response.status}`);
+          const data = await response.arrayBuffer();
           fonts.push({ family: f.family, data, weight: f.weight ?? 400, style: f.style ?? "normal" });
           console.log("[deck] registered font", f.family, f.weight);
         } catch (e) {
@@ -313,9 +315,10 @@
         root.appendChild(page);
       }
       document.body.appendChild(root);
+      let pdf;
       try {
         const renderer = await getRenderer();
-        const pdf = await renderer.render(root, {
+        pdf = await renderer.render(root, {
           page: PDF_PAGE,
           cssProfile: "web",
           mediaType: "print",
@@ -326,11 +329,11 @@
         pdf.download(`${document.title || "deck"}.pdf`);
         console.log("[deck] PDF exported:", pdf.pageCount, "pages");
         if (pdf.diagnostics?.length) console.table(pdf.diagnostics);
-        pdf.dispose();
       } catch (err) {
         console.error("[deck] PDF export failed:", err);
         alert("PDF export failed:\n" + (err?.message || err) + "\n\nSee console (DevTools) for details.");
       } finally {
+        pdf?.dispose();
         root.remove();
         btn.disabled = false;
       }

@@ -72,7 +72,7 @@ Available themes: `black`, `white`, `beige`, `league`, `sky`, `night`, `serif`, 
 The deck is a single portable file, so it must not depend on fonts in surrounding folders. Two rules:
 
 1. **html2realpdf only embeds raw TrueType bytes (`.ttf`/`.otf`).** `woff2`/`woff` (what Google Fonts and Fontshare CSS serve) will **not** embed; the PDF silently falls back to the bundled Noto Sans. Use a `.ttf` CDN source. The most reliable is **`@expo-google-fonts/<name>` on jsDelivr** (versioned, CORS, real `.ttf`): `https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_400Regular.ttf`. Google Fonts gstatic `.ttf` also works but its URLs are opaque and change on every font update.
-2. **Use the same `.ttf` URL for the live deck and the PDF.** Declare it via `@font-face` (live display) **and** list it in `DECK_FONTS` (the export fetches the same bytes and registers them). This guarantees live and PDF match. If a fetch fails, that face falls back to Noto Sans. The PDF is never broken.
+2. **Use the same `.ttf` URL for the live deck and the PDF.** Declare it via `@font-face` (live display) **and** list it in `DECK_FONTS` (the export fetches the same bytes and registers them). This guarantees live and PDF match. If a font fetch or HTTP response fails, that face falls back to Noto Sans. Other renderer errors are reported by the export button.
 
 The skeleton wires `Inter` (400 + 700) this way. To use your own fonts, replace both the `@font-face` URLs and the `DECK_FONTS` entries together. Leave `DECK_FONTS = []` for zero-config Noto Sans output.
 

@@ -76,17 +76,28 @@ const DECK_FONTS = [
   { family: "Inter", url: "https://cdn.jsdelivr.net/npm/@expo-google-fonts/inter@0.2.3/Inter_700Bold.ttf", weight: 700 },
 ];
 
+const fonts = [];
+for (const f of DECK_FONTS) {
+  try {
+    const response = await fetch(f.url);
+    if (!response.ok) throw new Error(`font HTTP ${response.status}`);
+    fonts.push({
+      family: f.family, weight: f.weight ?? 400, style: f.style ?? "normal",
+      data: await response.arrayBuffer(),
+    });
+  } catch (error) {
+    console.warn("Font registration failed; using Noto Sans for this face:", f.family, error);
+  }
+}
+
 const renderer = await createRenderer({
   execution: "main",                       // robust for file:// (no cross-origin Worker)
   wasmUrl: "https://cdn.jsdelivr.net/npm/@imggion/html2realpdf@0.1.13/dist/libhtml2realpdf.wasm",
-  fonts: await Promise.all(DECK_FONTS.map(async (f) => ({
-    family: f.family, weight: f.weight ?? 400, style: f.style ?? "normal",
-    data: await (await fetch(f.url)).arrayBuffer(),
-  }))),
+  fonts,
 });
 ```
 
-`@expo-google-fonts/<name>` on jsDelivr is the most reliable `.ttf` source (versioned, CORS). Google Fonts gstatic `.ttf` works too but its URLs are opaque and change per update. On any per-font fetch failure, that face falls back to Noto Sans. The PDF is never broken.
+`@expo-google-fonts/<name>` on jsDelivr is the most reliable `.ttf` source (versioned, CORS). Google Fonts gstatic `.ttf` works too but its URLs are opaque and change per update. On any per-font fetch or HTTP failure, that face falls back to Noto Sans. Other renderer errors are reported separately.
 
 ## Enhanced export (fonts + progress + main-thread fallback)
 
@@ -115,8 +126,9 @@ async function exportDeckToPdf() {
     fonts: window.__DECK_FONTS ?? [],           // pre-fetched FontRegistration[]
   });
 
+  let pdf;
   try {
-    const pdf = await renderer.render(root, {
+    pdf = await renderer.render(root, {
       page: PDF_PAGE,
       cssProfile: "web",
       mediaType: "print",
@@ -127,11 +139,11 @@ async function exportDeckToPdf() {
     });
     pdf.download(`${document.title || "deck"}.pdf`);
     if (pdf.diagnostics?.length) console.table(pdf.diagnostics);
-    pdf.dispose();
   } catch (err) {
     console.error("PDF export failed:", err);
     alert("PDF export failed. See console. If this is a Worker/CORS issue, retry with execution:'main'.");
   } finally {
+    pdf?.dispose();
     renderer.dispose();
     root.remove();
     btn.disabled = false; btn.textContent = "Export PDF";

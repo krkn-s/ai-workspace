@@ -186,8 +186,14 @@
       if (_renderer) return _renderer;
       const fonts = [];
       for (const f of DECK_FONTS) {
-        try { fonts.push({ family: f.family, data: await (await fetch(f.url)).arrayBuffer(), weight: f.weight ?? 400, style: f.style ?? "normal" }); }
-        catch (e) { console.warn("[deck] font fetch failed (Noto Sans fallback for this face):", f.family, e); }
+        try {
+          const response = await fetch(f.url);
+          if (!response.ok) throw new Error(`font HTTP ${response.status}`);
+          const data = await response.arrayBuffer();
+          fonts.push({ family: f.family, data, weight: f.weight ?? 400, style: f.style ?? "normal" });
+        } catch (e) {
+          console.warn("[deck] font fetch failed (Noto Sans fallback for this face):", f.family, e);
+        }
       }
       _renderer = await createRenderer({ execution: "main", wasmUrl: WASM_URL, fonts });
       return _renderer;
@@ -206,8 +212,9 @@
         root.appendChild(page);
       }
       document.body.appendChild(root);
+      let pdf;
       try {
-        const pdf = await (await getRenderer()).render(root, {
+        pdf = await (await getRenderer()).render(root, {
           page: PDF_PAGE,
           cssProfile: "web",      // required for slides: flex/grid/transforms/shadows/positioning
           mediaType: "print",
@@ -217,11 +224,11 @@
         });
         pdf.download(`${document.title || "deck"}.pdf`);
         if (pdf.diagnostics?.length) console.table(pdf.diagnostics);
-        pdf.dispose();
       } catch (err) {
         console.error("[deck] PDF export failed:", err);
         alert("PDF export failed:\n" + (err?.message || err) + "\n\nSee console (DevTools).");
       } finally {
+        pdf?.dispose();
         root.remove();
         btn.disabled = false;
       }

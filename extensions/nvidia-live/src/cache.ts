@@ -35,9 +35,9 @@ export function emptyCache(): CacheShape {
 	return { updatedAt: 0, knownIds: [], models: {} };
 }
 
-export async function readCache(): Promise<CacheShape> {
+export async function readCache(path: string = CACHE_PATH): Promise<CacheShape> {
 	try {
-		const raw = JSON.parse(await readFile(CACHE_PATH, "utf8")) as Partial<CacheShape>;
+		const raw = JSON.parse(await readFile(path, "utf8")) as Partial<CacheShape>;
 		return {
 			updatedAt: raw.updatedAt ?? 0,
 			knownIds: Array.isArray(raw.knownIds) ? raw.knownIds : [],
@@ -48,12 +48,12 @@ export async function readCache(): Promise<CacheShape> {
 	}
 }
 
-export async function writeCache(cache: CacheShape): Promise<void> {
-	await mkdir(join(CACHE_PATH, ".."), { recursive: true });
-	const tmp = `${CACHE_PATH}.tmp`;
+export async function writeCache(cache: CacheShape, path: string = CACHE_PATH): Promise<void> {
+	await mkdir(join(path, ".."), { recursive: true });
+	const tmp = `${path}.tmp`;
 	try {
 		await writeFile(tmp, JSON.stringify(cache, null, 2));
-		await rename(tmp, CACHE_PATH).catch(async () => writeFile(CACHE_PATH, JSON.stringify(cache, null, 2)));
+		await rename(tmp, path).catch(async () => writeFile(path, JSON.stringify(cache, null, 2)));
 	} catch {
 		// Cache write failure is never fatal: the extension still works in-memory.
 	}
