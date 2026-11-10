@@ -1,11 +1,11 @@
 ---
 name: reveal-slides
-description: "Build a slide deck as one self-contained HTML file with reveal.js 6, and export it to a clean one-slide-per-page vector PDF via html2realpdf: title slides, code with highlighting, speaker notes, fragments, auto-animate, dark and light themes."
+description: "Build a slide deck as a single HTML file with reveal.js 6, and export it to a clean one-slide-per-page vector PDF via html2realpdf: title slides, code with highlighting, speaker notes, fragments, auto-animate, dark and light themes."
 ---
 
 # Reveal Slides
 
-Build a **single self-contained HTML file** that runs a reveal.js presentation in the browser and exports a **real vector PDF** (one slide per page, selectable text) via html2realpdf. Both libraries are loaded from pinned jsDelivr URLs so the file has no build step and no local dependencies, only an internet connection.
+Build a **single HTML file** that runs a reveal.js presentation in the browser and exports a **real vector PDF** (one slide per page, selectable text) via html2realpdf. Both libraries are loaded from pinned jsDelivr URLs so the file has no build step and no local dependencies, only an internet connection.
 
 Slide copy and speaker notes follow the `prose` skill. Load it when the slides' wording is drafted or rewritten in this run.
 

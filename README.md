@@ -14,7 +14,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`compact`](skills/compact): Compact, LLM-friendly Markdown style for any `.md` file.
 - [`image-prompt-crafter`](skills/image-prompt-crafter): Production-grade prompts for GPT Image 2, Nano Banana 2/Pro, and Seedream 5 Pro.
 - [`prose`](skills/prose): Human-sounding, AI-tell-free prose in French or English.
-- [`reveal-slides`](skills/reveal-slides): Self-contained reveal.js 6 decks in one HTML file, exported to vector PDF via html2realpdf.
+- [`reveal-slides`](skills/reveal-slides): Single-file reveal.js 6 decks in one HTML file, exported to vector PDF via html2realpdf.
 - [`schwartz-awareness`](skills/schwartz-awareness): Schwartz's awareness levels and market sophistication: which lead, how long, what to promise.
 - [`seo-aeo-content`](skills/seo-aeo-content): SEO and AEO content strategy: briefs, outlines, audits, editorial plans.
 - [`web-design`](skills/web-design): Web design fundamentals: visual hierarchy, color, typography, conversion practices, audience fit.
