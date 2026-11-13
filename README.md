@@ -26,6 +26,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agents-md-brand`](prompts/agents-md-brand.md): Create, convert, or maintain a `## Brand` section inside AGENTS.md.
 - [`agents-md-sessions`](prompts/agents-md-sessions.md): Mine a repo's finished Pi sessions and add only evidence-backed facts to its AGENTS.md, one approved bullet at a time.
 - [`challenge`](prompts/challenge.md): Critical intellectual partner stress-testing claims for truth over agreement.
+- [`cp`](prompts/cp.md): One-liner: merge if needed, commit, push.
 - [`ship`](prompts/ship.md): Plan, execute with verification, commit, request approval before push, and prepare server update commands.
 - [`stack-audit`](prompts/stack-audit.md): Read-only stack audit: the smallest tier that does the job, then one ordered table of cuts, replacements, additions and fixes with proof.
 - [`stack-refs`](prompts/stack-refs.md): Vendor third-party source and docs into read-only `.refs/` at lockfile versions with resolved tags and verified SHAs, plus the default stack for new projects.
