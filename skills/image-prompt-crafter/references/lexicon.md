@@ -45,7 +45,31 @@ Brushed stainless steel, frosted glass, unglazed ceramic, navy blue tweed, worn 
   - `"Your First Order" in thin minimalist Century Gothic at the bottom`
 - Font vocabulary: bold condensed sans-serif, tall condensed serif, geometric sans-serif, small caps, handwritten script, slab serif, monospace.
 - Placement vocabulary: masthead across the top, centered mid-frame, lower-third banner, bottom-left corner, running down the right edge.
-- Discipline rules: 3–5 text elements max (Nano Banana), render exactly once, spell difficult words letter-by-letter (GPT Image), ≤25 characters per element if targeting anything Imagen-derived.
+- Discipline rules: 3 to 5 text elements max (Nano Banana), render exactly once, spell difficult words letter-by-letter (GPT Image), end on "no other text" (Seedream).
+
+## Reserving layout space
+
+Say the empty space out loud; models honor it and it saves a crop:
+
+- "open sky to the left", "calm water across the left half, empty for a headline"
+- "top third empty dark slate, clear for an offer banner"
+- "subject on the right third, generous padding on the left for the masthead"
+- "clear band across the bottom third for the price"
+
+## Motion and loop (animated GIF)
+
+GPT Image can return an animation. Describe one continuous action and its return:
+
+- "gives the subject a starting pose to return to", "lifts the lantern, looks up, blinks, lowers it back to the starting pose"
+- "camera still" or "slow push-in", never both
+- "loop smoothly", "the last frame matches the first"
+- Keep one moving element; two competing motions break the loop.
+
+## Vector output (SVG)
+
+- "flat design, clean vector-like shapes, strong silhouette, balanced negative space"
+- "minimal strokes, no gradients unless essential, single centered mark with generous padding"
+- "reads clearly at small and large sizes", "no embedded raster detail"
 
 ## Constraint and exclusion clauses
 
@@ -53,7 +77,7 @@ Pick what applies; drop the rest:
 
 - "No watermark, no logos, no extra text, no trademarks."
 - "Render the tagline exactly once, clearly and legibly."
-- "Isolated subject on a fully transparent background: no scenery, no solid backdrop, no checkerboard, no shadows." (GPT Image 2 transparent PNG)
+- "Isolated subject on a fully transparent background: no scenery, no solid backdrop, no checkerboard, no shadows." (GPT Image, transparent PNG)
 - "Original design only, no copyrighted characters."
 - "Plain background to clearly showcase the character."
 - "Avoid cinematic lighting, dramatic color grading, or stylized composition." (when grounded realism is wanted)

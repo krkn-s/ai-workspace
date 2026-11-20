@@ -12,7 +12,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agent-swarm`](skills/agent-swarm): Parallel agent coordination on one clone with `wt`: claims, contracts, messages and acks, merge lock, recipes.
 - [`ai-visibility-stack`](skills/ai-visibility-stack): `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler access.
 - [`compact`](skills/compact): Compact, LLM-friendly Markdown style for any `.md` file.
-- [`image-prompt-crafter`](skills/image-prompt-crafter): Production-grade prompts for GPT Image 2, Nano Banana 2/Pro, and Seedream 5 Pro.
+- [`image-prompt-crafter`](skills/image-prompt-crafter): Production-grade prompts for GPT Image, Nano Banana, and Seedream.
 - [`prose`](skills/prose): Human-sounding, AI-tell-free prose in French or English.
 - [`reveal-slides`](skills/reveal-slides): Single-file reveal.js 6 decks in one HTML file, exported to vector PDF via html2realpdf.
 - [`schwartz-awareness`](skills/schwartz-awareness): Schwartz's awareness levels and market sophistication: which lead, how long, what to promise.
