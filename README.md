@@ -5,6 +5,7 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 ## Extensions
 
 - [`nvidia-live`](extensions/nvidia-live): Live NVIDIA NIM catalog for pi. Free-tier `/v1/models` model list with enriched per-model metadata; commands `/nvidia-refresh` and `/nvidia-models`.
+- [`one-line-tools`](extensions/one-line-tools): Collapsed tool rows take one line; the result stays hidden until the row is expanded.
 - [`skills-guard`](extensions/skills-guard): Gate enforcing `prose` and `compact` mechanical rules on `write`/`edit` and redirected bash heredocs, with Markdown-only structure checks and retry-until-clean.
 
 ## Skills
