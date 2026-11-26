@@ -1,7 +1,6 @@
 # pi workspace
 
 Skills, prompts and extensions for pi. One install command, no build step.
-Each folder documents itself in its own README.
 
 ## Extensions
 
