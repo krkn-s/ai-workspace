@@ -1,6 +1,6 @@
 ---
 name: web-design
-description: "Design or critique a web page: visual hierarchy, buttons and CTAs, color palettes, font pairings, conversion clarity, and fitting the target audience. Use when building or restyling a landing page or marketing site, or when a design looks off or does not convert."
+description: "Design or critique a web page: visual hierarchy, buttons and CTAs, color palettes, font pairings, conversion clarity, and fitting the target audience. Use when building or restyling a site, or when a page converts badly for layout reasons rather than message (`copy-angle`)."
 ---
 
 # Web Design

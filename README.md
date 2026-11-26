@@ -13,10 +13,10 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 - [`agent-swarm`](skills/agent-swarm): Parallel agent coordination on one clone with `wt`: claims, contracts, messages and acks, merge lock, recipes.
 - [`ai-visibility-stack`](skills/ai-visibility-stack): `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`, and AI crawler access.
 - [`compact`](skills/compact): Compact, LLM-friendly Markdown style for any `.md` file.
+- [`copy-angle`](skills/copy-angle): Schwartz's awareness levels and market sophistication decide which lead, how long, and what to promise.
 - [`image-prompt-crafter`](skills/image-prompt-crafter): Production-grade prompts for GPT Image, Nano Banana, and Seedream.
 - [`prose`](skills/prose): Human-sounding, AI-tell-free prose in French or English.
 - [`reveal-slides`](skills/reveal-slides): Single-file reveal.js 6 decks in one HTML file, exported to vector PDF via html2realpdf.
-- [`schwartz-awareness`](skills/schwartz-awareness): Schwartz's awareness levels and market sophistication: which lead, how long, what to promise.
 - [`seo-aeo-content`](skills/seo-aeo-content): SEO and AEO content strategy: briefs, outlines, audits, editorial plans.
 - [`web-design`](skills/web-design): Web design fundamentals: visual hierarchy, color, typography, conversion practices, audience fit.
 - [`weasyprint-pdf`](skills/weasyprint-pdf): Print-ready PDFs from HTML and CSS via WeasyPrint (`@page`, TOC, bookmarks, CMYK/PDF-X).
@@ -25,7 +25,6 @@ Personal AI workspace: pi extensions, skills, and prompt templates. Doubles as a
 
 - [`agents-md`](prompts/agents-md.md): Create, improve, or realign any agent instruction file against the global baseline.
 - [`agents-md-brand`](prompts/agents-md-brand.md): Create, convert, or maintain a `## Brand` section inside AGENTS.md.
-- [`agents-md-sessions`](prompts/agents-md-sessions.md): Mine a repo's finished Pi sessions and add only evidence-backed facts to its AGENTS.md, one approved bullet at a time.
 - [`challenge`](prompts/challenge.md): Critical intellectual partner stress-testing claims for truth over agreement.
 - [`cp`](prompts/cp.md): One-liner: merge if needed, commit, push.
 - [`ship`](prompts/ship.md): Plan, execute with verification, commit, request approval before push, and prepare server update commands.
