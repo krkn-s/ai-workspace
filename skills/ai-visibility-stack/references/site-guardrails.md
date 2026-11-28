@@ -4,21 +4,21 @@ Use this reference when creating, expanding, or redesigning a business website w
 
 ## Goal
 
-System 5 from the source playbook is useful mainly as a reminder that visible pages and invisible infrastructure must ship together.
+System 5 from the original playbook is useful mainly as a reminder that visible pages and invisible infrastructure must ship together.
 
 Treat these as guardrails, not as a mandate to generate a giant one-shot site prompt.
 
 ## Preserve These Layers
 
-- `llms.txt`
-- markdown mirrors or equivalent clean machine-readable pages
+- crawlable, server-rendered page structure
 - `sitemap.xml`
-- `robots.txt`
+- `robots.txt` and any AI crawler policy or `Content-Signal` values
 - canonical URLs
 - meta titles and descriptions
 - structured data / schema
 - internal linking between important pages
-- crawlable page structure
+- `llms.txt` and markdown delivery when an agent or a coding tool consumes them
+- agent readability: semantic HTML, labels tied to inputs, stable layout
 - mobile readability and usable page performance
 
 ## During Redesigns
@@ -52,6 +52,19 @@ Do not assume every project needs a 40-page site. Build the smallest structure t
 
 If the project already has a public docs or markdown layer that machines can parse cleanly, prefer reusing that source of truth over introducing a second redundant mirror system.
 
+## Agent Readability
+
+Browser agents and AI tools read the site through the DOM, the accessibility tree, and screenshots. Google's own guidance says the fixes are the same ones accessibility asks for:
+
+- use real `<a>` and `<button>` elements instead of clickable `<div>` or `<span>`
+- give every control a role, a name, and a label bound with `for`
+- keep layout stable across pages so an action stays where the agent found it
+- avoid invisible overlays and ghost elements that hide interactive content
+- keep interactive targets large enough and visible in a screenshot
+- keep the main text in the served HTML, not only in client-side rendering
+
+Treat WebMCP and other agent protocols as experimental. Do not build a site around them without confirming the user wants that bet.
+
 ## Content Quality Rules
 
 - prefer fewer strong pages over many weak near-duplicates
@@ -63,9 +76,12 @@ If the project already has a public docs or markdown layer that machines can par
 
 After a rebuild or redesign, verify that:
 
+- main content is still readable without JavaScript
 - machine-readable files still resolve
 - schema still matches the visible page
 - titles and descriptions were not reset to placeholders
 - key pages remain linked and indexable
-- the site still communicates the same business accurately to both humans and machines
+- interactive elements are still semantic and labeled
+- layout for key actions is still stable
+- the site still communicates the same business to humans and machines
 - any AI-crawler policy still matches the user's actual intent

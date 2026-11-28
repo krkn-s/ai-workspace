@@ -8,6 +8,14 @@ Markdown mirrors give machines a low-noise version of a page that is easier to p
 
 Use mirrors for page-level detail. Use `llms.txt` as the directory that points to them.
 
+## Measured Value
+
+- Serving markdown instead of HTML did not change AI bot traffic in a randomized test on 380 pages across six sites, and the study did not measure citations (Profound, February 2026).
+- In one month of server logs for a site that offered markdown three ways, no AI crawler used content negotiation. Crawlers reached the markdown only through a declared alternate link (Dries Buytaert, March 2026). A separate test of seven coding tools found three that send `Accept: text/markdown`: Claude Code, Cursor, and OpenCode (Checkly).
+- Google states that Search does not need markdown versions to appear in its generative AI features (generative AI guide, 2026).
+
+So markdown is a functionality decision for agents and readers, not a discovery tactic. Publish it where an agent asks for it or where documentation is read by coding tools, and say what it will not do.
+
 ## Source Of Truth Decision
 
 Choose the first option that already solves the problem:
@@ -20,10 +28,10 @@ Choose the first option that already solves the problem:
 
 Use mirrors when:
 
-- the production HTML is noisy or heavily componentized
-- the site relies on client-side rendering
-- the user wants pages to be easier to quote or summarize
-- page-level content is more useful than a root summary alone
+- an agent or coding tool asks for markdown
+- developer documentation, API references, or long reference pages are consumed by AI tools
+- the production HTML is noisy, heavily componentized, or relies on client-side rendering
+- a reader is likely to paste the page into an assistant
 
 Skip them when:
 
@@ -101,9 +109,17 @@ Expand beyond that only when the site actually benefits from wider page-level ma
 
 Mirrors should be publicly fetchable as plain text or markdown without download friction.
 
+Pick one delivery mechanism before the pattern:
+
+1. content negotiation: return markdown when the request sends `Accept: text/markdown`, and HTML to browsers. Fewer URLs to maintain, no second public surface, and the pattern coding agents already use.
+2. a separate `.md` URL, declared with `rel="alternate"` from the HTML page or from a response header, so the alternate is visible to every client rather than served only to a chosen user agent.
+3. a separate `.md` URL with no declaration, which works only for clients that already know the convention.
+
+Prefer content negotiation or a declared alternate over serving different content by user agent.
+
 The important behavior is:
 
-- stable public URL
+- stable public URL or stable negotiation behavior
 - fetchable without auth
 - correct content type for inline reading
 - same factual content as the source page
@@ -124,7 +140,8 @@ Do not assume every page needs to be listed in `llms.txt`.
 
 ## Validation Checklist
 
-- mirror URL resolves publicly
+- the delivery mechanism is chosen and documented
+- markdown resolves through that mechanism for a plain request
 - mirror content is meaningfully cleaner than the HTML page
 - title, description, and canonical URL are preserved when available
 - excluded page types are not surfaced accidentally

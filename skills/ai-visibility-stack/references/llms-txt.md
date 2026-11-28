@@ -2,6 +2,17 @@
 
 Use this reference when the task involves creating, reviewing, or correcting `/llms.txt`.
 
+## Measured Value And Audience
+
+Say this before writing the file, because most articles about `llms.txt` oversell it:
+
+- No major AI provider documents reading `llms.txt` for search or answer retrieval. Google states that Search ignores it and that no such file is needed to appear in its generative AI features (Google Search Central, generative AI guide, 2026).
+- Server-log studies find almost no readers: 28% of 137,000 monitored domains publish the file, and 97% of those files received zero requests in a month. AI retrieval bots made 1.1% of the few requests that happened (Ahrefs, June 2026).
+- The audience that does exist is agents. Coding agents such as Claude Code fetch `llms.txt` more often than any AI retrieval bot, and training crawlers fetch it about five times more than retrieval bots (Ahrefs, June 2026).
+- There is no measured citation benefit, and there is a real, undeveloped prompt-injection surface: agents are designed to trust the file.
+
+So the file is worth writing when agents or documentation tooling will read it, or when the user wants it anyway. It is not a citation tactic, and the output should say so once, plainly, without lecturing.
+
 ## Source Of Truth
 
 Follow the official `llmstxt.org` structure first:
@@ -12,7 +23,7 @@ Follow the official `llmstxt.org` structure first:
 4. One or more `##` sections containing markdown link lists
 5. Optional `## Optional` section for lower-priority links
 
-For business websites, the playbook's practical content is still useful, but it should be mapped into this structure rather than copied as custom headings like `About`, `Services and Pricing`, or `Locations`.
+For business websites, the usual section content is still useful, but it should be mapped into this structure rather than copied as custom headings like `About`, `Services and Pricing`, or `Locations`.
 
 ## What `llms.txt` Should Do
 
@@ -132,6 +143,7 @@ The URLs above are examples only. Use the site's real deployed mirror pattern. D
 
 ## Validation Checklist
 
+- the file states who will read it, or the answer does the same in one line
 - H1 exists and is unique
 - blockquote summary sits directly under the H1
 - all detailed sections use `##`

@@ -9,9 +9,9 @@ Skills, prompts and extensions for pi. One install command, no build step.
 
 ## Skills
 
-- [`ai-visibility-stack`](skills/ai-visibility-stack): Get a site read and cited by crawlers and answer engines: `llms.txt`, markdown mirrors, `sitemap.xml`, `robots.txt`.
+- [`ai-visibility-stack`](skills/ai-visibility-stack): Make a site machine-readable for crawlers and agents: crawl files, AI crawler policy, `llms.txt`, markdown for agents, semantic HTML.
 - [`image-prompt-crafter`](skills/image-prompt-crafter): Write image prompts that hold up in the model: GPT Image, Nano Banana, Seedream.
-- [`seo-aeo-content`](skills/seo-aeo-content): Plan content that ranks and gets cited: briefs, outlines, audits, editorial calendars.
+- [`seo-aeo-content`](skills/seo-aeo-content): Plan content that ranks and gets cited: SEO, AEO and GEO briefs, outlines, audits, editorial calendars, AI-search measurement.
 - [`web-design`](skills/web-design): Judge a page on hierarchy, color, type and CTA, then fix what costs conversions.
 
 ## Prompts

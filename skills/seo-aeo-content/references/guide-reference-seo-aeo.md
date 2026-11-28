@@ -1,7 +1,7 @@
 # SEO and AEO Reference Guide
 
-Last updated: April 27, 2026  
-Purpose: reference document for writing, creating, optimizing, and maintaining internet content that can be visible in Google, AI Overviews, ChatGPT, Perplexity, Gemini, Copilot, and other answer interfaces.
+Last updated: November 28, 2026
+Purpose: reference document for writing, creating, optimizing, and maintaining internet content that can be visible in Google, AI Overviews, ChatGPT, Perplexity, Gemini, Copilot, and other answer interfaces. For evidence levels, tactics that fail on live engines, and the measurement protocol, read `geo-ai-search-2026.md` in this folder.
 
 ## 1. Executive Summary
 
@@ -51,6 +51,13 @@ The first version of this guide was drafted from six local research transcripts 
 - Google Search Central, [Structured data intro](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) and [structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies): structured data is useful but not guaranteed to produce enhanced results.
 - Google Search Central, [Robots meta tags](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag): `nosnippet`, `max-snippet`, `data-nosnippet`, and impact on AI Overviews/AI Mode.
 - Google, [AI Overviews and AI Mode in Search](https://search.google/pdf/google-about-AI-overviews-AI-Mode.pdf): AI Overviews rely on ranking systems, the Knowledge Graph, web results, and quality protections.
+- Google Search Central, [Optimizing your website for generative AI features on Google Search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide): SEO fundamentals remain the foundation; explicit myth list covering `llms.txt`, chunking, AI-specific rewriting, inauthentic mentions, and over-focusing on structured data; Search Console generative AI reporting; agentic guidance.
+- Chen and Koudas, [What Drives AI Citations?](https://arxiv.org/abs/2610.15033), October 2026, preprint: within-site study of 158,099 answers and 468,037 citations; retrieval explains 32% of citation variance against 2.8% for all on-page features.
+- Puerto et al., [C-SEO Bench: Does Conversational SEO Work?](https://arxiv.org/abs/2506.11097), NeurIPS Datasets and Benchmarks 2025: most conversational SEO methods are ineffective or harmful; classical SEO work performs better; gains shrink as adoption spreads.
+- Kong et al., [LIVE-GEO](https://arxiv.org/abs/2611.01126), October 2026, preprint: rewrites move live rankings, but engines disagree on winners for a third to a half of brands, and fabricated statistics lose.
+- Martinez, [A Critical Survey of Generative Engine Optimization, 2023-2026](https://arxiv.org/html/2607.14035), July 2026: terminology, metrics, and evidence standards remain heterogeneous; strong evidence only for a causal effect conditional on context.
+- Ahrefs, [137K sites: 97% of llms.txt Files Never Get Read](https://ahrefs.com/blog/llmstxt-study/), June 2026, and [1,885 pages adding schema](https://ahrefs.com/blog/schema-ai-citations/), May 2026: no measured citation gain from `llms.txt` or from adding structured data.
+- Profound, randomized markdown-serving test on 380 pages, February 2026: no significant bot-traffic difference.
 - Semrush, [AI Overviews Study 2025](https://www.semrush.com/blog/semrush-ai-overviews-study/): growth of AI Overview-triggering queries, intent patterns, zero-click behavior, and SERP co-presence.
 - Ahrefs, [AI Overview Brand Visibility Factors](https://ahrefs.com/blog/ai-overview-brand-correlation/): strong correlation between web brand mentions and visibility in AI Overviews.
 - Ahrefs, [How to Rank in AI Overviews](https://ahrefs.com/blog/?p=194802): importance of intent density and the risk of diluting content with overly broad coverage.
@@ -92,7 +99,9 @@ AEO does not replace SEO. It adds a new question:
 
 Generative Engine Optimization. A term often used to describe visibility optimization in generative engines. In practice, GEO and AEO overlap heavily: content structure, citations, brand mentions, external authority, clear data, and share-of-voice tracking.
 
-This guide uses AEO as the primary term because the goal is the answer.
+This guide uses AEO as the primary term because the goal is the answer. Keep GEO in the vocabulary for routing and for matching client wording, but do not build a separate plan for it.
+
+Google's position is explicit: from Google Search's perspective, optimizing for generative AI search is still SEO, and third-party AEO or GEO advice should be judged against official guidance. Most named GEO tactics were validated on a fixed set of documents handed to a model; retested on live engines, the rewrite recipes that define the field mostly fail. `geo-ai-search-2026.md` records which claims survive and at what evidence level.
 
 ### AI Overview
 
@@ -205,6 +214,8 @@ For AEO, technical quality has two roles:
 - allow engines to find the page;
 - make content easy to extract, understand, and cite.
 
+The first role carries far more weight. In a within-site study of 158,099 AI answers and 468,037 citations, whether the engine's own search returned a page explained 32% of citation variance, against 2.8% for all on-page features combined. A page the engine never retrieves cannot be cited, no matter how well it is written. Check server rendering, canonicals, internal links, and indexability before any content surgery.
+
 ### Pillar 2: Content
 
 Goal: answer a precise intent better than alternatives.
@@ -221,6 +232,8 @@ Good SEO/AEO content:
 - is updated when facts change.
 
 Ahrefs' AI Overview research highlights an important point: longer is not always better. A page can become less relevant if it adds too many sections that drift away from the primary intent. Intent density matters more than length.
+
+The most repeatable on-page lever is how closely the title and the best-matching paragraph match the question: +14.1% and +15.5% citations per standard deviation within the same site. That favors one page per main question with a self-contained answer under the heading, over a broad page that covers everything a little.
 
 ### Pillar 3: Trust and Authority
 
@@ -876,6 +889,17 @@ Recommended approach:
 8. Repeat what works.
 
 Do not draw conclusions from a single before/after. The channel is too volatile.
+
+Reporting rules that follow from the measurement instability:
+
+- run each prompt 7 to 8 times per engine and average;
+- report over two to four weeks, never a single day;
+- report each engine on its own;
+- split branded from unbranded prompts;
+- keep "brand named in the answer" separate from "our page cited";
+- compare changed pages against unchanged controls before claiming an effect.
+
+`geo-ai-search-2026.md` documents the numbers behind these rules.
 
 ## 14. Playbook: Create SEO/AEO Content
 

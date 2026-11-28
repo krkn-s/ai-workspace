@@ -7,20 +7,24 @@ Use these as reusable instruction patterns inside the conversation. They are not
 Use when the user wants a diagnosis before changes.
 
 ```text
-Audit this website for AI visibility and crawl visibility.
+Audit this website for crawl access, agent readability, and machine-readable surfaces.
 
 Check:
-- whether a valid llms.txt exists and whether it follows the official structure
-- whether clean markdown mirrors or equivalent machine-readable page versions exist
+- whether the main content is readable without JavaScript
 - whether sitemap.xml and robots.txt exist and agree
-- whether important pages are easy for search crawlers and LLM-based agents to discover
-- whether any redesign or content change risks breaking invisible SEO or AI-readable infrastructure
+- whether any AI crawler policy or Content-Signal value matches the stated intent
+- whether important pages are easy for search crawlers and agents to discover
+- whether interactive elements are semantic, labeled, and stable across pages
+- whether a valid llms.txt exists, and who actually reads it
+- whether markdown is served through content negotiation or a declared alternate
+- whether any redesign or content change risks breaking invisible infrastructure
 
 Return:
 - what exists now
 - what is missing
-- what should be fixed first
+- what to fix first, ordered by retrieval impact
 - what must be preserved during future redesigns
+- what will not help, stated plainly
 - whether any existing docs or markdown already remove the need for a mirror layer
 ```
 
@@ -46,17 +50,19 @@ Do not invent facts. Use the actual public URLs. Keep the top of the file compac
 Use when the site needs clean page-level machine-readable content.
 
 ```text
-Plan a markdown mirror strategy for this website.
+Plan a markdown delivery strategy for this website.
 
 Decide:
-- which pages should have mirrors
+- whether content negotiation, a declared .md URL, or an undeclared .md URL is the right mechanism
+- which pages should have markdown
 - which pages should be excluded
 - which public URL pattern is the most stable
-- what metadata each mirror must preserve
-- how llms.txt should reference the highest-value mirrors
+- what metadata each version must preserve
+- how llms.txt should reference the highest-value pages
 
 Prefer a durable pattern and a cleaner output over maximum page count.
-If the site already has clean markdown or docs, say whether mirrors are unnecessary.
+If the site already has clean markdown or docs, say whether a new surface is unnecessary.
+State which agents will actually request it, and do not claim a citation benefit.
 ```
 
 ## 4. Redesign Preservation Brief
@@ -67,14 +73,16 @@ Use when visible design work must not damage invisible infrastructure.
 Make the requested website changes, but preserve the site's discovery infrastructure.
 
 Do not regress:
-- llms.txt
-- markdown mirrors or equivalent machine-readable files
+- server-rendered main content
+- llms.txt when an agent consumes it
+- markdown delivery or equivalent machine-readable files
 - sitemap.xml
-- robots.txt
+- robots.txt and any AI crawler policy
 - schema
 - meta titles and descriptions
 - canonical URLs
 - internal linking to core pages
+- semantic elements, labels, and stable layout for key actions
 
 If any of these need to change, explain the replacement plan explicitly instead of dropping them silently.
 ```
@@ -110,4 +118,23 @@ Decide:
 - whether llms.txt or markdown mirrors should exist at all under this policy
 
 Return an explicit policy, the affected files, and any tradeoffs instead of assuming broader AI exposure is always desired.
+```
+
+## 7. Agent Readiness Brief
+
+Use when browser agents or AI tools must act on the site, not just read it.
+
+```text
+Review this site for agent readability.
+
+Check:
+- whether main content and key actions appear in the served HTML and DOM
+- whether actionable elements use real links, buttons, and labeled inputs
+- whether each control exposes a role, a name, and a state in the accessibility tree
+- whether layouts keep key actions in a stable position across pages
+- whether overlays or ghost elements hide interactive content
+- whether interactive targets are large enough to appear in a screenshot
+
+Return the failures ordered by how likely they block a task, the exact element changes, and a re-test plan.
+Treat experimental agent protocols as opt-in, not as the baseline.
 ```
